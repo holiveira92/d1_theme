@@ -1,8 +1,12 @@
 <?php
+//Obter todas as opções da página
+//$gerenal_configs = $d1_settings_api->get_d1_general_options();
+//var_dump($gerenal_configs);die;
+
 ?>
 <head>
     <meta charset="utf-8">
-    <title>D1web</title>
+    <title>D1Web<?php //echo $gerenal_configs['title'];?></title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="Webflow" name="generator">
     <link href="<?php echo get_template_directory_uri().'/';?>css/normalize.css" rel="stylesheet" type="text/css">
