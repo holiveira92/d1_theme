@@ -2,11 +2,18 @@
 //Obter todas as opções da página
 //$gerenal_configs = $d1_settings_api->get_d1_general_options();
 //var_dump($gerenal_configs);die;
-
+$gerenal_configs = array(
+    'title' => get_option('d1_web_title'),
+    'secao1_hero_name' => get_option('secao1_hero_name'),
+    'secao1_hero_cargo' => get_option('secao1_hero_cargo'),
+    'secao1_hero_descricao' => get_option('secao1_hero_descricao'),
+    'secao1_descricao_primaria' => get_option('secao1_descricao_primaria'),
+    'secao1_descricao_secundaria' => get_option('secao1_descricao_secundaria'),
+)
 ?>
 <head>
     <meta charset="utf-8">
-    <title>D1Web<?php //echo $gerenal_configs['title'];?></title>
+    <title><?php echo $gerenal_configs['title'];?></title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="Webflow" name="generator">
     <link href="<?php echo get_template_directory_uri().'/';?>css/normalize.css" rel="stylesheet" type="text/css">
@@ -40,15 +47,22 @@
         <div class="mycontainer">
             <div class="hero-wrapper">
                 <div class="hero-mockup-description-block">
+                    <!--
                     <h1 class="white-hero-title">Engaje clientes com <span class="text-gradient">jornadas multicanais</span></h1>
                     <p class="p-white"><span class="text-gradient">Plataforma de engajamento </span>que ajuda grandes empresas a automatizar suas comunicações com clientes em canais como Email, SMS, WhatsApp, Voz, Push, entre outros.</p>
-                    <p class="secondary-text p-white">Entenda como seu negócio pode <span class="text-gradient">melhorar a experiência do consumidor!</span></p>
+                    -->
+                    <!-- Descrição Primária -->
+                    <p class="p-white"><?php echo $gerenal_configs['secao1_descricao_primaria'];?></p>
+
+                    <!-- Descrição Secundária -->
+                    <!-- <p class="secondary-text p-white">Entenda como seu negócio pode <span class="text-gradient">melhorar a experiência do consumidor!</span></p> -->
+                    <p class="secondary-text p-white"><?php echo $gerenal_configs['secao1_descricao_secundaria'];?></p>
                     <div class="div-block"><a href="#" class="button w-button">CONHEÇA EM 1 MINUTO</a></div>
                 </div>
                 <div class="div-block-17">
-                    <h3 class="heading-8">Miguel Dorneles</h3>
-                    <h6 class="heading-9 text-gradient">DIRETOR EXECUTIVO</h6>
-                    <p class="paragraph-4">Drives hyper-growth in 77 countries widh D1</p><img src="<?php echo get_template_directory_uri().'/';?>images/YOUSE-logo.png" alt="" class="image-3"></div>
+                    <h3 class="heading-8"><?php echo $gerenal_configs['secao1_hero_name'];?></h3>
+                    <h6 class="heading-9 text-gradient"><?php echo $gerenal_configs['secao1_hero_cargo'];?></h6>
+                    <p class="paragraph-4"><?php echo $gerenal_configs['secao1_hero_descricao'];?></p><img src="<?php echo get_template_directory_uri().'/';?>images/YOUSE-logo.png" alt="" class="image-3"></div>
             </div>
         </div>
     </div>
