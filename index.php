@@ -3,17 +3,18 @@
 //$gerenal_configs = $d1_settings_api->get_d1_general_options();
 //var_dump($gerenal_configs);die;
 $gerenal_configs = array(
-    'title' => get_option('d1_web_title'),
-    'secao1_hero_name' => get_option('secao1_hero_name'),
-    'secao1_hero_cargo' => get_option('secao1_hero_cargo'),
-    'secao1_hero_descricao' => get_option('secao1_hero_descricao'),
-    'secao1_descricao_primaria' => get_option('secao1_descricao_primaria'),
-    'secao1_descricao_secundaria' => get_option('secao1_descricao_secundaria'),
+    'd1_web_title' => !empty(get_option('d1_web_title')) ? get_option('d1_web_title') : "Insira um Título",
+    'secao1_hero_name' => !empty(get_option('secao1_hero_name')) ? get_option('secao1_hero_name') : "Insira o Nome do Hero",
+    'secao1_hero_cargo' => !empty(get_option('secao1_hero_cargo')) ? get_option('secao1_hero_cargo') : "Insira o Cargo do Hero",
+    'secao1_hero_descricao' => !empty(get_option('secao1_hero_descricao')) ? get_option('secao1_hero_descricao') : "Insira a Descrição ",
+    'secao1_hero_title' => !empty(get_option('secao1_hero_title')) ? get_option('secao1_hero_title') : "Insira um Título para o Hero",
+    'secao1_descricao_primaria' => !empty(get_option('secao1_descricao_primaria')) ? get_option('secao1_descricao_primaria') : "Insira um Título",
+    'secao1_descricao_secundaria' => !empty(get_option('secao1_descricao_secundaria')) ? get_option('secao1_descricao_secundaria') : "Insira um Título",
 )
 ?>
 <head>
     <meta charset="utf-8">
-    <title><?php echo $gerenal_configs['title'];?></title>
+    <title><?php echo $gerenal_configs['d1_web_title'];?></title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="Webflow" name="generator">
     <link href="<?php echo get_template_directory_uri().'/';?>css/normalize.css" rel="stylesheet" type="text/css">
@@ -47,17 +48,15 @@ $gerenal_configs = array(
         <div class="mycontainer">
             <div class="hero-wrapper">
                 <div class="hero-mockup-description-block">
-                    <!--
-                    <h1 class="white-hero-title">Engaje clientes com <span class="text-gradient">jornadas multicanais</span></h1>
-                    <p class="p-white"><span class="text-gradient">Plataforma de engajamento </span>que ajuda grandes empresas a automatizar suas comunicações com clientes em canais como Email, SMS, WhatsApp, Voz, Push, entre outros.</p>
-                    -->
+                    <!-- Título do Hero -->
+                    <h1 class="white-hero-title"><?php echo $gerenal_configs['secao1_hero_title'];?></h1>
+                    
                     <!-- Descrição Primária -->
                     <p class="p-white"><?php echo $gerenal_configs['secao1_descricao_primaria'];?></p>
 
                     <!-- Descrição Secundária -->
-                    <!-- <p class="secondary-text p-white">Entenda como seu negócio pode <span class="text-gradient">melhorar a experiência do consumidor!</span></p> -->
                     <p class="secondary-text p-white"><?php echo $gerenal_configs['secao1_descricao_secundaria'];?></p>
-                    <div class="div-block"><a href="#" class="button w-button">CONHEÇA EM 1 MINUTO</a></div>
+                    <div id="conheca_minuto" class="div-block"><a href="#" class="button w-button">CONHEÇA EM 1 MINUTO</a></div>
                 </div>
                 <div class="div-block-17">
                     <h3 class="heading-8"><?php echo $gerenal_configs['secao1_hero_name'];?></h3>
@@ -709,9 +708,11 @@ $gerenal_configs = array(
             </div>
         </div>
     </div>
-    <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="<?php echo get_template_directory_uri().'/';?>css/bootstrap.min.css" type="text/javascript"></script>
+    <script src="<?php echo get_template_directory_uri().'/';?>js/jquery-3.4.1.min.js" type="text/javascript"></script>
     <script src="<?php echo get_template_directory_uri().'/';?>js/webflow.js" type="text/javascript"></script>
-    <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+    <script src="<?php echo get_template_directory_uri().'/';?>js/home.js" type="text/javascript"></script>
+    <script src="<?php echo get_template_directory_uri().'/';?>js/bootstrap.min.js" type="text/javascript"></script>
 </body>
 
 </html>
