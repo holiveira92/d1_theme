@@ -81,7 +81,7 @@ p {
   padding-top: 200px;
   padding-bottom: 130px;
   background-color: #181919;
-  background-image: url('../images/stripes-h_black_trans.png'), url('../images/bg-hero.png');
+  /* background-image: url('../images/stripes-h_black_trans.png'), url('../images/bg-hero.png'); */
   background-position: 100% 50%, 50% 0px;
   background-size: 232px, cover;
   background-repeat: no-repeat, repeat;
@@ -310,8 +310,8 @@ p {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('../images/case-thumb0home.png');
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/case-thumb0home.png');
+  /* background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('../images/case-thumb0home.png'); */
+  /* background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/case-thumb0home.png'); */
   background-position: 0px 0px, 50% 50%;
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;

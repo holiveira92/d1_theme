@@ -3,14 +3,42 @@
 //$gerenal_configs = $d1_settings_api->get_d1_general_options();
 //var_dump($gerenal_configs);die;
 $gerenal_configs = array(
+    //Configs Gerais
+    'd1_main_logo' => !empty(get_option('d1_main_logo')) ? get_option('d1_main_logo') : "",
+    'd1_favicon' => !empty(get_option('d1_favicon')) ? get_option('d1_favicon') : get_template_directory_uri().'icons/favicon.ico',
     'd1_web_title' => !empty(get_option('d1_web_title')) ? get_option('d1_web_title') : "Insira um Título",
+
+    //Seção 1
     'secao1_hero_name' => !empty(get_option('secao1_hero_name')) ? get_option('secao1_hero_name') : "Insira o Nome do Hero",
     'secao1_hero_cargo' => !empty(get_option('secao1_hero_cargo')) ? get_option('secao1_hero_cargo') : "Insira o Cargo do Hero",
     'secao1_hero_descricao' => !empty(get_option('secao1_hero_descricao')) ? get_option('secao1_hero_descricao') : "Insira a Descrição ",
     'secao1_hero_title' => !empty(get_option('secao1_hero_title')) ? get_option('secao1_hero_title') : "Insira um Título para o Hero",
     'secao1_descricao_primaria' => !empty(get_option('secao1_descricao_primaria')) ? get_option('secao1_descricao_primaria') : "Insira um Título",
     'secao1_descricao_secundaria' => !empty(get_option('secao1_descricao_secundaria')) ? get_option('secao1_descricao_secundaria') : "Insira um Título",
-)
+    'secao1_conheca_um_minuto' => !empty(get_option('secao1_conheca_um_minuto')) ? get_option('secao1_conheca_um_minuto') : "#",
+    'secao1_hero_img_bg' => !empty(get_option('secao1_hero_img_bg')) ? get_option('secao1_hero_img_bg') : get_template_directory_uri().'/images/bg-hero.png',
+
+    //Seção 2
+    'secao2_section_title' => !empty(get_option('secao2_section_title')) ? get_option('secao2_section_title') : "Insira a descrição da seção",
+    //Card 1
+    'secao2_title_card_case1' => !empty(get_option('secao2_title_card_case1')) ? get_option('secao2_title_card_case1') : "Insira o Título do Case 1",
+    'secao2_subtitle_card_case1' => !empty(get_option('secao2_subtitle_card_case1')) ? get_option('secao2_subtitle_card_case1') : "Insira o Subtítulo do Case 1",
+    'secao2_text_footer_card_case1' => !empty(get_option('secao2_text_footer_card_case1')) ? get_option('secao2_text_footer_card_case1') : "Insira um Título para o Hero",
+    'secao2_subtext_footer_card_case1' => !empty(get_option('secao2_subtext_footer_card_case1')) ? get_option('secao2_subtext_footer_card_case1') : "Insira a descrição da footer",
+    'secao2_img_bg_case1' => !empty(get_option('secao2_img_bg_case1')) ? get_option('secao2_img_bg_case1') : get_template_directory_uri() . "/images/case-thumb0home.png",
+    //Card 2
+    'secao2_title_card_case2' => !empty(get_option('secao2_title_card_case2')) ? get_option('secao2_title_card_case2') : "Insira o Título do Case 1",
+    'secao2_subtitle_card_case2' => !empty(get_option('secao2_subtitle_card_case2')) ? get_option('secao2_subtitle_card_case2') : "Insira o Subtítulo do Case 1",
+    'secao2_text_footer_card_case2' => !empty(get_option('secao2_text_footer_card_case2')) ? get_option('secao2_text_footer_card_case2') : "Insira um Título para o Hero",
+    'secao2_subtext_footer_card_case2' => !empty(get_option('secao2_subtext_footer_card_case2')) ? get_option('secao2_subtext_footer_card_case2') : "Insira a descrição da footer",
+    'secao2_img_bg_case2' => !empty(get_option('secao2_img_bg_case2')) ? get_option('secao2_img_bg_case2') : get_template_directory_uri() . "/images/case-thumb0home.png",
+    //Card 3
+    'secao2_title_card_case3' => !empty(get_option('secao2_title_card_case3')) ? get_option('secao2_title_card_case3') : "Insira o Título do Case 1",
+    'secao2_subtitle_card_case3' => !empty(get_option('secao2_subtitle_card_case3')) ? get_option('secao2_subtitle_card_case3') : "Insira o Subtítulo do Case 1",
+    'secao2_text_footer_card_case3' => !empty(get_option('secao2_text_footer_card_case3')) ? get_option('secao2_text_footer_card_case3') : "Insira um Título para o Hero",
+    'secao2_subtext_footer_card_case3' => !empty(get_option('secao2_subtext_footer_card_case3')) ? get_option('secao2_subtext_footer_card_case3') : "Insira a descrição da footer",
+    'secao2_img_bg_case3' => !empty(get_option('secao2_img_bg_case3')) ? get_option('secao2_img_bg_case3') : get_template_directory_uri() . "/images/case-thumb0home.png",
+);
 ?>
 <head>
     <meta charset="utf-8">
@@ -44,7 +72,10 @@ $gerenal_configs = array(
             </div>
         </div>
     </div>
-    <div class="home-hero">
+
+    <!-- SEÇÃO 1 - HERO -->
+    <div class="home-hero" style="background-image: url('<?php echo get_template_directory_uri().'/';?>/images/stripes-h_black_trans.png'), 
+    url('<?php echo $gerenal_configs['secao1_hero_img_bg'];?>');">
         <div class="mycontainer">
             <div class="hero-wrapper">
                 <div class="hero-mockup-description-block">
@@ -56,7 +87,9 @@ $gerenal_configs = array(
 
                     <!-- Descrição Secundária -->
                     <p class="secondary-text p-white"><?php echo $gerenal_configs['secao1_descricao_secundaria'];?></p>
-                    <div id="conheca_minuto" class="div-block"><a href="#" class="button w-button">CONHEÇA EM 1 MINUTO</a></div>
+
+                    <!-- Modal vídeo -->
+                    <div id="conheca_minuto" class="div-block"><a href="<?php echo $gerenal_configs['secao1_conheca_um_minuto'];?>" class="button w-button">CONHEÇA EM 1 MINUTO</a></div>
                 </div>
                 <div class="div-block-17">
                     <h3 class="heading-8"><?php echo $gerenal_configs['secao1_hero_name'];?></h3>
@@ -65,15 +98,66 @@ $gerenal_configs = array(
             </div>
         </div>
     </div>
+
+    <!-- SEÇÃO 2 - CASES -->
     <div class="section">
         <div class="homethumbcontetn">
             <div class="home-title-case">
-                <div class="body-text-white">IMPACTOS REAIS DE MELHORIA EM CUSTOMER EXPERIENCE</div>
+                <div class="body-text-white"> <?php echo $gerenal_configs['secao2_section_title'];?> </div>
             </div>
             <div class="home-title-case2"><a href="#" class="body-text-link2">VER CASES</a><img src="https://uploads-ssl.webflow.com/5d556b82fee1f930c695bc98/5d5570c64d608a833f2fa00d_arrowlink.svg" alt="" class="arrowlink"></div>
         </div>
         <div class="mycontainer">
             <div class="cases-row w-row">
+                <!-- CARD 1 -->
+                <div class="cases-column w-col w-col-4 w-col-medium-4">
+                    <div class="cases-thumb-block">
+                        <div class="case-thumb-content" style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $gerenal_configs['secao2_img_bg_case1'];?>');">
+                            <div class="case-thumb-title">
+                                <h3> <?php echo $gerenal_configs['secao2_title_card_case1'];?> </h3>
+                                <h3 class="h6-gradient"><?php echo $gerenal_configs['secao2_subtitle_card_case1'];?></h3>
+                            </div>
+                            <div class="case-thumb-numbers">
+                                <div class="text-block"><span class="text-span"> <?php echo $gerenal_configs['secao2_text_footer_card_case1'];?> </span></div>
+                                <div class="text-block-2"> <?php echo $gerenal_configs['secao2_subtext_footer_card_case1'];?> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="cases-column w-col w-col-4 w-col-medium-4">
+                    <div class="cases-thumb-block">
+                        <div class="case-thumb-content" style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $gerenal_configs['secao2_img_bg_case2'];?>');">
+                            <div class="case-thumb-title">
+                                <h3> <?php echo $gerenal_configs['secao2_title_card_case2'];?> </h3>
+                                <h3 class="h6-gradient"><?php echo $gerenal_configs['secao2_subtitle_card_case2'];?></h3>
+                            </div>
+                            <div class="case-thumb-numbers">
+                                <div class="text-block"><span class="text-span"> <?php echo $gerenal_configs['secao2_text_footer_card_case2'];?> </span></div>
+                                <div class="text-block-2"> <?php echo $gerenal_configs['secao2_subtext_footer_card_case2'];?> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="cases-column w-col w-col-4 w-col-medium-4">
+                    <div class="cases-thumb-block">
+                        <div class="case-thumb-content" style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $gerenal_configs['secao2_img_bg_case3'];?>');">
+                            <div class="case-thumb-title">
+                                <h3> <?php echo $gerenal_configs['secao2_title_card_case3'];?> </h3>
+                                <h3 class="h6-gradient"><?php echo $gerenal_configs['secao2_subtitle_card_case3'];?></h3>
+                            </div>
+                            <div class="case-thumb-numbers">
+                                <div class="text-block"><span class="text-span"> <?php echo $gerenal_configs['secao2_text_footer_card_case3'];?> </span></div>
+                                <div class="text-block-2"> <?php echo $gerenal_configs['secao2_subtext_footer_card_case3'];?> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--
                 <div class="cases-column w-col w-col-4 w-col-medium-4">
                     <div class="cases-thumb-block">
                         <div class="case-thumb-content">
@@ -102,20 +186,8 @@ $gerenal_configs = array(
                         </div>
                     </div>
                 </div>
-                <div class="cases-column w-col w-col-4 w-col-medium-4">
-                    <div class="cases-thumb-block">
-                        <div class="case-thumb-content">
-                            <div class="case-thumb-title">
-                                <h3>Escalando Mensagens<br>Transacionais na Black Friday</h3>
-                                <h3 class="h6-gradient">EFICIÊNCIA OPERACIONAL</h3>
-                            </div>
-                            <div class="case-thumb-numbers">
-                                <div class="text-block"><span class="text-span">20mi</span></div>
-                                <div class="text-block-2">de eventos processados em horário de pico</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                -->
+
             </div>
         </div>
     </div>
@@ -405,7 +477,8 @@ $gerenal_configs = array(
                                                 <p>Execute Crie jornadas personalizadas e
                                                     <br>aumente o sucesso da entrega
                                                     <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
-                                            <div><img src="<?php echo get_template_directory_uri().'/';?>images/tab-example.png" srcset="<?php echo get_template_directory_uri().'/';?>images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 67vw, (max-width: 991px) 62vw, 60vw" alt=""></div>
+                                            <div><img src="<?php echo get_template_directory_uri().'/';?>images/tab-example.png" srcset="<?php echo get_template_directory_uri().'/';?>images/tab-example-p-500.png 500w, <?php echo get_template_directory_uri().'/';?>images/tab-example-p-800.png 800w, 
+                                            <?php echo get_template_directory_uri().'/';?>images/tab-example-p-1080.png 1080w, <?php echo get_template_directory_uri().'/';?>images/tab-example.png 1212w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 67vw, (max-width: 991px) 62vw, 60vw" alt=""></div>
                                         </div>
                                     </div>
                                     <div data-w-tab="Tab 3" class="w-tab-pane w--tab-active">
@@ -640,7 +713,7 @@ $gerenal_configs = array(
                             <div class="blog-thumb-image-wrapper"><img src="<?php echo get_template_directory_uri().'/';?>images/imagee.png" 
                             srcset="<?php echo get_template_directory_uri().'/';?>images/imagee-p-500.png 500w, <?php echo get_template_directory_uri().'/';?>images/imagee.png 692w" sizes="(max-width: 479px) 100vw, (max-width: 752px) 92vw, (max-width: 767px) 692px, 32vw" alt=""></div>
                             <div class="blog-thumb-text-wrapper">
-                                <p class="paragraph-3">Transformação digital: você está pronto para essa mudança exponencial?</p><img src="images/arrowlink.svg" alt="" class="image"></div>
+                                <p class="paragraph-3">Transformação digital: você está pronto para essa mudança exponencial?</p><img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink.svg" alt="" class="image"></div>
                         </div>
                     </div>
                 </div>
@@ -650,7 +723,7 @@ $gerenal_configs = array(
                             <div class="blog-thumb-image-wrapper"><img src="<?php echo get_template_directory_uri().'/';?>images/imagee.png" 
                             srcset="<?php echo get_template_directory_uri().'/';?>images/imagee-p-500.png 500w, <?php echo get_template_directory_uri().'/';?>images/imagee.png 692w" sizes="(max-width: 479px) 100vw, (max-width: 752px) 92vw, (max-width: 767px) 692px, 32vw" alt=""></div>
                             <div class="blog-thumb-text-wrapper">
-                                <p class="paragraph-3">Transformação digital: você está pronto para essa mudança exponencial?</p><img src="images/arrowlink.svg" alt="" class="image"></div>
+                                <p class="paragraph-3">Transformação digital: você está pronto para essa mudança exponencial?</p><img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink.svg" alt="" class="image"></div>
                         </div>
                     </div>
                 </div>
@@ -708,11 +781,9 @@ $gerenal_configs = array(
             </div>
         </div>
     </div>
-    <script src="<?php echo get_template_directory_uri().'/';?>css/bootstrap.min.css" type="text/javascript"></script>
     <script src="<?php echo get_template_directory_uri().'/';?>js/jquery-3.4.1.min.js" type="text/javascript"></script>
     <script src="<?php echo get_template_directory_uri().'/';?>js/webflow.js" type="text/javascript"></script>
     <script src="<?php echo get_template_directory_uri().'/';?>js/home.js" type="text/javascript"></script>
-    <script src="<?php echo get_template_directory_uri().'/';?>js/bootstrap.min.js" type="text/javascript"></script>
 </body>
 
 </html>
