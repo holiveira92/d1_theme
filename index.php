@@ -2,12 +2,16 @@
 //Obter todas as opções da página
 //$gerenal_configs = $d1_settings_api->get_d1_general_options();
 //var_dump($gerenal_configs);die;
+$d1_main_logo = get_option('d1_main_logo');
+$d1_favicon = get_option('d1_favicon');
+$d1_web_title = get_option('d1_web_title');
 $gerenal_configs = array(
     //Configs Gerais
-    'd1_main_logo' => !empty(get_option('d1_main_logo')) ? get_option('d1_main_logo') : "",
-    'd1_favicon' => !empty(get_option('d1_favicon')) ? get_option('d1_favicon') : get_template_directory_uri().'icons/favicon.ico',
-    'd1_web_title' => !empty(get_option('d1_web_title')) ? get_option('d1_web_title') : "Insira um Título",
+    'd1_main_logo' => !empty($d1_main_logo) ? $d1_main_logo : "",
+    'd1_favicon' => !empty($d1_favicon ) ? $d1_favicon  : get_template_directory_uri().'icons/favicon.ico',
+    'd1_web_title' => !empty($d1_web_title) ? $d1_web_title : "Insira um Título",
 
+    /*
     //Seção 1
     'secao1_hero_name' => !empty(get_option('secao1_hero_name')) ? get_option('secao1_hero_name') : "Insira o Nome do Hero",
     'secao1_hero_cargo' => !empty(get_option('secao1_hero_cargo')) ? get_option('secao1_hero_cargo') : "Insira o Cargo do Hero",
@@ -38,6 +42,7 @@ $gerenal_configs = array(
     'secao2_text_footer_card_case3' => !empty(get_option('secao2_text_footer_card_case3')) ? get_option('secao2_text_footer_card_case3') : "Insira um Título para o Hero",
     'secao2_subtext_footer_card_case3' => !empty(get_option('secao2_subtext_footer_card_case3')) ? get_option('secao2_subtext_footer_card_case3') : "Insira a descrição da footer",
     'secao2_img_bg_case3' => !empty(get_option('secao2_img_bg_case3')) ? get_option('secao2_img_bg_case3') : get_template_directory_uri() . "/images/case-thumb0home.png",
+    */
 );
 ?>
 <head>
