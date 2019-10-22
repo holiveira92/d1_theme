@@ -2,105 +2,74 @@
     $data = $GLOBALS["data"]['d1_plugin_footer'];
 ?>
 <div class="bigfooter">
+        <!-- Pré Footer -->
         <div class="section-3">
             <div class="mycontainer-2">
                 <div class="section-title-wrapper">
                     <div class="body-text-2"><?php echo $data['secao1_title'];?></div>
                 </div>
                 <div class="cases-row w-row">
+                
+                    <?php 
+                    for($i=1;$i<=4;$i++):
+                        $key_title = "secao1_passo" . $i . "_title";
+                        $key_desc = "secao1_passo" . $i . "_descricao";
+                    ?>
                     <div class="steps-column w-col w-col-3">
                         <div class="steps-thumb-block">
                             <div class="steps-thumb-content">
                                 <div class="gradient-stripe"></div>
-                                <h3><?php echo $data['secao1_passo1_title'];?></h3>
+                                <h3><?php echo $data[$key_title];?></h3>
                                 <div class="steps-thumb-content-bloc">
-                                    <p><?php echo $data['secao1_passo1_descricao'];?></p>
+                                    <p><?php echo $data[$key_desc];?></p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="steps-column w-col w-col-3">
-                        <div class="steps-thumb-block">
-                            <div class="steps-thumb-content">
-                                <div class="gradient-stripe"></div>
-                                <h3><?php echo $data['secao1_passo2_title'];?></h3>
-                                <div class="steps-thumb-content-bloc">
-                                    <p><?php echo $data['secao1_passo2_descricao'];?></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="steps-column w-col w-col-3">
-                        <div class="steps-thumb-block">
-                            <div class="steps-thumb-block">
-                                <div class="steps-thumb-content">
-                                    <div class="gradient-stripe"></div>
-                                    <h3><?php echo $data['secao1_passo3_title'];?></h3>
-                                    <div class="steps-thumb-content-bloc">
-                                        <p><?php echo $data['secao1_passo2_descricao'];?></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="steps-column w-col w-col-3">
-                        <div class="steps-thumb-block">
-                            <div class="steps-thumb-content">
-                                <div class="gradient-stripe"></div>
-                                <h3><?php echo $data['secao1_passo3_title'];?></h3>
-                                <div class="steps-thumb-content-bloc">
-                                    <p><?php echo $data['secao1_passo2_descricao'];?></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endfor; ?>
+
                 </div>
                 <div>
                     <div class="div-block-2"></div>
                     <div class="div-block-3">
-                        <div class="darkgrey">Veja como podemos trabalhar em conjunto <span class="text-gradient">para aumentar a qualidade do seu CX.</span></div>
+                        <div class="darkgrey"><?php echo insert_degrade($data['secao1_desc_pre_cta']);?></div>
                     </div>
-                    <div class="div-block-4"><a href="#" class="btn-black-home w-button">FALAR COM ESPECIALISTA</a></div>
+                    <div class="div-block-4"><a target="_blank" href="<?php echo $data['secao1_link_cta'];?>" class="btn-black-home w-button">FALAR COM ESPECIALISTA</a></div>
                 </div>
             </div>
         </div>
+
+        <!-- Blog -->
         <div class="section-home-blog">
             <div class="mycontainer-2">
                 <div class="section-title-wrapper">
-                    <div class="body-text-2 grey">QUER SE TONAR UM EXPERT EM CX?</div>
+                    <div class="body-text-2 grey"><?php echo $data['secao2_title'];?></div>
                 </div>
-                <p class="pgrey">Lançamos mensalmente uma série de conteúdos sobre Customer Experience para te ajudar a entender como implementar na sua empresa.</p>
+                <p class="pgrey"></p>
                 <div class="blog-row w-row">
-                    <div class="blog-column w-col w-col-4 w-col-medium-4">
-                        <div class="blog-thumb-block">
-                            <div class="blog-thumb-content">
-                                <div class="blog-thumb-image-wrapper"><img src="images/imagee.png" srcset="images/imagee-p-500.png 500w, images/imagee.png 692w" sizes="(max-width: 767px) 96vw, 32vw" alt="" class="image-2"></div>
-                                <div class="blog-thumb-text-wrapper">
-                                    <p class="paragraph-3">Transformação digital: você está pronto para essa mudança exponencial?</p><img src="images/arrowlink.svg" alt="" class="image"></div>
+                    <?php 
+                    for($i=1;$i<=3;$i++):
+                        $key_desc   = "secao2_card" . $i . "_descricao";
+                        $key_link   = "secao2_card" . $i . "_artigo_link";
+                        $key_img    = "secao2_card" . $i . "_img_bg";
+                    ?>  
+                        <div class="blog-column w-col w-col-4 w-col-medium-4">
+                        <a href="<?php echo $data[$key_link];?>">
+                            <div class="blog-thumb-block">
+                                <div class="blog-thumb-content" style='height:auto !important;'>
+                                    <div class="blog-thumb-image-wrapper"><img src="<?php echo $data[$key_img];?>" class="image-2"></div>
+                                    <div class="blog-thumb-text-wrapper">
+                                        <p class="paragraph-3"></p><img src="images/arrowlink.svg" alt="" class="image"></div>
+                                </div>
                             </div>
+                        </a>
                         </div>
-                    </div>
-                    <div class="blog-column w-col w-col-4 w-col-medium-4">
-                        <div class="blog-thumb-block">
-                            <div class="blog-thumb-content">
-                                <div class="blog-thumb-image-wrapper"><img src="images/imagee.png" srcset="images/imagee-p-500.png 500w, images/imagee.png 692w" sizes="(max-width: 479px) 96vw, (max-width: 728px) 95vw, (max-width: 767px) 692px, 32vw" alt=""></div>
-                                <div class="blog-thumb-text-wrapper">
-                                    <p class="paragraph-3">Transformação digital: você está pronto para essa mudança exponencial?</p><img src="images/arrowlink.svg" alt="" class="image"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog-column w-col w-col-4 w-col-medium-4">
-                        <div class="blog-thumb-block">
-                            <div class="blog-thumb-content">
-                                <div class="blog-thumb-image-wrapper"><img src="images/imagee.png" srcset="images/imagee-p-500.png 500w, images/imagee.png 692w" sizes="(max-width: 479px) 96vw, (max-width: 728px) 95vw, (max-width: 767px) 692px, 32vw" alt=""></div>
-                                <div class="blog-thumb-text-wrapper">
-                                    <p class="paragraph-3">Transformação digital: você está pronto para essa mudança exponencial?</p><img src="images/arrowlink.svg" alt="" class="image"></div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endfor; ?>
                 </div>
             </div>
         </div>
+
+        <!-- Footer -->
         <div class="footer-section">
             <div class="mycontainer-2">
                 <div class="div-block-7">

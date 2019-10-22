@@ -6,6 +6,13 @@ function dirname_oldphp($path, $level = 0){
     array_splice($dir, $level);
     return implode($dir, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
 }
+
+function insert_degrade($str){
+    $str = str_replace("[degrade]","<span class='text-gradient'>",$str);
+    $str = str_replace("[/degrade]","</span>",$str);
+    return $str;
+}
+
 require_once dirname_oldphp(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view_parser.php';
 $d1_view_parser = new D1_View_Parser();
 //Obter todas as opções da página
