@@ -6,7 +6,7 @@
                 <div class="div-block-71">
                     <div data-delay="0" class="dropdown-3 w-dropdown">
                         <div class="dropdown-toggle-3 w-dropdown-toggle">
-                            <div class="icon w-icon-dropdown-toggle"></div><img src="https://uploads-ssl.webflow.com/5d5d3ab49052fea25a4b1c73/5d9be7f2f2af2d39dbfdb3e2_brasilflag.svg" alt="">
+                            <div class="icon w-icon-dropdown-toggle"></div><img src="<?php echo get_template_directory_uri().'/';?>images/brasilflag.svg" alt="">
                             <div class="text-block-6">PT</div>
                         </div>
                         <nav class="dropdown-list-2 w-dropdown-list"><a href="#" class="dropdown-link-2 w-dropdown-link">EN</a></nav>
@@ -116,7 +116,7 @@
                             <div class="menu-preco-wrapper">
                                 <div class="body-text-white">Saiba para onde vai
                                     <br>seu investimento</div>
-                                <div class="menu-preco"><a href="#" class="body-text-link3">VER PÁGINA DE ORÇAMENTOS</a><img src="https://uploads-ssl.webflow.com/5d5d3ab49052fea25a4b1c73/5d66ec667c0872c78441f287_arrowlink-black.svg" alt="" class="arrowlink"></div>
+                                <div class="menu-preco"><a href="#" class="body-text-link3">VER PÁGINA DE ORÇAMENTOS</a><img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink"></div>
                             </div>
                         </nav>
                     </div>
@@ -132,6 +132,6 @@
                     <div class="div-block-32"><a href="#" class="btn-black-home-outline w-button">FALAR COM ESPECIALISTA</a></div>
                 </div>
             </nav>
-            <div class="menu-button w-nav-button"><img src="images/Menu.png" width="33" alt="" class="image-6"></div>
+            <div class="menu-button w-nav-button"><img src="<?php echo get_template_directory_uri().'/';?>images/Menu.png" width="33" alt="" class="image-6"></div>
         </div>
     </div>

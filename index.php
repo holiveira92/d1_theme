@@ -7,9 +7,17 @@ function dirname_oldphp($path, $level = 0){
     return implode($dir, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
 }
 
-function insert_degrade($str){
-    $str = str_replace("[degrade]","<span class='text-gradient'>",$str);
-    $str = str_replace("[/degrade]","</span>",$str);
+function insert_degrade($str,$tipo=1){
+    switch($tipo){
+        case 1 :
+            $str = str_replace("[degrade]","<span class='text-gradient'>",$str);
+            $str = str_replace("[/degrade]","</span>",$str);
+            break;
+        default:
+            $str = str_replace("[degrade]","<span class='text-gradient'>",$str);
+            $str = str_replace("[/degrade]","</span>",$str);
+    }
+    
     return $str;
 }
 
@@ -37,82 +45,63 @@ get_header();
 </head>
 
 <body>
-    <div class="home-hero">
+<div class="home-hero">
         <div class="mycontainer">
-            <div class="hero-wrapper">
-                <div class="hero-mockup-description-block">
-                    <h1 class="white-hero-title">Engaje clientes com <span class="text-gradient">jornadas multicanais</span></h1>
-                    <p class="p-white"><span class="text-gradient">Plataforma de engajamento </span>que ajuda grandes empresas a automatizar suas comunicações com clientes em canais como Email, SMS, WhatsApp, Voz, Push, entre outros.</p>
-                    <p class="secondary-text p-white">Entenda como seu negócio pode <span class="text-gradient">melhorar a experiência do consumidor!</span></p>
-                    <div class="div-block"><a href="#" class="button w-button">CONHEÇA EM 1 MINUTO</a></div>
-                </div>
-                <div class="hero-home-cliente-name-wrapper">
-                    <h3 class="heading-8">Miguel Dorneles</h3>
-                    <h6 class="heading-9 text-gradient">DIRETOR EXECUTIVO</h6>
-                    <p class="paragraph-4">Drives hyper-growth in 77 countries widh D1</p><img src="images/YOUSE-logo.png" alt="" class="image-3"></div>
+            <div class="home-hero-wrapper">
+                <div class="home-hero-left" data-ix="fade-in-on-load">
+                    <h1 class="white pad20">Engaje clientes com jornadas multicanais</h1>
+                    <div class="white pad20">Plataforma de engajamento que ajuda grandes empresas a automatizar suas comunicações com clientes em canais como Email, SMS, WhatsApp, Voz, Push, entre outros.</div><a href="#" class="btn-gradient w-button">CONHEÇA EM 1 MINUTO</a></div>
+                <div class="home-hero-right">
+                    <h3 class="white">Miguel Dorneles</h3>
+                    <h6 class="lightblue">DIRETOR  EXECUTIVO</h6>
+                    <div class="white pad20">This is some text inside of a div block.</div><img src="images/YOUSE-logo_1YOUSE-logo.png" alt="" class="home-hero-logo-partner"></div>
             </div>
         </div>
     </div>
-    <div class="section-gradient-home">
-        <div class="homethumbcontetn">
-            <div class="home-title-case">
-                <div class="body-text-white">IMPACTOS REAIS DE MELHORIA EM CUSTOMER EXPERIENCE</div>
+    <div class="home-wrapper-gradient gradient-bg">
+        <div>
+            <div class="mycontainer">
+                <div class="section-title-2col">
+                    <h6 class="white pad20">IMPACTOS REAIS DE MELHORIA EM CUSTOMER EXPERIENCE</h6><a href="#" class="link-text-white">VER CASES</a></div>
             </div>
-            <div class="home-title-case2"><a href="#" class="body-text-link2">VER CASES</a><img src="https://uploads-ssl.webflow.com/5d556b82fee1f930c695bc98/5d5570c64d608a833f2fa00d_arrowlink.svg" alt="" class="arrowlink"></div>
         </div>
-        <div class="mycontainer">
-            <div class="cases-row w-row">
-                <div class="cases-column w-col w-col-4 w-col-medium-4">
-                    <div class="cases-thumb-block">
-                        <div class="case-thumb-content">
-                            <div class="case-thumb-title">
-                                <h3>Escalando Mensagens<br>Transacionais na Black Friday</h3>
-                                <h3 class="h6-gradient">EFICIÊNCIA OPERACIONAL</h3>
-                            </div>
-                            <div class="case-thumb-numbers">
-                                <div class="text-block"><span class="text-span">20mi</span></div>
-                                <div class="text-block-2">de eventos processados em horário de pico</div>
-                            </div>
-                        </div>
+    </div>
+    <div class="mycontainer">
+        <div class="home-wrapper-gradient-2">
+            <div class="case-thumb-content-wrapper" data-ix="fade-in-on-scroll">
+                <div class="case-thumb-content">
+                    <h3 class="white">Escalando Mensagens<br>Transacionais na Black Friday</h3>
+                    <h6 class="lightblue">EFICIÊNCIA OPERACIONAL</h6>
+                    <div class="case-thumb-numbers">
+                        <h5 class="heading-2 pad20 white">20mi</h5>
+                        <div class="white">de eventos processados em horário de pico</div>
                     </div>
                 </div>
-                <div class="cases-column w-col w-col-4 w-col-medium-4">
-                    <div class="cases-thumb-block">
-                        <div class="case-thumb-content">
-                            <div class="case-thumb-title">
-                                <h3>Escalando Mensagens<br>Transacionais na Black Friday</h3>
-                                <h3 class="h6-gradient">EFICIÊNCIA OPERACIONAL</h3>
-                            </div>
-                            <div class="case-thumb-numbers">
-                                <div class="text-block"><span class="text-span">20mi</span></div>
-                                <div class="text-block-2">de eventos processados em horário de pico</div>
-                            </div>
-                        </div>
+                <div class="case-thumb-content">
+                    <h3 class="white">Escalando Mensagens<br>Transacionais na Black Friday</h3>
+                    <h6 class="lightblue">EFICIÊNCIA OPERACIONAL</h6>
+                    <div class="case-thumb-numbers">
+                        <h5 class="heading-2 white">20mi</h5>
+                        <div class="white">de eventos processados em horário de pico</div>
                     </div>
                 </div>
-                <div class="cases-column w-col w-col-4 w-col-medium-4">
-                    <div class="cases-thumb-block">
-                        <div class="case-thumb-content">
-                            <div class="case-thumb-title">
-                                <h3>Escalando Mensagens<br>Transacionais na Black Friday</h3>
-                                <h3 class="h6-gradient">EFICIÊNCIA OPERACIONAL</h3>
-                            </div>
-                            <div class="case-thumb-numbers">
-                                <div class="text-block"><span class="text-span">20mi</span></div>
-                                <div class="text-block-2">de eventos processados em horário de pico</div>
-                            </div>
-                        </div>
+                <div class="case-thumb-content">
+                    <h3 class="white">Escalando Mensagens<br>Transacionais na Black Friday</h3>
+                    <h6 class="lightblue">EFICIÊNCIA OPERACIONAL</h6>
+                    <div class="case-thumb-numbers">
+                        <h5 class="heading-2 pad20 white">20mi</h5>
+                        <div class="white">de eventos processados em horário de pico</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="section-2 tint">
+    <div class="section-wrapper-large">
         <div class="mycontainer">
-            <div class="section-title-wrapper">
-                <div class="body-text-2 grey">CLIENTES QUE ENCANTAM CLIENTES</div>
+            <div class="section-title" data-ix="fade-in-on-scroll">
+                <h6 class="darkgrey pad20">CLIENTES QUE ENCANTAM  CLIENTES</h6>
             </div>
-            <div class="logo-clients-wrapper">
+            <div class="logo-clients-wrapper" data-ix="fade-in-on-scroll">
                 <div class="image-clientes-block"><img src="images/logos_clientes6qualicorp.png" alt=""></div>
                 <div class="image-clientes-block"><img src="images/logos_clientes8sulamerica.png" alt=""></div>
                 <div class="image-clientes-block"><img src="images/logos_clientes4hdi.png" alt=""></div>
@@ -123,362 +112,296 @@ get_header();
                 <div class="image-clientes-block"><img src="images/logos_clientes_12youse.png" alt=""></div>
             </div>
         </div>
+    </div>
+    <div class="section-wrapper">
         <div class="mycontainer">
-            <div class="section-title-wrapper">
-                <div class="body-text-2 grey">QUAL É O SEU MAIOR DESAFIO?</div>
+            <div class="section-title">
+                <h6 class="darkgrey pad20">QUAL O SEU MAIOR DESAFIO?</h6>
             </div>
-            <div class="cases-row w-row">
-                <div class="cases-column w-col w-col-4 w-col-medium-4">
-                    <div class="cases-thumb-block">
-                        <div class="desafio-thumb-content">
-                            <div class="case-thumb-title">
-                                <h3 class="h3-desafio">Satisfação do Cliente</h3>
-                                <p class="p-white">Somos especialistas em ajudar sua empresa a crescer seu score.</p>
-                            </div>
-                        </div>
+            <div class="case-thumb-content-wrapper" data-ix="fade-in-on-scroll-2">
+                <div class="desafio-thumb-content">
+                    <div class="case-thumb-title">
+                        <h3 class="white">Satisfação do Cliente</h3>
+                        <div>Somos especialistas em ajudar sua empresa a crescer seu score.</div>
                     </div>
                 </div>
-                <div class="cases-column w-col w-col-4 w-col-medium-4">
-                    <div class="cases-thumb-block">
-                        <div class="desafio-thumb-content">
-                            <div class="case-thumb-title">
-                                <h3 class="h3-desafio">Satisfação do Cliente</h3>
-                                <p class="p-white">Somos especialistas em ajudar sua empresa a crescer seu score.</p>
-                            </div>
-                        </div>
+                <div class="desafio-thumb-content">
+                    <div class="case-thumb-title">
+                        <h3 class="white">Satisfação do Cliente</h3>
+                        <div>Somos especialistas em ajudar sua empresa a crescer seu score.</div>
                     </div>
                 </div>
-                <div class="cases-column w-col w-col-4 w-col-medium-4">
-                    <div class="cases-thumb-block">
-                        <div class="desafio-thumb-content">
-                            <div class="case-thumb-title">
-                                <h3 class="h3-desafio">Satisfação do Cliente</h3>
-                                <p class="p-white">Somos especialistas em ajudar sua empresa a crescer seu score.</p>
-                            </div>
-                        </div>
+                <div class="desafio-thumb-content">
+                    <div class="case-thumb-title">
+                        <h3 class="white">Satisfação do Cliente</h3>
+                        <div>Somos especialistas em ajudar sua empresa a crescer seu score.</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="blue-section ui-section">
+    <div class="section-wrapper-large black-bg-stripe">
         <div class="mycontainer">
-            <div class="info-block-left ui">
-                <div class="section-title-wrapper-2 full info">
-                    <h2 class="white-hero-title">Calcule a <span>Maturidade de Customer Experience</span> da sua empresa</h2>
-                </div>
-                <p class="p-white">Mapeie, através da nossa calculadora, o nível de maturidade de CX da sua empresa e comece a desenhar a estratégia para reduzir custos operacionais, fidelizar clientes, aumentando o ticket médio e o life-time value.</p><a href="#" class="btn-cx w-button">CALCULAR CX</a></div>
+            <div class="section-1col-wrapper" data-ix="fade-in-on-scroll-2">
+                <h1 class="white pad20">Calcule a Maturidade de Customer Experience da sua empresa</h1>
+                <div class="white pad20">Mapeie, através da nossa calculadora, o nível de maturidade de CX da sua empresa e comece a desenhar a estratégia para reduzir custos operacionais, fidelizar clientes, aumentando o ticket médio e o life-time value.</div><a href="#" class="btn-cx w-button">CALCULAR CX</a></div>
         </div>
     </div>
-    <div class="section-3">
+    <div class="tab-section-wrapper" data-ix="fade-in-on-scroll">
         <div class="mycontainer">
-            <div class="homethumbcontetn">
-                <div class="home-title-case">
-                    <div class="body-text-2">IMPACTOS REAIS DE MELHORIA EM CUSTOMER EXPERIENCE</div>
-                </div>
-                <div class="home-title-case2"><a href="#" class="body-text-link3">VER CASES</a><img src="images/arrowlink-black.svg" alt="" class="arrowlink"></div>
+            <div class="tabs-section-title-2col">
+                <h6 class="pad20">IMPACTOS REAIS DE MELHORIA EM CUSTOMER EXPERIENCE</h6>
+                <div class="link-text-arrow"><a href="#" class="link-text-black">VER CASES</a><img src="https://uploads-ssl.webflow.com/5d5d3ab49052fea25a4b1c73/5d66ec667c0872c78441f287_arrowlink-black.svg" alt="" class="arrowlink"></div>
             </div>
-            <div class="div-block-15">
-                <div data-duration-in="300" data-duration-out="100" class="tabs-2 w-tabs">
-                    <div class="tabs-menu w-tab-menu">
-                        <a data-w-tab="Tab 1" class="tab-link-tab-1 w-inline-block w-tab-link w--current">
-                            <div>JOURNEYS</div>
-                        </a>
-                        <a data-w-tab="Tab 2" class="tab-link-tab-1 w-inline-block w-tab-link">
-                            <div>CUSTOMER INSIGHTS</div>
-                        </a>
-                        <a data-w-tab="Tab 3" class="tab-link-tab-1 w-inline-block w-tab-link">
-                            <div>MULTICHANNEL</div>
-                        </a>
-                        <a data-w-tab="Tab 4" class="tab-link-tab-1 w-inline-block w-tab-link">
-                            <div>CONNECT</div>
-                        </a>
-                        <a data-w-tab="Tab 5" class="tab-link-tab-1 w-inline-block w-tab-link">
-                            <div>BLOCKCHAIN</div>
-                        </a>
-                        <a data-w-tab="Tab 6" class="tab-link-tab-1 w-inline-block w-tab-link">
-                            <div>DOCUMENTS</div>
-                        </a>
+            <div data-duration-in="300" data-duration-out="100" class="home-tabs w-tabs">
+                <div class="tabs-menu w-tab-menu">
+                    <a data-w-tab="Tab 1" class="home-tab-link w-inline-block w-tab-link w--current">
+                        <div>JOURNEYS</div>
+                    </a>
+                    <a data-w-tab="Tab 2" class="home-tab-link w-inline-block w-tab-link">
+                        <div>CUSTOMER INSIGHTS</div>
+                    </a>
+                    <a data-w-tab="Tab 3" class="home-tab-link w-inline-block w-tab-link">
+                        <div>MULTICHANNEL</div>
+                    </a>
+                    <a data-w-tab="Tab 5" class="home-tab-link w-inline-block w-tab-link">
+                        <div>BLOCKCHAIN</div>
+                    </a>
+                    <a data-w-tab="Tab 6" class="home-tab-link w-inline-block w-tab-link">
+                        <div>DOCUMENTS</div>
+                    </a>
+                </div>
+                <div class="tabs-content w-tab-content">
+                    <div data-w-tab="Tab 1" class="tab-pane-tab-1 w-tab-pane w--tab-active">
+                        <div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
+                            <div class="tabs-menu-2 w-tab-menu">
+                                <a data-w-tab="Tab 1" class="home-tab-link w-inline-block w-tab-link w--current">
+                                    <div>Build</div>
+                                </a>
+                                <a data-w-tab="Tab 2" class="home-tab-link w-inline-block w-tab-link">
+                                    <div>Execute</div>
+                                </a>
+                                <a data-w-tab="Tab 3" class="home-tab-link w-inline-block w-tab-link">
+                                    <div>Analyze</div>
+                                </a>
+                            </div>
+                            <div class="w-tab-content">
+                                <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active">
+                                    <div class="home-tab-content-wrapper">
+                                        <div class="line-gradient"></div>
+                                        <div class="div-block-14">
+                                            <p>Crie jornadas personalizadas e
+                                                <br>aumente o sucesso da entrega
+                                                <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
+                                        <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 991px) 100vw, 59vw" alt=""></div>
+                                    </div>
+                                </div>
+                                <div data-w-tab="Tab 2" class="w-tab-pane">
+                                    <div class="home-tab-content-wrapper">
+                                        <div class="line-gradient"></div>
+                                        <div class="div-block-14">
+                                            <p>Execute Crie jornadas personalizadas e
+                                                <br>aumente o sucesso da entrega
+                                                <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
+                                        <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 991px) 100vw, 59vw" alt=""></div>
+                                    </div>
+                                </div>
+                                <div data-w-tab="Tab 3" class="w-tab-pane">
+                                    <div class="home-tab-content-wrapper">
+                                        <div class="line-gradient"></div>
+                                        <div class="div-block-14">
+                                            <p>Analyze Crie jornadas personalizadas e
+                                                <br>aumente o sucesso da entrega
+                                                <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
+                                        <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 991px) 100vw, 59vw" alt=""></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tabs-content w-tab-content">
-                        <div data-w-tab="Tab 1" class="tab-pane-tab-1 w-tab-pane w--tab-active">
-                            <div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
-                                <div class="tabs-menu-2 w-tab-menu">
-                                    <a data-w-tab="Tab 1" class="tab-link-tab-1 w-inline-block w-tab-link w--current">
-                                        <div>Build</div>
-                                    </a>
-                                    <a data-w-tab="Tab 2" class="tab-link-tab-1 w-inline-block w-tab-link">
-                                        <div>Execute</div>
-                                    </a>
-                                    <a data-w-tab="Tab 3" class="tab-link-tab-1 w-inline-block w-tab-link">
-                                        <div>Analyze</div>
-                                    </a>
+                    <div data-w-tab="Tab 2" class="w-tab-pane">
+                        <div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
+                            <div class="tabs-menu-2 w-tab-menu">
+                                <a data-w-tab="Tab 1" class="home-tab-link w-inline-block w-tab-link">
+                                    <div>Build</div>
+                                </a>
+                                <a data-w-tab="Tab 2" class="home-tab-link w-inline-block w-tab-link">
+                                    <div>Execute</div>
+                                </a>
+                                <a data-w-tab="Tab 3" class="home-tab-link w-inline-block w-tab-link w--current">
+                                    <div>Analyze</div>
+                                </a>
+                            </div>
+                            <div class="w-tab-content">
+                                <div data-w-tab="Tab 1" class="w-tab-pane">
+                                    <div class="home-tab-content-wrapper">
+                                        <div class="line-gradient"></div>
+                                        <div class="div-block-14">
+                                            <p>Crie jornadas personalizadas e
+                                                <br>aumente o sucesso da entrega
+                                                <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
+                                        <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 991px) 100vw, 59vw" alt=""></div>
+                                    </div>
                                 </div>
-                                <div class="w-tab-content">
-                                    <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active">
-                                        <div class="div-block-13">
-                                            <div class="div-block-12"></div>
-                                            <div class="div-block-14">
-                                                <p>Crie jornadas personalizadas e
-                                                    <br>aumente o sucesso da entrega
-                                                    <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
-                                            <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 65vw, (max-width: 991px) 61vw, 60vw" alt=""></div>
-                                        </div>
+                                <div data-w-tab="Tab 2" class="w-tab-pane">
+                                    <div class="home-tab-content-wrapper">
+                                        <div class="line-gradient"></div>
+                                        <div class="div-block-14">
+                                            <p>Execute Crie jornadas personalizadas e
+                                                <br>aumente o sucesso da entrega
+                                                <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
+                                        <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 991px) 100vw, 59vw" alt=""></div>
                                     </div>
-                                    <div data-w-tab="Tab 2" class="w-tab-pane">
-                                        <div class="div-block-13">
-                                            <div class="div-block-12"></div>
-                                            <div class="div-block-14">
-                                                <p>Execute Crie jornadas personalizadas e
-                                                    <br>aumente o sucesso da entrega
-                                                    <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
-                                            <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 65vw, (max-width: 991px) 61vw, 60vw" alt=""></div>
-                                        </div>
-                                    </div>
-                                    <div data-w-tab="Tab 3" class="w-tab-pane">
-                                        <div class="div-block-13">
-                                            <div class="div-block-12"></div>
-                                            <div class="div-block-14">
-                                                <p>Analyze Crie jornadas personalizadas e
-                                                    <br>aumente o sucesso da entrega
-                                                    <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
-                                            <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 65vw, (max-width: 991px) 61vw, 60vw" alt=""></div>
-                                        </div>
+                                </div>
+                                <div data-w-tab="Tab 3" class="w-tab-pane w--tab-active">
+                                    <div class="home-tab-content-wrapper">
+                                        <div class="line-gradient"></div>
+                                        <div class="div-block-14">
+                                            <p>Analyze Crie jornadas personalizadas e
+                                                <br>aumente o sucesso da entrega
+                                                <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
+                                        <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 991px) 100vw, 59vw" alt=""></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div data-w-tab="Tab 2" class="w-tab-pane">
-                            <div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
-                                <div class="tabs-menu-2 w-tab-menu">
-                                    <a data-w-tab="Tab 1" class="tab-link-tab-1 w-inline-block w-tab-link">
-                                        <div>Build</div>
-                                    </a>
-                                    <a data-w-tab="Tab 2" class="tab-link-tab-1 w-inline-block w-tab-link">
-                                        <div>Execute</div>
-                                    </a>
-                                    <a data-w-tab="Tab 3" class="tab-link-tab-1 w-inline-block w-tab-link w--current">
-                                        <div>Analyze</div>
-                                    </a>
+                    </div>
+                    <div data-w-tab="Tab 3" class="w-tab-pane">
+                        <div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
+                            <div class="tabs-menu-2 w-tab-menu">
+                                <a data-w-tab="Tab 1" class="home-tab-link w-inline-block w-tab-link">
+                                    <div>Build</div>
+                                </a>
+                                <a data-w-tab="Tab 2" class="home-tab-link w-inline-block w-tab-link">
+                                    <div>Execute</div>
+                                </a>
+                                <a data-w-tab="Tab 3" class="home-tab-link w-inline-block w-tab-link w--current">
+                                    <div>Analyze</div>
+                                </a>
+                            </div>
+                            <div class="w-tab-content">
+                                <div data-w-tab="Tab 1" class="w-tab-pane">
+                                    <div class="home-tab-content-wrapper">
+                                        <div class="line-gradient"></div>
+                                        <div class="div-block-14">
+                                            <p>Crie jornadas personalizadas e
+                                                <br>aumente o sucesso da entrega
+                                                <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
+                                        <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 991px) 100vw, 59vw" alt=""></div>
+                                    </div>
                                 </div>
-                                <div class="w-tab-content">
-                                    <div data-w-tab="Tab 1" class="w-tab-pane">
-                                        <div class="div-block-13">
-                                            <div class="div-block-12"></div>
-                                            <div class="div-block-14">
-                                                <p>Crie jornadas personalizadas e
-                                                    <br>aumente o sucesso da entrega
-                                                    <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
-                                            <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 67vw, (max-width: 991px) 62vw, 60vw" alt=""></div>
-                                        </div>
+                                <div data-w-tab="Tab 2" class="w-tab-pane">
+                                    <div class="home-tab-content-wrapper">
+                                        <div class="line-gradient"></div>
+                                        <div class="div-block-14">
+                                            <p>Execute Crie jornadas personalizadas e
+                                                <br>aumente o sucesso da entrega
+                                                <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
+                                        <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 991px) 100vw, 59vw" alt=""></div>
                                     </div>
-                                    <div data-w-tab="Tab 2" class="w-tab-pane">
-                                        <div class="div-block-13">
-                                            <div class="div-block-12"></div>
-                                            <div class="div-block-14">
-                                                <p>Execute Crie jornadas personalizadas e
-                                                    <br>aumente o sucesso da entrega
-                                                    <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
-                                            <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 67vw, (max-width: 991px) 62vw, 60vw" alt=""></div>
-                                        </div>
-                                    </div>
-                                    <div data-w-tab="Tab 3" class="w-tab-pane w--tab-active">
-                                        <div class="div-block-13">
-                                            <div class="div-block-12"></div>
-                                            <div class="div-block-14">
-                                                <p>Analyze Crie jornadas personalizadas e
-                                                    <br>aumente o sucesso da entrega
-                                                    <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
-                                            <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 67vw, (max-width: 991px) 62vw, 60vw" alt=""></div>
-                                        </div>
+                                </div>
+                                <div data-w-tab="Tab 3" class="w-tab-pane w--tab-active">
+                                    <div class="home-tab-content-wrapper">
+                                        <div class="line-gradient"></div>
+                                        <div class="div-block-14">
+                                            <p>Analyze Crie jornadas personalizadas e
+                                                <br>aumente o sucesso da entrega
+                                                <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
+                                        <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 991px) 100vw, 59vw" alt=""></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div data-w-tab="Tab 3" class="w-tab-pane">
-                            <div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
-                                <div class="tabs-menu-2 w-tab-menu">
-                                    <a data-w-tab="Tab 1" class="tab-link-tab-1 w-inline-block w-tab-link">
-                                        <div>Build</div>
-                                    </a>
-                                    <a data-w-tab="Tab 2" class="tab-link-tab-1 w-inline-block w-tab-link">
-                                        <div>Execute</div>
-                                    </a>
-                                    <a data-w-tab="Tab 3" class="tab-link-tab-1 w-inline-block w-tab-link w--current">
-                                        <div>Analyze</div>
-                                    </a>
+                    </div>
+                    <div data-w-tab="Tab 5" class="w-tab-pane">
+                        <div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
+                            <div class="tabs-menu-2 w-tab-menu">
+                                <a data-w-tab="Tab 1" class="home-tab-link w-inline-block w-tab-link">
+                                    <div>Build</div>
+                                </a>
+                                <a data-w-tab="Tab 2" class="home-tab-link w-inline-block w-tab-link">
+                                    <div>Execute</div>
+                                </a>
+                                <a data-w-tab="Tab 3" class="home-tab-link w-inline-block w-tab-link w--current">
+                                    <div>Analyze</div>
+                                </a>
+                            </div>
+                            <div class="w-tab-content">
+                                <div data-w-tab="Tab 1" class="w-tab-pane">
+                                    <div class="home-tab-content-wrapper">
+                                        <div class="line-gradient"></div>
+                                        <div class="div-block-14">
+                                            <p>Crie jornadas personalizadas e
+                                                <br>aumente o sucesso da entrega
+                                                <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
+                                        <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 991px) 100vw, 59vw" alt=""></div>
+                                    </div>
                                 </div>
-                                <div class="w-tab-content">
-                                    <div data-w-tab="Tab 1" class="w-tab-pane">
-                                        <div class="div-block-13">
-                                            <div class="div-block-12"></div>
-                                            <div class="div-block-14">
-                                                <p>Crie jornadas personalizadas e
-                                                    <br>aumente o sucesso da entrega
-                                                    <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
-                                            <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 67vw, (max-width: 991px) 62vw, 60vw" alt=""></div>
-                                        </div>
+                                <div data-w-tab="Tab 2" class="w-tab-pane">
+                                    <div class="home-tab-content-wrapper">
+                                        <div class="line-gradient"></div>
+                                        <div class="div-block-14">
+                                            <p>Execute Crie jornadas personalizadas e
+                                                <br>aumente o sucesso da entrega
+                                                <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
+                                        <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 991px) 100vw, 59vw" alt=""></div>
                                     </div>
-                                    <div data-w-tab="Tab 2" class="w-tab-pane">
-                                        <div class="div-block-13">
-                                            <div class="div-block-12"></div>
-                                            <div class="div-block-14">
-                                                <p>Execute Crie jornadas personalizadas e
-                                                    <br>aumente o sucesso da entrega
-                                                    <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
-                                            <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 67vw, (max-width: 991px) 62vw, 60vw" alt=""></div>
-                                        </div>
-                                    </div>
-                                    <div data-w-tab="Tab 3" class="w-tab-pane w--tab-active">
-                                        <div class="div-block-13">
-                                            <div class="div-block-12"></div>
-                                            <div class="div-block-14">
-                                                <p>Analyze Crie jornadas personalizadas e
-                                                    <br>aumente o sucesso da entrega
-                                                    <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
-                                            <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 67vw, (max-width: 991px) 62vw, 60vw" alt=""></div>
-                                        </div>
+                                </div>
+                                <div data-w-tab="Tab 3" class="w-tab-pane w--tab-active">
+                                    <div class="home-tab-content-wrapper">
+                                        <div class="line-gradient"></div>
+                                        <div class="div-block-14">
+                                            <p>Analyze Crie jornadas personalizadas e
+                                                <br>aumente o sucesso da entrega
+                                                <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
+                                        <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 991px) 100vw, 59vw" alt=""></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div data-w-tab="Tab 4" class="w-tab-pane">
-                            <div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
-                                <div class="tabs-menu-2 w-tab-menu">
-                                    <a data-w-tab="Tab 1" class="tab-link-tab-1 w-inline-block w-tab-link">
-                                        <div>Build</div>
-                                    </a>
-                                    <a data-w-tab="Tab 2" class="tab-link-tab-1 w-inline-block w-tab-link">
-                                        <div>Execute</div>
-                                    </a>
-                                    <a data-w-tab="Tab 3" class="tab-link-tab-1 w-inline-block w-tab-link w--current">
-                                        <div>Analyze</div>
-                                    </a>
-                                </div>
-                                <div class="w-tab-content">
-                                    <div data-w-tab="Tab 1" class="w-tab-pane">
-                                        <div class="div-block-13">
-                                            <div class="div-block-12"></div>
-                                            <div class="div-block-14">
-                                                <p>Crie jornadas personalizadas e
-                                                    <br>aumente o sucesso da entrega
-                                                    <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
-                                            <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 67vw, (max-width: 991px) 62vw, 60vw" alt=""></div>
-                                        </div>
-                                    </div>
-                                    <div data-w-tab="Tab 2" class="w-tab-pane">
-                                        <div class="div-block-13">
-                                            <div class="div-block-12"></div>
-                                            <div class="div-block-14">
-                                                <p>Execute Crie jornadas personalizadas e
-                                                    <br>aumente o sucesso da entrega
-                                                    <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
-                                            <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 67vw, (max-width: 991px) 62vw, 60vw" alt=""></div>
-                                        </div>
-                                    </div>
-                                    <div data-w-tab="Tab 3" class="w-tab-pane w--tab-active">
-                                        <div class="div-block-13">
-                                            <div class="div-block-12"></div>
-                                            <div class="div-block-14">
-                                                <p>Analyze Crie jornadas personalizadas e
-                                                    <br>aumente o sucesso da entrega
-                                                    <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
-                                            <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 67vw, (max-width: 991px) 62vw, 60vw" alt=""></div>
-                                        </div>
-                                    </div>
-                                </div>
+                    </div>
+                    <div data-w-tab="Tab 6" class="w-tab-pane">
+                        <div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
+                            <div class="tabs-menu-2 w-tab-menu">
+                                <a data-w-tab="Tab 1" class="home-tab-link w-inline-block w-tab-link">
+                                    <div>Build</div>
+                                </a>
+                                <a data-w-tab="Tab 2" class="home-tab-link w-inline-block w-tab-link">
+                                    <div>Execute</div>
+                                </a>
+                                <a data-w-tab="Tab 3" class="home-tab-link w-inline-block w-tab-link w--current">
+                                    <div>Analyze</div>
+                                </a>
                             </div>
-                        </div>
-                        <div data-w-tab="Tab 5" class="w-tab-pane">
-                            <div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
-                                <div class="tabs-menu-2 w-tab-menu">
-                                    <a data-w-tab="Tab 1" class="tab-link-tab-1 w-inline-block w-tab-link">
-                                        <div>Build</div>
-                                    </a>
-                                    <a data-w-tab="Tab 2" class="tab-link-tab-1 w-inline-block w-tab-link">
-                                        <div>Execute</div>
-                                    </a>
-                                    <a data-w-tab="Tab 3" class="tab-link-tab-1 w-inline-block w-tab-link w--current">
-                                        <div>Analyze</div>
-                                    </a>
-                                </div>
-                                <div class="w-tab-content">
-                                    <div data-w-tab="Tab 1" class="w-tab-pane">
-                                        <div class="div-block-13">
-                                            <div class="div-block-12"></div>
-                                            <div class="div-block-14">
-                                                <p>Crie jornadas personalizadas e
-                                                    <br>aumente o sucesso da entrega
-                                                    <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
-                                            <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 67vw, (max-width: 991px) 62vw, 60vw" alt=""></div>
-                                        </div>
-                                    </div>
-                                    <div data-w-tab="Tab 2" class="w-tab-pane">
-                                        <div class="div-block-13">
-                                            <div class="div-block-12"></div>
-                                            <div class="div-block-14">
-                                                <p>Execute Crie jornadas personalizadas e
-                                                    <br>aumente o sucesso da entrega
-                                                    <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
-                                            <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 67vw, (max-width: 991px) 62vw, 60vw" alt=""></div>
-                                        </div>
-                                    </div>
-                                    <div data-w-tab="Tab 3" class="w-tab-pane w--tab-active">
-                                        <div class="div-block-13">
-                                            <div class="div-block-12"></div>
-                                            <div class="div-block-14">
-                                                <p>Analyze Crie jornadas personalizadas e
-                                                    <br>aumente o sucesso da entrega
-                                                    <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
-                                            <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 67vw, (max-width: 991px) 62vw, 60vw" alt=""></div>
-                                        </div>
+                            <div class="w-tab-content">
+                                <div data-w-tab="Tab 1" class="w-tab-pane">
+                                    <div class="home-tab-content-wrapper">
+                                        <div class="line-gradient"></div>
+                                        <div class="div-block-14">
+                                            <p>Crie jornadas personalizadas e
+                                                <br>aumente o sucesso da entrega
+                                                <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
+                                        <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 991px) 100vw, 59vw" alt=""></div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div data-w-tab="Tab 6" class="w-tab-pane">
-                            <div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
-                                <div class="tabs-menu-2 w-tab-menu">
-                                    <a data-w-tab="Tab 1" class="tab-link-tab-1 w-inline-block w-tab-link">
-                                        <div>Build</div>
-                                    </a>
-                                    <a data-w-tab="Tab 2" class="tab-link-tab-1 w-inline-block w-tab-link">
-                                        <div>Execute</div>
-                                    </a>
-                                    <a data-w-tab="Tab 3" class="tab-link-tab-1 w-inline-block w-tab-link w--current">
-                                        <div>Analyze</div>
-                                    </a>
+                                <div data-w-tab="Tab 2" class="w-tab-pane">
+                                    <div class="home-tab-content-wrapper">
+                                        <div class="line-gradient"></div>
+                                        <div class="div-block-14">
+                                            <p>Execute Crie jornadas personalizadas e
+                                                <br>aumente o sucesso da entrega
+                                                <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
+                                        <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 991px) 100vw, 59vw" alt=""></div>
+                                    </div>
                                 </div>
-                                <div class="w-tab-content">
-                                    <div data-w-tab="Tab 1" class="w-tab-pane">
-                                        <div class="div-block-13">
-                                            <div class="div-block-12"></div>
-                                            <div class="div-block-14">
-                                                <p>Crie jornadas personalizadas e
-                                                    <br>aumente o sucesso da entrega
-                                                    <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
-                                            <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 67vw, (max-width: 991px) 62vw, 60vw" alt=""></div>
-                                        </div>
-                                    </div>
-                                    <div data-w-tab="Tab 2" class="w-tab-pane">
-                                        <div class="div-block-13">
-                                            <div class="div-block-12"></div>
-                                            <div class="div-block-14">
-                                                <p>Execute Crie jornadas personalizadas e
-                                                    <br>aumente o sucesso da entrega
-                                                    <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
-                                            <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 67vw, (max-width: 991px) 62vw, 60vw" alt=""></div>
-                                        </div>
-                                    </div>
-                                    <div data-w-tab="Tab 3" class="w-tab-pane w--tab-active">
-                                        <div class="div-block-13">
-                                            <div class="div-block-12"></div>
-                                            <div class="div-block-14">
-                                                <p>Analyze Crie jornadas personalizadas e
-                                                    <br>aumente o sucesso da entrega
-                                                    <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
-                                            <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 67vw, (max-width: 991px) 62vw, 60vw" alt=""></div>
-                                        </div>
+                                <div data-w-tab="Tab 3" class="w-tab-pane w--tab-active">
+                                    <div class="home-tab-content-wrapper">
+                                        <div class="line-gradient"></div>
+                                        <div class="div-block-14">
+                                            <p>Analyze Crie jornadas personalizadas e
+                                                <br>aumente o sucesso da entrega
+                                                <br>da suas mensagens.</p><a href="#" class="text-link-blue">Leia mais sobre &quot;Build Journeys&quot;</a></div>
+                                        <div><img src="images/tab-example.png" srcset="images/tab-example-p-500.png 500w, images/tab-example-p-800.png 800w, images/tab-example-p-1080.png 1080w, images/tab-example.png 1212w" sizes="(max-width: 991px) 100vw, 59vw" alt=""></div>
                                     </div>
                                 </div>
                             </div>
@@ -488,23 +411,18 @@ get_header();
             </div>
         </div>
     </div>
-    <div class="mycontainer">
-        <div class="section-title-wrapper"></div>
-    </div>
-    <div class="home-black-section ui-section-2 ui-section3">
-        <div class="home-blue-container">
-            <div class="info-block-left ui-2">
-                <div class="section-title-wrapper-2 full info">
-                    <h2 class="black-hero-title">O que faz a D1 ser tão diferente?</h2>
-                </div>
-                <p>1. <span>Uma plataforma completa de gestão da experiência dos seus clientes.</span>
-                    <br>‍
-                    <br>2. <span>Integração rápida com todos os softwares. Somos API Ready.</span>
-                    <br>
-                    <br>3. <span>Estrutura escalável e pronta para operações de alta escala.</span></p>
-                <div class="home-balck-button-wrapper"><a href="#" class="btn-black-home-play w-button">ASSISTA AO WEBINAR</a></div>
+    <div class="section-wrapper-large gradient-bg">
+        <div class="mycontainer">
+            <div class="section-2col-wrapper">
+                <div class="section-col-left" data-ix="fade-in-on-scroll">
+                    <h1 class="pad20">O que faz a D1 ser tão diferente?</h1>
+                    <div class="pad20">1. Uma plataforma completa de gestão da experiência dos seus clientes.
+                        <br>
+                        <br>2. Integração rápida com todos os softwares. Somos API Ready.
+                        <br>
+                        <br>3. Estrutura escalável e pronta para operações de alta escala.</div><a href="#" class="btn-black-home-play w-button">ASSISTA AO WEBINAR</a></div>
+                <div class="section-colright"><img src="images/laptop_mockup.png" width="673" srcset="images/laptop_mockup-p-500.png 500w, images/laptop_mockup-p-800.png 800w, images/laptop_mockup-p-1080.png 1080w, images/laptop_mockup.png 1346w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 89vw, (max-width: 991px) 673px, 50vw" alt=""></div>
             </div>
-            <div class="home-laptop-wrapper"><img src="images/laptop_mockup.png" width="673" srcset="images/laptop_mockup-p-500.png 500w, images/laptop_mockup-p-800.png 800w, images/laptop_mockup-p-1080.png 1080w, images/laptop_mockup.png 1346w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 86vw, (max-width: 991px) 85vw, 56vw" alt=""></div>
         </div>
     </div>
 
