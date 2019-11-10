@@ -18,6 +18,10 @@ function insert_degrade($str,$tipo=1){
             $str = str_replace("[degrade]","<span class='text-span-4'>",$str);
             $str = str_replace("[/degrade]","</span>",$str);
             break;
+        case 2 :
+            $str = str_replace("[degrade]","text-span-21 type-gradient",$str);
+            $str = str_replace("[/degrade]","</span>",$str);
+            break;
         default:
             $str = str_replace("[degrade]","<span class='text-gradient'>",$str);
             $str = str_replace("[/degrade]","</span>",$str);
@@ -42,7 +46,7 @@ get_header();
     <meta content="Webflow" name="generator">
     <link href="<?php echo get_template_directory_uri().'/';?>css/normalize.css" rel="stylesheet" type="text/css">
     <link href="<?php echo get_template_directory_uri().'/';?>css/webflow.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo get_template_directory_uri().'/';?>css/d1web.webflow.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo get_template_directory_uri().'/';?>css/d1web.css" rel="stylesheet" type="text/css">
     <script src="<?php echo get_template_directory_uri().'/';?>js/jquery-3.4.1.min.js" type="text/javascript"></script>
     <script src="<?php echo get_template_directory_uri().'/';?>js/webflow.js" type="text/javascript"></script>
     <script src="<?php echo get_template_directory_uri().'/';?>js/home.js" type="text/javascript"></script>
