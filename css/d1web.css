@@ -2035,6 +2035,10 @@ h6 {
   border-color: transparent;
 }
 
+a.btn-black-home-outline.herp.line.type-gradient.w-button {
+  text-transform: uppercase;
+}
+
 .btn-black-home-outline.herp.line.type-gradient:hover {
   border-color: #00e1ff;
 }

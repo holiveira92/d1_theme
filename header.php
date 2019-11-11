@@ -59,7 +59,7 @@ foreach($menu_pai as $key=>&$menu){
             <div class="div-block-70">
                 <div class="secondary-text type-gradient">Quer saber as melhoras práticas do mercado de Customer Experience?</div><a href="#" class="link-top-menu">Descubra aqui</a></div>
             <div><a href="#" class="link-top-menu-copy type-gradient">LOG IN</a>
-                <div class="div-block-71">
+                <div class="div-block-71 hide">
                     <div data-delay="0" class="dropdown-3 w-dropdown">
                         <div class="dropdown-toggle-3 w-dropdown-toggle">
                             <div class="icon w-icon-dropdown-toggle"></div><img src="<?php echo get_template_directory_uri().'/';?>images/brasilflag.svg" alt="">
@@ -100,7 +100,7 @@ foreach($menu_pai as $key=>&$menu){
                 <?php endforeach; ?>
                 <!-- Fim dos Blocos -->
                     
-                    <div class="div-block-32"><a href="<?php echo $menu_cta['link'];?>" target="<?php echo $menu_cta['target'];?>" class="btn-black-home-outline w-button"><?php echo $menu_cta['title'];?></a></div>
+                    <div class="div-block-32"><a href="<?php echo $menu_cta['link'];?>" target="<?php echo $menu_cta['target'];?>" class="btn-black-home-outline herp line type-gradient w-button"><?php echo $menu_cta['title'];?></a></div>
                 </div>
             </nav>
             <div class="menu-button w-nav-button"><img src="<?php echo get_template_directory_uri().'/';?>images/Menu.png" width="33" alt="" class="image-6"></div>
