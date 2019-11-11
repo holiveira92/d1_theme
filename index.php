@@ -37,7 +37,7 @@ function insert_degrade($str,$tipo=0){
 require_once dirname_oldphp(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view_parser.php';
 global $wpdb;
 $d1_view_parser = new D1_View_Parser();
-//Obter todas as opções da página
+$img_default = get_template_directory_uri() . "/images/img_default.jpg";
 $GLOBALS["data"] = $d1_view_parser->get_data();
 $data_home = $GLOBALS["data"]["d1_plugin"];
 $id_lead_generator_cta = $data_home['secao5_cta'];
@@ -51,30 +51,15 @@ $modulos = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->
 get_header();
 
 ?>
-<head>
-    <meta charset="utf-8">
-    <title><?php echo $data_home['d1_web_title'];?></title>
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <meta content="Webflow" name="generator">
-    <link href="<?php echo get_template_directory_uri().'/';?>css/normalize.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo get_template_directory_uri().'/';?>css/webflow.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo get_template_directory_uri().'/';?>css/d1web.css" rel="stylesheet" type="text/css">
-    <script src="<?php echo get_template_directory_uri().'/';?>js/jquery-3.4.1.min.js" type="text/javascript"></script>
-    <script src="<?php echo get_template_directory_uri().'/';?>js/webflow.js" type="text/javascript"></script>
-    <script src="<?php echo get_template_directory_uri().'/';?>js/index.js" type="text/javascript"></script>
-    <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart" in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document)</script>
-    <link href="<?php echo get_template_directory_uri().'/';?>icons/webclip.png" rel="apple-touch-icon">
-    <link href="<?php echo $data_home['d1_favico'];?>" rel="shortcut icon" type="image/x-icon">
-</head>
 
 <body>
 <!-- SEÇÃO HERO -->
 <!-- TODO - img backgroun do hero está no css , pensar em maneira para tornar variavel - images/home-hero.png' -->
 <div class="home-hero">
-    <div class="arrowdown"><img src="<?php echo get_template_directory_uri().'/';?>images/images/arrow-hero.svg" width="12" alt=""></div>
+    <div class="arrowdown"><img src="<?php echo get_template_directory_uri().'/';?>images/arrow-hero.svg" width="12" alt=""></div>
         <div data-delay="4000" data-animation="fade" data-autoplay="1" data-nav-spacing="0" data-duration="500" data-infinite="1" class="slider w-slider">
             <div class="mask w-slider-mask">
-                <div class="_1-slide w-slide" style="">
+                <div class="_1-slide w-slide" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('<?php echo $card['secao1_hero_img_bg'];?>');background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $card['secao1_hero_img_bg'];?>');">
                     <div class="mycontainer _1">
                         <div class="home-hero-wrapper">
                             <div class="home-hero-left left nopad" data-ix="fade-in-on-load">
@@ -197,23 +182,29 @@ get_header();
     <div id="modulos-plat" class="tab-section-wrapper grey-bg nomargin" data-ix="fade-in-on-scroll">
         <div class="mycontainer">
             <div class="tabs-section-title-2col">
-                <h6 class="pad20 left lightblue"><?php echo $data_home['secao6_title'];?></h6>
-                <div class="link-text-arrow right noinvert"><a href="#" class="link-text-black">VER CASES</a><img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink"></div>
+                <h6 class="pad20 left lightblueleft lightblue"><?php echo $data_home['secao6_title'];?></h6>
+                <div class="link-text-arrow right noinvert">
+                    <a href="#" class="link-text-black">VER CASES</a>
+                    <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink">
+                </div>
             </div>
 
             <div data-duration-in="300" data-duration-out="100" class="home-tabs w-tabs">
                 <!-- SEÇÃO TITULOS DA ESTRUTURA DE SOLUÇÕES -->
                 <div class="tabs-menu w-tab-menu">
                     <?php
-                    $modulos = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_modulos")),true);
-                    
+                    $modulos = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_modulos WHERE id_modulo IS NULL OR id_modulo = '' ")),true);
+                    $i=1;
                     foreach($modulos as $key=>$modulo):
                         $title_class = ($key == 1) ? 'w--current' : "";
                     ?>
-                        <a data-w-tab="Tab <?php echo $i;?>" class="home-tab-link w-inline-block w-tab-link<?php echo $title_class;?>">
-                            <div><?php echo $modulo['description'];?></div>
+                        <a data-w-tab="Tab <?php echo $i;?>" class="home-tab-link w-inline-block w-tab-link <?php echo $title_class;?>">
+                            <div><?php echo $modulo['title'];?></div>
                         </a>
-                    <?php endforeach; ?>
+                    <?php 
+                        $i++;
+                        endforeach; 
+                    ?>
                 </div>
                     
                 <!-- SEÇÃO TITULOS DA ESTRUTURA DE SOLUÇÕES -->
@@ -221,54 +212,55 @@ get_header();
 
                     <!-- SEÇÃO ITENS DA ESTRUTURA DE SOLUÇÕES -->
                     <?php
-                    for($i=1;$i<=5;$i++):
-                        $modulo_title = "secao6_modulo$i";
-                        $tab_class = ($i == 1) ? 'w--tab-active' : "";
+                    $i_mod=1;
+                    foreach($modulos as $key=>$modulo):
+                        $id_modulo = $modulo['id'];
+                        $itens = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_modulos WHERE id_modulo = $id_modulo")),true);
+                        $tab_class = ($i_mod == 1) ? 'w--tab-active' : "";
                     ?>
-                    <div data-w-tab="Tab <?php echo $i;?>" class="tab-pane-tab-1 w-tab-pane <?php echo $tab_class;?>">
+                    <div data-w-tab="Tab <?php echo $i_mod;?>" class="tab-pane-tab-1 w-tab-pane <?php echo $tab_class;?>">
                         <div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
                             <!-- SEÇÃO SUBITENS DA ESTRUTURA DE SOLUÇÕES -->
                             <div class="tabs-menu-2 w-tab-menu">
                                 <?php
-                                for($j=1;$j<=3;$j++):
-                                    $subitem_title = $modulo_title . "_subitem$j";
+                                $j=1;
+                                foreach($itens as $k=>$item):
                                     $subitem_tab_class = ($j == 1) ? 'w--current' : "";
                                 ?>
 
                                 <a data-w-tab="Tab <?php echo $j;?>" class="home-tab-link w-inline-block w-tab-link <?php echo $subitem_tab_class;?>">
-                                    <div><?php echo $data_home[$subitem_title];?></div>
+                                    <div><?php echo $item['subtitle'];?></div>
                                 </a>
-                                <?php endfor; ?>
+                                <?php $j++;endforeach; ?>
                             </div>
 
 
                             <!-- SEÇÃO CONTEUDO DA ESTRUTURA DE SOLUÇÕES -->
                             <div class="w-tab-content">
                             <?php
-                            for($j=1;$j<=3;$j++):
-                                $subitem_descricao = $modulo_title . "_subitem$j" . "_descricao";
-                                $subitem_link = $modulo_title . "_subitem$j" . "_link";
-                                $subitem_image = $modulo_title . "_subitem$j" . "_image";
+                            $j=1;
+                            foreach($itens as $k=>$item):
                                 $subitem_tab_class = ($j == 1) ? 'w--tab-active' : "";
+                                $item['url_img'] = (!empty($item['url_img'])) ? $item['url_img'] : $img_default 
                             ?>
                                 <div data-w-tab="Tab <?php echo $j;?>" class="w-tab-pane <?php echo $subitem_tab_class;?>">
                                     <div class="home-tab-content-wrapper">
                                         <div class="line-gradient"></div>
                                         <div class="div-block-14">
                                             <p>
-                                                <?php echo $data_home[$subitem_descricao];?>
+                                                <?php echo $item['description'];?>
                                             </p>
-                                            <a href="<?php echo $data_home[$subitem_link];?>" class="text-link-blue"> Leia mais sobre </a>
+                                            <a href="<?php echo $item['url_link'];?>" class="text-link-blue"> <?php echo $item['text_link'];?> </a>
                                         </div>
-                                        <div><img src="<?php echo $data_home[$subitem_image];?>" alt=""></div>
+                                        <div class="motionblock"><img src="<?php echo $item['url_img'];?>" width="900" alt="" class="image-11"></div>
                                     </div>
                                 </div>
-                            <?php endfor; ?>
+                            <?php $j++;endforeach; ?>
 
                             </div>
                         </div>
                     </div>
-                    <?php endfor; ?>
+                    <?php $i_mod++; endforeach; ?>
                 </div>
 
             </div>

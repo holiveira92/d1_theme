@@ -5116,8 +5116,6 @@ h6 {
   margin-left: auto;
   padding-top: 220px;
   padding-bottom: 0px;
-  background-image: url('../images/stripes-v-transparent.png'), -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2))), url('../images/Hero-cliente-D1.png');
-  background-image: url('../images/stripes-v-transparent.png'), linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/Hero-cliente-D1.png');
   background-position: 100% 50%, 0px 0px, 98% 31%;
   background-size: 17%, auto, 120%;
   background-repeat: no-repeat, repeat, no-repeat;
@@ -8750,8 +8748,6 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
   ._1-slide {
     padding-top: 133px;
     padding-bottom: 65px;
-    background-image: url('../images/stripes-v-transparent.png'), -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2))), url('../images/Hero-cliente-D1.png');
-    background-image: url('../images/stripes-v-transparent.png'), linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/Hero-cliente-D1.png');
     background-position: 100% 100%, 0px 0px, 70% 28%;
     background-size: 30%, auto, auto 150%;
   }
@@ -10451,8 +10447,6 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
     width: 90%;
   }
   ._1-slide {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2))), url('../images/Hero-cliente-D1.png');
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/Hero-cliente-D1.png');
     background-position: 0px 0px, 71% 50%;
     background-size: auto, cover;
     background-repeat: repeat, no-repeat;
@@ -12850,8 +12844,6 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
   ._1-slide {
     height: 125vh;
     padding-top: 120px;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.35)), to(rgba(0, 0, 0, 0.35))), url('../images/Hero-cliente-D1.png');
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('../images/Hero-cliente-D1.png');
     background-position: 0px 0px, 70% 64%;
     background-size: auto, auto 124%;
     background-repeat: repeat, no-repeat;
@@ -12859,8 +12851,6 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
   ._2-slide {
     height: 125vh;
     padding-top: 120px;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url('../images/portrait-of-beautiful-yound-woman-outdoors-4Y8QCUX.jpg');
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/portrait-of-beautiful-yound-woman-outdoors-4Y8QCUX.jpg');
     background-position: 0px 0px, 66% 60%;
     background-size: auto, auto 131%;
     background-repeat: repeat, no-repeat;

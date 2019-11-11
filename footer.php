@@ -1,6 +1,7 @@
 <?php
     require(trim(ABSPATH) . "wp-load.php");
     global $wpdb;
+    $img_default = get_template_directory_uri() . "/images/img_default.jpg";
     $data = $GLOBALS["data"]['d1_plugin_footer'];
     $id_cta = $data['secao1_footer_cta'];
     $id_cta = !empty($id_cta) ? $id_cta : 0;
@@ -94,9 +95,9 @@
                     <div> <?php echo $data['secao3_title'];?></div>
                 </div>
                 <div class="div-block-5">
-                    <div class="div-block-6"><a href="<?php echo $footer_cta1['link'];?>" target="<?php echo $footer_cta1['tagret'];?>" class="btn-black-home-outline-footer w-button"><?php echo $footer_cta1['title'];?></a></div>
-                    <div class="div-block-6"><a href="<?php echo $footer_cta2['link'];?>" target="<?php echo $footer_cta2['tagret'];?>" class="btn-play-outline w-button"><?php echo $footer_cta2['title'];?></a></div>
-                    <div class="div-block-6"><a href="<?php echo $footer_cta3['link'];?>" target="<?php echo $footer_cta3['tagret'];?>" class="btn-cx-outline w-button"><?php echo $footer_cta3['title'];?></a></div>
+                    <div class="div-block-6"><a href="<?php echo $footer_cta1['link'];?>" target="<?php echo $footer_cta1['target'];?>" class="btn-black-home-outline-footer w-button"><?php echo $footer_cta1['title'];?></a></div>
+                    <div class="div-block-6"><a href="<?php echo $footer_cta2['link'];?>" target="<?php echo $footer_cta2['target'];?>" class="btn-play-outline w-button"><?php echo $footer_cta2['title'];?></a></div>
+                    <div class="div-block-6"><a href="<?php echo $footer_cta3['link'];?>" target="<?php echo $footer_cta3['target'];?>" class="btn-cx-outline w-button"><?php echo $footer_cta3['title'];?></a></div>
                 </div>
 
                 <div class="div-block-8">

@@ -24,7 +24,10 @@
 </head>
 
 <body class="body">
+
+
     <div class="wrapper-menu">
+
         <div class="div-block-69">
             <div class="div-block-70">
                 <div class="secondary-text type-gradient">Quer saber as melhoras práticas do mercado de Customer Experience?</div><a href="#" class="link-top-menu">Descubra aqui</a></div>
@@ -40,6 +43,8 @@
                 </div>
             </div>
         </div>
+
+
         <div data-collapse="medium" data-animation="over-right" data-duration="400" data-doc-height="1" data-no-scroll="1" class="navbar-3 w-nav">
             <div class="div-block-82">
                 <a href="#" class="brand-3 w-nav-brand"><img src="images/betterjourneys.svg" width="8" alt="" class="image-9"></a>
@@ -127,7 +132,10 @@
                         </div>
                         <nav class="dropdown-conteudo w-dropdown-list">
                             <div class="menu-select-conteudos"></div>
-                            <div class="menu-conteudos-wrapper"><a href="#" class="black-menu-link">Cases</a><a href="#" class="black-menu-link">Whitepapers</a><a href="#" class="black-menu-link">Webinars</a><a href="#" class="black-menu-link">Blog</a></div>
+                            <div class="menu-conteudos-wrapper"><a href="#" class="black-menu-link">Cases</a>
+                            <a href="#" class="black-menu-link">Whitepapers</a>
+                            <a href="#" class="black-menu-link">Webinars</a>
+                            <a href="#" class="black-menu-link">Blog</a></div>
                         </nav>
                     </div>
                     <div data-delay="0" data-hover="1" class="dropdown w-dropdown">
@@ -138,7 +146,8 @@
                             <div class="menu-select-preco"></div>
                             <div class="menu-preco-wrapper">
                                 <div class="body-text-white">Saiba para onde vai seu investimento</div>
-                                <div class="menu-preco"><a href="#" class="body-text-link3 precocta">VER PÁGINA DE ORÇAMENTOS</a><img src="https://uploads-ssl.webflow.com/5d5d3ab49052fea25a4b1c73/5d66ec667c0872c78441f287_arrowlink-black.svg" alt="" class="arrowlink"></div>
+                                <div class="menu-preco"><a href="#" class="body-text-link3 precocta">VER PÁGINA DE ORÇAMENTOS</a>
+                                <img src="https://uploads-ssl.webflow.com/5d5d3ab49052fea25a4b1c73/5d66ec667c0872c78441f287_arrowlink-black.svg" alt="" class="arrowlink"></div>
                             </div>
                         </nav>
                     </div>
@@ -148,7 +157,10 @@
                         </div>
                         <nav class="dropdown-conteudo w-dropdown-list">
                             <div class="menu-select-sobre"></div>
-                            <div class="menu-conteudos-wrapper"><a href="#" class="black-menu-link">Nossa Jornada</a><a href="#" class="black-menu-link">Whitepapers</a><a href="#" class="black-menu-link">Webinars</a><a href="#" class="black-menu-link">Blog</a></div>
+                            <div class="menu-conteudos-wrapper"><a href="#" class="black-menu-link">Nossa Jornada</a>
+                            <a href="#" class="black-menu-link">Whitepapers</a>
+                            <a href="#" class="black-menu-link">Webinars</a>
+                            <a href="#" class="black-menu-link">Blog</a></div>
                         </nav>
                     </div>
                     <div class="div-block-32"><a href="#" class="btn-black-home-outline herp line type-gradient w-button">FALAR COM ESPECIALISTA</a></div>
@@ -158,6 +170,9 @@
                 <div class="menutext">Menu</div><img src="images/Menu.png" width="33" alt="" class="image-6"></div>
         </div>
     </div>
+
+
+
     <div id="hero" class="home-hero">
         <div class="arrowdown"><img src="images/arrow-hero.svg" width="12" alt=""></div>
         <div data-delay="4000" data-animation="fade" data-autoplay="1" data-nav-spacing="0" data-duration="500" data-infinite="1" class="slider w-slider">
@@ -299,6 +314,7 @@
 
 
 
+
     <div id="modulos-plat" class="tab-section-wrapper grey-bg nomargin" data-ix="fade-in-on-scroll">
         <div class="mycontainer">
             <div class="tabs-section-title-2col">
@@ -306,6 +322,7 @@
                 <div class="link-text-arrow right noinvert"><a href="#" class="link-text-black">VER CASES</a><img src="https://uploads-ssl.webflow.com/5d5d3ab49052fea25a4b1c73/5d66ec667c0872c78441f287_arrowlink-black.svg" alt="" class="arrowlink"></div>
             </div>
             <div data-duration-in="300" data-duration-out="100" class="home-tabs w-tabs">
+
                 <div class="tabs-menu w-tab-menu">
                     <a data-w-tab="Tab 1" class="home-tab-link w-inline-block w-tab-link w--current">
                         <div class="text-block-22">JOURNEYS</div>
@@ -323,7 +340,10 @@
                         <div class="text-block-23">DOCUMENTS</div>
                     </a>
                 </div>
+
+
                 <div class="tabs-content w-tab-content">
+
                     <div data-w-tab="Tab 1" class="tab-pane-tab-1 w-tab-pane w--tab-active">
                         <div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
                             <div class="tabs-menu-2 center w-tab-menu">
@@ -337,6 +357,8 @@
                                     <div>Analyze</div>
                                 </a>
                             </div>
+
+
                             <div class="tabs-content-3 w-tab-content">
                                 <div data-w-tab="Tab 1" class="w-tab-pane">
                                     <div class="home-tab-content-wrapper">
@@ -366,7 +388,10 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
+
+
                     <div data-w-tab="Tab 2" class="tab-pane-tab-2-2 w-tab-pane">
                         <div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
                             <div class="tabs-menu-2 center w-tab-menu">
@@ -550,6 +575,12 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
     <div id="diferencial" class="section-wrapper-large gradient-bg notop">
         <div class="mycontainer narrow lessnarrow">
             <div class="section-2col-wrapper">
