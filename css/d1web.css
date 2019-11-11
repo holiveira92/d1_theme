@@ -1658,8 +1658,24 @@ h6 {
   color: #42a6ff;
 }
 
+.type-gradient span {
+  background: linear-gradient(247.73deg, #0A8CFF 6.41%, #13F1FF 82.61%);
+  -webkit-linear-gradient(247.73deg, #0A8CFF 6.41%, #13F1FF 82.61%): ;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: normal!important;
+  background-size: auto;
+}
+
+.w-button span:hover{
+  background: none;
+  -webkit-text-fill-color: #fff;
+  color: #fff;
+}
+
 .btn-black-home.vagas.type-gradient {
   border-style: none;
+
 }
 
 .btn-black-home.vagas.type-gradient:hover {

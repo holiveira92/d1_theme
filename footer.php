@@ -49,7 +49,7 @@
                 <div class="darkgrey"><?php echo insert_degrade($data['secao1_desc_pre_cta']);?></div>
             </div>
             <div class="div-block-4">
-                <a href="<?php echo $cta['link'];?>" class="btn-black-home lightblue type-gradient w-button"><?php echo $cta['title'];?></a>
+                <a href="<?php echo $cta['link'];?>" class="btn-black-home lightblue type-gradient w-button"><span><?php echo $cta['title'];?></span></a>
             </div>
         </div>
 
@@ -177,7 +177,7 @@
                     <div class="body-text-small"><?php echo $data['secao6_pitch'];?>
                         <br>
                     </div>
-                    <h6 class="h6-gradient-copy type-gradient">© 2019 D1</h6>
+                    <h6 class="h6-gradient-copy type-gradient"><span>© 2019 D1</span></h6>
                 </div>
             </div>
         </div>
