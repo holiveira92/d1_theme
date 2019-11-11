@@ -7,33 +7,8 @@ function dirname_oldphp($path, $level = 0){
     return implode($dir, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
 }
 
-function insert_degrade($str,$tipo=0){
-    
-    switch($tipo){
-        case 0 :
-            $str = str_replace("[degrade]","<span class='text-gradient'>",$str);
-            $str = str_replace("[/degrade]","</span>",$str);
-            break;
-        case 1 :
-            $str = str_replace("[degrade]","<span class='text-span-4'>",$str);
-            $str = str_replace("[/degrade]","</span>",$str);
-            break;
-        case 2 :
-            $str = str_replace("[degrade]","<span class='text-span-21 type-gradient'>",$str);
-            $str = str_replace("[/degrade]","</span>",$str);
-            break;
-        case 3 :
-            $str = str_replace("[degrade]","<span class='text-span-22 type-gradient'>",$str);
-            $str = str_replace("[/degrade]","</span>",$str);
-            break;
-        default:
-            $str = str_replace("[degrade]","<span class='text-gradient'>",$str);
-            $str = str_replace("[/degrade]","</span>",$str);
-    }
-    
-    return $str;
-}
-
+require(trim(dirname_oldphp(__FILE__,4)) . "wp-load.php");
+wp_load_alloptions();
 require_once dirname_oldphp(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view_parser.php';
 global $wpdb;
 $d1_view_parser = new D1_View_Parser();
@@ -49,7 +24,6 @@ $home_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb-
 $home_cta = !empty($home_cta[0]) ? $home_cta[0] : array();
 $modulos = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_modulos")),true);
 get_header();
-
 ?>
 
 <body>
