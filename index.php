@@ -55,44 +55,64 @@ get_header();
 <body>
 <!-- SEÇÃO HERO -->
 <!-- TODO - img backgroun do hero está no css , pensar em maneira para tornar variavel - images/home-hero.png' -->
-<div class="home-hero">
-    <div class="arrowdown"><img src="<?php echo get_template_directory_uri().'/';?>images/arrow-hero.svg" width="12" alt=""></div>
-        <div data-delay="4000" data-animation="fade" data-autoplay="1" data-nav-spacing="0" data-duration="500" data-infinite="1" class="slider w-slider">
-            <div class="mask w-slider-mask">
-                <div class="_1-slide w-slide" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('<?php echo $card['secao1_hero_img_bg'];?>');background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $card['secao1_hero_img_bg'];?>');">
-                    <div class="mycontainer _1">
-                        <div class="home-hero-wrapper">
-                            <div class="home-hero-left left nopad" data-ix="fade-in-on-load">
-                                <h1 class="h1white herohome maintitle rightpad"><?php echo insert_degrade($data_home['secao1_hero_title'],2);?></h1>
-                                <div class="paragrafo white"><?php echo $data_home['secao1_descricao_primaria'];?></div>
-                                <div class="h1white pad20 small type-gradient"><span class="text-span-9"><?php echo $data_home['secao1_descricao_secundaria'];?></div>
-                                <a href="<?php echo $home_cta['link'];?>" class="btn-gradient hero w-button"><?php echo $home_cta['title'];?></a>
-                            </div>
-
-                            <div class="home-hero-right">
-                                <h3 class="h1white nomargin"><?php echo $data_home['secao1_hero_name'];?></h3>
-                                <div class="div-block-97"></div>
-                                <h6 class="lightblue type-gradient"><?php echo $data_home['secao1_hero_cargo'];?></h6>
-                                <div class="h1white pad20 client"><?php echo $data_home['secao1_hero_descricao'];?></div>
-                                <img src="<?php echo $data_home['secao1_hero_company'];?>" alt="" class="home-hero-logo-partner">
-                            </div>
+<div id="hero" class="home-hero">
+    <div class="arrowdown">
+        <img src="<?php echo get_template_directory_uri().'/';?>images/arrow-hero.svg" width="12" alt="">
+    </div>
+    <div data-delay="4000" data-animation="fade" data-autoplay="0" data-nav-spacing="0" data-duration="500" data-infinite="1" class="slider w-slider">
+        <div class="mask w-slider-mask">
+            <div class="_1-slide w-slide" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('<?php echo $card['secao1_hero_img_bg'];?>');background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $card['secao1_hero_img_bg'];?>');">
+                <div class="mycontainer _1">
+                    <div class="home-hero-wrapper">
+                        <div class="home-hero-left left nopad" data-ix="fade-in-on-load">
+                            <h1 class="h1white herohome maintitle rightpad"><?php echo insert_degrade($data_home['secao1_hero_title'],2);?></h1>
+                            <div class="paragrafo white"><?php echo $data_home['secao1_descricao_primaria'];?></div>
+                            <div class="h1white pad20 small type-gradient"><span class="text-span-9"><?php echo $data_home['secao1_descricao_secundaria'];?></div>
+                            <a href="<?php echo $home_cta['link'];?>" class="btn-gradient hero w-button"><?php echo $home_cta['title'];?></a>
                         </div>
+
+                        <div class="home-hero-right">
+                            <h3 class="h1white nomargin"><?php echo $data_home['secao1_hero_name'];?></h3>
+                            <div class="div-block-97"></div>
+                            <h6 class="lightblue type-gradient"><?php echo $data_home['secao1_hero_cargo'];?></h6>
+                            <div class="h1white pad20 client"><?php echo $data_home['secao1_hero_descricao'];?></div>
+                            <img src="<?php echo $data_home['secao1_hero_company'];?>" alt="" class="home-hero-logo-partner">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="_2-slide w-slide" style="transform: translateX(-1360px); opacity: 1; z-index: 1;">
+                <div class="mycontainer _2">
+                    <div class="home-hero-wrapper left">
+                    <div class="home-hero-left left nopad" data-ix="fade-in-on-load" style="opacity: 1; transform: translateX(0px) translateY(0px) translateZ(0px); display: block; transition: opacity 500ms ease 0s, transform 500ms ease 0s;">
+                        <h1 class="h1white herohome maintitle rightpad">Engaje clientes com <span class="text-span-4">jornadas multicanais</span></h1>
+                        <div class="paragrafo white">Plataforma de engajamento que ajuda grandes empresas a automatizar suas comunicações com clientes em todos os canais.</div>
+                        <div class="h1white pad20 small"><span class="text-span-10">Entenda como seu negócio pode</span> melhorar a experiência do consumidor!</div><a href="#" class="btn-gradient hero w-button">CONHEÇA EM&nbsp;1&nbsp;MINUTO</a></div>
+                    <div class="home-hero-right">
+                        <h3 class="h1white nomargin">Neri Ashton</h3>
+                        <div class="div-block-97"></div>
+                        <h6 class="lightblue">CHIEF EXECUTIVE OFFICER</h6>
+                        <div class="h1white pad20 client">Drives hyper-growth in 77 countries with D1.</div><img src="images/YOUSE-logo_1YOUSE-logo.png" alt="" class="home-hero-logo-partner"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
     <div class="home-wrapper-gradient gradient-bg">
         <div class="div-block-84">
             <div class="mycontainer">
                 <div class="section-title-2col">
                     <h6 class="white _18"><?php echo $data_home['secao1_descricao_secundaria'];?></h6>
-                    <div class="link-text-arrow"><a href="#" class="link-text-black invert">VER CASES</a><img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink"></div>
+                    <div class="link-text-arrow">
+                        <a href="#" class="link-text-black invert">VER CASES</a>
+                        <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink">
+                    </div>
                 </div>
             </div>
         </div>
-</div>
+    </div>
 
     <!-- SEÇÃO CASES DE SUCESSO -->
     <div id="cases" class="section-cases">

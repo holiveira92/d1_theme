@@ -1658,11 +1658,15 @@ h6 {
 
 .type-gradient span {
   background: linear-gradient(247.73deg, #0A8CFF 6.41%, #13F1FF 82.61%);
-  -webkit-linear-gradient(247.73deg, #0A8CFF 6.41%, #13F1FF 82.61%): ;
+  -webkit-linear-gradient:(247.73deg, #0A8CFF 6.41%, #13F1FF 82.61%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-style: normal!important;
   background-size: auto;
+}
+
+.hide {
+  display: none!important;
 }
 
 .w-button span:hover{
