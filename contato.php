@@ -40,7 +40,7 @@ get_header();
                         <div class="div-block-80"><img src="<?php echo $data_contato[$key_img];?>" height="50" width="50" alt="" class="image-7">
                             <p class="paragraph-4 left nopad"><?php echo $data_contato[$key_descricao];?></p>
                         </div>
-                    </div><a href="<?php echo $data_contato[$key_link];?>" class="btn-black-home-copy lightblue type-gradient w-button"><?php echo $data_contato[$key_btn_title];?></a></div>
+                    </div><a href="<?php echo $data_contato[$key_link];?>" class="btn-black-home-copy lightblue type-gradient w-button"><span><?php echo $data_contato[$key_btn_title];?></span></a></div>
             <?php endfor;?>
 
             </div>
@@ -70,7 +70,7 @@ get_header();
                             </div>
                         </div>
                     </div>
-                    <div class="text-block-10 lightblue type-gradient">Como quer ser contatado?</div>
+                    <div class="text-block-10 lightblue type-gradient"><span>Como quer ser contatado?</span></div>
                     <div class="div-block-78 bottomline">
                         <div class="_616block">
                             <div class="div-block-79">
@@ -98,7 +98,7 @@ get_header();
                         <div class="_616block">
                             <div class="div-block-79-copy">
                                 <div class="text-block-10 white">Entre em contato também em</div>
-                                <div class="text-block-9-copy lightblue type-gradient">(11)47650-5200 ou contato@direct.one</div>
+                                <div class="text-block-9-copy lightblue type-gradient"><span>(11)47650-5200 ou contato@direct.one</span></div>
                             </div>
                             <div class="div-block-79 flex">
                                 <input type="submit" value="Enviar" data-wait="Please wait..." class="btn-black-form-copy w-button">

@@ -57,8 +57,8 @@ foreach($menu_pai as $key=>&$menu){
     <div class="wrapper-menu">
         <div class="div-block-69">
             <div class="div-block-70">
-                <div class="secondary-text type-gradient">Quer saber as melhoras práticas do mercado de Customer Experience?</div><a href="#" class="link-top-menu">Descubra aqui</a></div>
-            <div><a href="#" class="link-top-menu-copy type-gradient">LOG IN</a>
+                <div class="secondary-text type-gradient"><span>Quer saber as melhoras práticas do mercado de Customer Experience?</span></div><a href="#" class="link-top-menu">Descubra aqui</a></div>
+            <div><a href="#" class="link-top-menu-copy type-gradient"><span>LOG IN</span></a>
                 <div class="div-block-71">
                     <div data-delay="0" class="dropdown-3 w-dropdown">
                         <div class="dropdown-toggle-3 w-dropdown-toggle">
@@ -96,7 +96,7 @@ foreach($menu_pai as $key=>&$menu){
                         </div>
                     <?php endforeach; ?>
                     <!-- Fim dos Blocos -->
-                    <div class="div-block-32"><a href="<?php echo $menu_cta['link'];?>" target="<?php echo $menu_cta['target'];?>" class="btn-black-home-outline herp line type-gradient w-button"><?php echo $menu_cta['title'];?></a></div>
+                    <div class="div-block-32"><a href="<?php echo $menu_cta['link'];?>" target="<?php echo $menu_cta['target'];?>" class="btn-black-home-outline herp line type-gradient w-button"><span><?php echo $menu_cta['title'];?></span></a></div>
                 </div>
             </nav>
             <div class="menu-button w-nav-button">
