@@ -2587,7 +2587,6 @@ a.btn-black-home-outline.herp.line.type-gradient.w-button {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background-image: url('../images/Group-16.39.svg'), url('../images/segmentos-hero.png');
   background-position: 100% 50%, 0px 0px;
   background-size: 17%, cover;
   background-repeat: no-repeat, no-repeat;
@@ -7955,7 +7954,6 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
     justify-content: center;
   }
   .segmentos-hero {
-    background-image: url('../images/segmentos-hero.png');
     background-position: 50% 0px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -8832,7 +8830,6 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
     text-align: center;
   }
   .departamentos-hero {
-    background-image: url('../images/segmentos-hero.png');
     background-position: 50% 0px;
     background-size: cover;
     background-repeat: no-repeat;

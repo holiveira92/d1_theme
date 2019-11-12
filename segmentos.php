@@ -16,7 +16,7 @@ $GLOBALS["data"] = $d1_view_parser->get_data();
 $data_segmentos = $GLOBALS["data"]["d1_plugin_segmentos"];
 $id_segmento = 1; //buscar ao abrir
 $id_card = $data_segmentos['segmentos_secao3_card_select'];
-$card = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases where id_card = '" . $data_home[$key_select] ."'")),true);
+$card = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases where id_card = $id_card")),true);
 $card = !empty($card[0]) ? $card[0] : array();
 $segmento = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_segmentos WHERE id=$id_segmento")),true);
 $segmento = !empty($segmento[0]) ? $segmento[0] : array();
@@ -28,7 +28,7 @@ get_header();
 ?>
 <body class="body">
 
-    <div id="hero" class="segmentos-hero">
+    <div id="hero" class="segmentos-hero" style="background-image:url('<?php echo get_template_directory_uri();?>/images/Group-16.39.svg'), url('<?php echo $segmento['url_img_bg'];?>');">
         <div class="mycontainer">
             <div class="home-hero-wrapper left">
                 <div class="home-hero-left left _16pad nopad">

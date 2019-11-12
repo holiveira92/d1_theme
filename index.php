@@ -35,7 +35,7 @@ get_header();
     </div>
     <div data-delay="4000" data-animation="fade" data-autoplay="0" data-nav-spacing="0" data-duration="500" data-infinite="1" class="slider w-slider">
         <div class="mask w-slider-mask">
-            <div class="_1-slide w-slide" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('<?php echo $card['secao1_hero_img_bg'];?>');background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $card['secao1_hero_img_bg'];?>');">
+            <div class="_1-slide w-slide" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('<?php echo $data_home['secao1_hero_img_bg'];?>');background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $data_home['secao1_hero_img_bg'];?>');">
                 <div class="mycontainer _1">
                     <div class="home-hero-wrapper">
                         <div class="home-hero-left left nopad" data-ix="fade-in-on-load">
@@ -97,9 +97,8 @@ get_header();
                     $key_select = "secao2_select_card_cases" . $i;
                     $query = "SELECT * FROM " . $wpdb->prefix . "d1_cases where id_card = '" . $data_home[$key_select] ."'";
                     $cards = json_decode(json_encode($wpdb->get_results($query)),true);
-                    foreach($cards as $key=>$card){
+                    foreach($cards as $key=>$card):
                         
-                    }
                     ?>
                     <div class="case-thumb-content _200ms left" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('<?php echo $card['img_bg_url'];?>');background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $card['img_bg_url'];?>');">
                         <a href="<?php echo $card['card_link'];?>" style='text-decoration:none;'>
@@ -112,7 +111,7 @@ get_header();
                         <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink.svg" alt="" class="image-20" style='float:right;'>
                     </div>
                     </a>
-                <?php endfor; ?>
+                <?php endforeach; endfor; ?>
             </div>
         </div>
     </div>
