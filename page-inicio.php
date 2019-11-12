@@ -26,6 +26,7 @@ $modulos = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->
 $menu = wp_get_nav_menus();
 $menu_itens = wp_get_nav_menu_items($menu[0]->term_id);
 $menu_pai = get_menus_data($menu_itens);
+get_header();
 ?>
 
 <head>
@@ -45,60 +46,6 @@ $menu_pai = get_menus_data($menu_itens);
 </head>
 
 <body>
-<div class="wrapper-menu">
-    <!-- aba de alerta -->
-    <div class="div-block-69">
-        <div class="div-block-70">
-            <div class="secondary-text type-gradient"><span>Quer saber as melhoras práticas do mercado de Customer Experience?</span></div><a href="#" class="link-top-menu">Descubra aqui</a></div>
-        <div><a href="#" class="link-top-menu-copy type-gradient"><span>LOG IN</span></a>
-            <div class="div-block-71 hide">
-                <div data-delay="0" class="dropdown-3 w-dropdown">
-                    <div class="dropdown-toggle-3 w-dropdown-toggle">
-                        <div class="icon w-icon-dropdown-toggle"></div><img src="<?php echo get_template_directory_uri().'/';?>images/brasilflag.svg" alt="">
-                        <div class="text-block-6">PT</div>
-                    </div>
-                    <nav class="dropdown-list-2 w-dropdown-list"><a href="#" class="dropdown-link-2 w-dropdown-link">EN</a></nav>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- menus -->
-    <div data-collapse="medium" data-animation="over-right" data-duration="400" data-doc-height="1" data-no-scroll="1" class="navbar-3 w-nav">
-        <a href="#" class="brand-3 w-nav-brand"></a>
-        <div class="menu-button-copy w-nav-button">
-            <div class="menutext">Menu</div>
-        </div>
-        <nav role="navigation" class="nav-menu w-nav-menu">
-            <div class="text-block-7">Voltar</div>
-            <div class="menu-wrapper w-clearfix">
-
-            <!-- Bloco de criação dos menus pai -->
-            <?php foreach($menu_pai as $key=>$menu): ?>
-                <div data-delay="0" data-hover="1" class="dropdown w-dropdown">
-                    <div class="menulink w-dropdown-toggle">
-                        <div class="text-block-4"><?php echo $menu['title'];?></div>
-                    </div>
-                    <nav class="dropdown-conteudo w-dropdown-list">
-                        <div class="menu-select-conteudos"></div>
-                        <div class="menu-conteudos-wrapper">
-                    <!-- Bloco de criação dos menus filhos -->
-                    <?php foreach($menu['subitems'] as $key=>$item): ?>
-                        <a href="<?php echo $item['url'];?>" class="black-menu-link"><?php echo $item['title'];?></a>
-                    <?php endforeach; ?>
-                        </div>
-                    </nav>
-                </div>
-            <?php endforeach; ?>
-            <!-- Fim dos Blocos -->
-                
-                <div class="div-block-32"><a href="<?php echo $menu_cta['link'];?>" target="<?php echo $menu_cta['target'];?>" class="btn-black-home-outline herp line type-gradient w-button"><span><?php echo $menu_cta['title'];?></span></a></div>
-            </div>
-        </nav>
-        <div class="menu-button w-nav-button"><img src="<?php echo get_template_directory_uri().'/';?>images/Menu.png" width="33" alt="" class="image-6"></div>
-    </div>
-</div>
-
 
 <!-- SEÇÃO HERO -->
 <div id="hero" class="home-hero">
@@ -107,7 +54,7 @@ $menu_pai = get_menus_data($menu_itens);
     </div>
     <div data-delay="4000" data-animation="fade" data-autoplay="0" data-nav-spacing="0" data-duration="500" data-infinite="1" class="slider w-slider">
         <div class="mask w-slider-mask">
-            <div class="_1-slide w-slide" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('<?php echo $data_home['secao1_hero_img_bg'];?>');background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $data_home['secao1_hero_img_bg'];?>');">
+            <div class="_1-slide w-slide" style="background-image: url('https://uploads-ssl.webflow.com/5d9f3e21a78bd192c39905ad/5d9f4366a121e054729a5477_stripes-h_black_trans.png'), -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url('<?php echo $data_home['secao1_hero_img_bg'];?>')">
                 <div class="mycontainer _1">
                     <div class="home-hero-wrapper">
                         <div class="home-hero-left left nopad" data-ix="fade-in-on-load">

@@ -10,7 +10,7 @@ $id_menu_cta = $data_header['d1_menu_cta'];
 $id_menu_cta = !empty($id_menu_cta) ? $id_menu_cta : 0;
 $menu_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_call_to_action WHERE id=$id_menu_cta")),true);
 $menu_cta = !empty($menu_cta[0]) ? $menu_cta[0] : array();
-$menu = wp_get_nav_menus();
+$menu = wp_get_nav_menus('d1_theme');
 $menu_itens = wp_get_nav_menu_items($menu[0]->term_id);
 $menu_pai = array();
 //pre($menu_itens);die;
@@ -59,7 +59,7 @@ foreach($menu_pai as $key=>&$menu){
             <div class="div-block-70">
                 <div class="secondary-text type-gradient"><span>Quer saber as melhoras práticas do mercado de Customer Experience?</span></div><a href="#" class="link-top-menu">Descubra aqui</a></div>
             <div><a href="#" class="link-top-menu-copy type-gradient"><span>LOG IN</span></a>
-                <div class="div-block-71">
+                <div class="div-block-71 hide">
                     <div data-delay="0" class="dropdown-3 w-dropdown">
                         <div class="dropdown-toggle-3 w-dropdown-toggle">
                             <div class="icon w-icon-dropdown-toggle"></div><img src="https://uploads-ssl.webflow.com/5d5d3ab49052fea25a4b1c73/5d9be7f2f2af2d39dbfdb3e2_brasilflag.svg" alt="">
@@ -74,7 +74,7 @@ foreach($menu_pai as $key=>&$menu){
 
         <div data-collapse="medium" data-animation="over-right" data-duration="400" data-doc-height="1" data-no-scroll="1" class="navbar-3 w-nav">
             <div class="div-block-82">
-                <a href="#" class="brand-3 w-nav-brand"><img src="images/betterjourneys.svg" width="8" alt="" class="image-9"></a>
+                <a href="<?php echo get_home_url(); ?>" class="brand-3 w-nav-brand"><img src="./wp-content/themes/d1_theme/images/betterjourneys.svg" width="8" alt="" class="image-9"></a>
             </div>
             <nav role="navigation" class="nav-menu w-nav-menu">
                 <div class="menu-wrapper mobi w-clearfix">
