@@ -4228,8 +4228,6 @@ a.btn-black-home-outline.herp.line.type-gradient.w-button {
   display: flex;
   height: 85vh;
   background-color: transparent;
-  background-image: url('../images/Group-16.39.svg'), -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url('../images/team-of-specialists-managing-network-server-LMDFX24.png');
-  background-image: url('../images/Group-16.39.svg'), linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/team-of-specialists-managing-network-server-LMDFX24.png');
   background-position: 100% 50%, 0px 0px, 100% 7%;
   background-size: 17%, auto, 100%;
   background-repeat: no-repeat, repeat, no-repeat;
@@ -8368,8 +8366,6 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
     padding-top: 86px;
   }
   .seg-hero.gradient-bg {
-    background-image: url('../images/Group-16.39.svg'), -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url('../images/team-of-specialists-managing-network-server-LMDFX24.png');
-    background-image: url('../images/Group-16.39.svg'), linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/team-of-specialists-managing-network-server-LMDFX24.png');
     background-position: 100% 50%, 0px 0px, -150px 0px;
     background-size: 30%, auto, auto 100%;
     background-repeat: no-repeat, repeat, no-repeat;
@@ -12512,8 +12508,6 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
   }
   .seg-hero.gradient-bg {
     height: 100vh;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url('../images/team-of-specialists-managing-network-server-LMDFX24.png');
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/team-of-specialists-managing-network-server-LMDFX24.png');
     background-position: 0px 0px, 10% 50%;
     background-size: auto, cover;
     background-repeat: repeat, no-repeat;
