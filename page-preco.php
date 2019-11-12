@@ -41,7 +41,7 @@ get_header();
                 <div class="section-colright-form">
                     <div class="preco-form-wrapper left bottommargin" data-ix="fade-in-on-load-2">
                         <div class="div-block-93">
-                            <h3 class="heading-36 type-gradient">Vamos conversar?</h3>
+                            <h3 class="heading-36 type-gradient"><span>Vamos conversar?</span></h3>
                             <div class="form-block w-form">
                                 <form id="email-form" name="email-form" data-name="Email Form" class="form">
                                     <label for="name" class="field-label">Nome</label>
@@ -153,7 +153,7 @@ get_header();
                     <div class="case-thumb-content _200ms left" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('<?php echo $card['img_bg_url'];?>');background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $card['img_bg_url'];?>');">
                         <a href="<?php echo $card['card_link'];?>" style='text-decoration:none;'>
                         <h3 class="h1white left"><?php echo $card['title_card'];?></h3>
-                        <h6 class="lightblue type-gradient"><?php echo $card['subtitle_card'];?></h6>
+                        <h6 class="lightblue type-gradient"><span><?php echo $card['subtitle_card'];?></span></h6>
                         <div class="case-thumb-numbers">
                             <h5 class="heading-2 pad20 white huge left"><?php echo $card['text_footer_card'];?></h5>
                             <div class="h1white left tiny"><?php echo $card['subtext_footer_card'];?></div>

@@ -51,8 +51,8 @@ $menu_pai = get_menus_data($menu_itens);
     <!-- aba de alerta -->
     <div class="div-block-69">
         <div class="div-block-70">
-            <div class="secondary-text type-gradient">Quer saber as melhoras práticas do mercado de Customer Experience?</div><a href="#" class="link-top-menu">Descubra aqui</a></div>
-        <div><a href="#" class="link-top-menu-copy type-gradient">LOG IN</a>
+            <div class="secondary-text type-gradient"><span>Quer saber as melhoras práticas do mercado de Customer Experience?</span></div><a href="#" class="link-top-menu">Descubra aqui</a></div>
+        <div><a href="#" class="link-top-menu-copy type-gradient"><span>LOG IN</span></a>
             <div class="div-block-71 hide">
                 <div data-delay="0" class="dropdown-3 w-dropdown">
                     <div class="dropdown-toggle-3 w-dropdown-toggle">
@@ -94,7 +94,7 @@ $menu_pai = get_menus_data($menu_itens);
             <?php endforeach; ?>
             <!-- Fim dos Blocos -->
                 
-                <div class="div-block-32"><a href="<?php echo $menu_cta['link'];?>" target="<?php echo $menu_cta['target'];?>" class="btn-black-home-outline herp line type-gradient w-button"><?php echo $menu_cta['title'];?></a></div>
+                <div class="div-block-32"><a href="<?php echo $menu_cta['link'];?>" target="<?php echo $menu_cta['target'];?>" class="btn-black-home-outline herp line type-gradient w-button"><span><?php echo $menu_cta['title'];?></span></a></div>
             </div>
         </nav>
         <div class="menu-button w-nav-button"><img src="<?php echo get_template_directory_uri().'/';?>images/Menu.png" width="33" alt="" class="image-6"></div>
@@ -105,7 +105,7 @@ $menu_pai = get_menus_data($menu_itens);
         <div class="mycontainer">
             <div class="home-hero-wrapper left">
                 <div class="home-hero-left left _16pad nopad">
-                    <h6 class="lightblue type-gradient" data-ix="fade-in-on-load"><?php echo $segmento['title'];?></h6>
+                    <h6 class="lightblue type-gradient" data-ix="fade-in-on-load"><span><?php echo $segmento['title'];?></span></h6>
                     <h1 class="h1white mobi left larger notop" data-ix="fade-in-on-load-2"><?php echo $segmento['main_title'];?></h1>
                     <div class="white" data-ix="fade-in-on-load-2"><?php echo $segmento['description'];?></div>
                 </div>
@@ -183,7 +183,7 @@ $menu_pai = get_menus_data($menu_itens);
     <div id="big-case" class="mycontainer">
         <div class="case-thumb-content-2" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('<?php echo $card['img_bg_url'];?>');background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $card['img_bg_url'];?>');">
             <h3 class="h1white left2"><?php echo $card['title_card'];?></h3>
-            <h6 class="lightblue type-gradient"><?php echo $card['subtitle_card'];?></h6>
+            <h6 class="lightblue type-gradient"><span><?php echo $card['subtitle_card'];?></span></h6>
             <div class="case-thumb-numbers">
                 <h4 class="h1white huge"><?php echo $card['text_footer_card'];?></h4>
                 <div class="h1white"><?php echo $card['subtext_footer_card'];?></div>

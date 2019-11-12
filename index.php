@@ -49,8 +49,8 @@ $menu_pai = get_menus_data($menu_itens);
     <!-- aba de alerta -->
     <div class="div-block-69">
         <div class="div-block-70">
-            <div class="secondary-text type-gradient">Quer saber as melhoras práticas do mercado de Customer Experience?</div><a href="#" class="link-top-menu">Descubra aqui</a></div>
-        <div><a href="#" class="link-top-menu-copy type-gradient">LOG IN</a>
+            <div class="secondary-text type-gradient"><span>Quer saber as melhoras práticas do mercado de Customer Experience?</span></div><a href="#" class="link-top-menu">Descubra aqui</a></div>
+        <div><a href="#" class="link-top-menu-copy type-gradient"><span>LOG IN</span></a>
             <div class="div-block-71 hide">
                 <div data-delay="0" class="dropdown-3 w-dropdown">
                     <div class="dropdown-toggle-3 w-dropdown-toggle">
@@ -92,7 +92,7 @@ $menu_pai = get_menus_data($menu_itens);
             <?php endforeach; ?>
             <!-- Fim dos Blocos -->
                 
-                <div class="div-block-32"><a href="<?php echo $menu_cta['link'];?>" target="<?php echo $menu_cta['target'];?>" class="btn-black-home-outline herp line type-gradient w-button"><?php echo $menu_cta['title'];?></a></div>
+                <div class="div-block-32"><a href="<?php echo $menu_cta['link'];?>" target="<?php echo $menu_cta['target'];?>" class="btn-black-home-outline herp line type-gradient w-button"><span><?php echo $menu_cta['title'];?></span></a></div>
             </div>
         </nav>
         <div class="menu-button w-nav-button"><img src="<?php echo get_template_directory_uri().'/';?>images/Menu.png" width="33" alt="" class="image-6"></div>
@@ -113,14 +113,14 @@ $menu_pai = get_menus_data($menu_itens);
                         <div class="home-hero-left left nopad" data-ix="fade-in-on-load">
                             <h1 class="h1white herohome maintitle rightpad"><?php echo insert_degrade($data_home['secao1_hero_title'],2);?></h1>
                             <div class="paragrafo white"><?php echo $data_home['secao1_descricao_primaria'];?></div>
-                            <div class="h1white pad20 small type-gradient"><span class="text-span-9"><?php echo $data_home['secao1_descricao_secundaria'];?></div>
+                            <div class="h1white pad20 small type-gradient"><span class="text-span-9"><?php echo $data_home['secao1_descricao_secundaria'];?></span></div>
                             <a href="<?php echo $home_cta['link'];?>" class="btn-gradient hero w-button"><?php echo $home_cta['title'];?></a>
                         </div>
 
                         <div class="home-hero-right">
                             <h3 class="h1white nomargin"><?php echo $data_home['secao1_hero_name'];?></h3>
                             <div class="div-block-97"></div>
-                            <h6 class="lightblue type-gradient"><?php echo $data_home['secao1_hero_cargo'];?></h6>
+                            <h6 class="lightblue type-gradient"><span><?php echo $data_home['secao1_hero_cargo'];?></span></h6>
                             <div class="h1white pad20 client"><?php echo $data_home['secao1_hero_descricao'];?></div>
                             <img src="<?php echo $data_home['secao1_hero_company'];?>" alt="" class="home-hero-logo-partner">
                         </div>
@@ -175,7 +175,7 @@ $menu_pai = get_menus_data($menu_itens);
                     <div class="case-thumb-content _200ms left" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('<?php echo $card['img_bg_url'];?>');background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $card['img_bg_url'];?>');">
                         <a href="<?php echo $card['card_link'];?>" style='text-decoration:none;'>
                         <h3 class="h1white left"><?php echo $card['title_card'];?></h3>
-                        <h6 class="lightblue type-gradient"><?php echo $card['subtitle_card'];?></h6>
+                        <h6 class="lightblue type-gradient"><span><?php echo $card['subtitle_card'];?></span></h6>
                         <div class="case-thumb-numbers">
                             <h5 class="heading-2 pad20 white huge left"><?php echo $card['text_footer_card'];?></h5>
                             <div class="h1white left tiny"><?php echo $card['subtext_footer_card'];?></div>
