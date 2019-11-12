@@ -1,10 +1,9 @@
 <?php
-add_action('template_redirect', 'default_page');
-function default_page(){
-    $url_array = explode("/","https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
-    $last_index = count($url_array) - 1;
-    $file = $url_array[$last_index];
-    wp_redirect(get_template_directory_uri() . "/$file");
+
+add_action( 'after_setup_theme', 'register_my_menu' );
+
+function register_my_menu() {
+  register_nav_menu( 'primary', __( 'Primary Menu', 'd1_theme' ) );
 }
 
 function insert_degrade($str,$tipo=0){
