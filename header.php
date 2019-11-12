@@ -50,23 +50,19 @@ foreach($menu_pai as $key=>&$menu){
     <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart" in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document)</script>
     <link href="<?php echo get_template_directory_uri().'/';?>icons/webclip.png" rel="apple-touch-icon">
     <link href="<?php echo $data_header['d1_favicon'];?>" rel="shortcut icon" type="image/x-icon">
-    <!-- Start of HubSpot Embed Code -->
-<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3898638.js"></script>
-<!-- End of HubSpot Embed Code -->
-
 </head>
 
 
-<div class="wrapper-menu">
-        <!-- aba de alerta -->
+<div class="nav-black-bg"></div>
+    <div class="wrapper-menu">
         <div class="div-block-69">
             <div class="div-block-70">
                 <div class="secondary-text type-gradient">Quer saber as melhoras práticas do mercado de Customer Experience?</div><a href="#" class="link-top-menu">Descubra aqui</a></div>
             <div><a href="#" class="link-top-menu-copy type-gradient">LOG IN</a>
-                <div class="div-block-71 hide">
+                <div class="div-block-71">
                     <div data-delay="0" class="dropdown-3 w-dropdown">
                         <div class="dropdown-toggle-3 w-dropdown-toggle">
-                            <div class="icon w-icon-dropdown-toggle"></div><img src="<?php echo get_template_directory_uri().'/';?>images/brasilflag.svg" alt="">
+                            <div class="icon w-icon-dropdown-toggle"></div><img src="https://uploads-ssl.webflow.com/5d5d3ab49052fea25a4b1c73/5d9be7f2f2af2d39dbfdb3e2_brasilflag.svg" alt="">
                             <div class="text-block-6">PT</div>
                         </div>
                         <nav class="dropdown-list-2 w-dropdown-list"><a href="#" class="dropdown-link-2 w-dropdown-link">EN</a></nav>
@@ -75,38 +71,37 @@ foreach($menu_pai as $key=>&$menu){
             </div>
         </div>
 
-        <!-- menus -->
+
         <div data-collapse="medium" data-animation="over-right" data-duration="400" data-doc-height="1" data-no-scroll="1" class="navbar-3 w-nav">
-            <a href="#" class="brand-3 w-nav-brand"></a>
-            <div class="menu-button-copy w-nav-button">
-                <div class="menutext">Menu</div>
+            <div class="div-block-82">
+                <a href="#" class="brand-3 w-nav-brand"><img src="images/betterjourneys.svg" width="8" alt="" class="image-9"></a>
             </div>
             <nav role="navigation" class="nav-menu w-nav-menu">
-                <div class="text-block-7">Voltar</div>
-                <div class="menu-wrapper w-clearfix">
-
-                <!-- Bloco de criação dos menus pai -->
-                <?php foreach($menu_pai as $key=>$menu): ?>
-                    <div data-delay="0" data-hover="1" class="dropdown w-dropdown">
-                        <div class="menulink w-dropdown-toggle">
-                            <div class="text-block-4"><?php echo $menu['title'];?></div>
-                        </div>
-                        <nav class="dropdown-conteudo w-dropdown-list">
-                            <div class="menu-select-conteudos"></div>
-                            <div class="menu-conteudos-wrapper">
-                        <!-- Bloco de criação dos menus filhos -->
-                        <?php foreach($menu['subitems'] as $key=>$item): ?>
-                            <a href="<?php echo $item['url'];?>" class="black-menu-link"><?php echo $item['title'];?></a>
-                        <?php endforeach; ?>
+                <div class="menu-wrapper mobi w-clearfix">
+                    <!-- Bloco de criação dos menus pai -->
+                    <?php foreach($menu_pai as $key=>$menu): ?>
+                        <div data-delay="0" data-hover="1" class="dropdown w-dropdown">
+                            <div class="menulink w-dropdown-toggle">
+                                <div class="text-block-4"><?php echo $menu['title'];?></div>
                             </div>
-                        </nav>
-                    </div>
-                <?php endforeach; ?>
-                <!-- Fim dos Blocos -->
-                    
+                            <nav class="dropdown-conteudo w-dropdown-list">
+                                <div class="menu-select-conteudos"></div>
+                                <div class="menu-conteudos-wrapper">
+                            <!-- Bloco de criação dos menus filhos -->
+                            <?php foreach($menu['subitems'] as $key=>$item): ?>
+                                <a href="<?php echo $item['url'];?>" class="black-menu-link"><?php echo $item['title'];?></a>
+                            <?php endforeach; ?>
+                                </div>
+                            </nav>
+                        </div>
+                    <?php endforeach; ?>
+                    <!-- Fim dos Blocos -->
                     <div class="div-block-32"><a href="<?php echo $menu_cta['link'];?>" target="<?php echo $menu_cta['target'];?>" class="btn-black-home-outline herp line type-gradient w-button"><?php echo $menu_cta['title'];?></a></div>
                 </div>
             </nav>
+            <div class="menu-button w-nav-button">
             <div class="menu-button w-nav-button"><img src="<?php echo get_template_directory_uri().'/';?>images/Menu.png" width="33" alt="" class="image-6"></div>
         </div>
+
     </div>
+</div>

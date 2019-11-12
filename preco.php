@@ -44,17 +44,6 @@ get_header();
                             <h3 class="heading-36 type-gradient">Vamos conversar?</h3>
                             <div class="form-block w-form">
                                 <form id="email-form" name="email-form" data-name="Email Form" class="form">
-                                    <!--[if lte IE 8]>
-                                    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
-                                    <![endif]-->
-                                    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
-                                    <script>
-                                    hbspt.forms.create({
-                                        portalId: "3898638",
-                                        formId: "a82bba50-33f2-43dd-bc61-f90fd8a5d359"
-                                    });
-                                    </script>
-                                    <!--
                                     <label for="name" class="field-label">Nome</label>
                                     <input type="text" class="text-field w-input" maxlength="256" name="name" data-name="Name" id="name">
                                     <label for="email" class="field-label-2">Email</label>
@@ -84,7 +73,6 @@ get_header();
                                         </div>
                                     </div>
                                     <input type="submit" value="Realizar Orçamento" data-wait="Please wait..." class="btn-black-form w-button">
-                                -->
                                 </form>
                                 <div class="success-message w-form-done">
                                     <div class="text-block-5">Obrigado! Em breve entraremos em contato</div>
