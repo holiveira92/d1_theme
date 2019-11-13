@@ -40,6 +40,14 @@ function insert_degrade($str,$tipo=0){
             $str = str_replace("[degrade]","<span class='body-text-link-inline'>",$str);
             $str = str_replace("[/degrade]","</span>",$str);
             break;
+        case 8 :
+            $str = str_replace("[degrade]","<span class='text-span-11 mobi type-gradient'>",$str);
+            $str = str_replace("[/degrade]","</span>",$str);
+            break;
+        case 9 :
+            $str = str_replace("[degrade]","<span class='text-span-14'>",$str);
+            $str = str_replace("[/degrade]","</span>",$str);
+            break;
         default:
             $str = str_replace("[degrade]","<span class='text-gradient'>",$str);
             $str = str_replace("[/degrade]","</span>",$str);
