@@ -38,6 +38,7 @@ foreach($menu_pai as $key=>&$menu){
 
 <head>
     <meta charset="utf-8">
+    <meta name="description" content="D1 – Direct One Marketing">
     <title><?php echo $data_header['d1_web_title'];?></title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="Webflow" name="generator">
