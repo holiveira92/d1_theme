@@ -208,12 +208,14 @@ foreach($menu_pai as $key=>&$menu){
                     foreach($cards as $key=>$card):
                 ?>
                     <div class="case-thumb-content _200ms left" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('<?php echo $card['img_bg_url'];?>');background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $card['img_bg_url'];?>');">
+                    <a href="case?slug=<?php echo sanitize_title($card['title_card']);?>&id=<?php echo $card['id_card'];?>" style='text-decoration:none;'>
                         <h3 class="h1white left"><?php echo $card['title_card'];?></h3>
                         <h6 class="lightblue type-gradient"><span><?php echo $card['subtitle_card'];?></span></h6>
                         <div class="case-thumb-numbers">
                             <h5 class="heading-2 pad20 white huge left"><?php echo $card['text_footer_card'];?></h5>
                             <div class="h1white left tiny"><?php echo $card['subtext_footer_card'];?></div>
                         </div><img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink.svg" alt="" class="image-20">
+                    </a>
                     </div>
                 <?php endforeach; endfor;?>
             </div>

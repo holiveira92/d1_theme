@@ -22,7 +22,10 @@ $impactos = !empty($case['impactos']) ? json_decode($case['impactos'],true) :arr
 $desafios = !empty($case['desafios']) ? json_decode($case['desafios'],true) :array() ;
 $implantacao = !empty($case['implantacao']) ? json_decode($case['implantacao'],true) :array() ;
 $cases_options = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) :array() ;
-//pre($cases_options);die;
+$id_categoria_case = !empty($cases_options['categoria_case']) ? $cases_options['categoria_case'] : 0;
+$categoria_case = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias WHERE id=$id_categoria_case")),true);
+$categoria_case = !empty($categoria_case[0]) ? $categoria_case[0] :array();
+//pre($categoria_case);die;
 get_header();
 ?>
 <body>
@@ -192,6 +195,8 @@ get_header();
     </div>
 </div>
 
+<br><br><br><br>
+
 <!-- SEÇÃO CASES DE SUCESSO -->
 <div id="cases" class="section-cases">
     <div class="home-wrapper-gradient-2">
@@ -201,11 +206,12 @@ get_header();
                 $key_select = "list_case" . $i;
                 $query = "SELECT * FROM " . $wpdb->prefix . "d1_cases where id_card = '" . $cases_options[$key_select] ."'";
                 $cards = json_decode(json_encode($wpdb->get_results($query)),true);
+                $cards = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases")),true);
                 foreach($cards as $key=>$card):
                     
                 ?>
-                <div class="case-thumb-content _200ms left" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('<?php echo $card['img_bg_url'];?>');background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $card['img_bg_url'];?>');">
-                    <a href="<?php echo $card['card_link'];?>" style='text-decoration:none;'>
+                <div class="case-thumb-content _200ms left"  categoria="<?php echo $categoria_case['descricao'];?>" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('<?php echo $card['img_bg_url'];?>');background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $card['img_bg_url'];?>');">
+                    <a href="case?slug=<?php echo sanitize_title($card['title_card']);?>&id=<?php echo $card['id_card'];?>" style='text-decoration:none;'>
                     <h3 class="h1white left"><?php echo $card['title_card'];?></h3>
                     <h6 class="lightblue type-gradient"><span><?php echo $card['subtitle_card'];?></span></h6>
                     <div class="case-thumb-numbers">
