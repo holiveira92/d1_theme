@@ -126,14 +126,14 @@ jQuery(document).ready(function($) {
         var name = $(this).attr('categoria');
         $.each($('[name=item_case]'), function(index, element){
             var categoria = $(this).attr('categoria');
-            if(categoria == undefined || categoria == '' || categoria == 0 && name =="TODOS"){
-                $(element).show();
-            }else if(categoria != name){
-                $(element).hide();
+            if(name != categoria){
+                if(name != "TODOS")
+                    $(element).hide();
+                else
+                    $(element).show();
             }
-            else{
+            else
                 $(element).show();
-            }
         });
     });
 });
