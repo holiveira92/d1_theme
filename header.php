@@ -63,7 +63,7 @@ foreach($menu_pai as $key=>&$menu){
                 <div class="div-block-71 hide">
                     <div data-delay="0" class="dropdown-3 w-dropdown">
                         <div class="dropdown-toggle-3 w-dropdown-toggle">
-                            <div class="icon w-icon-dropdown-toggle"></div><img src="https://uploads-ssl.webflow.com/5d5d3ab49052fea25a4b1c73/5d9be7f2f2af2d39dbfdb3e2_brasilflag.svg" alt="">
+                            <div class="icon w-icon-dropdown-toggle"></div><img src="./wp-content/themes/d1_theme/images/brasilflag.svg" alt="">
                             <div class="text-block-6">PT</div>
                         </div>
                         <nav class="dropdown-list-2 w-dropdown-list"><a href="#" class="dropdown-link-2 w-dropdown-link">EN</a></nav>

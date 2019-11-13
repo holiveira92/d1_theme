@@ -85,7 +85,7 @@ get_header();
                         <h3 class="h1white nomargin">Neri Ashton</h3>
                         <div class="div-block-97"></div>
                         <h6 class="lightblue">CHIEF EXECUTIVE OFFICER</h6>
-                        <div class="h1white pad20 client">Drives hyper-growth in 77 countries with D1.</div><img src="images/YOUSE-logo_1YOUSE-logo.png" alt="" class="home-hero-logo-partner"></div>
+                        <div class="h1white pad20 client">Drives hyper-growth in 77 countries with D1.</div><img src="./wp-content/themes/d1_theme/images/YOUSE-logo_1YOUSE-logo.png" alt="" class="home-hero-logo-partner"></div>
                     </div>
                 </div>
             </div>

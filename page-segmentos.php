@@ -14,7 +14,8 @@ $d1_view_parser = new D1_View_Parser();
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";
 $GLOBALS["data"] = $d1_view_parser->get_data();
 $data_segmentos = $GLOBALS["data"]["d1_plugin_segmentos"];
-$id_segmento = 1; //buscar ao abrir
+$id_segmento = (!empty($_GET['id'])) ? $_GET['id'] : 0;
+$slug = (!empty($_GET['slug'])) ? $_GET['slug'] : "";
 $id_card = $data_segmentos['segmentos_secao3_card_select'];
 $card = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases where id_card = $id_card")),true);
 $card = !empty($card[0]) ? $card[0] : array();

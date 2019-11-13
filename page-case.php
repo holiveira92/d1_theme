@@ -13,7 +13,7 @@ require_once dirname_oldphp(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view
 global $wpdb;
 $d1_view_parser = new D1_View_Parser();
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";
-$id_case = (!empty($_GET['id'])) ? $_GET['id'] : 6;
+$id_case = (!empty($_GET['id'])) ? $_GET['id'] : 0;
 $slug = (!empty($_GET['slug'])) ? $_GET['slug'] : "";
 $case = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases WHERE id_card=$id_case")),true);
 $case = !empty($case[0]) ? $case[0] :array();
