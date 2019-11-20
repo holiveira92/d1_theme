@@ -63,7 +63,7 @@ foreach($menu_pai as $key=>&$menu){
                 <div class="div-block-71 hide">
                     <div data-delay="0" class="dropdown-3 w-dropdown">
                         <div class="dropdown-toggle-3 w-dropdown-toggle">
-                            <div class="icon w-icon-dropdown-toggle"></div><img src="./wp-content/themes/d1_theme/images/brasilflag.svg" alt="">
+                            <div class="icon w-icon-dropdown-toggle"></div><img src="<?php echo get_template_directory_uri();?>/images/brasilflag.svg" alt="">
                             <div class="text-block-6">PT</div>
                         </div>
                         <nav class="dropdown-list-2 w-dropdown-list"><a href="#" class="dropdown-link-2 w-dropdown-link">EN</a></nav>
@@ -75,7 +75,7 @@ foreach($menu_pai as $key=>&$menu){
 
         <div data-collapse="medium" data-animation="over-right" data-duration="400" data-doc-height="1" data-no-scroll="1" class="navbar-3 w-nav">
             <div class="div-block-82">
-                <a href="<?php echo get_home_url(); ?>" class="brand-3 w-nav-brand"><img src="./wp-content/themes/d1_theme/images/betterjourneys.svg" width="8" alt="" class="image-9"></a>
+                <a href="<?php echo get_home_url(); ?>" class="brand-3 w-nav-brand"><img src="<?php echo get_template_directory_uri();?>/images/betterjourneys.svg" width="8" alt="" class="image-9"></a>
             </div>
             <nav role="navigation" class="nav-menu w-nav-menu">
                 <div class="menu-wrapper mobi w-clearfix">

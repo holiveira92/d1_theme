@@ -198,15 +198,19 @@ get_header();
 <br><br><br><br>
 
 <!-- SEÇÃO CASES DE SUCESSO -->
-<div id="cases" class="section-cases">
-    <div class="home-wrapper-gradient-2">
+<div id="cases" class="section-wrapper-large bg-grey notop">
+    <div class="mycontainer">
+        <div class="tabs-section-title-2col narrow">
+            <h6 class="pad20">IMPACTOS REAIS DE MELHORIA EM CUSTOMER EXPERIENCE</h6>
+            <div class="link-text-arrow noinvert"><a href="cases-overview" class="link-text-black">VER CASES</a><img src="<?php echo get_template_directory_uri();?>/images/arrowlink-black.svg" alt="" class="arrowlink"></div>
+        </div>
+
         <div class="case-thumb-content-wrapper large" data-ix="fade-in-on-scroll">
             <?php
             for($i=1;$i<=3;$i++):
                 $key_select = "list_case" . $i;
                 $query = "SELECT * FROM " . $wpdb->prefix . "d1_cases where id_card = '" . $cases_options[$key_select] ."'";
                 $cards = json_decode(json_encode($wpdb->get_results($query)),true);
-                $cards = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases")),true);
                 foreach($cards as $key=>$card):
                     
                 ?>
@@ -218,7 +222,7 @@ get_header();
                         <h5 class="heading-2 pad20 white huge left"><?php echo $card['text_footer_card'];?></h5>
                         <div class="h1white left tiny"><?php echo $card['subtext_footer_card'];?></div>
                     </div>
-                    <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink.svg" alt="" class="image-20" style='float:right;'>
+                    <img src="<?php echo get_template_directory_uri();?>/images/arrowlink.svg" alt="" class="image-20" style='float:right;'>
                 </div>
                 </a>
             <?php endforeach; endfor; ?>

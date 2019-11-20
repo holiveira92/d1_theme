@@ -622,8 +622,6 @@ h6 {
 
 .case-thumb-content:hover {
   border-radius: 5px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('../images/case-thumb0home.png');
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/case-thumb0home.png');
   background-position: 0px 0px, 50% 50%;
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
@@ -4105,6 +4103,60 @@ a.btn-black-home-outline.herp.line.type-gradient.w-button {
 }
 
 .tab-pane-tab-2 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.tab-pane-tab-4 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.tab-pane-tab-5 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.tab-pane-tab-6 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.tab-pane-tab-7 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.tab-pane-tab-8 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.tab-pane-tab-9 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.tab-pane-tab-10 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.tab-pane-tab-11 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.tab-pane-tab-12 {
   margin-top: 24px;
   margin-bottom: 24px;
   text-align: center;
@@ -12441,6 +12493,78 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
     padding-bottom: 4px;
     white-space: normal;
   }
+
+  .tab-pane-tab-3 {
+    overflow: auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    white-space: normal;
+  }
+
+  .tab-pane-tab-4 {
+    overflow: auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    white-space: normal;
+  }
+
+  .tab-pane-tab-5 {
+    overflow: auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    white-space: normal;
+  }
+
+  .tab-pane-tab-6 {
+    overflow: auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    white-space: normal;
+  }
+
+  .tab-pane-tab-7 {
+    overflow: auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    white-space: normal;
+  }
+
+  .tab-pane-tab-8 {
+    overflow: auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    white-space: normal;
+  }
+
+  .tab-pane-tab-9 {
+    overflow: auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    white-space: normal;
+  }
+
+  .tab-pane-tab-10 {
+    overflow: auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    white-space: normal;
+  }
+
+  .tab-pane-tab-11 {
+    overflow: auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    white-space: normal;
+  }
+
+  .tab-pane-tab-12 {
+    overflow: auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    white-space: normal;
+  }
+
+
   .div-block-36 {
     display: -webkit-box;
     display: -webkit-flex;
