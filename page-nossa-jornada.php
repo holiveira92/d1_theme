@@ -80,7 +80,7 @@ get_header();
                     </div>
                     <div class="pad20 left"><?php echo $data_jornada['jornada_secao2_descricao'];?></div>
                     <div class="ver-plat">
-                        <a href="<?php echo $data_jornada['jornada_secao2_plataforma_link'];?>" style='text-decoration:none;color: inherit;'>
+                        <a href="<?php echo $data_jornada['jornada_secao2_plataforma_link'];?>" style='text-decoration:none;color: inherit;display:flex;'>
                         <div class="text-block-30">VER PLATAFORMA</div>
                         <img src="<?php echo get_template_directory_uri();?>/images/arrowlink-black.svg" alt=""></div></a>
                 </div>
@@ -112,7 +112,7 @@ get_header();
                 </div>
                 <div class="div-block-105">
                     <div class="text-block-25"><?php echo $data_jornada['jornada_secao3_equipe2_descricao'];?></div>
-                    <div class="ver-plat">
+                    <div class="ver-plat hide">
                         <a href="<?php echo $data_jornada['jornada_secao3_equipe2_link'];?>" style='text-decoration:none;color: inherit;'>
                         <div class="text-block-29">VER D1 NA MÍDIA </div>
                         <img src="<?php echo get_template_directory_uri();?>/images/arrowlink-black.svg" alt=""></a>
@@ -184,7 +184,7 @@ get_header();
         <div class="div-block-84">
             <div class="mycontainer">
                 <div class="section-title-2col">
-                    <h6 class="white _18"><?php echo $data_home['secao1_descricao_secundaria'];?></h6>
+                    <h6 class="white _18">IMPACTOS REAIS DE MELHORIA EM CUSTOMER EXPERIENCE</h6>
                     <div class="link-text-arrow">
                         <a href="#" class="link-text-black invert">VER CASES</a>
                         <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink">

@@ -72,8 +72,8 @@ foreach($menu_pai as $key=>&$menu){
     <div class="wrapper-menu">
         <div class="div-block-69">
             <div class="div-block-70">
-                <div class="secondary-text type-gradient"><span>Quer saber as melhoras práticas do mercado de Customer Experience?</span></div><a href="#" class="link-top-menu">Descubra aqui</a></div>
-            <div><a href="#" class="link-top-menu-copy type-gradient"><span>LOG IN</span></a>
+                <div class="secondary-text type-gradient"><span>Quer saber as melhoras práticas do mercado de Customer Experience?</span></div><a href="https://medium.com/d1experience" class="link-top-menu">Descubra aqui</a></div>
+            <div><a href="https://app.direct.one" class="link-top-menu-copy type-gradient"><span>LOG IN</span></a>
                 <div class="div-block-71">
                     <div data-delay="0" class="dropdown-3 w-dropdown">
                         <div class="dropdown-toggle-3 w-dropdown-toggle">
@@ -162,17 +162,17 @@ foreach($menu_pai as $key=>&$menu){
         <div class="mycontainer">
             <h6 class="h1white lightblue2 type-gradient"><span><?php echo $data_plataforma['plataforma_secao2_title'];?></span></h6>
             <div class="div-block-26">
-                <div class="selectplataform"><a href="#" class="link-2"><?php echo $data_plataforma['plataforma_secao2_modulo1_title'];?></a></div>
-                <div class="selectplataform"><a href="#" class="link-2"><?php echo $data_plataforma['plataforma_secao2_modulo2_title'];?></a></div>
-                <div class="selectplataform"><a href="#" class="link-2 type-gradient"><span><?php echo $data_plataforma['plataforma_secao2_modulo3_title'];?></span></a></div>
-                <div class="selectplataform"><a href="#" class="link-2"><?php echo $data_plataforma['plataforma_secao2_modulo4_title'];?></a></div>
-                <div class="selectplataform"><a href="#" class="link-2"><?php echo $data_plataforma['plataforma_secao2_modulo5_title'];?></a></div>
+                <div class="selectplataform"><a href="<?php echo "#".$data_plataforma['plataforma_secao2_modulo1_link'];?>" class="link-2"><?php echo $data_plataforma['plataforma_secao2_modulo1_title'];?></a></div>
+                <div class="selectplataform"><a href="<?php echo "#".$data_plataforma['plataforma_secao2_modulo2_link'];?>" class="link-2"><?php echo $data_plataforma['plataforma_secao2_modulo2_title'];?></a></div>
+                <div class="selectplataform"><a href="<?php echo "#".$data_plataforma['plataforma_secao2_modulo3_link'];?>" class="link-2"><?php echo $data_plataforma['plataforma_secao2_modulo3_title'];?></a></div>
+                <div class="selectplataform"><a href="<?php echo "#".$data_plataforma['plataforma_secao2_modulo4_link'];?>" class="link-2"><?php echo $data_plataforma['plataforma_secao2_modulo4_title'];?></a></div>
+                <div class="selectplataform"><a href="<?php echo "#".$data_plataforma['plataforma_secao2_modulo5_link'];?>" class="link-2"><?php echo $data_plataforma['plataforma_secao2_modulo5_title'];?></a></div>
             </div>
         </div>
     </div>
 
     <?php for($i=1;$i<=5;$i++): ?>
-    <div id="modulo" class="section-wrapper-large" data-ix="fade-in-on-scroll-2">
+    <div id="<?php echo $data_plataforma["plataforma_secao2_modulo$i"."_link"];?>" class="section-wrapper-large" data-ix="fade-in-on-scroll-2">
         <div class="mycontainer">
             <div class="section-2col-wrapper narrow">
                 <div class="section-col-left left">
@@ -181,8 +181,8 @@ foreach($menu_pai as $key=>&$menu){
                         <h1 class="heading-37"><?php echo $data_plataforma["plataforma_secao2_modulo$i"."_title"];?></h1>
                     </div>
                     <div class="pad20 left"><?php echo $data_plataforma["plataforma_secao2_modulo$i"."_desc"];?></div>
-                    <div class="home-title-case2 left noinvert"><a href="<?php echo $data_plataforma["plataforma_secao2_modulo$i"."_link"];?>" class="body-text-link3">VER MÓDULO</a>
-                        <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink">
+                        <div class="home-title-case2 left noinvert hide"><a href="<?php echo $data_plataforma["plataforma_secao2_modulo$i"."_link"];?>" class="body-text-link3">VER MÓDULO</a>
+                        <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink hide">
                     </div>
                 </div>
                 <div class="section-col-left margin"><img src="<?php echo $data_plataforma["plataforma_secao2_modulo$i"."_img"];?>" width="1004" alt="" class="img-plataforma image-11"></div>

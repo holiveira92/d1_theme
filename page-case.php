@@ -33,11 +33,10 @@ get_header();
 <div id="hero" class="case-hero" style=" background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('<?php echo !empty($case['img_bg_url']) ? $case['img_bg_url'] : $img_default;?>');
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo !empty($case['img_bg_url']) ? $case['img_bg_url'] : $img_default;?>">
     <div class="mycontainer">
-    <a href="case?id=<?php echo $case['id_card'];?>" style='text-decoration:none;color:inherit;'>
         <div class="home-hero-wrapper left">
             <div class="home-hero-left left _16pad" data-ix="fade-in-on-load">
-                <h6 class="lightblue type-gradient"><?php echo $case['title_card'];?></h6>
-                <h1 class="h1white pad20 white2 notop"><?php echo $case['subtitle_card'];?> </h1>
+                <h6 class="lightblue type-gradient"><?php echo $case['subtitle_card'];?></h6>
+                <h1 class="h1white pad20 white2 notop"><?php echo $case['title_card'];?> </h1>
             </div>
             <div class="home-hero-right right mobi">
                 <h1 class="big mobi"><?php echo insert_degrade($case['desc_card'],8);?></h1>
@@ -45,13 +44,12 @@ get_header();
             </div>
         </div>
     </div>
-    </a>
 <div class="arrowdown downer type-gradient"><img src="<?php echo get_template_directory_uri();?>/images/arrow-hero.svg" width="12" alt=""></div>
 </div>
 
 <div id="impactos" class="section-6">
     <div class="mycontainer-3">
-        <h6 class="heading-13-copy lightblue center"><?php !empty($impactos['impacto_title']) ? $impactos['impacto_title'] : "";?></h6>
+        <h6 class="heading-13-copy lightblue center"><?php echo !empty($impactos['impacto_title']) ? $impactos['impacto_title'] : "";?></h6>
         <div class="caseaberto-block-black">
         <?php
             for($i=1;$i<=3;$i++):
@@ -194,8 +192,6 @@ get_header();
         </div>
     </div>
 </div>
-
-<br><br><br><br>
 
 <!-- SEÇÃO CASES DE SUCESSO -->
 <div id="cases" class="section-wrapper-large bg-grey notop">

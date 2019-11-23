@@ -52,8 +52,8 @@ $menu_pai = get_menus_data($menu_itens);
     <!-- aba de alerta -->
     <div class="div-block-69">
         <div class="div-block-70">
-            <div class="secondary-text type-gradient"><span>Quer saber as melhoras práticas do mercado de Customer Experience?</span></div><a href="#" class="link-top-menu">Descubra aqui</a></div>
-        <div><a href="#" class="link-top-menu-copy type-gradient"><span>LOG IN</span></a>
+            <div class="secondary-text type-gradient"><span>Quer saber as melhoras práticas do mercado de Customer Experience?</span></div><a href="https://medium.com/d1experience" class="link-top-menu">Descubra aqui</a></div>
+        <div><a href="https://app.direct.one" class="link-top-menu-copy type-gradient"><span>LOG IN</span></a>
             <div class="div-block-71 hide">
                 <div data-delay="0" class="dropdown-3 w-dropdown">
                     <div class="dropdown-toggle-3 w-dropdown-toggle">

@@ -32,9 +32,7 @@ get_header();
                     <h1 class="h1white pad20 white nomargin white"><?php echo $data_preco['preco_secao1_main_title'];?></h1>
                     <div class="h1white black left"><?php echo $data_preco['preco_secao1_descricao'];?></div>
                     <div>
-                        <ul class="list">
-                            <li class="list-item"><?php echo $data_preco['preco_secao1_descricao_secundaria'];?></li>
-                        </ul>
+                        <p class="h1white black left"><?php echo $data_preco['preco_secao1_descricao_secundaria'];?></p>
                     </div>
                 </div>
 
@@ -42,44 +40,17 @@ get_header();
                     <div class="preco-form-wrapper left bottommargin" data-ix="fade-in-on-load-2">
                         <div class="div-block-93">
                             <h3 class="heading-36 type-gradient"><span>Vamos conversar?</span></h3>
-                            <div class="form-block w-form">
-                                <form id="email-form" name="email-form" data-name="Email Form" class="form">
-                                    <label for="name" class="field-label">Nome</label>
-                                    <input type="text" class="text-field w-input" maxlength="256" name="name" data-name="Name" id="name">
-                                    <label for="email" class="field-label-2">Email</label>
-                                    <input type="email" class="text-field w-input" maxlength="256" name="email" data-name="Email" id="email" required="">
-                                    <label for="email" class="field-label-3">Empresa</label>
-                                    <input type="email" class="text-field w-input" maxlength="256" name="email-2" data-name="Email 2" id="email-2" required="">
-                                    <label for="email" class="field-label-4">Cargo</label>
-                                    <input type="email" class="text-field w-input" maxlength="256" name="email-2" data-name="Email 2" id="email-2" required="">
-                                    <div class="div-block-33">
-                                        <div class="form-select-wrapper">
-                                            <label for="email" class="field-label-5">Nº de clientes</label>
-                                            <select id="field-2" name="field-2" data-name="Field 2" class="select-field w-select">
-                                                <option value="">Selecione</option>
-                                                <option value="First">First Choice</option>
-                                                <option value="Second">Second Choice</option>
-                                                <option value="Third">Third Choice</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-select-wrapper">
-                                            <label for="email" class="field-label-6">Nº de clientes</label>
-                                            <select id="field" name="field" data-name="Field" class="select-field w-select">
-                                                <option value="">Selecione</option>
-                                                <option value="First">First Choice</option>
-                                                <option value="Second">Second Choice</option>
-                                                <option value="Third">Third Choice</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <input type="submit" value="Realizar Orçamento" data-wait="Please wait..." class="btn-black-form w-button">
-                                </form>
-                                <div class="success-message w-form-done">
-                                    <div class="text-block-5">Obrigado! Em breve entraremos em contato</div>
-                                </div>
-                                <div class="w-form-fail">
-                                    <div class="text-block-5">Ops, alguma coisa deu errado :/</div>
-                                </div>
+                            <div class="preco-form form-block w-form">
+                                <!--[if lte IE 8]>
+                                <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+                                <![endif]-->
+                                <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+                                <script>
+                                    hbspt.forms.create({
+                                    portalId: "3898638",
+                                    formId: "a82bba50-33f2-43dd-bc61-f90fd8a5d359"
+                                });
+                                </script>
                             </div>
                         </div>
                     </div>
@@ -128,7 +99,7 @@ get_header();
         <div class="div-block-84">
             <div class="mycontainer">
                 <div class="section-title-2col">
-                    <h6 class="white _18"><?php echo $data_home['secao1_descricao_secundaria'];?></h6>
+                    <h6 class="white _18">IMPACTOS REAIS DE MELHORIA EM CUSTOMER EXPERIENCE</h6>
                     <div class="link-text-arrow">
                         <a href="#" class="link-text-black invert">VER CASES</a>
                         <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink">

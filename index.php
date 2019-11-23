@@ -58,10 +58,10 @@ get_header();
                 <div class="mycontainer _1">
                     <div class="home-hero-wrapper">
                         <div class="home-hero-left left nopad" data-ix="fade-in-on-load">
-                            <h1 class="h1white herohome maintitle rightpad"><?php echo insert_degrade($data_home['secao1_hero_title'],2);?></h1>
+                            <h1 class="h1white herohome maintitle rightpad type-gradient"><?php echo insert_degrade($data_home['secao1_hero_title'],2);?></h1>
                             <div class="paragrafo white"><?php echo $data_home['secao1_descricao_primaria'];?></div>
-                            <div class="h1white pad20 small type-gradient"><span class="text-span-9"><?php echo $data_home['secao1_descricao_secundaria'];?></span></div>
                             <a href="<?php echo $home_cta['link'];?>" class="btn-gradient hero w-button"><?php echo $home_cta['title'];?></a>
+                            <div class="h1white pad20 small type-gradient"><p class="text-span-9"><?php echo insert_degrade($data_home['secao1_descricao_secundaria'],2);?></p></div>
                         </div>
 
                         <div class="home-hero-right">
@@ -97,9 +97,9 @@ get_header();
         <div class="div-block-84">
             <div class="mycontainer">
                 <div class="section-title-2col">
-                    <h6 class="white _18"><?php echo $data_home['secao1_descricao_secundaria'];?></h6>
+                    <h6 class="white _18"><?php echo $data_home['secao2_section_title'];?></h6>
                     <div class="link-text-arrow">
-                        <a href="#" class="link-text-black invert">VER CASES</a>
+                        <a href="./cases" class="link-text-black invert"><?php echo $data_home['secao2_call_action_cases'];?></a>
                         <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink">
                     </div>
                 </div>
@@ -139,12 +139,12 @@ get_header();
     <div id="logo-clientes" class="section-wrapper-large">
         <div class="mycontainer">
             <div class="section-title" data-ix="fade-in-on-scroll">
-                <h6 class="darkgrey pad20 center"><?php echo $data_home['secao2_empresas_title'];?></h6>
+                <h6 class="darkgrey pad20 center"><?php echo $data_home['secao3_empresas_title'];?></h6>
             </div>
             <div class="logo-clients-wrapper" data-ix="fade-in-on-scroll">
                 <?php
                 for($i=1;$i<=8;$i++):
-                    $key_img = "secao2_img_empresa" . $i ;
+                    $key_img = "secao3_img_empresa" . $i ;
                 ?>
                     <div class="image-clientes-block"><img src="<?php echo $data_home[$key_img];?>" alt=""></div>
                 <?php endfor; ?>
@@ -153,7 +153,7 @@ get_header();
     </div>
 
     <!-- SEÇÃO DESAFIO -->
-    <div class="section-wrapper">
+    <div class="section-wrapper hide">
         <div class="mycontainer">
             <div class="section-title">
                 <h6 class="darkgrey pad20"><?php echo $data_home['secao4_section_title_part3'];?></h6>
@@ -179,10 +179,10 @@ get_header();
     </div>
 
     <!-- SEÇÃO LEAD GENERATOR -->
-    <div class="section-wrapper-large black-bg-stripe">
+    <div class="section-wrapper-large black-bg-stripe hide">
         <div class="mycontainer">
             <div class="section-1col-wrapper" data-ix="fade-in-on-scroll-2">
-                <h1 class="h1white calculadora"><?php echo insert_degrade($data_home['secao5_section_title'],3);?></h1>
+                <h1 class="h1white calculadora type-gradient"><?php echo insert_degrade($data_home['secao5_section_title'],3);?></h1>
                 <div class="paragrafo"><?php echo $data_home['secao5_section_descricao'];?></div>
                     <a href="<?php echo $lead_generator_cta['link'];?>" class="btn-cx w-button"><?php echo $lead_generator_cta['title'];?></a>
                 </div>
@@ -196,7 +196,7 @@ get_header();
             <div class="tabs-section-title-2col">
                 <h6 class="pad20 left lightblueleft lightblue"><?php echo $data_home['secao6_title'];?></h6>
                 <div class="link-text-arrow right noinvert">
-                    <a href="#" class="link-text-black">VER CASES</a>
+                    <a href="#" class="link-text-black">VER PLATAFORMA</a>
                     <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink">
                 </div>
             </div>
@@ -289,7 +289,7 @@ get_header();
                     <div class="pad20">
                         <?php echo str_replace("\n",'<br />',$data_home['secao7_section_descricao']);?>
                     </div>
-                    <a target='_blank' href="<?php echo $data_home['secao7_link_cta_webinario'];?>" class="btn-black-home-play w-button">ASSISTA AO WEBINARIO</a></div>
+                    <a target='_blank' href="<?php echo $lead_generator_cta['link'];?>" class="btn-black-home-play w-button"><?php echo $lead_generator_cta['title'];?></a></div>
                 <div class="section-colright"><img src="<?php echo $data_home['secao7_img'];?>" width="673"></div>
             </div>
         </div>

@@ -50,7 +50,7 @@
                 <div class="darkgrey"><?php echo insert_degrade($data['secao1_desc_pre_cta'],2);?></div>
             </div>
             <div class="div-block-4">
-                <a href="<?php echo $cta['link'];?>" class="btn-black-home lightblue type-gradient w-button"><span><?php echo $cta['title'];?></span></a>
+                <a href="<?php echo $cta['link'];?>" class="btn-black-home lightblue w-button"><span><?php echo $cta['title'];?></span></a>
             </div>
         </div>
 
@@ -95,9 +95,9 @@
                     <div> <?php echo $data['secao3_title'];?></div>
                 </div>
                 <div class="div-block-5">
+                    <div class="div-block-6"><!--a href="<?php echo $footer_cta2['link'];?>" target="<?php echo $footer_cta2['target'];?>" class="btn-play-outline w-button"><?php echo $footer_cta2['title'];?></a>--></div>
                     <div class="div-block-6"><a href="<?php echo $footer_cta1['link'];?>" target="<?php echo $footer_cta1['target'];?>" class="btn-black-home-outline-footer w-button"><?php echo $footer_cta1['title'];?></a></div>
-                    <div class="div-block-6"><a href="<?php echo $footer_cta2['link'];?>" target="<?php echo $footer_cta2['target'];?>" class="btn-play-outline w-button"><?php echo $footer_cta2['title'];?></a></div>
-                    <div class="div-block-6"><a href="<?php echo $footer_cta3['link'];?>" target="<?php echo $footer_cta3['target'];?>" class="btn-cx-outline w-button"><?php echo $footer_cta3['title'];?></a></div>
+                    <div class="div-block-6"><!--a href="<?php echo $footer_cta3['link'];?>" target="<?php echo $footer_cta3['target'];?>" class="btn-cx-outline w-button"><?php echo $footer_cta3['title'];?></a>--></div>
                 </div>
 
                 <div class="div-block-8">
@@ -184,3 +184,15 @@
         </div>
     </div>
 </div>
+<script>
+    $(window).on('load', function() {
+      // Criamos um elemento temporário para servir de checkbox
+      var customEl = '<div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox"></div>';
+      var labelCheckbox = $('.hs-form-booleancheckbox .hs-form-booleancheckbox-display .hs-input');
+
+      $(customEl).insertAfter(labelCheckbox);
+
+      // Criamos um wrapper, para colocar o botão do lado do texto no final do form.
+      $('.form-contact .form-columns-0:nth-child(8), .hs_submit.hs-submit').wrapAll('<div class="form-footer"></div>')
+    });    
+  </script>

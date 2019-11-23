@@ -22,8 +22,8 @@ get_header();
 
 <body>
 
-<div id="hero" class="seg-hero gradient-bg" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url('<?php echo $data_seguranca['seguranca_secao1_img'];?>');
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<?php echo $data_seguranca['seguranca_secao1_img'];?>');">
+<div id="hero" class="seg-hero gradient-bg" style="background-image: url('https://uploads-ssl.webflow.com/5d9f3e21a78bd192c39905ad/5db0ae33dc9fed66ae1dbfa3_Group%2016.39.svg'),-webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url('<?php echo $data_seguranca['seguranca_secao1_img'];?>');
+    background-image: url('https://uploads-ssl.webflow.com/5d9f3e21a78bd192c39905ad/5db0ae33dc9fed66ae1dbfa3_Group%2016.39.svg'),linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<?php echo $data_seguranca['seguranca_secao1_img'];?>');">
     <div class="mycontainer padup">
         <div class="section-1col-wrapper left rightpad">
             <h1 class="h1white pad20 white type-gradient" data-ix="fade-in-on-load"><?php echo $data_seguranca['seguranca_secao1_title'];?></h1>

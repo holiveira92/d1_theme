@@ -58,10 +58,10 @@ get_header();
                 <div class="mycontainer _1">
                     <div class="home-hero-wrapper">
                         <div class="home-hero-left left nopad" data-ix="fade-in-on-load">
-                            <h1 class="h1white herohome maintitle rightpad"><?php echo insert_degrade($data_home['secao1_hero_title'],2);?></h1>
+                            <h1 class="h1white herohome maintitle rightpad type-gradient"><?php echo insert_degrade($data_home['secao1_hero_title'],2);?></h1>
                             <div class="paragrafo white"><?php echo $data_home['secao1_descricao_primaria'];?></div>
-                            <div class="h1white pad20 small type-gradient"><span class="text-span-9"><?php echo $data_home['secao1_descricao_secundaria'];?></span></div>
                             <a href="<?php echo $home_cta['link'];?>" class="btn-gradient hero w-button"><?php echo $home_cta['title'];?></a>
+                            <div class="h1white pad20 small type-gradient"><span class="text-span-9"><?php echo $data_home['secao1_descricao_secundaria'];?></span></div>
                         </div>
 
                         <div class="home-hero-right">
@@ -179,7 +179,7 @@ get_header();
     </div>
 
     <!-- SEÇÃO LEAD GENERATOR -->
-    <div class="section-wrapper-large black-bg-stripe">
+    <div class="section-wrapper-large black-bg-stripe hide">
         <div class="mycontainer">
             <div class="section-1col-wrapper" data-ix="fade-in-on-scroll-2">
                 <h1 class="h1white calculadora"><?php echo insert_degrade($data_home['secao5_section_title'],3);?></h1>

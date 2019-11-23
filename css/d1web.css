@@ -1243,13 +1243,13 @@ h6 {
   height: 66px;
   margin-top: 28px;
   padding-top: 21px;
-  padding-right: 49px;
+  /*padding-right: 49px; - fase 1*/
   padding-left: 0px;
   border: 2px solid #000;
   border-radius: 100px;
-  background-color: transparent;
-  background-image: url('../images/play-icon.svg'), -webkit-gradient(linear, left top, left bottom, from(#141414), to(#141414));
-  background-image: url('../images/play-icon.svg'), linear-gradient(180deg, #141414, #141414);
+  background-color: black;
+  /*background-image: url('../images/play-icon.svg'), -webkit-gradient(linear, left top, left bottom, from(#141414), to(#141414)); - fase 1*/
+  /*background-image: url('../images/play-icon.svg'), linear-gradient(180deg, #141414, #141414); - fase 1*/
   background-position: 98% 50%, 0px 0px;
   background-size: auto, auto;
   background-repeat: no-repeat, repeat;
@@ -1266,7 +1266,7 @@ h6 {
   border-width: 2px;
   border-color: #fff;
   background-color: #000;
-  background-image: url('../images/play-icon.svg');
+  /*background-image: url('../images/play-icon.svg'); - fase 1*/
   background-position: 98% 50%;
   background-size: auto;
   background-repeat: no-repeat;
@@ -1381,7 +1381,7 @@ h6 {
   border: 2px solid #fff;
   border-radius: 100px;
   background-color: transparent;
-  background-image: url('../images/infinite-icon.svg');
+  /*background-image: url('../images/infinite-icon.svg'); - 1 fase*/
   background-position: 94% 50%;
   background-size: auto;
   background-repeat: no-repeat;
@@ -1638,6 +1638,7 @@ h6 {
   font-size: 18px;
   font-weight: 500;
   text-align: center;
+  color: white!important;
 }
 
 .btn-black-home:hover {
@@ -1679,14 +1680,6 @@ h6 {
 .btn-black-home.vagas.type-gradient {
   border-style: none;
 
-}
-
-.btn-black-home.vagas.type-gradient:hover {
-  color: #fff;
-}
-
-.btn-black-home.lightblue.type-gradient:hover {
-  color: #fff;
 }
 
 .mycontainer-2 {
@@ -1801,7 +1794,7 @@ h6 {
 }
 
 .section-3 {
-  margin-top: 136px;
+  margin-top: 90px;
   margin-bottom: 0px;
 }
 
@@ -1914,6 +1907,15 @@ h6 {
 .menu-solucoes-column {
   width: 200px;
   margin: 0px 0px 20px 20px;
+}
+
+div#w-dropdown-toggle-1 a {
+  color: white;
+  text-decoration: none;
+}
+
+div#w-dropdown-toggle-1 a:hover {
+  color: #00e1ff;
 }
 
 .dropdown-plataforma {
@@ -2048,7 +2050,7 @@ a.btn-black-home-outline.herp.line.type-gradient.w-button {
   display: inline-block;
   height: 86px;
   margin-top: 5px;
-  padding-top: 35px;
+  /*padding-top: 35px;*/
   padding-right: 21px;
   padding-bottom: 34px;
   border-radius: 100px;
@@ -2084,7 +2086,9 @@ a.btn-black-home-outline.herp.line.type-gradient.w-button {
 .dropdown-conteudo.w--open {
   display: block;
   width: 224px;
-  height: 221px;
+  /*height: 221px; - 1 fase */
+  height: auto;
+  padding-bottom: 14px;
   margin-top: 14px;
   margin-left: -12px;
   padding-right: 7px;
@@ -3456,14 +3460,13 @@ a.btn-black-home-outline.herp.line.type-gradient.w-button {
 }
 
 .section-wrapper-large {
-  margin: 40px auto;
   padding-top: 60px;
   padding-bottom: 60px;
 }
 
 .section-wrapper-large.black-bg-stripe {
   margin-top: 39px;
-  margin-bottom: 39px;
+
   background-color: #000;
   background-image: url('../images/stripes-v-color.png');
   background-position: 100% 50%;
@@ -3483,7 +3486,6 @@ a.btn-black-home-outline.herp.line.type-gradient.w-button {
 }
 
 .section-wrapper-large.gradient-bg {
-  margin-top: 60px;
   margin-bottom: 60px;
   background-image: url('../images/Group-16.9.svg'), linear-gradient(257.91deg, #0a8cff 6.41%, #0fc6ff 82.61%);
   background-position: 100% 0%, 0px 0px;
@@ -4350,6 +4352,7 @@ a.btn-black-home-outline.herp.line.type-gradient.w-button {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .section-gradient {
@@ -6662,13 +6665,13 @@ a.btn-black-home-outline.herp.line.type-gradient.w-button {
   height: 66px;
   margin-top: 28px;
   padding-top: 21px;
-  padding-right: 49px;
+  /*padding-right: 49px; - fase 1*/
   padding-left: 0px;
   border: 2px none #000;
   border-radius: 100px;
   background-color: transparent;
-  background-image: url('../images/play-icon.svg'), -webkit-gradient(linear, left top, right top, from(#03c4ff), to(#0a8cff));
-  background-image: url('../images/play-icon.svg'), linear-gradient(90deg, #03c4ff, #0a8cff);
+  /*background-image: url('../images/play-icon.svg'), -webkit-gradient(linear, left top, right top, from(#03c4ff), to(#0a8cff)); - fase 1*/
+  /*background-image: url('../images/play-icon.svg'), linear-gradient(90deg, #03c4ff, #0a8cff); - fase 1*/
   background-position: 98% 50%, 0px 0px;
   background-size: auto, auto;
   background-repeat: no-repeat, repeat;
@@ -6685,7 +6688,7 @@ a.btn-black-home-outline.herp.line.type-gradient.w-button {
   border-width: 2px;
   border-color: #fff;
   background-color: transparent;
-  background-image: url('../images/play-icon.svg');
+  /*background-image: url('../images/play-icon.svg'); - fase 1*/
   background-position: 98% 50%;
   background-size: auto;
   background-repeat: no-repeat;
