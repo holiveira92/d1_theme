@@ -90,7 +90,7 @@ foreach ($menu_pai as $key => &$menu) {
             <div class="menu-wrapper mobi w-clearfix">
                 <div data-delay="0" data-hover="1" class="dropdown w-dropdown" role="menu" aria-labelled-by="w-dropdown-toggle-1" style="">
                     <div class="menulink w-dropdown-toggle" tabindex="0" id="w-dropdown-toggle-1" aria-controls="w-dropdown-list-1" aria-haspopup="menu" style="outline: none;">
-                    <a href="https://novo.d1.cx/plataforma/"><div class="text-block-4 ">PLATAFORMA</div></a>
+                    <a href="../plataforma/"><div class="text-block-4 ">PLATAFORMA</div></a>
                     </div>
                     <!--<nav class="dropdown-plataforma w-dropdown-list" id="w-dropdown-list-1">
                         <div class="menu-select-plataforma"></div>
@@ -168,10 +168,10 @@ foreach ($menu_pai as $key => &$menu) {
                     <nav class="dropdown-conteudo w-dropdown-list" id="w-dropdown-list-3">
                         <div class="menu-select-conteudos"></div>
                         <div class="menu-conteudos-wrapper">
-                            <a href="https://novo.d1.cx/cases" class="black-menu-link">Cases</a>
+                            <a href="../cases/" class="black-menu-link">Cases</a>
                             <!--<a href="#" class="black-menu-link">Whitepapers</a>
                             <a href="#" class="black-menu-link">Webinars</a>-->
-                            <a href="#" class="black-menu-link">Blog</a></div>
+                            <a href="https://medium.com/d1experience" class="black-menu-link">Blog</a></div>
                     </nav>
                 </div>
                 <div data-delay="0" data-hover="1" class="dropdown w-dropdown" role="menu" aria-labelled-by="w-dropdown-toggle-4">
@@ -182,7 +182,7 @@ foreach ($menu_pai as $key => &$menu) {
                         <div class="menu-select-preco"></div>
                         <div class="menu-preco-wrapper">
                             <div class="body-text-white">Saiba para onde vai seu investimento</div>
-                            <div class="menu-preco"><a href="https://novo.d1.cx/preco" class="body-text-link3 precocta">VER&nbsp;PÁGINA DE ORÇAMENTOS</a><img src="https://uploads-ssl.webflow.com/5d5d3ab49052fea25a4b1c73/5d66ec667c0872c78441f287_arrowlink-black.svg" alt="" class="arrowlink"></div>
+                            <div class="menu-preco"><a href="../preco/" class="body-text-link3 precocta">VER&nbsp;PÁGINA DE ORÇAMENTOS</a><img src="https://uploads-ssl.webflow.com/5d5d3ab49052fea25a4b1c73/5d66ec667c0872c78441f287_arrowlink-black.svg" alt="" class="arrowlink"></div>
                         </div>
                     </nav>
                 </div>
@@ -193,11 +193,11 @@ foreach ($menu_pai as $key => &$menu) {
                     <nav class="dropdown-conteudo w-dropdown-list" id="w-dropdown-list-5">
                         <div class="menu-select-sobre"></div>
                         <div class="menu-conteudos-wrapper">
-                            <a href="https://novo.d1.cx/nossa-jornada" class="black-menu-link">Nossa Jornada</a>
+                            <a href="../nossa-jornada" class="black-menu-link">Nossa Jornada</a>
                             <a href="https://novo.d1.cx/#" class="black-menu-link">Carreiras</a>
                     </nav>
                 </div>
-                <div class="div-block-32"><a href="https://novo.d1.cx/contato" class="btn-black-home-outline herp line type-gradient w-button">FALAR&nbsp;COM&nbsp;ESPECIALISTA</a></div>
+                <div class="div-block-32"><a href="../contato" class="btn-black-home-outline herp line type-gradient w-button">FALAR&nbsp;COM&nbsp;ESPECIALISTA</a></div>
             </div>
         </nav>
         <div class="menu-button w-nav-button">
