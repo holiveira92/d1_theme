@@ -119,7 +119,7 @@ get_header();
 <div id="desafios" class="mycontainer-3 desafios">
     <div class="section-title-wrapper-copy">
         <div class="body-text-2 grey">
-            <?php echo !empty($desafios['desafios_title']) ? $case['desafios_title'] : "";?>
+            <?php echo !empty($desafios['desafios_title']) ? $desafios['desafios_title'] : "";?>
         </div>
     </div>
     <div class="cases-row-2 desafios _8pad w-row">
