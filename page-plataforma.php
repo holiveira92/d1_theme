@@ -47,78 +47,11 @@ foreach($menu_pai as $key=>&$menu){
         );}
     }
 }
-
+get_header();
 ?>
 <!DOCTYPE html>
-<head>
-    <meta charset="utf-8">
-    <title><?php echo $data_header['d1_web_title'];?></title>
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <meta content="Webflow" name="generator">
-    <link href="<?php echo get_template_directory_uri().'/';?>css/normalize.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo get_template_directory_uri().'/';?>css/webflow.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo get_template_directory_uri().'/';?>css/d1web.css" rel="stylesheet" type="text/css">
-    <script src="<?php echo get_template_directory_uri().'/';?>js/jquery-3.4.1.min.js" type="text/javascript"></script>
-    <script src="<?php echo get_template_directory_uri().'/';?>js/webflow.js" type="text/javascript"></script>
-    <script src="<?php echo get_template_directory_uri().'/';?>js/index.js" type="text/javascript"></script>
-    <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart" in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document)</script>
-    <link href="<?php echo get_template_directory_uri().'/';?>icons/webclip.png" rel="apple-touch-icon">
-    <link href="<?php echo $data_header['d1_favicon'];?>" rel="shortcut icon" type="image/x-icon">
-</head>
 
 <body class="body">
-
-    <div class="nav-black-bg"></div>
-    <div class="wrapper-menu">
-        <div class="div-block-69">
-            <div class="div-block-70">
-                <div class="secondary-text type-gradient"><span>Quer saber as melhoras práticas do mercado de Customer Experience?</span></div><a href="https://medium.com/d1experience" class="link-top-menu">Descubra aqui</a></div>
-            <div><a href="https://app.direct.one" class="link-top-menu-copy type-gradient"><span>LOG IN</span></a>
-                <div class="div-block-71">
-                    <div data-delay="0" class="dropdown-3 w-dropdown">
-                        <div class="dropdown-toggle-3 w-dropdown-toggle">
-                            <div class="icon w-icon-dropdown-toggle"></div><img src="<?php echo get_template_directory_uri().'/';?>images/brasilflag.svg" alt="">
-                            <div class="text-block-6">PT</div>
-                        </div>
-                        <nav class="dropdown-list-2 w-dropdown-list"><a href="#" class="dropdown-link-2 w-dropdown-link">EN</a></nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div data-collapse="medium" data-animation="over-right" data-duration="400" data-doc-height="1" data-no-scroll="1" class="navbar-3 w-nav">
-            <div class="div-block-82">
-                <a href="#" class="brand-3 w-nav-brand"><img src="images/betterjourneys.svg" width="8" alt="" class="image-9"></a>
-            </div>
-            <nav role="navigation" class="nav-menu w-nav-menu">
-                <div class="menu-wrapper mobi w-clearfix">
-                    
-                <!-- Bloco de criação dos menus pai -->
-                <?php foreach($menu_pai as $key=>$menu): ?>
-                    <div data-delay="0" data-hover="1" class="dropdown w-dropdown">
-                        <div class="menulink w-dropdown-toggle">
-                            <div class="text-block-4"><?php echo $menu['title'];?></div>
-                        </div>
-                        <nav class="dropdown-segmentos w-dropdown-list">
-                            <div class="menu-select-segmentos"></div>
-                            <div class="menu-conteudos-wrapper">
-                        <!-- Bloco de criação dos menus filhos -->
-                        <?php foreach($menu['subitems'] as $key=>$item): ?>
-                            <a href="<?php echo $item['url'];?>" class="black-menu-link"><?php echo $item['title'];?></a>
-                        <?php endforeach; ?>
-                            </div>
-                        </nav>
-                    </div>
-                <?php endforeach; ?>
-                <!-- Fim dos Blocos -->
-                
-                    <div class="div-block-32"><a href="<?php echo $menu_cta['link'];?>" target="<?php echo $menu_cta['target'];?>" class="btn-black-home-outline herp line type-gradient w-button"><span><?php echo $menu_cta['title'];?></span></a></div>
-                </div>
-            </nav>
-            <div class="menu-button w-nav-button">
-                <div class="menutext">Menu</div><img src="<?php echo get_template_directory_uri().'/';?>images/Menu.png" width="33" alt="" class="image-6"></div>
-        </div>
-    </div>
 
     <div id="hero" class="plataforma-hero2">
         <div class="mycontainer">

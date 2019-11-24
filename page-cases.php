@@ -21,7 +21,7 @@ get_header();
 
 <body>
 
-<div class="section-wrapper-large">
+<div class="section-wrapper-large no-padding-bottom">
 <input type="hidden" id="url_ajax" name="url_ajax" value="<?php echo $url_ajax;?>">
     <div id="filtro" class="div-block-36">
         <div data-duration-in="100" data-duration-out="100" class="tabs-4 w-tabs">

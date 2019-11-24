@@ -101,7 +101,7 @@ get_header();
                 <div class="section-title-2col">
                     <h6 class="white _18">IMPACTOS REAIS DE MELHORIA EM CUSTOMER EXPERIENCE</h6>
                     <div class="link-text-arrow">
-                        <a href="#" class="link-text-black invert">VER CASES</a>
+                        <a href="../cases/" class="link-text-black invert">VER CASES</a>
                         <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink">
                     </div>
                 </div>

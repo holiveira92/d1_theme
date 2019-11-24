@@ -142,7 +142,7 @@ get_header();
                     <div class="darkgrey"><?php echo insert_degrade($data_jornada['jornada_secao4_inovacao_desc_pre_cta'],5);?></span></div>
                 </div>
                 <div class="div-block-4 vervagas">
-                    <a href="<?php echo $secao4_cta['link'];?>" target="<?php echo $secao4_cta['target'];?>" class="btn-black-home vagas type-gradient w-button"><span><?php echo $secao4_cta['title'];?></span></a>
+                    <a href="<?php echo $secao4_cta['link'];?>" target="<?php echo $secao4_cta['target'];?>" class="btn-black-home vagas w-button"><?php echo $secao4_cta['title'];?></a>
                 </div>
             </div>
         </div>

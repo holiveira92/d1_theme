@@ -196,7 +196,7 @@ get_header();
             <div class="tabs-section-title-2col">
                 <h6 class="pad20 left lightblueleft lightblue"><?php echo $data_home['secao6_title'];?></h6>
                 <div class="link-text-arrow right noinvert">
-                    <a href="#" class="link-text-black">VER PLATAFORMA</a>
+                    <a href="https://novo.d1.cx/plataforma" class="link-text-black">VER PLATAFORMA</a>
                     <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink">
                 </div>
             </div>

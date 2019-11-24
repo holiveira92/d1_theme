@@ -439,7 +439,8 @@
      margin-right: auto;
      margin-left: auto;
      padding-top: 24px;
-     padding-right: 49px;
+     /*padding-right: 49px;*/
+     padding-right: 0; /* 1 fase */
      padding-left: 0px;
      border-radius: 100px;
      background-color: transparent;
@@ -3474,6 +3475,10 @@
    .section-wrapper-large {
      padding-top: 60px;
      padding-bottom: 60px;
+   }
+
+   .no-padding-bottom {
+     padding-bottom: 0px!important;
    }
    
    .section-wrapper-large.black-bg-stripe {

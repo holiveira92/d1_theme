@@ -5137,6 +5137,10 @@ a.btn-black-home-outline.herp.line.type-gradient.w-button {
   background-color: transparent;
 }
 
+._2-slide.w-slide {
+  opacity: 0!important;
+}
+
 .slide-nav {
   left: 69%;
   top: auto;

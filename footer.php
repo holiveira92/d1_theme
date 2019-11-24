@@ -47,7 +47,7 @@
         </div>
         <div class="cta-footer _1100">
             <div class="div-block-3">
-                <div class="darkgrey"><?php echo insert_degrade($data['secao1_desc_pre_cta'],2);?></div>
+                <div class="darkgrey type-gradient"><?php echo insert_degrade($data['secao1_desc_pre_cta'],2);?></div>
             </div>
             <div class="div-block-4">
                 <a href="<?php echo $cta['link'];?>" class="btn-black-home lightblue w-button"><span><?php echo $cta['title'];?></span></a>

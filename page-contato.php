@@ -40,7 +40,7 @@ get_header();
                         <div class="div-block-80"><img src="<?php echo $data_contato[$key_img];?>" height="50" width="50" alt="" class="image-7">
                             <p class="paragraph-4 left nopad"><?php echo $data_contato[$key_descricao];?></p>
                         </div>
-                    </div><a href="<?php echo $data_contato[$key_link];?>" class="btn-black-home-copy lightblue type-gradient w-button"><span><?php echo $data_contato[$key_btn_title];?></span></a></div>
+                    </div><a href="<?php echo $data_contato[$key_link];?>" class="btn-black-home-copy lightblue w-button"><span><?php echo $data_contato[$key_btn_title];?></span></a></div>
             <?php endfor;?>
 
             </div>
@@ -54,7 +54,7 @@ get_header();
 
 
 <div id="form" class="section-wrapper-large black">
-    <div class="mycontainer large">
+    <div id="mensagem" class="mycontainer large">
             <div class="form-contact w-form">
                 <!--[if lte IE 8]>
                 <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
