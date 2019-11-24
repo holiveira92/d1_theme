@@ -193,7 +193,9 @@ foreach ($menu_pai as $key => &$menu) {
                         <div class="menu-select-sobre"></div>
                         <div class="menu-conteudos-wrapper">
                             <a href="../nossa-jornada" class="black-menu-link">Nossa Jornada</a>
+                            <a href="../seguranca" class="black-menu-link">Segurança & Conformidade</a>
                             <a href="https://novo.d1.cx/#" class="black-menu-link">Carreiras</a>
+
                     </nav>
                 </div>
                 <div class="div-block-32"><a href="../contato" class="btn-black-home-outline herp line type-gradient w-button">FALAR&nbsp;COM&nbsp;ESPECIALISTA</a></div>
