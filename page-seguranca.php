@@ -71,10 +71,11 @@ get_header();
             <?php
                 $seguranca = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_seguranca where tipo = 'seguranca' ")),true);
                 $cont=1;
+                $class_tab_active_new = ($cont==1) ? "w--current" : "";
                 foreach($seguranca as $k=>$item):
 
                 ?>
-                <a data-w-tab="Tab <?php echo $cont;?>" class="tab-link-tab-1-2 _8pad w-inline-block w-tab-link">
+                <a data-w-tab="Tab <?php echo $cont;?>" class="tab-link-tab-1-2 _8pad w-inline-block w-tab-link <?php echo $class_tab_active_new;?>">
                     <div class="div-block-45"><img src="<?php echo $item['url_img'];?>" width="136" alt="" class="image-15">
                         <div class="body-text-link3"><?php echo $item['title'];?></div>
                     </div>
@@ -143,8 +144,9 @@ get_header();
         </div>
         <div class="section--conformidade">
         <?php
-            for($i=1;$i<=3;$i++):
+            for($i=1;$i<=6;$i++):
                 $key_title = "seguranca_secao4_item" . $i . "_title";
+                if(!empty($data_seguranca[$key_title]) && $data_seguranca[$key_title] != 'Insira uma Informação'):
         ?>
             <div class="div-block-48-copy _8mrgn">
                 <h3 class="heading-17"><?php echo $data_seguranca[$key_title];?></h3>
@@ -152,7 +154,7 @@ get_header();
                     <div>ONLINE</div>
                 </div>
             </div>
-        <?php $cont++; endfor;?>
+        <?php endif; endfor;?>
         </div>
     </div>
 </div>

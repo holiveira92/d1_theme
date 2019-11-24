@@ -34,6 +34,7 @@ get_header();
                     $key_descricao = "contato_secao1_item". $i ."_desc";
                     $key_link = "contato_secao1_item". $i ."_link";
                     $key_img = "contato_secao1_img_icon$i";
+                    if(!empty($data_contato[$key_descricao]) && $data_contato[$key_descricao] != 'Insira uma Informação'):
             ?>
                 <div class="contato-thumb-content center phone _8marg">
                     <div class="div-block-95">
@@ -41,8 +42,10 @@ get_header();
                             <p class="paragraph-4 left nopad"><?php echo $data_contato[$key_descricao];?></p>
                         </div>
                     </div><a href="<?php echo $data_contato[$key_link];?>" class="btn-black-home-copy lightblue w-button"><span><?php echo $data_contato[$key_btn_title];?></span></a></div>
-            <?php endfor;?>
-
+                    <?php 
+                        endif;
+                        endfor;
+                    ?>
             </div>
         </div>
         <div class="div-block-74" data-ix="fade-in-on-load-2">

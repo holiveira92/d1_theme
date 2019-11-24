@@ -3319,7 +3319,6 @@
      padding-top: 90px;
      padding-bottom: 90px;
      background-color: #000;
-     background-image: url("https://uploads-ssl.webflow.com/5d9f3e21a78bd192c39905ad/5d9fa3f1f70f35674585d5b3_nossajornada-img-bg.png");
      background-position: 0px 0px;
      background-size: cover;
      background-repeat: no-repeat;
@@ -6643,7 +6642,7 @@
      height: 66px;
      margin-top: 28px;
      padding-top: 21px;
-     padding-right: 49px; - 1 fase */
+     padding-right: 49px; /*- 1 fase */
      padding-left: 0px;
      border: 2px none #000;
      border-radius: 100px;
@@ -8211,7 +8210,6 @@
      .nossajornada-keypoint-imgbg.ui-section {
        padding-right: 45px;
        padding-left: 45px;
-       background-image: url("https://uploads-ssl.webflow.com/5d9f3e21a78bd192c39905ad/5d9fa3f1f70f35674585d5b3_nossajornada-img-bg.png");
        background-position: 50% 100%;
        background-size: cover;
        background-attachment: scroll;

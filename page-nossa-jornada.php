@@ -91,7 +91,7 @@ get_header();
         </div>
     </div>
 
-    <div id="equipe" class="nossajornada-keypoint-imgbg ui-section">
+    <div id="equipe" class="nossajornada-keypoint-imgbg ui-section" style='background-image: url("<?php echo $data_jornada['jornada_secao3_equipe1_img'];?>");'>
         <div class="mycontainer-3">
             <div class="keypoint-left _8pad">
                 <div class="keypoint-text-wrapper">
@@ -127,7 +127,7 @@ get_header();
             <div class="div-block-38 nomargin flex">
                 <h3 class="heading-48 type-gradient"><span><?php echo $data_jornada['jornada_secao4_slide_title'];?></span></h3>
             </div>
-            <div class="div-block-38 nomargin _100"><img src="<?php echo get_template_directory_uri();?>/images/d1.png" width="215" srcset="images/d1-p-500.png 500w, images/d1-p-800.png 800w, images/d1-p-1080.png 1080w, images/d1.png 1366w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 91vw, (max-width: 991px) 94vw, 100vw" alt="" class="image-24"></div>
+            <div class="div-block-38 nomargin _100"><?php echo html_entity_decode($data_jornada['jornada_secao4_slide_code']);?></div>
             <div class="div-block-38 nomargin flex"><a href="<?php echo $data_jornada['jornada_secao4_slide_link'];?>" target="_blank" class="downloadbtn type-gradient"><span>BAIXAR SLIDES</span></a></div>
         </div>
     </div>

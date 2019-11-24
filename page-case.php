@@ -13,6 +13,8 @@ require_once dirname_oldphp(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view
 global $wpdb;
 $d1_view_parser = new D1_View_Parser();
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";
+$GLOBALS["data"] = $d1_view_parser->get_data();
+$data_cases = $GLOBALS["data"]["d1_plugin_cases"];
 $id_case = (!empty($_GET['id'])) ? $_GET['id'] : 0;
 $slug = (!empty($_GET['slug'])) ? $_GET['slug'] : "";
 $case = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases WHERE id_card=$id_case")),true);
@@ -197,7 +199,7 @@ get_header();
 <div id="cases" class="section-wrapper-large bg-grey notop">
     <div class="mycontainer">
         <div class="tabs-section-title-2col narrow">
-            <h6 class="pad20">IMPACTOS REAIS DE MELHORIA EM CUSTOMER EXPERIENCE</h6>
+            <h6 class="pad20"><?php echo $data_cases['cases_secao0_title'];?></h6>
             <div class="link-text-arrow noinvert"><a href="cases-overview" class="link-text-black">VER CASES</a><img src="<?php echo get_template_directory_uri();?>/images/arrowlink-black.svg" alt="" class="arrowlink"></div>
         </div>
 
