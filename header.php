@@ -39,8 +39,7 @@ foreach ($menu_pai as $key => &$menu) {
 
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="D1 – Direct One Marketing">
-    <title><?php echo $data_header['d1_web_title']; ?></title>
+    <title><?php wp_title(''); ?></title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="Webflow" name="generator">
     <link href="<?php echo get_template_directory_uri() . '/'; ?>css/normalize.css" rel="stylesheet" type="text/css">
@@ -182,7 +181,7 @@ foreach ($menu_pai as $key => &$menu) {
                         <div class="menu-select-preco"></div>
                         <div class="menu-preco-wrapper">
                             <div class="body-text-white">Saiba para onde vai seu investimento</div>
-                            <div class="menu-preco"><a href="../preco/" class="body-text-link3 precocta">VER&nbsp;PÁGINA DE ORÇAMENTOS</a><img src="https://uploads-ssl.webflow.com/5d5d3ab49052fea25a4b1c73/5d66ec667c0872c78441f287_arrowlink-black.svg" alt="" class="arrowlink"></div>
+                            <div class="menu-preco"><a href="../preco/" class="body-text-link3 precocta">VER&nbsp;PÁGINA DE ORÇAMENTOS</a><img src="https://d1new.wpengine.com/conteudo/themes/d1_theme/images/arrowlink-black.svg" alt="" class="arrowlink"></div>
                         </div>
                     </nav>
                 </div>
