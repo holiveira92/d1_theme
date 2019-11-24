@@ -32,7 +32,7 @@ $menu_pai = get_menus_data($menu_itens);
 
 <head>
     <meta charset="utf-8">
-    <title><?php echo $data_header['d1_web_title'];?></title>
+    <title><?php wp_title(''); ?></title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="Webflow" name="generator">
     <link href="<?php echo get_template_directory_uri().'/';?>css/normalize.css" rel="stylesheet" type="text/css">

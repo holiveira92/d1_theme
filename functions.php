@@ -1,5 +1,7 @@
 <?php
 
+add_theme_support( 'title-tag' );
+
 add_action( 'after_setup_theme', 'register_my_menu' );
 
 function register_my_menu() {
