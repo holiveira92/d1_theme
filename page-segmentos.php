@@ -90,9 +90,10 @@ get_header();
                 <?php
                 for($i=1;$i<=3;$i++):
                     $key_title      = "img_customer" . $i ;
+                    if(!empty($segmento[$key_title])):
                 ?>
                     <div class="image-clientes-block-segmentoscopy"><img src="<?php echo $segmento[$key_title];?>" width="274" alt="" class="image-12"></div>
-                <?php endfor;?>
+                <?php endif; endfor;?>
                 </div>
             </div>
         </div>
