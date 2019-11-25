@@ -144,11 +144,10 @@ foreach ($menu_pai as $key => &$menu) {
                         <div class="menu-solucoes-wrapper">
                             <div class="menu-solucoes-column">
                                 <div class="dark-footer-subtitle notopline">SEGMENTOS</div>
-                                <a href="#" class="black-menu-link">Seguro</a>
-                                <a href="#" class="black-menu-link">Varejo</a>
-                                <a href="#" class="black-menu-link">Cartão</a>
-                                <a href="#" class="black-menu-link">Saúde</a>
-                                <a href="#" class="black-menu-link noline">Outros</a>
+                                <a href="https://novo.d1.cx/segmentos/?slug=seguros&id=3" class="black-menu-link">Seguros</a>
+                                <a href="https://novo.d1.cx/segmentos/?slug=varejo&id=2" class="black-menu-link">Varejo</a>
+                                <a href="https://novo.d1.cx/segmentos/?slug=servicos-financeiros&id=1" class="black-menu-link">Serviços Financeiros</a>
+                                <a href="https://novo.d1.cx/segmentos/?slug=saude&id=4" class="black-menu-link">Saúde</a>
                             </div>
                             <!--<div class="menu-solucoes-column">
                                 <div class="dark-footer-subtitle lineup">DEPARTAMENTOS</div><a href="#" class="black-menu-link">Atendimento</a><a href="#" class="black-menu-link">Operações</a><a href="#" class="black-menu-link">Marketing</a><a href="#" class="black-menu-link">Gestão</a><a href="#" class="black-menu-link noline">Tecnologia</a>
