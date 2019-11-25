@@ -1360,7 +1360,7 @@ h6 {
   color: #0a8cff;
   font-size: 18px;
   font-weight: 500;
-  text-transform: uppercase;
+  text-transform: initial;
 }
 
 .dark-footer-title.topargin {
@@ -10250,6 +10250,7 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
   .contato-thumb-content.center.phone {
     margin-right: 30px;
     margin-left: 30px;
+    max-width: 100%;
   }
   .div-block-75-copy {
     margin-top: 1px;
@@ -11089,7 +11090,7 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
     padding-left: 16px;
   }
   .mycontainer.padup {
-    margin-top: 160px;
+    margin-top: 60px;
   }
   .mycontainer.bigmargin {
     padding-bottom: 50px;
@@ -11195,10 +11196,23 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
     -ms-flex-align: start;
     align-items: flex-start;
   }
+  #hero h1.h1white.mobi.left.larger.notop {
+    color: #171717;
+  }
+  .caseaberto-block-black span {
+    font-size: 70px;
+    line-height: 70px;
+  }
   .pad20 {
     margin-bottom: 28px;
     font-size: 16px;
     text-align: left;
+  }
+  .case-thumb-numbers h5.pad20 {
+    font-size: 60px!important;
+  }
+  #cases .pad20 {
+    font-size: 22px;
   }
   .pad20.preto {
     margin-top: -1px;
@@ -11211,7 +11225,7 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
     text-align: left;
   }
   .pad20.left.lightblue {
-    font-size: 18px;
+    font-size: 22px;
   }
   .pad20.large {
     font-size: 24px;
@@ -11253,6 +11267,10 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
   }
   .case-thumb-content {
     height: auto;
+    text-align: left;
+  }
+  a.case-overview-link.w-inline-block.w-tab-link {
+    padding: 10px 16px!important;
   }
   .case-thumb-content._200ms {
     margin-right: 16px;
@@ -11461,6 +11479,7 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
     margin-top: 0px;
     margin-right: auto;
     margin-left: auto;
+    padding: 0 20px!important;
     -webkit-align-self: flex-start;
     -ms-flex-item-align: start;
     align-self: flex-start;
@@ -12101,6 +12120,7 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
   .plataforma-icon-title {
     width: 90px;
     margin-top: 22px;
+    display:none;
   }
   .plataforma-icon-title.smaller {
     margin-top: 18px;
@@ -12134,8 +12154,9 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
     padding-left: 0px;
   }
   .mycontainer-3.desafios {
-    margin-top: 79px;
+    margin-top: 10px;
     margin-bottom: 79px;
+    height: auto;
   }
   .faq-answer {
     padding-right: 0px;
@@ -12249,7 +12270,10 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
     padding-left: 8px;
   }
   .section-4.big {
-    height: 450px;
+    height: auto;
+  }
+  div#inovacao {
+    margin: 50px 0 0;
   }
   .div-block-38.nomargin._100 {
     width: 100%;
@@ -12304,7 +12328,7 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
     overflow: auto;
     width: 100%;
     margin: 0px;
-    padding-top: 75px;
+    padding-top: 45px;
     padding-bottom: 0px;
   }
   .section-wrapper-large.black-bg-stripe {
@@ -12319,8 +12343,8 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
     background-size: auto 32%, auto;
   }
   .section-wrapper-large.bg-grey {
-    padding-top: 59px;
-    padding-bottom: 41px;
+    padding-top: 59px!important;
+    padding-bottom: 41px!important;
   }
   .section-wrapper-large.black {
     overflow: visible;
@@ -12345,7 +12369,7 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
   }
   .preco-hero {
     display: block;
-    height: 130%;
+    height: auto;
     padding-top: 30px;
     background-image: none;
   }
@@ -12372,6 +12396,8 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
   .preco-section-2col-wrapper._8pad {
     padding-right: 8px;
     padding-left: 8px;
+    display:block;
+    width:100%;
   }
   .objetivos-de-negocio-hero {
     height: 100vh;
@@ -12431,6 +12457,7 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
     height: auto;
     padding: 101px 5px 40px;
     background-size: 59%;
+    background-image:none;
   }
   .btn-black-home-copy {
     width: 100%;
@@ -12615,7 +12642,7 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
     display: flex;
     overflow: visible;
     margin-left: 0px;
-    padding-top: 74px;
+    padding-top: 50px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -webkit-flex-direction: row;
@@ -12675,10 +12702,12 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
     padding-bottom: 40px;
   }
   .seg-hero.gradient-bg {
-    height: 100vh;
+    height: 70vh;
     background-position: 0px 0px, 10% 50%;
     background-size: auto, cover;
     background-repeat: repeat, no-repeat;
+    background-image: none!important;
+    background-color: #131313;
   }
   .div-block-37 {
     margin-right: 0%;
@@ -12759,9 +12788,7 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
     margin-top: 20px;
     margin-right: 0%;
     margin-left: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
+    padding: 0 30px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -12779,6 +12806,13 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
   .seguranca-gradient-wrapper-copy._8pad {
     padding-right: 8px;
     padding-left: 8px;
+  }
+  .section-status.moremargin {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  #conformidade .text {
+    margin-top: 0px;
   }
   .div-block-77 {
     display: block;

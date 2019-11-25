@@ -37,7 +37,7 @@ get_header();
     <div class="mycontainer">
         <div class="home-hero-wrapper left">
             <div class="home-hero-left left _16pad" data-ix="fade-in-on-load">
-                <h6 class="lightblue type-gradient"><?php echo $case['subtitle_card'];?></h6>
+                <h6 class="lightblue type-gradient"><span><?php echo $case['subtitle_card'];?></span></h6>
                 <h1 class="h1white pad20 white2 notop"><?php echo $case['title_card'];?> </h1>
             </div>
             <div class="home-hero-right right mobi">
@@ -51,7 +51,7 @@ get_header();
 
 <div id="impactos" class="section-6">
     <div class="mycontainer-3">
-        <h6 class="heading-13-copy lightblue center"><?php echo !empty($impactos['impacto_title']) ? $impactos['impacto_title'] : "";?></h6>
+        <h6 class="heading-13-copy lightblue center type-gradient"><span><?php echo !empty($impactos['impacto_title']) ? $impactos['impacto_title'] : "";?></span></h6>
         <div class="caseaberto-block-black">
         <?php
             for($i=1;$i<=3;$i++):
@@ -65,7 +65,7 @@ get_header();
                         <div class="body-text-white-2"><?php echo !empty($impactos[$key_title]) ? $impactos[$key_title] : "";?></div>
                     </div>
                     <div>
-                        <div class="text-block"><span class="text-span-3 lightblue type-gradient large">
+                        <div class="text-block type-gradient"><span class="text-span-3 lightblue large">
                             <?php echo !empty($impactos[$key_total]) ? $impactos[$key_total] : "";?>
                         </span></div>
                     </div>
@@ -104,7 +104,7 @@ get_header();
             <div class="div-block-37">
                 <div>
                     <h2 class="white-2 lightblue larger mobi type-gradient">
-                        <?php echo !empty($case['objetivos_title']) ? $case['objetivos_title'] : "";?>
+                        <span><?php echo !empty($case['objetivos_title']) ? $case['objetivos_title'] : "";?></span>
                     </h2>
                 </div>
             </div>
@@ -148,7 +148,7 @@ get_header();
     <div class="mycontainer-3">
         <div class="cases-aberto-ferramentas _16pad">
             <div class="div-block-37">
-                <h2 class="white-2 lightblue larger mobi type-gradient"><?php echo !empty($implantacao['implantacao_title']) ? $implantacao['implantacao_title'] : "";?></h2>
+                <h2 class="white-2 lightblue larger mobi type-gradient"><span><?php echo !empty($implantacao['implantacao_title']) ? $implantacao['implantacao_title'] : "";?></span></h2>
             </div>
             <div>
                 <p class="body-text-white mobi left"><?php echo !empty($implantacao['implantacao_desc_primaria']) ? $implantacao['implantacao_desc_primaria'] : "";?></p>
@@ -170,7 +170,7 @@ get_header();
                             <div class="body-text-white-2"><?php echo !empty($implantacao['implantacao_resultado1_title']) ? $implantacao['implantacao_resultado1_title'] : "";?></div>
                         </div>
                         <div>
-                            <div class="text-block"><span class="text-span-3 type-gradient large"><?php echo !empty($implantacao['implantacao_resultado1_valor']) ? $implantacao['implantacao_resultado1_valor'] : "";?></span></div>
+                            <div class="text-block type-gradient "><span class="text-span-3 large"><?php echo !empty($implantacao['implantacao_resultado1_valor']) ? $implantacao['implantacao_resultado1_valor'] : "";?></span></div>
                         </div>
                         <div class="div-block-53">
                             <div class="body-text-white-2"><?php echo !empty($implantacao['implantacao_resultado1_desc']) ? $implantacao['implantacao_resultado1_desc'] : "";?></div>
@@ -183,7 +183,7 @@ get_header();
                             <div class="body-text-white-2"><?php echo !empty($implantacao['implantacao_resultado2_title']) ? $implantacao['implantacao_resultado2_title'] : "";?></div>
                         </div>
                         <div>
-                            <div class="text-block"><span class="text-span-3 type-gradient large"><?php echo !empty($implantacao['implantacao_resultado2_valor']) ? $implantacao['implantacao_resultado2_valor'] : "";?></span></div>
+                            <div class="text-block type-gradient"><span class="text-span-3 large"><?php echo !empty($implantacao['implantacao_resultado2_valor']) ? $implantacao['implantacao_resultado2_valor'] : "";?></span></div>
                         </div>
                         <div class="div-block-53">
                             <div class="body-text-white-2"><?php echo !empty($implantacao['implantacao_resultado2_desc']) ? $implantacao['implantacao_resultado2_desc'] : "";?></div>
@@ -200,7 +200,7 @@ get_header();
     <div class="mycontainer">
         <div class="tabs-section-title-2col narrow">
             <h6 class="pad20"><?php echo $data_cases['cases_secao0_title'];?></h6>
-            <div class="link-text-arrow noinvert"><a href="cases-overview" class="link-text-black">VER CASES</a><img src="<?php echo get_template_directory_uri();?>/images/arrowlink-black.svg" alt="" class="arrowlink"></div>
+            <div class="link-text-arrow noinvert"><a href="../cases/" class="link-text-black">VER CASES</a><img src="<?php echo get_template_directory_uri();?>/images/arrowlink-black.svg" alt="" class="arrowlink"></div>
         </div>
 
         <div class="case-thumb-content-wrapper large" data-ix="fade-in-on-scroll">

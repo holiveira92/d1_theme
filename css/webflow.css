@@ -1772,6 +1772,7 @@ textarea.w-select {
 @media screen and (max-width: 479px) {
   .w-tab-link {
     display: block;
+    padding: 0 10px!important
   }
 }
 .w-ix-emptyfix:after {
