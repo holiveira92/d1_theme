@@ -47,7 +47,6 @@ foreach ($menu_pai as $key => &$menu) {
     <link href="<?php echo get_template_directory_uri() . '/'; ?>css/d1-new.css" rel="stylesheet" type="text/css">
     <link href="<?php echo get_template_directory_uri() . '/'; ?>css/d1web.css" rel="stylesheet" type="text/css">
     <script src="<?php echo get_template_directory_uri() . '/'; ?>js/jquery-3.4.1.min.js" type="text/javascript"></script>
-    <script src="<?php echo get_template_directory_uri() . '/'; ?>js/webflow.js" type="text/javascript"></script>
     <script src="<?php echo get_template_directory_uri() . '/'; ?>js/index.js" type="text/javascript"></script>
     <script type="text/javascript">
         ! function(o, c) {
@@ -198,7 +197,7 @@ foreach ($menu_pai as $key => &$menu) {
 
                     </nav>
                 </div>
-                <div class="div-block-32"><a href="../contato" class="btn-black-home-outline herp line type-gradient w-button"><span>FALAR&nbsp;COM&nbsp;ESPECIALISTA</span></a></div>
+                <div class="div-block-32"><a href="../contato" class="btn-black-home-outline herp line type-gradient w-button">FALAR&nbsp;COM&nbsp;ESPECIALISTA</a></div>
             </div>
         </nav>
         <div class="menu-button w-nav-button">

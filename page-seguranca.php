@@ -89,7 +89,7 @@ get_header();
                 foreach($seguranca as $k=>$item):
                     $class_tab_active = ($cont==1) ? "w--tab-active" : "";
                 ?>
-                <div data-w-tab="Tab <?php echo $cont;?>" class="section-gradient <?php echo $class_tab_active;?>">
+                <div data-w-tab="Tab <?php echo $cont;?>" class="section-gradient w-tab-pane <?php echo $class_tab_active;?>">
                     <div class="section-gradient left">
                         <div class="mycontainer-3">
                             <div class="seguranca-gradient-wrapper-copy">

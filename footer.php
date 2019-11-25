@@ -197,3 +197,4 @@
       $('.form-contact .form-columns-0:nth-child(8), .hs_submit.hs-submit').wrapAll('<div class="form-footer"></div>')
     });    
   </script>
+  <script src="<?php echo get_template_directory_uri() . '/'; ?>js/webflow.js" type="text/javascript"></script>
