@@ -191,7 +191,7 @@ $menu_pai = get_menus_data($menu_itens);
                 <h4 class="h1white huge"><?php echo $card['text_footer_card'];?></h4>
                 <div class="h1white"><?php echo $card['subtext_footer_card'];?></div>
             </div>
-            <div class="ver-cases">
+            <div class="ver-cases" style="float:right;">
                 <div class="text-block-26">Ver Cases</div><img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink.svg" alt=""></div>
         </a>
         </div>
