@@ -27,7 +27,7 @@ get_header();
     <h1 class="h1white center mobi center" data-ix="fade-in-on-load"><?php echo $data_contato['contato_secao1_main_title'];?><span> <br>‍</span>
     <span class="text-span-19"><?php echo $data_contato['contato_secao1_title'];?></span><span class="text-span-20">!</span></h1>
         <div class="contato-cards-wrapper" data-ix="fade-in-on-load-2">
-            <div class="case-thumb-content-wrapper">
+            <div class="contato-thumb-content-wrapper">
 
             <?php for($i=1;$i<=3;$i++):
                     $key_btn_title = "contato_secao1_item". $i ."_button_title";
