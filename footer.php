@@ -123,25 +123,26 @@
                                 </p>
                             </div>
                         </div>
-
-                        <?php 
-                        foreach($group_links as $key=>$grupo):
-                            $id_grupo = $grupo['id'];
-                            $itens = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_footer_links WHERE group_id=$id_grupo")),true);
-                            $i = (in_array($key,array(2,5,8,11,14,17,20,23,26,29,32)) !== false ) ? 2 : 3;
-                        ?>
-                        <!-- Grupos de Links -->
-                        <div class="white-footer-column w-col w-col-<?php echo $i;?> ">
-                            <div class="dark-footer-title "><?php echo $grupo['name'];?></div>
-                            <!-- Links -->
+                        <div class="white-footer-column w-col w-col-8">
                             <?php 
-                            foreach($itens as $k=>$link):
+                            foreach($group_links as $key=>$grupo):
+                                $id_grupo = $grupo['id'];
+                                $itens = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_footer_links WHERE group_id=$id_grupo")),true);
+                                $i = (in_array($key,array(2,5,8,11,14,17,20,23,26,29,32)) !== false ) ? 2 : 3;
                             ?>
-                                <a href="<?php echo $link['link'];?>" class="light-footer-link"> <?php echo $link['name'];?> </a>
+                            <!-- Grupos de Links -->
+                            <div class="white-footer-column w-col w-col-<?php echo $i;?> ">
+                                <div class="dark-footer-title type-gradient"><span><?php echo $grupo['name'];?></span></div>
+                                <!-- Links -->
+                                <?php 
+                                foreach($itens as $k=>$link):
+                                ?>
+                                    <a href="<?php echo $link['link'];?>" class="light-footer-link"> <?php echo $link['name'];?> </a>
+                                <?php endforeach; ?>
+                                <br>
+                            </div>
                             <?php endforeach; ?>
-                            <br>
                         </div>
-                        <?php endforeach; ?>
                     </div>
 
                     <div class="div-block-72">

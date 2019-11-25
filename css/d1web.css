@@ -141,6 +141,7 @@ h6 {
 .h1white.pad20 {
   font-size: 46px;
   line-height: 116%;
+  font-weight: 500;
 }
 
 .h1white.pad20.small {
@@ -665,6 +666,9 @@ h6 {
   display: -ms-flexbox;
   display: flex;
   padding-top: 15px;
+  flex-direction: column;
+  justify-content: center!important;
+  align-items: center!important;
 }
 
 .case-thumb-content-wrapper.nopad {
@@ -1643,7 +1647,7 @@ h6 {
 
 .btn-black-home:hover {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#0a8cff), to(#0a8cff));
-  background-image: linear-gradient(180deg, #0a8cff, #0a8cff);
+  background-image: linear-gradient(247.73deg, #0A8CFF 6.41%, #13F1FF 82.61%);
   box-shadow: 1px 1px 8px 0 rgba(0, 0, 0, 0.5);
   -webkit-transition: box-shadow 200ms ease, background-color 200ms ease;
   transition: box-shadow 200ms ease, background-color 200ms ease;
@@ -1996,7 +2000,8 @@ div#w-dropdown-toggle-1 a:hover {
 
 .btn-black-home-outline:hover {
   border-color: #0a8cff;
-  background-color: #0a8cff;
+  background-color: transparent!important;
+  background-image: linear-gradient(247.73deg, #0A8CFF 6.41%, #13F1FF 82.61%);
 }
 
 .btn-black-home-outline.herp {
@@ -2018,7 +2023,7 @@ div#w-dropdown-toggle-1 a:hover {
   border-color: #0a8cff;
   background-color: transparent;
   background-image: -webkit-gradient(linear, left top, right top, from(#00e1ff), color-stop(0%, #03ccff), color-stop(70%, #0a8cff));
-  background-image: linear-gradient(90deg, #00e1ff, #03ccff 0%, #0a8cff 70%);
+  background-image: linear-gradient(247.73deg, #0A8CFF 6.41%, #13F1FF 82.61%);
   color: #fff;
 }
 
@@ -3593,7 +3598,7 @@ a.btn-black-home-outline.herp.line.type-gradient.w-button {
 }
 
 .btn-black-form:hover {
-  background-image: linear-gradient(45deg, #0a8cff 56%, #00e1ff);
+  background-image: linear-gradient(247.73deg, #0A8CFF 6.41%, #13F1FF 82.61%);
   box-shadow: 1px 1px 8px 0 #0a8cff;
 }
 
@@ -3941,7 +3946,7 @@ a.btn-black-home-outline.herp.line.type-gradient.w-button {
 
 .btn-black-home-copy:hover {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#0a8cff), to(#0a8cff));
-  background-image: linear-gradient(180deg, #0a8cff, #0a8cff);
+  background-image: linear-gradient(247.73deg, #0A8CFF 6.41%, #13F1FF 82.61%);
   box-shadow: 1px 1px 8px 0 rgba(0, 0, 0, 0.5);
   -webkit-transition: box-shadow 200ms ease, background-color 200ms ease;
   transition: box-shadow 200ms ease, background-color 200ms ease;
@@ -4003,6 +4008,7 @@ a.btn-black-home-outline.herp.line.type-gradient.w-button {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  max-width: 33%;
   border-radius: 8px;
   background-color: #fff;
   box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.3);
@@ -7053,6 +7059,7 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
   .h1white.pad20 {
     font-size: 38px;
     text-align: left;
+    font-weight: 500;
   }
   .h1white.pad20.small {
     padding-right: 113px;
@@ -7313,6 +7320,8 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+    justify-content: center!important;
+    align-items: center!important;
   }
   .section-wrapper {
     display: block;
@@ -9592,6 +9601,8 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+    justify-content: center!important;
+    align-items: center!important;
   }
   .section-wrapper {
     display: block;

@@ -198,7 +198,7 @@ foreach ($menu_pai as $key => &$menu) {
 
                     </nav>
                 </div>
-                <div class="div-block-32"><a href="../contato" class="btn-black-home-outline herp line type-gradient w-button">FALAR&nbsp;COM&nbsp;ESPECIALISTA</a></div>
+                <div class="div-block-32"><a href="../contato" class="btn-black-home-outline herp line type-gradient w-button"><span>FALAR&nbsp;COM&nbsp;ESPECIALISTA</span></a></div>
             </div>
         </nav>
         <div class="menu-button w-nav-button">

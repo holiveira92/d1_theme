@@ -26,7 +26,7 @@ get_header();
     background-image: url('https://uploads-ssl.webflow.com/5d9f3e21a78bd192c39905ad/5db0ae33dc9fed66ae1dbfa3_Group%2016.39.svg'),linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<?php echo $data_seguranca['seguranca_secao1_img'];?>');">
     <div class="mycontainer padup">
         <div class="section-1col-wrapper left rightpad">
-            <h1 class="h1white pad20 white type-gradient" data-ix="fade-in-on-load"><?php echo $data_seguranca['seguranca_secao1_title'];?></h1>
+            <h1 class="h1white pad20 white type-gradient" data-ix="fade-in-on-load"><span><?php echo $data_seguranca['seguranca_secao1_title'];?></span></h1>
             <div class="h1white"><span data-ix="fade-in-on-load-2"><?php echo $data_seguranca['seguranca_secao1_descricao'];?></span></div>
         </div>
     </div>
@@ -47,7 +47,7 @@ get_header();
                     <h3 class="white-2"><?php echo $data_seguranca[$key_title];?></h3>
                 </div>
                 <div class="div-block-40">
-                    <div class="body-text-white lightblue centered type-gradient"><?php echo $data_seguranca[$key_subtitle];?></div>
+                    <div class="body-text-white lightblue centered type-gradient"><span><?php echo $data_seguranca[$key_subtitle];?></span></div>
                 </div>
             </div>
             <?php endfor;?>

@@ -27,7 +27,7 @@ get_header();
         <div data-duration-in="100" data-duration-out="100" class="tabs-4 w-tabs">
             <div class="tabs-menu-5 w-tab-menu" data-ix="fade-in-on-load">
                 <a data-w-tab="Tab 1" class="case-overview-link w-inline-block w-tab-link w--current" categoria="0">
-                    <div class="casetab">TODOS</div>
+                    <div class="casetab type-gradient"><span>TODOS</span></div>
                 </a>
                 <?php
                 $cont = 2;
@@ -35,7 +35,7 @@ get_header();
                     
                 ?>
                 <a data-w-tab="Tab <?php echo $cont;?>" class="case-overview-link w-inline-block w-tab-link" categoria="<?php echo $categoria['id'];?>">
-                    <div class="casetab type-gradient"><?php echo $categoria['descricao'];?></div>
+                    <div class="casetab type-gradient"><span><?php echo $categoria['descricao'];?></span></div>
                 </a>
                 <?php $cont++; endforeach; ?>
 
@@ -80,7 +80,7 @@ get_header();
             <div class="case-thumb-content" name='item_case' style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('<?php echo $case_destaque['img_bg_url']; ?>');background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $case_destaque['img_bg_url'];?>');">
                 <a href="case?slug=<?php echo sanitize_title($case_destaque['title_card']);?>&id=<?php echo $case_destaque['id_card'];?>" style='text-decoration:none;'>
                 <h3 class="h1white left small"><?php echo $case_destaque['title_card'];?></h3>
-                <h6 class="lightblue type-gradient"><?php echo $case_destaque['subtitle_card'];?></h6>
+                <h6 class="lightblue type-gradient"><span><?php echo $case_destaque['subtitle_card'];?></span></h6>
                 <div class="case-thumb-numbers">
                     <h5 class="heading-2 pad20 white huge left"><?php echo $case_destaque['text_footer_card'];?></h5>
                     <div class="h1white left tiny"><?php echo $case_destaque['subtext_footer_card'];?></div>

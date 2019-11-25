@@ -129,7 +129,7 @@ get_header();
         <div class="mycontainer">
             <div class="tabs-section-title-2col narrow">
                 <h6 class="pad20"><?php echo $data_plataforma['plataforma_secao3_cases_title'];?></h6>
-                <div class="link-text-arrow noinvert"><a href="#" class="link-text-black">VER CASES</a>
+                <div class="link-text-arrow noinvert"><a href="../cases/" class="link-text-black">VER CASES</a>
                 <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink"></div>
             </div>
             <div class="case-thumb-content-wrapper large" data-ix="fade-in-on-scroll">

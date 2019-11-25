@@ -40,7 +40,7 @@ get_header();
             <div class="home-hero-wrapper centered _16pad">
                 <div class="home-hero-left center">
                     <h6 class="lightblue type-gradient" data-ix="fade-in-on-load"><span><?php echo $data_jornada['jornada_secao1_main_title'];?></span></h6>
-                    <h1 class="h1white center bottommargin" data-ix="fade-in-on-load-2"><?php echo insert_degrade($data_jornada['jornada_secao1_title'],4);?></h1>
+                    <h1 class="h1white center bottommargin type-gradient" data-ix="fade-in-on-load-2"><?php echo insert_degrade($data_jornada['jornada_secao1_title'],4);?></h1>
                     <div class="h1white lightblue2 larger center type-gradient" data-ix="fade-in-on-load-2"><span><?php echo $data_jornada['jornada_secao1_desc'];?></span></div>
                     <a href="<?php echo $secao1_cta['link'];?>" target="<?php echo $secao1_cta['target'];?>" class="btn-gradient w-button" data-ix="fade-in-on-load-2"><?php echo $secao1_cta['title'];?></a></div>
             </div>
@@ -139,7 +139,7 @@ get_header();
             <p class="paragraph-5"><?php echo $data_jornada['jornada_secao4_inovacao_desc'];?></p>
             <div class="cta-vagas">
                 <div class="div-block-3">
-                    <div class="darkgrey"><?php echo insert_degrade($data_jornada['jornada_secao4_inovacao_desc_pre_cta'],5);?></span></div>
+                    <div class="darkgrey type-gradient"><?php echo insert_degrade($data_jornada['jornada_secao4_inovacao_desc_pre_cta'],5);?></div>
                 </div>
                 <div class="div-block-4 vervagas">
                     <a href="<?php echo $secao4_cta['link'];?>" target="<?php echo $secao4_cta['target'];?>" class="btn-black-home vagas w-button"><?php echo $secao4_cta['title'];?></a>
@@ -186,7 +186,7 @@ get_header();
                 <div class="section-title-2col">
                     <h6 class="white _18">IMPACTOS REAIS DE MELHORIA EM CUSTOMER EXPERIENCE</h6>
                     <div class="link-text-arrow">
-                        <a href="#" class="link-text-black invert">VER CASES</a>
+                        <a href="../cases/" class="link-text-black invert">VER CASES</a>
                         <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink">
                     </div>
                 </div>

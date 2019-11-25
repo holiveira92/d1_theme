@@ -208,10 +208,10 @@ get_header();
                     $modulos = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_modulos WHERE id_modulo IS NULL OR id_modulo = '' ")),true);
                     $i=1;
                     foreach($modulos as $key=>$modulo):
-                        $title_class = ($key == 1) ? 'w--current' : "";
+                        $title_class = ($key == 1) ? 'w--current type-gradient' : "";
                     ?>
                         <a data-w-tab="Tab <?php echo $i;?>" class="home-tab-link w-inline-block w-tab-link <?php echo $title_class;?>">
-                            <div><?php echo $modulo['title'];?></div>
+                            <div><span><?php echo $modulo['title'];?></span></div>
                         </a>
                     <?php 
                         $i++;
@@ -237,11 +237,11 @@ get_header();
                                 <?php
                                 $j=1;
                                 foreach($itens as $k=>$item):
-                                    $subitem_tab_class = ($j == 1) ? 'w--current' : "";
+                                    $subitem_tab_class = ($j == 1) ? 'w--current type-gradient' : "";
                                 ?>
 
                                 <a data-w-tab="Tab <?php echo $j;?>" class="home-tab-link w-inline-block w-tab-link <?php echo $subitem_tab_class;?>">
-                                    <div><?php echo $item['subtitle'];?></div>
+                                    <div><span><?php echo $item['subtitle'];?></span></div>
                                 </a>
                                 <?php $j++;endforeach; ?>
                             </div>
