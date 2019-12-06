@@ -5425,7 +5425,7 @@
      -webkit-align-items: center;
      -ms-flex-align: center;
      align-items: center;
-     background-image: url("https://uploads-ssl.webflow.com/5d9f3e21a78bd192c39905ad/5db0ae33dc9fed66ae1dbfa3_Group%2016.39.svg"), url("https://uploads-ssl.webflow.com/5d9f3e21a78bd192c39905ad/5db0bcb1b8c0c9e22b3af61f_female-software-developer-working-for-it-company-4ZKCYDS.png");
+     background-image: url("https://uploads-ssl.webflow.com/5d9f3e21a78bd192c39905ad/5db0ae33dc9fed66ae1dbfa3_Group%2016.39.svg");
      background-position: 100% 50%, 0px 0px;
      background-size: 17%, cover;
      background-repeat: no-repeat, no-repeat;
@@ -8891,7 +8891,6 @@
        text-align: center;
      }
      .departamentos-hero {
-       background-image: url("https://uploads-ssl.webflow.com/5d9f3e21a78bd192c39905ad/5d9f86a5edb4fe2e48dd05e6_segmentos-hero.png");
        background-position: 50% 0px;
        background-size: cover;
        background-repeat: no-repeat;
