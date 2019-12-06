@@ -57,7 +57,7 @@ get_header();
                 </div>
             </div>
         </div>
-        <div class="arrowdown"><img src="images/arrowdownwhite.svg" width="12" alt=""></div>
+        <div class="arrowdown"><img src="<?php echo get_template_directory_uri().'/';?>images/arrowdownwhite.svg" width="12" alt=""></div>
     </div>
 
 

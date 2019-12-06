@@ -3,25 +3,41 @@ require_once 'data_loader.php';
 $data_loader        = new Data_Loader();
 $id_modulos         = (!empty($_GET['id'])) ? $_GET['id'] : 0;
 $slug               = (!empty($_GET['slug'])) ? $_GET['slug'] : "";
-$dados              = $data_loader->get('modulos',$id_modulos);
-$dados              = $dados['data_modulos'];
+$dados              = $data_loader->get('objetivos',$id_modulos);
+$dados              = $dados['data_objetivos'];
 get_header();
 ?>
 <body>
 <!-- SEÇÃO HERO -->
-<div id="hero" class="journey-hero">
-    <div class="mycontainer bigmargin narrow">
-        <div class="section-2col-wrapper">
-            <div class="section-col-left-2" data-ix="fade-in-on-load">
-                <h1 class="h1white pad20 main" data-ix="fade-in-on-load-2"><?php echo $dados['title'];?></h1>
-                <div class="h1white"><?php echo $dados['description'];?></div>
-            </div>
-            <div class="section-col-left center" data-ix="fade-in-on-load-2">
-                <img src="<?php echo $dados['url_img'];?>" width="810" alt="" class="image-6-copy">
+<div id="hero" class="objetivos-de-negocio-hero" style='url("<?php echo $dados['url_img'];?>");'>
+    <div class="mycontainer">
+        <div class="home-hero-wrapper _16pad">
+            <div class="home-hero-left">
+                <h6 class="lightblue left type-gradient" data-ix="fade-in-on-load"><?php echo $dados['title'];?></h6>
+                <h1 class="h1white pad20 white2 notop" data-ix="fade-in-on-load-2"><?php echo $dados['description'];?></h1>
             </div>
         </div>
     </div>
-    <div class="arrowdown"><img src="<?php echo get_template_directory_uri();?>/images/arrowdownblack.svg" width="12" alt=""></div>
+    <div class="arrowdown"><img src="<?php echo get_template_directory_uri().'/';?>images/arrowdownwhite.svg" width="12" alt=""></div>
+</div>
+
+<!-- SEÇÃO O QUE É -->
+<div id="o-que-e" class="objetivos-wrapper-grandient gradient-bg" data-ix="fade-in-on-scroll">
+    <div class="mycontainer">
+        <div class="objetivo-section-2col-wrapper">
+            <div class="section-title-2col bottommargin">
+                <h6 class="h1white notop nobot"><?php echo $dados['subtitle'];?></h6>
+            </div>
+            <div class="div-block-101">
+                <div class="section-col-left">
+                    <div class="pad20 rightmargin45 left leftpad notop"><?php echo $dados['subtitle_description'];?></div>
+                </div>
+                <div class="section-colright1">
+                    <h1 class="right nomargin"><?php echo nl2br(insert_degrade($dados['main_subtitle'],10));?></h1>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- SEÇÃO DESAFIOS -->
@@ -49,31 +65,43 @@ get_header();
 <!-- SEÇÃO FEATURES -->
 <?php
     $cont = 1;
-    foreach($dados['features'] as $key=>$kp):
+    foreach($dados['key_points'] as $key=>$kp):
         if(($cont%2 != 0) ):
 ?>
-    <div id="key-feature" class="section-wrapper">
+    <div id="key-point" class="section-wrapper _40margin">
         <div class="mycontainer">
-            <div class="section-2col-wrapper narrow" data-ix="fade-in-on-scroll">
+            <div class="section-2col-wrapper narrow2" data-ix="fade-in-on-scroll-2">
                 <div class="section-col-left">
-                    <h1 class="heading-45 notop"><?php echo $kp['title'];?></h1>
-                    <div class="pad20"><?php echo $kp['description'];?></div>
+                    <h1 class="heading-42"><?php echo $kp['title'];?></h1>
+                    <div class="pad20 _16pad nopad"><?php echo $kp['description'];?></div>
+                    <div class="link-text-arrow noinvert topmargin">
+                        <!-- <a href="#" class="link-text-black">VER MÓDULO</a> -->
+                        <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink">
+                    </div>
                 </div>
-                <div class="section-col-left center"><img src="<?php echo $kp['url_img'];?>" width="1004" alt="" class="image-4"></div>
+                <div class="section-col-left center right">
+                    <img src="<?php echo $kp['url_img'];?>" width="1004"  alt="" class="image-4">
+                </div>
             </div>
         </div>
     </div>
 <?php else:?>
-    <div id="key-feature" class="section-wrapper greybg">
-    <div class="mycontainer">
-        <div class="section-2col-invert-wrapper" data-ix="fade-in-on-scroll">
-            <div class="section-col-left center"><img src="<?php echo $kp['url_img'];?>" width="515" alt="" class="image-4"></div>
-            <div class="section-col-left">
-                <h1 class="heading-30"><?php echo $kp['title'];?></h1>
-                <div class="left"><?php echo $kp['description'];?></div>
+    <div id="keypoint" class="section-wrapper">
+        <div class="mycontainer">
+            <div class="section-2col-invert-wrapper narrow" data-ix="fade-in-on-scroll-2">
+                <div class="section-col-left center left">
+                    <img src="<?php echo $kp['url_img'];?>" width="1004"  alt="" class="image-4">
+                </div>
+                <div class="section-col-left">
+                    <h1 class="heading-41"><?php echo $kp['title'];?></h1>
+                    <div class="left"><?php echo $kp['description'];?></div>
+                    <div class="link-text-arrow noinvert topmargin">
+                        <!-- <a href="#" class="link-text-black">VER MÓDULO</a> -->
+                        <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink">
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 <?php endif;?>
 <?php $cont++; endforeach; ?>
@@ -102,7 +130,6 @@ get_header();
         </div>
     </div>
 </div>
-
 
 <?php get_footer();?>
 </body>

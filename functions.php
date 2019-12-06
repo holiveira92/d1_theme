@@ -50,8 +50,12 @@ function insert_degrade($str,$tipo=0){
             $str = str_replace("[degrade]","<span class='text-span-14'>",$str);
             $str = str_replace("[/degrade]","</span>",$str);
             break;
+        case 10 :
+            $str = str_replace("[degrade]","<span class='text-span-2'>",$str);
+            $str = str_replace("[/degrade]","</span>",$str);
+            break;
         default:
-            $str = str_replace("[degrade]","<span class='text-gradient'>",$str);
+            $str = str_replace("[degrade]","<span class='text-span-2'>",$str);
             $str = str_replace("[/degrade]","</span>",$str);
     }
     return $str;

@@ -30,6 +30,9 @@ class Data_Loader {
             case 'modulos':
                 $data = $this->get_modulos_data($id);
                 break;
+            case 'objetivos':
+                $data = $this->get_objetivos_data($id);
+                break;
             default :
                 break;
         }
@@ -84,6 +87,33 @@ class Data_Loader {
             $categoria              = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias where id = $id_categoria_case")),true);
             $case['categoria']      = !empty($categoria[0]) ? $categoria[0] : array();
             $this->data['data_modulos']['cases'][] = $case;
+        }
+        return $this->data;
+    }
+
+    private function get_objetivos_data($id){
+        global $wpdb;
+        $this->data['data_objetivos']                   = $this->all_data["d1_plugin_objetivos"];
+        $this->data['data_objetivos']                   = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_objetivos WHERE id=$id")),true);
+        $this->data['data_objetivos']                   = !empty($this->data['data_objetivos'][0]) ? $this->data['data_objetivos'][0] : array();
+        if(empty($id) || empty($this->data['data_objetivos'])){
+            wp_redirect(site_url() . '/404/');
+        }
+        $this->data['data_objetivos']['cases_options']  = !empty($this->data['data_objetivos']['cases_options']) ? json_decode($this->data['data_objetivos']['cases_options'],true) : array();
+        $this->data['data_objetivos']['challenge1']     = !empty($this->data['data_objetivos']['challenge1']) ? json_decode($this->data['data_objetivos']['challenge1'],true) : array();
+        $this->data['data_objetivos']['challenge2']     = !empty($this->data['data_objetivos']['challenge2']) ? json_decode($this->data['data_objetivos']['challenge2'],true) : array();
+        $this->data['data_objetivos']['challenge3']     = !empty($this->data['data_objetivos']['challenge3']) ? json_decode($this->data['data_objetivos']['challenge3'],true) : array();
+        $this->data['data_objetivos']['key_points']     = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_key_points WHERE id_segmento=$id AND page='objetivos'")),true);
+        $this->data['data_objetivos']['cases']          = array();
+        for($i=1;$i<=3;$i++){
+            $id_case                = $this->data['data_objetivos']['cases_options']["list_case$i"];
+            $case                   = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases where id_card = $id_case")),true);
+            $case                   = !empty($case[0]) ? $case[0] : array();
+            $id_categoria_case      = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) : array();
+            $id_categoria_case      = !empty($id_categoria_case['categoria_case']) ? $id_categoria_case['categoria_case'] : 0;
+            $categoria              = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias where id = $id_categoria_case")),true);
+            $case['categoria']      = !empty($categoria[0]) ? $categoria[0] : array();
+            $this->data['data_objetivos']['cases'][] = $case;
         }
         return $this->data;
     }
