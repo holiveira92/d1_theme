@@ -1,8 +1,8 @@
 <?php
 require_once 'data_loader.php';
 $data_loader        = new Data_Loader();
-$id_modulos         = (!empty($_GET['id'])) ? $_GET['id'] : 0;
-$slug               = (!empty($_GET['slug'])) ? $_GET['slug'] : "";
+$id_modulos         = get_query_var('id');
+$slug               = get_query_var('slug');
 $dados              = $data_loader->get('modulos',$id_modulos);
 $dados              = $dados['data_modulos'];
 get_header();
@@ -83,12 +83,12 @@ get_header();
     <div class="mycontainer">
         <div class="tabs-section-title-2col narrow">
             <h6 class="pad20"><?php echo $dados['cases_options']['cases_title'];?></h6>
-            <div class="link-text-arrow noinvert"><a href="../cases/" class="link-text-black">VER CASES</a><img src="<?php echo get_template_directory_uri();?>/images/arrowlink-black.svg" alt="" class="arrowlink"></div>
+            <div class="link-text-arrow noinvert"><a href="<?php echo get_home_url();?>/cases/" class="link-text-black">VER CASES</a><img src="<?php echo get_template_directory_uri();?>/images/arrowlink-black.svg" alt="" class="arrowlink"></div>
         </div>
         <div class="case-thumb-content-wrapper large" data-ix="fade-in-on-scroll">
         <?php foreach($dados['cases'] as $key=>$card): ?>
             <div class="case-thumb-content _200ms left" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('<?php echo $card['img_bg_url'];?>');background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $card['img_bg_url'];?>');">
-            <a href="case?slug=<?php echo sanitize_title($card['title_card']);?>&id=<?php echo $card['id_card'];?>" style='text-decoration:none;'>
+            <a href="<?php echo get_home_url();?>/case/<?php echo sanitize_title($card['title_card']);?>/<?php echo $card['id_card'];?>" style='text-decoration:none;'>
                 <h3 class="h1white left"><?php echo $card['title_card'];?></h3>
                 <h6 class="lightblue type-gradient"><?php echo $card['categoria']['descricao'];?></h6>
                 <div class="case-thumb-numbers">

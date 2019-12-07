@@ -102,7 +102,7 @@ get_header();
                     echo '<div id="case" class="div-block-75-copy">';
                 }
                 echo '<div class="case-thumb-content" name="item_case" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('.$case['img_bg_url'].');background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('.$case['img_bg_url'].');");">
-                    <a href="case?slug='.sanitize_title($case['title_card']).'&id='.$case['id_card'].'" style="text-decoration:none;">
+                    <a href="' .get_home_url() . '/case/'.sanitize_title($case['title_card']).'/'.$case['id_card'].'" style="text-decoration:none;">
                     <h3 class="h1white left small">'.$case['title_card'].'</h3>
                     <h6 class="lightblue left type-gradient">'.$case['subtitle_card'].'</h6>
                     <div class="case-thumb-numbers">
