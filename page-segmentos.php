@@ -6,6 +6,8 @@ function dirname_oldphp($path, $level = 0){
     array_splice($dir, $level);
     return implode($dir, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
 }
+$id     = get_query_var('id');
+$slug   = get_query_var('slug');
 require(trim(dirname_oldphp(__FILE__,4)) . "wp-load.php");
 wp_load_alloptions();
 require_once dirname_oldphp(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view_parser.php';
@@ -14,8 +16,8 @@ $d1_view_parser = new D1_View_Parser();
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";
 $GLOBALS["data"] = $d1_view_parser->get_data();
 $data_segmentos = $GLOBALS["data"]["d1_plugin_segmentos"];
-$id_segmento = (!empty($_GET['id'])) ? $_GET['id'] : 0;
-$slug = (!empty($_GET['slug'])) ? $_GET['slug'] : "";
+$id_segmento = (!empty($id)) ? $id : 0;
+$slug = (!empty($slug)) ? $slug : "";
 $segmento = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_segmentos WHERE id=$id_segmento")),true);
 $segmento = !empty($segmento[0]) ? $segmento[0] : array();
 $key_points = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_key_points where page = 'segmentos' AND id_segmento=$id_segmento")),true);
@@ -132,7 +134,7 @@ get_header();
 
     <div id="big-case" class="mycontainer">
         <div class="case-thumb-content-2" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('<?php echo $card['img_bg_url'];?>');background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $card['img_bg_url'];?>');">
-        <a href="case?slug=<?php echo sanitize_title($card['title_card']);?>&id=<?php echo $card['id_card'];?>" style='text-decoration:none;'>
+        <a href="<?php echo get_home_url();?>/case/<?php echo sanitize_title($card['title_card']);?>/<?php echo $card['id_card'];?>" style='text-decoration:none;'>
             <h3 class="h1white left2"><?php echo $card['title_card'];?></h3>
             <h6 class="lightblue type-gradient"><span><?php echo $card['subtitle_card'];?></span></h6>
             <div class="case-thumb-numbers">
