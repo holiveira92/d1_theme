@@ -192,7 +192,7 @@ foreach ($menu_pai as $key => &$menu) {
                         <div class="menu-conteudos-wrapper">
                             <a href="../nossa-jornada" class="black-menu-link">Nossa Jornada</a>
                             <a href="../seguranca" class="black-menu-link">Segurança & Conformidade</a>
-                            <a href="https://novo.d1.cx/#" class="black-menu-link">Carreiras</a>
+                            <a href="https://directone.gupy.io/" class="black-menu-link">Carreiras</a>
 
                     </nav>
                 </div>
