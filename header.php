@@ -64,7 +64,7 @@ foreach ($menu_pai as $key => &$menu) {
 <div class="wrapper-menu">
     <div class="div-block-69">
         <div class="div-block-70">
-            <div class="secondary-text type-gradient"><span>Quer saber as melhoras práticas do mercado de Customer Experience?</span></div><a href="https://medium.com/d1experience" class="link-top-menu">Descubra aqui</a>
+            <div class="secondary-text type-gradient"><span>Siga a D1 no LinkedIn para saber sobre os próximos eventos e novidades da empresa.</span></div><a href="https://www.linkedin.com/company/d1experience/" class="link-top-menu">Acesse aqui!</a>
         </div>
         <div><a href="https://app.direct.one" class="link-top-menu-copy type-gradient"><span>LOG IN</span></a>
             <div class="div-block-71 hide">
@@ -144,10 +144,10 @@ foreach ($menu_pai as $key => &$menu) {
                         <div class="menu-solucoes-wrapper">
                             <div class="menu-solucoes-column">
                                 <div class="dark-footer-subtitle notopline">SEGMENTOS</div>
-                                <a href="../segmentos/seguros/3" class="black-menu-link">Seguros</a>
-                                <a href="https://novo.d1.cx/segmentos/?slug=varejo&id=2" class="black-menu-link">Varejo</a>
-                                <a href="https://novo.d1.cx/segmentos/?slug=servicos-financeiros&id=1" class="black-menu-link">Serviços Financeiros</a>
-                                <a href="https://novo.d1.cx/segmentos/?slug=saude&id=4" class="black-menu-link">Saúde</a>
+                                <a href="https://d1new.wpengine.com/segmentos/seguros/3" class="black-menu-link">Seguros</a>
+                                <a href="https://d1new.wpengine.com/segmentos/varejo/2" class="black-menu-link">Varejo</a>
+                                <a href="https://d1new.wpengine.com/segmentos/servicos-financeiros/1" class="black-menu-link">Serviços Financeiros</a>
+                                <a href="https://d1new.wpengine.com/segmentos/saude/4" class="black-menu-link">Saúde</a>
                             </div>
                             <!--<div class="menu-solucoes-column">
                                 <div class="dark-footer-subtitle lineup">DEPARTAMENTOS</div><a href="#" class="black-menu-link">Atendimento</a><a href="#" class="black-menu-link">Operações</a><a href="#" class="black-menu-link">Marketing</a><a href="#" class="black-menu-link">Gestão</a><a href="#" class="black-menu-link noline">Tecnologia</a>
@@ -178,7 +178,7 @@ foreach ($menu_pai as $key => &$menu) {
                     <nav class="dropdown-preco w-dropdown-list" id="w-dropdown-list-4">
                         <div class="menu-select-preco"></div>
                         <div class="menu-preco-wrapper">
-                            <div class="body-text-white">Saiba para onde vai seu investimento</div>
+                            <div class="body-text-white">Comece a sua jornada aqui</div>
                             <div class="menu-preco"><a href="../preco/" class="body-text-link3 precocta">VER&nbsp;PÁGINA DE ORÇAMENTOS</a><img src="https://d1new.wpengine.com/conteudo/themes/d1_theme/images/arrowlink-black.svg" alt="" class="arrowlink"></div>
                         </div>
                     </nav>

@@ -474,11 +474,6 @@ h6 {
   padding-right: 63px;
 }
 
-.home-hero-right {
-  width: 30%;
-  text-align: left;
-}
-
 .home-hero-right.right {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1352,6 +1347,16 @@ h6 {
 
 .h6-gradient-copy.type-gradient {
   text-align: right;
+}
+
+.centralize-img {
+  position: relative;
+}
+
+.centralize-img img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .dark-footer-title {

@@ -32,7 +32,11 @@ get_header();
                     <h1 class="h1white pad20 white nomargin white"><?php echo $data_preco['preco_secao1_main_title'];?></h1>
                     <div class="h1white black left"><?php echo $data_preco['preco_secao1_descricao'];?></div>
                     <div>
-                        <p class="h1white black left"><?php echo $data_preco['preco_secao1_descricao_secundaria'];?></p>
+                        <p class="h1white black left">
+                            <div>
+                                <?php echo html_entity_decode($data_preco['preco_secao1_descricao_secundaria']);?>
+                            </div>
+                        </p>
                     </div>
                 </div>
 

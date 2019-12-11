@@ -71,7 +71,7 @@ get_header();
             <?php
                 $seguranca = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_seguranca where tipo = 'seguranca' ")),true);
                 $cont=1;
-                $class_tab_active_new = ($cont==1) ? "w--current" : "";
+                $class_tab_active_new = ($cont==1) ? "" : "";
                 foreach($seguranca as $k=>$item):
 
                 ?>
@@ -128,7 +128,7 @@ get_header();
             foreach($conformidade as $k=>$item):
 
         ?>
-        <div class="div-block-48 _8mrgn"><img src="<?php echo $item['url_img'];?>" alt="">
+        <div class="div-block-48 _8mrgn"><div class="centralize-img"><img src="<?php echo $item['url_img'];?>" alt=""></div>
             <h3><?php echo $item['title'];?></h3>
             <div class="body-text-2"><?php echo $item['description'];?></div>
         </div>

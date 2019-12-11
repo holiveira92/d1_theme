@@ -504,9 +504,13 @@
    }
    
    .home-hero-right {
-     width: 30%;
-     text-align: left;
-   }
+    width: 30%;
+    text-align: left;
+    align-items: flex-end!important;
+      -webkit-box-align: end;
+      -webkit-align-items: flex-end;
+    margin-top: 20%;  
+    }
    
    .home-hero-right.right {
      display: -webkit-box;

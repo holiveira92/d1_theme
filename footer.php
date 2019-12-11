@@ -151,7 +151,7 @@ $group_links = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wp
                     </div>
                 </div>
 
-                <div class="div-block-72">
+                <div class="div-block-72 hide">
                     <!-- Regulamentação, Parceiros e Premios -->
                     <div>
                         <div>
@@ -185,7 +185,7 @@ $group_links = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wp
                 <div class="body-text-small"><?php echo $data['secao6_pitch']; ?>
                     <br>
                 </div>
-                <h6 class="h6-gradient-copy type-gradient"><span>© 2019 D1</span></h6>
+                <h6 class="h6-gradient-copy type-gradient"><span>© <?php echo date("Y"); ?> D1</span></h6>
             </div>
         </div>
     </div>
