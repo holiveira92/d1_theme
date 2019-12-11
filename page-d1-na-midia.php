@@ -36,16 +36,16 @@ get_header();
         <div class="noticias-title">
             <h6>NOTÍCIAS</h6>
         </div>
-        <div id="noticias" class="div-block-62">
+        <div id="noticias" class="div-block-62" style="display: flex;flex-wrap: wrap;">
         <?php
             $cont = 0;
             foreach($dados['noticias'] as $key=>$noticia):
                 if($dados['destaque']['id'] == $noticia['id'])
                     continue;
         ?>
-            <a href="<?php echo $noticia['link'];?>"  target="_blank" class="card-midia margin type-gradient w-inline-block">
-                <div class="div-block-59" style='background-image: url("<?php echo $noticia['url_img_bg'];?>");'></div>
+            <a href="<?php echo $noticia['link'];?>"  target="_blank" class="card-midia margin type-gradient w-inline-block" style="display: flex;flex: 1 0 29%;">
                 <div class="div-block-61">
+                    <img class="div-block-59" src="<?php echo $noticia['url_img_bg'];?>">
                     <h3><?php echo $noticia['title'];?></h3>
                     <p class="paragraph-6"><?php echo $noticia['content'];?></p>
                     <div class="div-block-66">
