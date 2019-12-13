@@ -107,14 +107,14 @@ get_header();
             <div class="case-thumb-content-wrapper large" data-ix="fade-in-on-scroll">
                 <?php
                 for($i=1;$i<=3;$i++):
-                    $key_select = "secao2_select_card_cases" . $i;
-                    $query = "SELECT * FROM " . $wpdb->prefix . "d1_cases where id_card = '" . $data_home[$key_select] ."'";
-                    $cards = json_decode(json_encode($wpdb->get_results($query)),true);
-                    foreach($cards as $key=>$card):
-                        $id_categoria_case      = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) : array();
-                        $id_categoria_case      = !empty($id_categoria_case['categoria_case']) ? $id_categoria_case['categoria_case'] : 0;
-                        $categoria              = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias where id = $id_categoria_case")),true);
-                        $categoria              = !empty($categoria[0]) ? $categoria[0] : array('descricao' => '');
+                    $key_select             = "secao2_select_card_cases" . $i;
+                    $query                  = "SELECT * FROM " . $wpdb->prefix . "d1_cases where id_card = '" . $data_home[$key_select] ."'";
+                    $card                   = json_decode(json_encode($wpdb->get_results($query)),true);
+                    $card                   = !empty($card[0]) ? $card[0] : array();
+                    $id_categoria_case      = !empty($card['cases_options']) ? json_decode($card['cases_options'],true) : array();
+                    $id_categoria_case      = !empty($id_categoria_case['categoria_case']) ? $id_categoria_case['categoria_case'] : 0;
+                    $categoria              = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias where id = $id_categoria_case")),true);
+                    $categoria              = !empty($categoria[0]) ? $categoria[0] : array('descricao' => '');
                     ?>
                     <div class="case-thumb-content _200ms left" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('<?php echo $card['img_bg_url'];?>');background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $card['img_bg_url'];?>');">
                     <a href="<?php echo get_home_url();?>/case/<?php echo sanitize_title($card['title_card']);?>/<?php echo $card['id_card'];?>" style='text-decoration:none;'>
@@ -127,7 +127,7 @@ get_header();
                         <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink.svg" alt="" class="image-20" style='float:right;'>
                     </div>
                     </a>
-                <?php endforeach; endfor; ?>
+                <?php endfor; ?>
             </div>
         </div>
     </div>
