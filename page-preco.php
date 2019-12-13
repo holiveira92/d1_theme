@@ -123,12 +123,15 @@ get_header();
                     $query = "SELECT * FROM " . $wpdb->prefix . "d1_cases where id_card = '" . $data_preco[$key_select] ."'";
                     $cards = json_decode(json_encode($wpdb->get_results($query)),true);
                     foreach($cards as $key=>$card):
-                        
+                        $id_categoria_case      = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) : array();
+                        $id_categoria_case      = !empty($id_categoria_case['categoria_case']) ? $id_categoria_case['categoria_case'] : 0;
+                        $categoria              = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias where id = $id_categoria_case")),true);
+                        $categoria              = !empty($categoria[0]) ? $categoria[0] : array('descricao' => '');
                     ?>
                     <div class="case-thumb-content _200ms left" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('<?php echo $card['img_bg_url'];?>');background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $card['img_bg_url'];?>');">
                     <a href="<?php echo get_home_url();?>/case/<?php echo sanitize_title($card['title_card']);?>/<?php echo $card['id_card'];?>" style='text-decoration:none;'>
                         <h3 class="h1white left"><?php echo $card['title_card'];?></h3>
-                        <h6 class="lightblue type-gradient"><span><?php echo $card['subtitle_card'];?></span></h6>
+                        <h6 class="lightblue type-gradient"><span><?php echo $categoria['descricao'];?></span></h6>
                         <div class="case-thumb-numbers">
                             <h5 class="heading-2 pad20 white huge left"><?php echo $card['text_footer_card'];?></h5>
                             <div class="h1white left tiny"><?php echo $card['subtext_footer_card'];?></div>
