@@ -70,9 +70,19 @@ get_header();
         $i=0;
         $cases = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases ORDER BY id_card DESC ")),true);
         $case_destaque = array();
-        if(!empty($cases[0])){
-            $case_destaque = $cases[0];
-            unset($cases[0]);
+        foreach($cases as $key=>$case){
+            $cases_options = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) :array() ;
+            $is_whitepaper  = (!empty($cases_options['is_whitepaper']) && $cases_options['is_whitepaper']) ? true : false;
+            if($is_whitepaper){
+                continue;
+            }else{
+                $case_destaque = $case;
+                $chave = $key;
+                break;
+            }
+        }
+        if(!empty($chave)){
+            unset($cases[$chave]);
             $cases = array_values($cases);
         }
     ?>
@@ -97,6 +107,9 @@ get_header();
                 $id_categoria_case = !empty($cases_options['categoria_case']) ? $cases_options['categoria_case'] : 0;
                 $categoria_case = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias WHERE id=$id_categoria_case")),true);
                 $categoria_case = !empty($categoria_case[0]) ? $categoria_case[0] : array('descricao' => '');
+                $is_whitepaper  = (!empty($cases_options['is_whitepaper']) && $cases_options['is_whitepaper']) ? true : false;
+                if($is_whitepaper)
+                    continue;
                 if($i==2){
                     $i=0;
                     echo '<div id="case" class="div-block-75-copy">';

@@ -71,9 +71,14 @@ get_header();
             <div class="link-text-arrow noinvert"><a href="../cases/" class="link-text-black">VER CASES</a><img src="<?php echo get_template_directory_uri();?>/images/arrowlink-black.svg" alt="" class="arrowlink"></div>
         </div>
         <div class="case-thumb-content-wrapper large" data-ix="fade-in-on-scroll">
-        <?php foreach($dados['cases'] as $key=>$card): ?>
+        <?php foreach($dados['cases'] as $key=>$card): 
+            $is_whitepaper  = (!empty($card['is_whitepaper']) && $card['is_whitepaper']) ? $card['is_whitepaper'] : false;
+            $link           = ($is_whitepaper) ? $card['card_link'] : get_home_url() ."/case/" . sanitize_title($card['title_card']) . "/" . $card['id_card'];
+            $target         = ($is_whitepaper) ? "_blank" : "_self";
+            $card['categoria']['descricao'] = ($is_whitepaper) ? $card['subtitle_card'] : $card['categoria']['descricao'];    
+        ?>
             <div class="case-thumb-content _200ms left" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('<?php echo $card['img_bg_url'];?>');background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $card['img_bg_url'];?>');">
-            <a href="<?php echo get_home_url();?>/case/<?php echo sanitize_title($card['title_card']);?>/<?php echo $card['id_card'];?>" style='text-decoration:none;'>
+            <a href="<?php echo $link;?>" target="<?php echo $target;?>" style='text-decoration:none;'>
                 <h3 class="h1white left"><?php echo $card['title_card'];?></h3>
                 <h6 class="lightblue type-gradient"><?php echo $card['categoria']['descricao'];?></h6>
                 <div class="case-thumb-numbers">

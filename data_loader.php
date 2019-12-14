@@ -58,8 +58,9 @@ class Data_Loader {
             $id_case                = $this->data['data_midia']["midia_secao2_case$i"];
             $case                   = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases where id_card = $id_case")),true);
             $case                   = !empty($case[0]) ? $case[0] : array();
-            $id_categoria_case      = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) : array();
-            $id_categoria_case      = !empty($id_categoria_case['categoria_case']) ? $id_categoria_case['categoria_case'] : 0;
+            $cases_options          = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) : array();
+            $id_categoria_case      = !empty($cases_options['categoria_case']) ? $cases_options['categoria_case'] : 0;
+            $case['is_whitepaper']  = !empty($cases_options['is_whitepaper']) ? $cases_options['is_whitepaper'] : 0;
             $categoria              = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias where id = $id_categoria_case")),true);
             $case['categoria']      = !empty($categoria[0]) ? $categoria[0] : array();
             $this->data['data_midia']['cases'][] = $case;
@@ -85,8 +86,9 @@ class Data_Loader {
             $id_case                = $this->data['data_modulos']['cases_options']["list_case$i"];
             $case                   = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases where id_card = $id_case")),true);
             $case                   = !empty($case[0]) ? $case[0] : array();
-            $id_categoria_case      = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) : array();
-            $id_categoria_case      = !empty($id_categoria_case['categoria_case']) ? $id_categoria_case['categoria_case'] : 0;
+            $cases_options          = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) : array();
+            $id_categoria_case      = !empty($cases_options['categoria_case']) ? $cases_options['categoria_case'] : 0;
+            $case['is_whitepaper']  = !empty($cases_options['is_whitepaper']) ? $cases_options['is_whitepaper'] : 0;
             $categoria              = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias where id = $id_categoria_case")),true);
             $case['categoria']      = !empty($categoria[0]) ? $categoria[0] : array();
             $this->data['data_modulos']['cases'][] = $case;
@@ -112,8 +114,9 @@ class Data_Loader {
             $id_case                = $this->data['data_objetivos']['cases_options']["list_case$i"];
             $case                   = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases where id_card = $id_case")),true);
             $case                   = !empty($case[0]) ? $case[0] : array();
-            $id_categoria_case      = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) : array();
-            $id_categoria_case      = !empty($id_categoria_case['categoria_case']) ? $id_categoria_case['categoria_case'] : 0;
+            $cases_options          = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) : array();
+            $id_categoria_case      = !empty($cases_options['categoria_case']) ? $cases_options['categoria_case'] : 0;
+            $case['is_whitepaper']  = !empty($cases_options['is_whitepaper']) ? $cases_options['is_whitepaper'] : 0;
             $categoria              = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias where id = $id_categoria_case")),true);
             $case['categoria']      = !empty($categoria[0]) ? $categoria[0] : array();
             $this->data['data_objetivos']['cases'][] = $case;
@@ -141,8 +144,9 @@ class Data_Loader {
             $id_case                = $this->data['data_departamentos']['cases_options']["list_case$i"];
             $case                   = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases where id_card = $id_case")),true);
             $case                   = !empty($case[0]) ? $case[0] : array();
-            $id_categoria_case      = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) : array();
-            $id_categoria_case      = !empty($id_categoria_case['categoria_case']) ? $id_categoria_case['categoria_case'] : 0;
+            $cases_options          = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) : array();
+            $id_categoria_case      = !empty($cases_options['categoria_case']) ? $cases_options['categoria_case'] : 0;
+            $case['is_whitepaper']  = !empty($cases_options['is_whitepaper']) ? $cases_options['is_whitepaper'] : 0;
             $categoria              = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias where id = $id_categoria_case")),true);
             $case['categoria']      = !empty($categoria[0]) ? $categoria[0] : array();
             $this->data['data_departamentos']['cases'][] = $case;
