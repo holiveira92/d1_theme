@@ -1,5 +1,6 @@
 <?php
 require_once dirname_oldphp(__FILE__, 3) . 'plugins/d1_plugin/includes/base/d1_view_parser.php';
+require_once dirname_oldphp(__FILE__, 3) . 'themes/d1_theme/menu_tree.php';
 global $wpdb;
 $d1_view_parser = new D1_View_Parser();
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";
@@ -10,31 +11,15 @@ $id_menu_cta = $data_header['d1_menu_cta'];
 $id_menu_cta = !empty($id_menu_cta) ? $id_menu_cta : 0;
 $menu_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_call_to_action WHERE id=$id_menu_cta")), true);
 $menu_cta = !empty($menu_cta[0]) ? $menu_cta[0] : array();
-$menu = wp_get_nav_menus('d1_theme');
-$menu_itens = wp_get_nav_menu_items($menu[0]->term_id);
-$menu_pai = array();
-//pre($menu_itens);die;
-foreach ($menu_itens as $key => $menu) {
-    if ($menu->menu_item_parent == 0) {
-        $menu_pai[] = array(
-            'id' => $menu->ID,
-            'title' => $menu->title,
-            'subitems' => array()
-        );
-    }
-}
-foreach ($menu_pai as $key => &$menu) {
-    foreach ($menu_itens as $key => $item) {
-        if ($item->menu_item_parent == $menu['id']) {
-            $menu['subitems'][] = array(
-                'id' => $item->ID,
-                'title' => $item->title,
-                'url' => $item->url,
-            );
-        }
-    }
-}
+$menu = array_values(get_d1_menu_tree('menu_principal'));
+/*
+//buscando imagem do plugin "menu image" , este codigo irá inserir o elemento imagem de fato
+//wp_get_attachment_image( $attachment_id, $size, $icon, $attr );//https://developer.wordpress.org/reference/functions/wp_get_attachment_image/
 
+//este codigo irá buscar a URL da imagem, uma outra maneira
+pre(wp_get_attachment_url($menu[0]->thumbnail_id));die;
+pre(wp_get_attachment_image($menu[0]->thumbnail_id));die;
+*/
 ?>
 
 <head>
