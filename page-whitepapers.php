@@ -23,46 +23,7 @@ get_header();
 
 <div class="section-wrapper-large no-padding-bottom">
 <input type="hidden" id="url_ajax" name="url_ajax" value="<?php echo $url_ajax;?>">
-    <div id="filtro" class="div-block-36">
-        <div data-duration-in="100" data-duration-out="100" class="tabs-4 w-tabs">
-            <div class="tabs-menu-5 w-tab-menu" data-ix="fade-in-on-load">
-                <a data-w-tab="Tab 1" class="case-overview-link w-inline-block w-tab-link w--current" categoria="0">
-                    <div class="casetab type-gradient"><span>TODOS</span></div>
-                </a>
-                <?php
-                $cont = 2;
-                foreach($categorias_pai as $key=>$categoria):
-                    
-                ?>
-                <a data-w-tab="Tab <?php echo $cont;?>" class="case-overview-link w-inline-block w-tab-link" categoria="<?php echo $categoria['id'];?>">
-                    <div class="casetab type-gradient"><span><?php echo $categoria['descricao'];?></span></div>
-                </a>
-                <?php $cont++; endforeach; ?>
-
-            </div>
-
-            <div class="tabs-content-4 w-tab-content">
-                <div data-w-tab="Tab 1" class="tab-pane-tab-1-2 w-tab-pane w--tab-active"></div>
-                <?php
-                $cont = 2;
-                foreach($categorias_pai as $k=>$categoria):
-                    $id_categoria = $categoria['id'];
-                    $filhos = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias WHERE id_categoria=$id_categoria ")),true);
-                ?>
-                    <div data-w-tab="Tab <?php echo $cont;?>" class="tab-pane-tab-<?php echo $cont;?> w-tab-pane">
-                        <?php
-                            foreach($filhos as $key=>$item):
-                        ?>
-                            <a class="case-overview-link" categoria="<?php echo $item['id'];?>" style="cursor:pointer"><?php echo $item['descricao'];?></a>
-                        <?php endforeach; ?>
-                    </div>
-                <?php $cont++; endforeach; ?>
-
-            </div>
-
-        </div>
-    </div>
-
+<div id="filtro" class="div-block-36"> </div>
     <!-- SEÇÃO CASES DE SUCESSO -->
     <div id="cases" class="mycontainer" data-ix="fade-in-on-load-2">
     <div name="cases_list" categoria="0">
@@ -73,7 +34,7 @@ get_header();
         foreach($cases as $key=>$case){
             $cases_options = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) :array() ;
             $is_whitepaper  = (!empty($cases_options['is_whitepaper']) && $cases_options['is_whitepaper']) ? true : false;
-            if($is_whitepaper){
+            if(!$is_whitepaper){
                 continue;
             }else{
                 $case_destaque = $case;
@@ -88,7 +49,7 @@ get_header();
     ?>
         <div id="case" class="div-block-75">
             <div class="case-thumb-content" name='item_case' style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('<?php echo $case_destaque['img_bg_url']; ?>');background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $case_destaque['img_bg_url'];?>');">
-            <a href="<?php echo get_home_url();?>/case/<?php echo sanitize_title($case_destaque['title_card']);?>/<?php echo $case_destaque['id_card'];?>" style='text-decoration:none;'>
+            <a href="<?php echo $case_destaque['card_link'];?>" target="_blank" style='text-decoration:none;'>
                 <h3 class="h1white left small"><?php echo $case_destaque['title_card'];?></h3>
                 <h6 class="lightblue type-gradient"><span><?php echo $case_destaque['subtitle_card'];?></span></h6>
                 <div class="case-thumb-numbers">
@@ -108,14 +69,14 @@ get_header();
                 $categoria_case = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias WHERE id=$id_categoria_case")),true);
                 $categoria_case = !empty($categoria_case[0]) ? $categoria_case[0] : array('descricao' => '');
                 $is_whitepaper  = (!empty($cases_options['is_whitepaper']) && $cases_options['is_whitepaper']) ? true : false;
-                if($is_whitepaper)
+                if(!$is_whitepaper)
                     continue;
                 if($i==2){
                     $i=0;
                     echo '<div id="case" class="div-block-75-copy">';
                 }
                 echo '<div class="case-thumb-content" name="item_case" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('.$case['img_bg_url'].');background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('.$case['img_bg_url'].');");">
-                    <a href="' .get_home_url() . '/case/'.sanitize_title($case['title_card']).'/'.$case['id_card'].'" style="text-decoration:none;">
+                    <a href="' . $case['card_link'] .'" target="_blank" style="text-decoration:none;">
                     <h3 class="h1white left small">'.$case['title_card'].'</h3>
                     <h6 class="lightblue left type-gradient">'.$categoria_case['descricao'].'</h6>
                     <div class="case-thumb-numbers">
@@ -145,20 +106,6 @@ get_header();
 jQuery(document).ready(function($) {
     var url_ajax = $("#url_ajax").val();
 
-    $('.case-overview-link').click(function(){
-        var id_categoria = $(this).attr('categoria');
-        var div_cases = $("#cases");
-        var cases_list = $("#cases").find('div[name*=cases_list]');
-        $.ajax({
-            url: url_ajax + "?id_categoria=" + id_categoria,
-            success: function(data){
-                $('#loader').show();
-                cases_list.remove();
-                div_cases.append(data).end();
-                $('#loader').hide();
-            }
-        });
-    }); 
 
 });
 </script>
