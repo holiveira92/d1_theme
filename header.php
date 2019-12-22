@@ -49,9 +49,10 @@ pre(wp_get_attachment_image($menu[0]->thumbnail_id));die;
 <div class="wrapper-menu">
     <div class="div-block-69">
         <div class="div-block-70">
-            <div class="secondary-text type-gradient"><span>Siga a D1 no LinkedIn para saber sobre os próximos eventos e novidades da empresa.</span></div><a href="https://www.linkedin.com/company/d1experience/" class="link-top-menu">Acesse aqui!</a>
+            <div class="secondary-text type-gradient"><span><?php echo $data_header['top_bar_desc']; ?></span>
+            </div><a href="<?php echo $data_header['top_bar_link']; ?>" class="link-top-menu"><?php echo $data_header['top_bar_text_link']; ?></a>
         </div>
-        <div><a href="https://app.direct.one" class="link-top-menu-copy type-gradient"><span>LOG IN</span></a>
+        <div><a href="<?php echo $data_header['top_bar_login_link']; ?>" class="link-top-menu-copy type-gradient"><span><?php echo $data_header['top_bar_text_login_link']; ?></span></a>
             <div class="div-block-71 hide">
                 <div data-delay="0" class="dropdown-3 w-dropdown">
                     <div class="dropdown-toggle-3 w-dropdown-toggle">
