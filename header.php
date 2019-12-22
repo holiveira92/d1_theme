@@ -15,10 +15,9 @@ $menu = array_values(get_d1_menu_tree('menu_principal'));
 /*
 //buscando imagem do plugin "menu image" , este codigo irá inserir o elemento imagem de fato
 //wp_get_attachment_image( $attachment_id, $size, $icon, $attr );//https://developer.wordpress.org/reference/functions/wp_get_attachment_image/
-
 //este codigo irá buscar a URL da imagem, uma outra maneira
-pre(wp_get_attachment_url($menu[0]->thumbnail_id));die;
-pre(wp_get_attachment_image($menu[0]->thumbnail_id));die;
+//pre(wp_get_attachment_url($menu[0]->thumbnail_id));die;
+//pre(wp_get_attachment_image($menu[0]->thumbnail_id));die;
 */
 ?>
 
@@ -74,112 +73,94 @@ pre(wp_get_attachment_image($menu[0]->thumbnail_id));die;
             <div class="menu-wrapper mobi w-clearfix">
                 <div data-delay="0" data-hover="1" class="dropdown w-dropdown" role="menu" aria-labelled-by="w-dropdown-toggle-1" style="">
                     <div class="menulink w-dropdown-toggle" tabindex="0" id="w-dropdown-toggle-1" aria-controls="w-dropdown-list-1" aria-haspopup="menu" style="outline: none;">
-                    <a href="../plataforma/"><div class="text-block-4 ">PLATAFORMA</div></a>
+                    <a href="#"><div class="text-block-4 "><?php echo $menu[0]->title; ?></div></a>
                     </div>
-                    <!--<nav class="dropdown-plataforma w-dropdown-list" id="w-dropdown-list-1">
+                    <nav class="dropdown-plataforma w-dropdown-list" id="w-dropdown-list-1">
                         <div class="menu-select-plataforma"></div>
                         <div class="menu-plataforma-wrapper">
                             <div class="div-block-112">
-                                <div class="menu-item-wrapper"><a href="#" class="menu-item w-inline-block">
-                                        <div class="plat-menu-journey"></div>
+                            <?php 
+                            $cont = 1;
+                            foreach($menu[0]->wpse_children as $key=>$wpse):
+                                $icon = wp_get_attachment_url($wpse->thumbnail_id);
+                                $icon = !empty($icon) ? $icon : $img_default ;
+                            ?>
+                                <div class="menu-item-wrapper">
+                                    <a href="<?php echo $wpse->url;?>" class="menu-item w-inline-block">
+                                        <div class="plat-menu-journey" style='background-image: url("<?php echo $icon;?>");'></div>
                                         <div class="div-block-22">
-                                            <div class="select-item link">Journeys</div>
-                                            <div class="secondary-text-link">Construa jornadas otimizadas e reduza seus custos</div>
+                                            <div class="select-item link"><?php echo $wpse->title;?></div>
+                                            <div class="secondary-text-link"><?php echo $wpse->description;?></div>
                                         </div>
-                                    </a></div>
-                                <div class="menu-item-wrapper"><a href="#" class="menu-item w-inline-block">
-                                        <div class="plat-menu-customeinsights"></div>
-                                        <div class="div-block-22">
-                                            <div class="select-item link">Customer Insights</div>
-                                            <div class="secondary-text-link">Construa jornadas otimizadas e reduza seus custos</div>
-                                        </div>
-                                    </a></div>
-                                <div class="menu-item-wrapper"><a href="#" class="menu-item w-inline-block">
-                                        <div class="plat-menu-multichannel"></div>
-                                        <div class="div-block-22">
-                                            <div class="select-item link">Multichannel</div>
-                                            <div class="secondary-text-link">Construa jornadas otimizadas e reduza seus custos</div>
-                                        </div>
-                                    </a></div>
-                            </div>
-                            <div>
-                                <div class="menu-item-wrapper"><a href="#" class="menu-item w-inline-block">
-                                        <div class="plat-menu-blockchain"></div>
-                                        <div class="div-block-22">
-                                            <div class="select-item link">Blockchain</div>
-                                            <div class="secondary-text-link">Construa jornadas otimizadas e reduza seus custos</div>
-                                        </div>
-                                    </a></div>
-                                <div class="menu-item-wrapper"><a href="#" class="menu-item w-inline-block">
-                                        <div class="plat-menu-documents"></div>
-                                        <div class="div-block-22">
-                                            <div class="select-item link">Documents</div>
-                                            <div class="secondary-text-link">Construa jornadas otimizadas e reduza seus custos</div>
-                                        </div>
-                                    </a></div>
+                                    </a>
+                                </div>
+                            <?php $cont++; endforeach;?>
                             </div>
                         </div>
-                    </nav>-->
+                    </nav>
                 </div>
                 <div data-delay="0" data-hover="1" class="dropdown w-dropdown" role="menu" aria-labelled-by="w-dropdown-toggle-2" style="">
                     <div class="menulink w-dropdown-toggle" tabindex="0" id="w-dropdown-toggle-2" aria-controls="w-dropdown-list-2" aria-haspopup="menu" style="outline: none;">
-                        <div class="text-block-4">SOLUÇÕES</div>
+                        <div class="text-block-4"><?php echo $menu[1]->title; ?></div>
                     </div>
                     <nav class="dropdown-segmentos w-dropdown-list" id="w-dropdown-list-2">
                         <div class="menu-select-segmentos"></div>
                         <div class="menu-solucoes-wrapper">
-                            <div class="menu-solucoes-column">
-                                <div class="dark-footer-subtitle notopline">SEGMENTOS</div>
-                                <a href="https://d1new.wpengine.com/segmentos/seguros/3" class="black-menu-link">Seguros</a>
-                                <a href="https://d1new.wpengine.com/segmentos/varejo/2" class="black-menu-link">Varejo</a>
-                                <a href="https://d1new.wpengine.com/segmentos/servicos-financeiros/1" class="black-menu-link">Serviços Financeiros</a>
-                                <a href="https://d1new.wpengine.com/segmentos/saude/4" class="black-menu-link">Saúde</a>
-                            </div>
-                            <!--<div class="menu-solucoes-column">
-                                <div class="dark-footer-subtitle lineup">DEPARTAMENTOS</div><a href="#" class="black-menu-link">Atendimento</a><a href="#" class="black-menu-link">Operações</a><a href="#" class="black-menu-link">Marketing</a><a href="#" class="black-menu-link">Gestão</a><a href="#" class="black-menu-link noline">Tecnologia</a>
-                            </div>
-                            <div class="menu-solucoes-column">
-                                <div class="dark-footer-subtitle">OBJETIVOS</div><a href="#" class="black-menu-link">Satisfação do Cliente</a><a href="#" class="black-menu-link">Redução de Custos</a><a href="#" class="black-menu-link noline">Retenção de Custos</a>
-                            </div>-->
+                            <?php foreach($menu[1]->wpse_children as $key=>$wpse): ?>
+                                <div class="menu-solucoes-column">
+                                <div class="dark-footer-subtitle notopline"><?php echo $wpse->title;?></div>
+                                <?php 
+                                    foreach($wpse->wpse_children as $k=>$v):
+                                ?>
+                                    <a href="<?php echo $v->url;?>" class="black-menu-link"><?php echo $v->title;?></a>
+                                    <?php endforeach;?>
+                                </div>
+                                <?php endforeach;?>
                         </div>
                     </nav>
                 </div>
+
                 <div data-delay="0" data-hover="1" class="dropdown w-dropdown" role="menu" aria-labelled-by="w-dropdown-toggle-3" style="">
                     <div class="menulink w-dropdown-toggle" tabindex="0" id="w-dropdown-toggle-3" aria-controls="w-dropdown-list-3" aria-haspopup="menu" style="outline: none;">
-                        <div class="text-block-4">CONTEÚDOS</div>
+                        <div class="text-block-4"><?php echo $menu[2]->title; ?></div>
                     </div>
                     <nav class="dropdown-conteudo w-dropdown-list" id="w-dropdown-list-3">
                         <div class="menu-select-conteudos"></div>
                         <div class="menu-conteudos-wrapper">
-                            <a href="../cases/" class="black-menu-link">Cases</a>
-                            <!--<a href="#" class="black-menu-link">Whitepapers</a>
-                            <a href="#" class="black-menu-link">Webinars</a>-->
-                            <a href="https://medium.com/d1experience" class="black-menu-link">Blog</a></div>
+                            <?php foreach($menu[2]->wpse_children as $key=>$wpse): ?>
+                                <a href="<?php echo $wpse->url;?>" class="black-menu-link"><?php echo $wpse->title;?></a>
+                            <?php endforeach;?> 
                     </nav>
                 </div>
+
                 <div data-delay="0" data-hover="1" class="dropdown w-dropdown" role="menu" aria-labelled-by="w-dropdown-toggle-4">
                     <div class="menulink w-dropdown-toggle" tabindex="0" id="w-dropdown-toggle-4" aria-controls="w-dropdown-list-4" aria-haspopup="menu" style="outline: none;">
-                        <div class="text-block-4">PREÇO</div>
+                        <div class="text-block-4"><?php echo $menu[3]->title; ?></div>
                     </div>
+                    <?php foreach($menu[3]->wpse_children as $key=>$wpse): ?>
                     <nav class="dropdown-preco w-dropdown-list" id="w-dropdown-list-4">
                         <div class="menu-select-preco"></div>
                         <div class="menu-preco-wrapper">
-                            <div class="body-text-white">Comece a sua jornada aqui</div>
-                            <div class="menu-preco"><a href="../preco/" class="body-text-link3 precocta">VER&nbsp;PÁGINA DE ORÇAMENTOS</a><img src="https://d1new.wpengine.com/conteudo/themes/d1_theme/images/arrowlink-black.svg" alt="" class="arrowlink"></div>
+                            <div class="body-text-white"><?php echo $wpse->description;?></div>
+                            <div class="menu-preco">
+                                <a href="<?php echo $wpse->url;?>" class="body-text-link3 precocta"><?php echo $wpse->title;?></a>
+                                <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink">
+                            </div>
                         </div>
                     </nav>
+                    <?php endforeach;?> 
                 </div>
+
                 <div data-delay="0" data-hover="1" class="dropdown w-dropdown" role="menu" aria-labelled-by="w-dropdown-toggle-5">
                     <div class="menulink w-dropdown-toggle" tabindex="0" id="w-dropdown-toggle-5" aria-controls="w-dropdown-list-5" aria-haspopup="menu" style="outline: none;">
-                        <div class="text-block-4">SOBRE</div>
+                        <div class="text-block-4"><?php echo $menu[4]->title; ?></div>
                     </div>
                     <nav class="dropdown-conteudo w-dropdown-list" id="w-dropdown-list-5">
                         <div class="menu-select-sobre"></div>
                         <div class="menu-conteudos-wrapper">
-                            <a href="../nossa-jornada" class="black-menu-link">Nossa Jornada</a>
-                            <a href="../seguranca" class="black-menu-link">Segurança & Conformidade</a>
-                            <a href="https://directone.gupy.io/" class="black-menu-link">Carreiras</a>
-
+                        <?php foreach($menu[4]->wpse_children as $key=>$wpse): ?>
+                            <a href="<?php echo $wpse->url;?>" class="black-menu-link"><?php echo $wpse->title;?></a>
+                        <?php endforeach;?> 
                     </nav>
                 </div>
                 <div class="div-block-32"><a href="../contato" class="btn-black-home-outline herp line type-gradient w-button">FALAR&nbsp;COM&nbsp;ESPECIALISTA</a></div>
