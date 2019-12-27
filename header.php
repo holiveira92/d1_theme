@@ -4,7 +4,10 @@ require_once dirname_oldphp(__FILE__, 3) . 'themes/d1_theme/menu_tree.php';
 global $wpdb;
 $d1_view_parser = new D1_View_Parser();
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";
-$GLOBALS["data"] = $d1_view_parser->get_data();
+//setcookie('language', '');
+$language = !empty($_COOKIE['language']) ? $_COOKIE['language'] : "PT";
+$GLOBALS["data"] = $d1_view_parser->get_data($language );
+$data_config_geral = $GLOBALS["data"]["d1_plugin_config_geral"];
 $data_header = $GLOBALS["data"]["d1_plugin"];
 $data_header['d1_favicon'] = (!empty($data_header['d1_favicon'])) ? $data_header['d1_favicon'] : $img_default;
 $id_menu_cta = $data_header['d1_menu_cta'];
@@ -12,13 +15,6 @@ $id_menu_cta = !empty($id_menu_cta) ? $id_menu_cta : 0;
 $menu_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_call_to_action WHERE id=$id_menu_cta")), true);
 $menu_cta = !empty($menu_cta[0]) ? $menu_cta[0] : array();
 $menu = array_values(get_d1_menu_tree('menu_principal'));
-/*
-//buscando imagem do plugin "menu image" , este codigo irá inserir o elemento imagem de fato
-//wp_get_attachment_image( $attachment_id, $size, $icon, $attr );//https://developer.wordpress.org/reference/functions/wp_get_attachment_image/
-//este codigo irá buscar a URL da imagem, uma outra maneira
-//pre(wp_get_attachment_url($menu[0]->thumbnail_id));die;
-//pre(wp_get_attachment_image($menu[0]->thumbnail_id));die;
-*/
 ?>
 
 <head>
@@ -59,6 +55,7 @@ $menu = array_values(get_d1_menu_tree('menu_principal'));
                         <div class="text-block-6">PT</div>
                     </div>
                     <nav class="dropdown-list-2 w-dropdown-list"><a href="#" class="dropdown-link-2 w-dropdown-link">EN</a></nav>
+                    <nav class="dropdown-list-2 w-dropdown-list"><a href="#" class="dropdown-link-2 w-dropdown-link">ES</a></nav>
                 </div>
             </div>
         </div>
@@ -163,7 +160,9 @@ $menu = array_values(get_d1_menu_tree('menu_principal'));
                         <?php endforeach;?> 
                     </nav>
                 </div>
-                <div class="div-block-32"><a href="../contato" class="btn-black-home-outline herp line type-gradient w-button">FALAR&nbsp;COM&nbsp;ESPECIALISTA</a></div>
+                <div class="div-block-32">
+                    <a href="<?php echo $menu_cta['link']; ?>" class="btn-black-home-outline herp line type-gradient w-button"><?php echo $menu_cta['title']; ?></a>
+                </div>
             </div>
         </nav>
         <div class="menu-button w-nav-button">
