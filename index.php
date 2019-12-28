@@ -17,7 +17,7 @@ $d1_view_parser = new D1_View_Parser();
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";
 $GLOBALS["data"] = $d1_view_parser->get_data();
 $data_home = $GLOBALS["data"]["d1_plugin"];
-$id_lead_generator_cta = $data_home['secao5_cta'];
+$id_lead_generator_cta = !empty($data_home['secao5_cta']) ? $data_home['secao5_cta'] : 0;
 $lead_generator_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_call_to_action WHERE id=$id_lead_generator_cta")),true);
 $lead_generator_cta = !empty($lead_generator_cta[0]) ? $lead_generator_cta[0] : array();
 $heroes_list = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_home_hero")),true);

@@ -15,7 +15,7 @@ global $wpdb;
 $id_categoria = (!empty($_GET['id_categoria'])) ? $_GET['id_categoria'] : "0";
 $cases = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_cases ORDER BY id_card DESC")),true);
 $categoria = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_cases_categorias WHERE id=$id_categoria")),true);
-$id_pai = !empty($categoria[0]['id']) ? $categoria[0]['id'] : "";
+$id_pai = !empty($categoria[0]['id']) ? $categoria[0]['id'] : 0;
 $categorias_filhas = (!empty($id_pai)) ? json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_cases_categorias WHERE id_categoria=$id_pai")),true) : array();
 $cat_filhas = array();
 foreach($categorias_filhas as $key=>$cat)
