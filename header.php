@@ -7,6 +7,7 @@ $img_default = get_template_directory_uri() . "/images/img_default.jpg";
 session_start(); 
 $language_option = !empty($_SESSION['d1_language_option']) ? $_SESSION['d1_language_option'] : "PT";
 $language = !empty($language_option) ? $language_option ."_" : "";
+$menu_language = !empty($language_option) ? "_" . strtolower($language_option) : "";
 $arr_lang = array('PT','EN','ES');
 $GLOBALS["data"] = $d1_view_parser->get_data($language);
 $data_config_geral = $GLOBALS["data"]["d1_plugin_config_geral"];
@@ -16,7 +17,7 @@ $id_menu_cta = $data_header['d1_menu_cta'];
 $id_menu_cta = !empty($id_menu_cta) ? $id_menu_cta : 0;
 $menu_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_call_to_action WHERE id=$id_menu_cta")), true);
 $menu_cta = !empty($menu_cta[0]) ? $menu_cta[0] : array();
-$menu = array_values(get_d1_menu_tree('menu_principal'));
+$menu = array_values(get_d1_menu_tree('menu_principal'.$menu_language));
 ?>
 
 <head>
