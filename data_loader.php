@@ -13,7 +13,7 @@ class Data_Loader {
 	public function __construct(){
         session_start(); 
         $language_option = !empty($_SESSION['d1_language_option']) ? $_SESSION['d1_language_option'] : "PT";
-        $this->language = !empty($language_option) ? $language_option ."_" : "";
+        $this->language = (!empty($language_option) && $language_option != "PT") ? $language_option ."_" : "";
         require(trim(dirname_oldphp(__FILE__,4)) . "wp-load.php");
         wp_load_alloptions();
         require_once dirname_oldphp(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view_parser.php';

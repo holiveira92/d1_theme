@@ -8,7 +8,7 @@ function dirname_oldphp($path, $level = 0){
 }
 session_start(); 
 $language_option = !empty($_SESSION['d1_language_option']) ? $_SESSION['d1_language_option'] : "PT";
-$language = !empty($language_option) ? $language_option ."_" : "";
+$language = (!empty($language_option) && $language_option != "PT") ? $language_option ."_" : "";
 require(trim(dirname_oldphp(__FILE__,4)) . "wp-load.php");
 wp_load_alloptions();
 require_once dirname_oldphp(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view_parser.php';

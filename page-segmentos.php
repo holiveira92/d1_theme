@@ -8,7 +8,7 @@ function dirname_oldphp($path, $level = 0){
 }
 session_start(); 
 $language_option = !empty($_SESSION['d1_language_option']) ? $_SESSION['d1_language_option'] : "PT";
-$language = !empty($language_option) ? $language_option ."_" : "";
+$language = (!empty($language_option) && $language_option != "PT") ? $language_option ."_" : "";
 $id     = get_query_var('id');
 $slug   = get_query_var('slug');
 require(trim(dirname_oldphp(__FILE__,4)) . "wp-load.php");

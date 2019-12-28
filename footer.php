@@ -1,7 +1,7 @@
 <?php
 session_start(); 
 $language_option = !empty($_SESSION['d1_language_option']) ? $_SESSION['d1_language_option'] : "PT";
-$language = !empty($language_option) ? $language_option ."_" : "";
+$language = (!empty($language_option) && $language_option != "PT") ? $language_option ."_" : "";
 require(trim(ABSPATH) . "wp-load.php");
 global $wpdb;
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";

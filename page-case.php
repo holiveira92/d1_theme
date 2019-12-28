@@ -1,7 +1,7 @@
 <?php
 session_start(); 
 $language_option = !empty($_SESSION['d1_language_option']) ? $_SESSION['d1_language_option'] : "PT";
-$language = !empty($language_option) ? $language_option ."_" : "";
+$language = (!empty($language_option) && $language_option != "PT") ? $language_option ."_" : "";
 function dirname_oldphp($path, $level = 0){
     $dir = explode(DIRECTORY_SEPARATOR, $path);
     $level = $level * -1;
