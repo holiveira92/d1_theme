@@ -4,15 +4,17 @@ require_once dirname_oldphp(__FILE__, 3) . 'themes/d1_theme/menu_tree.php';
 global $wpdb;
 $d1_view_parser = new D1_View_Parser();
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";
-//setcookie('language', '');
-$language = !empty($_COOKIE['language']) ? $_COOKIE['language'] : "PT";
-$GLOBALS["data"] = $d1_view_parser->get_data($language );
+session_start(); 
+$language_option = !empty($_SESSION['d1_language_option']) ? $_SESSION['d1_language_option'] : "PT";
+$language = !empty($language_option) ? $language_option ."_" : "";
+$arr_lang = array('PT','EN','ES');
+$GLOBALS["data"] = $d1_view_parser->get_data($language);
 $data_config_geral = $GLOBALS["data"]["d1_plugin_config_geral"];
 $data_header = $GLOBALS["data"]["d1_plugin"];
 $data_header['d1_favicon'] = (!empty($data_header['d1_favicon'])) ? $data_header['d1_favicon'] : $img_default;
 $id_menu_cta = $data_header['d1_menu_cta'];
 $id_menu_cta = !empty($id_menu_cta) ? $id_menu_cta : 0;
-$menu_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_call_to_action WHERE id=$id_menu_cta")), true);
+$menu_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_call_to_action WHERE id=$id_menu_cta")), true);
 $menu_cta = !empty($menu_cta[0]) ? $menu_cta[0] : array();
 $menu = array_values(get_d1_menu_tree('menu_principal'));
 ?>
@@ -44,18 +46,29 @@ $menu = array_values(get_d1_menu_tree('menu_principal'));
 <div class="wrapper-menu">
     <div class="div-block-69">
         <div class="div-block-70">
-            <div class="secondary-text type-gradient"><span><?php echo $data_header['top_bar_desc']; ?></span>
-            </div><a href="<?php echo $data_header['top_bar_link']; ?>" class="link-top-menu"><?php echo $data_header['top_bar_text_link']; ?></a>
+            <div class="secondary-text type-gradient"><span><?php echo $data_config_geral['top_bar_desc']; ?></span>
+            </div><a href="<?php echo $data_config_geral['top_bar_link']; ?>" class="link-top-menu"><?php echo $data_config_geral['top_bar_text_link']; ?></a>
         </div>
-        <div><a href="<?php echo $data_header['top_bar_login_link']; ?>" class="link-top-menu-copy type-gradient"><span><?php echo $data_header['top_bar_text_login_link']; ?></span></a>
-            <div class="div-block-71 hide">
+        <div><a href="<?php echo $data_config_geral['top_bar_login_link']; ?>" class="link-top-menu-copy type-gradient"><span><?php echo $data_config_geral['top_bar_text_login_link']; ?></span></a>
+            <div class="div-block-71">
                 <div data-delay="0" class="dropdown-3 w-dropdown">
-                    <div class="dropdown-toggle-3 w-dropdown-toggle">
-                        <div class="icon w-icon-dropdown-toggle"></div><img src="<?php echo get_template_directory_uri(); ?>/images/brasilflag.svg" alt="">
-                        <div class="text-block-6">PT</div>
-                    </div>
-                    <nav class="dropdown-list-2 w-dropdown-list"><a href="#" class="dropdown-link-2 w-dropdown-link">EN</a></nav>
-                    <nav class="dropdown-list-2 w-dropdown-list"><a href="#" class="dropdown-link-2 w-dropdown-link">ES</a></nav>
+                <?php 
+                    foreach($arr_lang as $lang):
+                        if($language_option == $lang):
+                ?>
+                        <div class="dropdown-toggle-3 w-dropdown-toggle">
+                            <div class="icon w-icon-dropdown-toggle"></div>
+                            <div class="text-block-6"><?php echo $lang;?></div>
+                        </div>
+                        <?php endif;?>
+                <?php endforeach;?>
+                <?php
+                    foreach($arr_lang as $lang):
+                        if($language_option != $lang):
+                ?>
+                            <nav class="dropdown-list-2 w-dropdown-list"><a href="<?php echo get_template_directory_uri() ."/language.php?lang=$lang&location=" . get_home_url() ;?>" class="dropdown-link-2 w-dropdown-link"><?php echo $lang;?></a></nav>
+                        <?php endif;?>
+                <?php endforeach;?>
                 </div>
             </div>
         </div>

@@ -6,7 +6,9 @@ function dirname_oldphp($path, $level = 0){
     array_splice($dir, $level);
     return implode($dir, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
 }
-
+session_start(); 
+$language_option = !empty($_SESSION['d1_language_option']) ? $_SESSION['d1_language_option'] : "PT";
+$language = !empty($language_option) ? $language_option ."_" : "";
 require(trim(dirname_oldphp(__FILE__,4)) . "wp-load.php");
 wp_load_alloptions();
 require_once dirname_oldphp(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view_parser.php';
@@ -75,7 +77,7 @@ get_header();
                 <div class="div-block-102"></div>
             </div>
             <?php
-                $query = "SELECT * FROM " . $wpdb->prefix . "d1_faq where page = 'preco'";
+                $query = "SELECT * FROM " . $wpdb->prefix . $language  . "d1_faq where page = 'preco'";
                 $faqs = json_decode(json_encode($wpdb->get_results($query)),true);
                 foreach($faqs as $key=>$faq):
             ?>
@@ -120,12 +122,12 @@ get_header();
                 <?php
                 for($i=1;$i<=3;$i++):
                     $key_select = "preco_secao3_case" . $i;
-                    $query = "SELECT * FROM " . $wpdb->prefix . "d1_cases where id_card = '" . $data_preco[$key_select] ."'";
+                    $query = "SELECT * FROM " . $wpdb->prefix . $language  . "d1_cases where id_card = '" . $data_preco[$key_select] ."'";
                     $cards = json_decode(json_encode($wpdb->get_results($query)),true);
                     foreach($cards as $key=>$card):
                         $cases_options          = !empty($card['cases_options']) ? json_decode($card['cases_options'],true) : array();
                         $id_categoria_case      = !empty($cases_options['categoria_case']) ? $cases_options['categoria_case'] : 0;
-                        $categoria              = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias where id = $id_categoria_case")),true);
+                        $categoria              = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_cases_categorias where id = $id_categoria_case")),true);
                         $categoria              = !empty($categoria[0]) ? $categoria[0] : array('descricao' => '');
                         $is_whitepaper          = (!empty($cases_options['is_whitepaper']) && $cases_options['is_whitepaper']) ? $cases_options['is_whitepaper'] : false;
                         $link                   = ($is_whitepaper) ? $card['card_link'] : get_home_url() ."/case/" . sanitize_title($card['title_card']) . "/" . $card['id_card'];

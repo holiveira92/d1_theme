@@ -6,7 +6,9 @@ function dirname_oldphp($path, $level = 0){
     array_splice($dir, $level);
     return implode($dir, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
 }
-
+session_start(); 
+$language_option = !empty($_SESSION['d1_language_option']) ? $_SESSION['d1_language_option'] : "PT";
+$language = !empty($language_option) ? $language_option ."_" : "";
 require(trim(dirname_oldphp(__FILE__,4)) . "wp-load.php");
 wp_load_alloptions();
 require_once dirname_oldphp(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view_parser.php';
@@ -16,10 +18,10 @@ $img_default = get_template_directory_uri() . "/images/img_default.jpg";
 $GLOBALS["data"] = $d1_view_parser->get_data();
 $data_home = $GLOBALS["data"]["d1_plugin"];
 $id_lead_generator_cta = $data_home['secao5_cta'];
-$lead_generator_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_call_to_action WHERE id=$id_lead_generator_cta")),true);
+$lead_generator_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_call_to_action WHERE id=$id_lead_generator_cta")),true);
 $lead_generator_cta = !empty($lead_generator_cta[0]) ? $lead_generator_cta[0] : array();
-$heroes_list = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_home_hero")),true);
-$modulos = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_modulos")),true);
+$heroes_list = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_home_hero")),true);
+$modulos = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_modulos")),true);
 $menu = wp_get_nav_menus();
 $menu_itens = wp_get_nav_menu_items($menu[0]->term_id);
 $menu_pai = get_menus_data($menu_itens);
@@ -51,7 +53,7 @@ get_header();
             foreach($heroes_list as $k=>$hero):
                 $id_home_cta = $hero['id_cta'];
                 $id_home_cta = !empty($id_home_cta) ? $id_home_cta : 0;
-                $home_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_call_to_action WHERE id=$id_home_cta")),true);
+                $home_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_call_to_action WHERE id=$id_home_cta")),true);
                 $home_cta = !empty($home_cta[0]) ? $home_cta[0] : array();
                 $cont = 1;
         ?>
@@ -108,12 +110,12 @@ get_header();
                 <?php
                 for($i=1;$i<=3;$i++):
                     $key_select             = "secao2_select_card_cases" . $i;
-                    $query                  = "SELECT * FROM " . $wpdb->prefix . "d1_cases where id_card = '" . $data_home[$key_select] ."'";
+                    $query                  = "SELECT * FROM " . $wpdb->prefix . $language  . "d1_cases where id_card = '" . $data_home[$key_select] ."'";
                     $card                   = json_decode(json_encode($wpdb->get_results($query)),true);
                     $card                   = !empty($card[0]) ? $card[0] : array();
                     $cases_options          = !empty($card['cases_options']) ? json_decode($card['cases_options'],true) : array();
                     $id_categoria_case      = !empty($cases_options['categoria_case']) ? $cases_options['categoria_case'] : 0;
-                    $categoria              = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias where id = $id_categoria_case")),true);
+                    $categoria              = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_cases_categorias where id = $id_categoria_case")),true);
                     $categoria              = !empty($categoria[0]) ? $categoria[0] : array('descricao' => '');
                     $is_whitepaper          = (!empty($cases_options['is_whitepaper']) && $cases_options['is_whitepaper']) ? $cases_options['is_whitepaper'] : false;
                     $link                   = ($is_whitepaper) ? $card['card_link'] : get_home_url() ."/case/" . sanitize_title($card['title_card']) . "/" . $card['id_card'];
@@ -206,7 +208,7 @@ get_header();
                 <!-- SEÇÃO TITULOS DA ESTRUTURA DE SOLUÇÕES -->
                 <div class="tabs-menu w-tab-menu">
                     <?php
-                    $modulos = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_modulos WHERE id_modulo IS NULL OR id_modulo = '' ")),true);
+                    $modulos = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_modulos WHERE id_modulo IS NULL OR id_modulo = '' ")),true);
                     $i=1;
                     foreach($modulos as $key=>$modulo):
                         $title_class = ($key == 1) ? 'w--current' : "";
@@ -228,7 +230,7 @@ get_header();
                     $i_mod=1;
                     foreach($modulos as $key=>$modulo):
                         $id_modulo = $modulo['id'];
-                        $itens = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_modulos WHERE id_modulo = $id_modulo")),true);
+                        $itens = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_modulos WHERE id_modulo = $id_modulo")),true);
                         $tab_class = ($i_mod == 1) ? 'w--tab-active' : "";
                     ?>
                     <div data-w-tab="Tab <?php echo $i_mod;?>" class="tab-pane-tab-1 w-tab-pane <?php echo $tab_class;?>">

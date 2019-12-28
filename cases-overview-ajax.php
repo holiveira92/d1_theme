@@ -6,15 +6,17 @@ function dirname_oldphp($path, $level = 0){
     array_splice($dir, $level);
     return implode($dir, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
 }
-
+session_start(); 
+$language_option = !empty($_SESSION['d1_language_option']) ? $_SESSION['d1_language_option'] : "PT";
+$language = !empty($language_option) ? $language_option ."_" : "";
 require(trim(dirname_oldphp(__FILE__,4)) . "wp-load.php");
 wp_load_alloptions();
 global $wpdb;
 $id_categoria = (!empty($_GET['id_categoria'])) ? $_GET['id_categoria'] : "0";
-$cases = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases ORDER BY id_card DESC")),true);
-$categoria = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias WHERE id=$id_categoria")),true);
+$cases = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_cases ORDER BY id_card DESC")),true);
+$categoria = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_cases_categorias WHERE id=$id_categoria")),true);
 $id_pai = !empty($categoria[0]['id']) ? $categoria[0]['id'] : "";
-$categorias_filhas = (!empty($id_pai)) ? json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias WHERE id_categoria=$id_pai")),true) : array();
+$categorias_filhas = (!empty($id_pai)) ? json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_cases_categorias WHERE id_categoria=$id_pai")),true) : array();
 $cat_filhas = array();
 foreach($categorias_filhas as $key=>$cat)
     $cat_filhas[] = $cat['id'];
@@ -78,7 +80,7 @@ if(!empty($case_destaque)){
     foreach($return as $key=>$case){
         $cases_options = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) :array() ;
         $id_categoria_case = !empty($cases_options['categoria_case']) ? $cases_options['categoria_case'] : 0;
-        $categoria_case = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias WHERE id=$id_categoria_case")),true);
+        $categoria_case = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_cases_categorias WHERE id=$id_categoria_case")),true);
         $categoria_case = !empty($categoria_case[0]) ? $categoria_case[0] : array('descricao' => '');
         $is_whitepaper  = (!empty($cases_options['is_whitepaper']) && $cases_options['is_whitepaper']) ? true : false;
         if($is_whitepaper)

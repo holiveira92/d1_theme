@@ -6,7 +6,9 @@ function dirname_oldphp($path, $level = 0){
     array_splice($dir, $level);
     return implode($dir, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
 }
-
+session_start(); 
+$language_option = !empty($_SESSION['d1_language_option']) ? $_SESSION['d1_language_option'] : "PT";
+$language = !empty($language_option) ? $language_option ."_" : "";
 require(trim(dirname_oldphp(__FILE__,4)) . "wp-load.php");
 wp_load_alloptions();
 require_once dirname_oldphp(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view_parser.php';
@@ -83,7 +85,7 @@ get_header();
             <div class="div-block-102"></div>
         </div>
         <?php
-            $query = "SELECT * FROM " . $wpdb->prefix . "d1_faq where page = 'contato'";
+            $query = "SELECT * FROM " . $wpdb->prefix . $language  . "d1_faq where page = 'contato'";
             $faqs = json_decode(json_encode($wpdb->get_results($query)),true);
             foreach($faqs as $key=>$faq):
         ?>

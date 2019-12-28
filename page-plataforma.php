@@ -6,7 +6,9 @@ function dirname_oldphp($path, $level = 0){
     array_splice($dir, $level);
     return implode($dir, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
 }
-
+session_start(); 
+$language_option = !empty($_SESSION['d1_language_option']) ? $_SESSION['d1_language_option'] : "PT";
+$language = !empty($language_option) ? $language_option ."_" : "";
 require(trim(dirname_oldphp(__FILE__,4)) . "wp-load.php");
 wp_load_alloptions();
 require_once dirname_oldphp(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view_parser.php';
@@ -19,11 +21,11 @@ $data_header['d1_favicon'] = (!empty($data_header['d1_favicon'])) ? $data_header
 $data_plataforma = $GLOBALS["data"]["d1_plugin_plataforma"];
 $id_menu_cta = $data_header['d1_menu_cta'];
 $id_menu_cta = !empty($id_menu_cta) ? $id_menu_cta : 0;
-$menu_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_call_to_action WHERE id=$id_menu_cta")),true);
+$menu_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_call_to_action WHERE id=$id_menu_cta")),true);
 $menu_cta = !empty($menu_cta[0]) ? $menu_cta[0] : array();
 $id_secao1_cta = $data_plataforma['plataforma_secao1_cta'];
 $id_secao1_cta = !empty($id_secao1_cta) ? $id_secao1_cta : 0;
-$secao1_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_call_to_action WHERE id=$id_secao1_cta")),true);
+$secao1_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_call_to_action WHERE id=$id_secao1_cta")),true);
 $secao1_cta = !empty($secao1_cta[0]) ? $secao1_cta[0] : array('title' =>'','link' =>'','target' =>'',);
 $menu = wp_get_nav_menus();
 $menu_itens = wp_get_nav_menu_items($menu[0]->term_id);
@@ -136,12 +138,12 @@ get_header();
                 <?php
                 for($i=1;$i<=3;$i++):
                     $key_select = "plataforma_secao3_case" . $i;
-                    $query = "SELECT * FROM " . $wpdb->prefix . "d1_cases where id_card = '" . $data_plataforma[$key_select] ."'";
+                    $query = "SELECT * FROM " . $wpdb->prefix . $language  . "d1_cases where id_card = '" . $data_plataforma[$key_select] ."'";
                     $cards = json_decode(json_encode($wpdb->get_results($query)),true);
                     foreach($cards as $key=>$card):
                         $cases_options          = !empty($card['cases_options']) ? json_decode($card['cases_options'],true) : array();
                         $id_categoria_case      = !empty($cases_options['categoria_case']) ? $cases_options['categoria_case'] : 0;
-                        $categoria              = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias where id = $id_categoria_case")),true);
+                        $categoria              = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_cases_categorias where id = $id_categoria_case")),true);
                         $categoria              = !empty($categoria[0]) ? $categoria[0] : array('descricao' => '');
                         $is_whitepaper          = (!empty($cases_options['is_whitepaper']) && $cases_options['is_whitepaper']) ? $cases_options['is_whitepaper'] : false;
                         $link                   = ($is_whitepaper) ? $card['card_link'] : get_home_url() ."/case/" . sanitize_title($card['title_card']) . "/" . $card['id_card'];
@@ -172,7 +174,7 @@ get_header();
                 <div class="div-block-102"></div>
             </div>
             <?php
-                $query = "SELECT * FROM " . $wpdb->prefix . "d1_faq where page = 'plataforma'";
+                $query = "SELECT * FROM " . $wpdb->prefix . $language  . "d1_faq where page = 'plataforma'";
                 $faqs = json_decode(json_encode($wpdb->get_results($query)),true);
                 foreach($faqs as $key=>$faq):
             ?>

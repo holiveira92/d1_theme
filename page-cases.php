@@ -6,7 +6,9 @@ function dirname_oldphp($path, $level = 0){
     array_splice($dir, $level);
     return implode($dir, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
 }
-
+session_start(); 
+$language_option = !empty($_SESSION['d1_language_option']) ? $_SESSION['d1_language_option'] : "PT";
+$language = !empty($language_option) ? $language_option ."_" : "";
 require(trim(dirname_oldphp(__FILE__,4)) . "wp-load.php");
 wp_load_alloptions();
 require_once dirname_oldphp(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view_parser.php';
@@ -15,7 +17,7 @@ $d1_view_parser = new D1_View_Parser();
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";
 $url_ajax = get_template_directory_uri() . "/cases-overview-ajax.php";
 $filter = (!empty($_GET['filter'])) ? $_GET['filter'] : "0";
-$categorias_pai = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias WHERE id_categoria IS NULL OR id_categoria='' ")),true);
+$categorias_pai = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_cases_categorias WHERE id_categoria IS NULL OR id_categoria='' ")),true);
 get_header();
 ?>
 
@@ -47,7 +49,7 @@ get_header();
                 $cont = 2;
                 foreach($categorias_pai as $k=>$categoria):
                     $id_categoria = $categoria['id'];
-                    $filhos = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias WHERE id_categoria=$id_categoria ")),true);
+                    $filhos = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_cases_categorias WHERE id_categoria=$id_categoria ")),true);
                 ?>
                     <div data-w-tab="Tab <?php echo $cont;?>" class="tab-pane-tab-<?php echo $cont;?> w-tab-pane">
                         <?php
@@ -68,7 +70,7 @@ get_header();
     <div name="cases_list" categoria="0">
     <?php
         $i=0;
-        $cases = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases ORDER BY id_card DESC ")),true);
+        $cases = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_cases ORDER BY id_card DESC ")),true);
         $case_destaque = array();
         foreach($cases as $key=>$case){
             $cases_options = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) :array() ;
@@ -105,7 +107,7 @@ get_header();
             foreach($cases as $key=>$case){
                 $cases_options = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) :array() ;
                 $id_categoria_case = !empty($cases_options['categoria_case']) ? $cases_options['categoria_case'] : 0;
-                $categoria_case = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias WHERE id=$id_categoria_case")),true);
+                $categoria_case = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_cases_categorias WHERE id=$id_categoria_case")),true);
                 $categoria_case = !empty($categoria_case[0]) ? $categoria_case[0] : array('descricao' => '');
                 $is_whitepaper  = (!empty($cases_options['is_whitepaper']) && $cases_options['is_whitepaper']) ? true : false;
                 if($is_whitepaper)
