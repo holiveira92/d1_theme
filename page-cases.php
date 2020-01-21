@@ -25,7 +25,7 @@ get_header();
 <input type="hidden" id="url_ajax" name="url_ajax" value="<?php echo $url_ajax;?>">
     <div id="filtro" class="div-block-36">
         <div data-duration-in="100" data-duration-out="100" class="tabs-4 w-tabs">
-            <div class="tabs-menu-5 w-tab-menu" data-ix="fade-in-on-load">
+            <div class="tabs-menu-5 w-tab-menu hide" data-ix="fade-in-on-load">
                 <a data-w-tab="Tab 1" class="case-overview-link w-inline-block w-tab-link w--current" categoria="0">
                     <div class="casetab type-gradient"><span>TODOS</span></div>
                 </a>

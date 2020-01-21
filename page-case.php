@@ -27,6 +27,11 @@ $cases_options = !empty($case['cases_options']) ? json_decode($case['cases_optio
 $id_categoria_case = !empty($cases_options['categoria_case']) ? $cases_options['categoria_case'] : 0;
 $categoria_case = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias WHERE id=$id_categoria_case")),true);
 $categoria_case = !empty($categoria_case[0]) ? $categoria_case[0] :array();
+?>
+<head>
+    <title><?php echo $case['title_card'];?> - D1</title>
+</head>
+<?php
 get_header();
 ?>
 <body>
@@ -37,7 +42,7 @@ get_header();
         <div class="home-hero-wrapper left">
             <div class="home-hero-left left _16pad" data-ix="fade-in-on-load">
                 <h6 class="lightblue type-gradient"><span><?php echo $case['subtitle_card'];?></span></h6>
-                <h1 class="h1white pad20 white2 notop"><?php echo $case['title_card'];?> </h1>
+                <h1 class="h1white pad20 white2 notop"><?php echo $case['title_card'];?></h1>
             </div>
             <div class="home-hero-right right mobi">
                 <h1 class="big mobi"><?php echo insert_degrade($case['desc_card'],8);?></h1>

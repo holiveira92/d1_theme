@@ -5,6 +5,11 @@ $id_modulos         = get_query_var('id');
 $slug               = get_query_var('slug');
 $dados              = $data_loader->get('departamentos',$id_modulos);
 $dados              = $dados['data_departamentos'];
+?>
+<head>
+    <title><?php echo "Soluções Para "; $dados['main_title'];?> - D1</title>
+</head>
+<?php
 get_header();
 ?>
 <body>

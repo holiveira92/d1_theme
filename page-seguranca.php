@@ -20,6 +20,18 @@ $data_seguranca = $GLOBALS["data"]["d1_plugin_seguranca"];
 get_header();
 ?>
 
+<style>
+    @media (max-width: 767px) {
+        .seg-hero.gradient-bg {
+            background-image: url('<?php echo $data_seguranca['seguranca_secao1_img'];?>')!important;
+        }
+        #hero span {
+        -webkit-text-fill-color: white;
+        }
+    }
+
+</style>
+
 <body>
 
 <div id="hero" class="seg-hero gradient-bg" style="background-image: url('https://uploads-ssl.webflow.com/5d9f3e21a78bd192c39905ad/5db0ae33dc9fed66ae1dbfa3_Group%2016.39.svg'),-webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url('<?php echo $data_seguranca['seguranca_secao1_img'];?>');
@@ -135,7 +147,7 @@ get_header();
         <?php $cont++; endforeach;?>
     </div>
 
-    <div id="status_sistema" class="section-status moremargin">
+    <div id="status_sistema" class="section-status moremargin hide">
         <div class="div-block-43">
             <h2 class="heading-18"><?php echo $data_seguranca['seguranca_secao4_title'];?></h2>
         </div>

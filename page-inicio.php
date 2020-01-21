@@ -36,6 +36,7 @@ get_header();
     <meta content="Webflow" name="generator">
     <link href="<?php echo get_template_directory_uri().'/';?>css/normalize.css" rel="stylesheet" type="text/css">
     <link href="<?php echo get_template_directory_uri().'/';?>css/webflow.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo get_template_directory_uri() . '/'; ?>css/d1-new.css" rel="stylesheet" type="text/css">
     <link href="<?php echo get_template_directory_uri().'/';?>css/d1web.css" rel="stylesheet" type="text/css">
     <script src="<?php echo get_template_directory_uri().'/';?>js/jquery-3.4.1.min.js" type="text/javascript"></script>
     <script src="<?php echo get_template_directory_uri().'/';?>js/webflow.js" type="text/javascript"></script>
@@ -44,6 +45,19 @@ get_header();
     <link href="<?php echo get_template_directory_uri().'/';?>icons/webclip.png" rel="apple-touch-icon">
     <link href="<?php echo $data_header['d1_favicon'];?>" rel="shortcut icon" type="image/x-icon">
 </head>
+
+<style type="text/css">
+
+    ._1-slide w-slide, ._1-slide{
+        background-image: url("https://uploads-ssl.webflow.com/5d9f3e21a78bd192c39905ad/5d9f4366a121e054729a5477_stripes-h_black_trans.png"), linear-gradient(180deg, transparent, transparent), url('<?php echo $data_home['secao1_hero_img_bg'];?>')!important;
+    }
+
+    @media only screen and (max-width: 767px) {
+        ._1-slide w-slide, ._1-slide{
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('<?php echo $data_home['secao1_hero_img_bg'];?>')!important;
+        }
+    }
+</style>
 
 <body>
 
@@ -54,7 +68,7 @@ get_header();
     </div>
     <div data-delay="4000" data-animation="fade" data-autoplay="0" data-nav-spacing="0" data-duration="500" data-infinite="1" class="slider w-slider">
         <div class="mask w-slider-mask">
-            <div class="_1-slide w-slide" style="background-image: url('https://uploads-ssl.webflow.com/5d9f3e21a78bd192c39905ad/5d9f4366a121e054729a5477_stripes-h_black_trans.png'), -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url('<?php echo $data_home['secao1_hero_img_bg'];?>')">
+            <div class="_1-slide w-slide">
                 <div class="mycontainer _1">
                     <div class="home-hero-wrapper">
                         <div class="home-hero-left left nopad" data-ix="fade-in-on-load">
@@ -67,7 +81,7 @@ get_header();
                         <div class="home-hero-right">
                             <h3 class="h1white nomargin"><?php echo $data_home['secao1_hero_name'];?></h3>
                             <div class="div-block-97"></div>
-                            <h6 class="lightblue type-gradient"><span><?php echo $data_home['secao1_hero_cargo'];?></span></h6>
+                            <h6 class="white"><span><?php echo $data_home['secao1_hero_cargo'];?></span></h6>
                             <div class="h1white pad20 client"><?php echo $data_home['secao1_hero_descricao'];?></div>
                             <img src="<?php echo $data_home['secao1_hero_company'];?>" alt="" class="home-hero-logo-partner">
                         </div>
@@ -208,7 +222,7 @@ get_header();
                     $modulos = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_modulos WHERE id_modulo IS NULL OR id_modulo = '' ")),true);
                     $i=1;
                     foreach($modulos as $key=>$modulo):
-                        $title_class = ($key == 1) ? 'w--current type-gradient' : "";
+                        $title_class = ($key == 0) ? 'w--current type-gradient' : "";
                     ?>
                         <a data-w-tab="Tab <?php echo $i;?>" class="home-tab-link w-inline-block w-tab-link <?php echo $title_class;?>">
                             <div><span><?php echo $modulo['title'];?></span></div>

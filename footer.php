@@ -115,9 +115,6 @@ $group_links = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wp
                             <?php echo str_replace("\n", '<br />', $data['secao3_info_d1']); ?>
                         </p>
                     </div>
-                    <div class="div-block-11">
-                        <p class="p-white footer"><?php echo str_replace("\n", '<br />', $data['secao3_info_d1']); ?></p>
-                    </div>
                 </div>
 
                 <div class="footer-row white-footer-row w-row">
@@ -185,7 +182,10 @@ $group_links = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wp
                 <div class="body-text-small"><?php echo $data['secao6_pitch']; ?>
                     <br>
                 </div>
-                <h6 class="h6-gradient-copy type-gradient"><span>© <?php echo date("Y"); ?> D1</span></h6>
+                <div class="bottom-footer">
+                    <a href="https://d1.cx/conteudo/uploads/2020/01/Politica-de-Privacidade-de-Dados-Site.pdf" target="_blank" class="politica"><span>Política de Privacidade de Dados</span></a>
+                    <h6 class="h6-gradient-copy type-gradient"><span>© <?php echo date("Y"); ?> D1</span></h6>
+                </div>
             </div>
         </div>
     </div>

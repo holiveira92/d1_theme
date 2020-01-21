@@ -42,6 +42,13 @@ foreach ($menu_pai as $key => &$menu) {
     <title><?php wp_title(''); ?></title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="Webflow" name="generator">
+    <!-- OneTrust Cookies Consent Notice start -->
+
+    <script src="https://cookie-cdn.cookiepro.com/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="065cdf4d-b682-4a87-bbb4-41776bbe1e60"></script>
+    <script type="text/javascript">
+    function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end -->
     <link href="<?php echo get_template_directory_uri() . '/'; ?>css/normalize.css" rel="stylesheet" type="text/css">
     <link href="<?php echo get_template_directory_uri() . '/'; ?>css/webflow.css" rel="stylesheet" type="text/css">
     <link href="<?php echo get_template_directory_uri() . '/'; ?>css/d1-new.css" rel="stylesheet" type="text/css">
@@ -144,10 +151,10 @@ foreach ($menu_pai as $key => &$menu) {
                         <div class="menu-solucoes-wrapper">
                             <div class="menu-solucoes-column">
                                 <div class="dark-footer-subtitle notopline">SEGMENTOS</div>
-                                <a href="https://d1new.wpengine.com/segmentos/seguros/3" class="black-menu-link">Seguros</a>
-                                <a href="https://d1new.wpengine.com/segmentos/varejo/2" class="black-menu-link">Varejo</a>
-                                <a href="https://d1new.wpengine.com/segmentos/servicos-financeiros/1" class="black-menu-link">Serviços Financeiros</a>
-                                <a href="https://d1new.wpengine.com/segmentos/saude/4" class="black-menu-link">Saúde</a>
+                                <a href="https://d1.cx/segmentos/seguros/3" class="black-menu-link">Seguros</a>
+                                <a href="https://d1.cx/segmentos/varejo/2" class="black-menu-link">Varejo</a>
+                                <a href="https://d1.cx/segmentos/servicos-financeiros/1" class="black-menu-link">Serviços Financeiros</a>
+                                <a href="https://d1.cx/segmentos/saude/4" class="black-menu-link">Saúde Suplementar</a>
                             </div>
                             <!--<div class="menu-solucoes-column">
                                 <div class="dark-footer-subtitle lineup">DEPARTAMENTOS</div><a href="#" class="black-menu-link">Atendimento</a><a href="#" class="black-menu-link">Operações</a><a href="#" class="black-menu-link">Marketing</a><a href="#" class="black-menu-link">Gestão</a><a href="#" class="black-menu-link noline">Tecnologia</a>
@@ -178,8 +185,8 @@ foreach ($menu_pai as $key => &$menu) {
                     <nav class="dropdown-preco w-dropdown-list" id="w-dropdown-list-4">
                         <div class="menu-select-preco"></div>
                         <div class="menu-preco-wrapper">
-                            <div class="body-text-white">Comece a sua jornada aqui</div>
-                            <div class="menu-preco"><a href="../preco/" class="body-text-link3 precocta">VER&nbsp;PÁGINA DE ORÇAMENTOS</a><img src="https://d1new.wpengine.com/conteudo/themes/d1_theme/images/arrowlink-black.svg" alt="" class="arrowlink"></div>
+                            <div class="body-text-white">Saiba para onde vai seu investimento</div>
+                            <div class="menu-preco"><a href="../preco/" class="body-text-link3 precocta">COMECE SUA JORNADA AQUI</a><img src="https://d1new.wpengine.com/conteudo/themes/d1_theme/images/arrowlink-black.svg" alt="" class="arrowlink"></div>
                         </div>
                     </nav>
                 </div>
@@ -191,7 +198,7 @@ foreach ($menu_pai as $key => &$menu) {
                         <div class="menu-select-sobre"></div>
                         <div class="menu-conteudos-wrapper">
                             <a href="../nossa-jornada" class="black-menu-link">Nossa Jornada</a>
-                            <a href="../seguranca" class="black-menu-link">Segurança & Conformidade</a>
+                            <a href="../seguranca" class="black-menu-link">Segurança e Proteção de Dados</a>
                             <a href="https://directone.gupy.io/" class="black-menu-link">Carreiras</a>
 
                     </nav>
@@ -200,7 +207,10 @@ foreach ($menu_pai as $key => &$menu) {
             </div>
         </nav>
         <div class="menu-button w-nav-button">
-            <div class="menu-button w-nav-button"><img src="<?php echo get_template_directory_uri() . '/'; ?>images/Menu.png" width="33" alt="" class="image-6"></div>
+            <div class="menu-button w-nav-button">
+                <div class="menutext">Menu</div>
+                <img src="<?php echo get_template_directory_uri() . '/'; ?>images/Menu.png" width="33" alt="" class="image-6">
+            </div>
         </div>
 
     </div>
