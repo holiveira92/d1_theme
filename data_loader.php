@@ -9,7 +9,11 @@ function dirname_oldphp($path, $level = 0){
 class Data_Loader {
     private $all_data;
     private $data;
+    private $language;
 	public function __construct(){
+        session_start(); 
+        $language_option = !empty($_SESSION['d1_language_option']) ? $_SESSION['d1_language_option'] : "PT";
+        $this->language = (!empty($language_option) && $language_option != "PT") ? $language_option ."_" : "";
         require(trim(dirname_oldphp(__FILE__,4)) . "wp-load.php");
         wp_load_alloptions();
         require_once dirname_oldphp(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view_parser.php';
@@ -50,17 +54,18 @@ class Data_Loader {
     private function get_d1_midia_data(){
         global $wpdb;
         $this->data['data_midia']                   = $this->all_data["d1_plugin_d1_midia"];
-        $this->data['data_midia']['noticias']       = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_midia ")),true);
-        $this->data['data_midia']['destaque']       = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_midia WHERE id=" . $this->data['data_midia']['midia_secao1_destaque_select'])),true);
+        $this->data['data_midia']['noticias']       = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $this->language  . "d1_midia ")),true);
+        $this->data['data_midia']['destaque']       = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $this->language  . "d1_midia WHERE id=" . $this->data['data_midia']['midia_secao1_destaque_select'])),true);
         $this->data['data_midia']['destaque']       = !empty($this->data['data_midia']['destaque'][0]) ? $this->data['data_midia']['destaque'][0] : array();
         $this->data['data_midia']['cases']          = array();
         for($i=1;$i<=3;$i++){
             $id_case                = $this->data['data_midia']["midia_secao2_case$i"];
-            $case                   = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases where id_card = $id_case")),true);
+            $case                   = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $this->language  . "d1_cases where id_card = $id_case")),true);
             $case                   = !empty($case[0]) ? $case[0] : array();
-            $id_categoria_case      = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) : array();
-            $id_categoria_case      = !empty($id_categoria_case['categoria_case']) ? $id_categoria_case['categoria_case'] : 0;
-            $categoria              = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias where id = $id_categoria_case")),true);
+            $cases_options          = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) : array();
+            $id_categoria_case      = !empty($cases_options['categoria_case']) ? $cases_options['categoria_case'] : 0;
+            $case['is_whitepaper']  = !empty($cases_options['is_whitepaper']) ? $cases_options['is_whitepaper'] : 0;
+            $categoria              = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $this->language  . "d1_cases_categorias where id = $id_categoria_case")),true);
             $case['categoria']      = !empty($categoria[0]) ? $categoria[0] : array();
             $this->data['data_midia']['cases'][] = $case;
         }
@@ -70,7 +75,7 @@ class Data_Loader {
     private function get_modulos_data($id){
         global $wpdb;
         $this->data['data_modulos']                   = $this->all_data["d1_plugin_modulos"];
-        $this->data['data_modulos']                   = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_modulos WHERE id=$id")),true);
+        $this->data['data_modulos']                   = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $this->language  . "d1_modulos WHERE id=$id")),true);
         $this->data['data_modulos']                   = !empty($this->data['data_modulos'][0]) ? $this->data['data_modulos'][0] : array();
         if(empty($id) || empty($this->data['data_modulos'])){
             wp_redirect(site_url() . '/404/');
@@ -79,15 +84,16 @@ class Data_Loader {
         $this->data['data_modulos']['challenge1']     = !empty($this->data['data_modulos']['challenge1']) ? json_decode($this->data['data_modulos']['challenge1'],true) : array();
         $this->data['data_modulos']['challenge2']     = !empty($this->data['data_modulos']['challenge2']) ? json_decode($this->data['data_modulos']['challenge2'],true) : array();
         $this->data['data_modulos']['challenge3']     = !empty($this->data['data_modulos']['challenge3']) ? json_decode($this->data['data_modulos']['challenge3'],true) : array();
-        $this->data['data_modulos']['features']       = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_key_points WHERE id_segmento=$id AND page='modulos'")),true);
+        $this->data['data_modulos']['features']       = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $this->language  . "d1_key_points WHERE id_segmento=$id AND page='modulos'")),true);
         $this->data['data_modulos']['cases']          = array();
         for($i=1;$i<=3;$i++){
             $id_case                = $this->data['data_modulos']['cases_options']["list_case$i"];
-            $case                   = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases where id_card = $id_case")),true);
+            $case                   = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $this->language  . "d1_cases where id_card = $id_case")),true);
             $case                   = !empty($case[0]) ? $case[0] : array();
-            $id_categoria_case      = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) : array();
-            $id_categoria_case      = !empty($id_categoria_case['categoria_case']) ? $id_categoria_case['categoria_case'] : 0;
-            $categoria              = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias where id = $id_categoria_case")),true);
+            $cases_options          = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) : array();
+            $id_categoria_case      = !empty($cases_options['categoria_case']) ? $cases_options['categoria_case'] : 0;
+            $case['is_whitepaper']  = !empty($cases_options['is_whitepaper']) ? $cases_options['is_whitepaper'] : 0;
+            $categoria              = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $this->language  . "d1_cases_categorias where id = $id_categoria_case")),true);
             $case['categoria']      = !empty($categoria[0]) ? $categoria[0] : array();
             $this->data['data_modulos']['cases'][] = $case;
         }
@@ -97,7 +103,7 @@ class Data_Loader {
     private function get_objetivos_data($id){
         global $wpdb;
         $this->data['data_objetivos']                   = $this->all_data["d1_plugin_objetivos"];
-        $this->data['data_objetivos']                   = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_objetivos WHERE id=$id")),true);
+        $this->data['data_objetivos']                   = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $this->language  . "d1_objetivos WHERE id=$id")),true);
         $this->data['data_objetivos']                   = !empty($this->data['data_objetivos'][0]) ? $this->data['data_objetivos'][0] : array();
         if(empty($id) || empty($this->data['data_objetivos'])){
             wp_redirect(site_url() . '/404/');
@@ -106,15 +112,16 @@ class Data_Loader {
         $this->data['data_objetivos']['challenge1']     = !empty($this->data['data_objetivos']['challenge1']) ? json_decode($this->data['data_objetivos']['challenge1'],true) : array();
         $this->data['data_objetivos']['challenge2']     = !empty($this->data['data_objetivos']['challenge2']) ? json_decode($this->data['data_objetivos']['challenge2'],true) : array();
         $this->data['data_objetivos']['challenge3']     = !empty($this->data['data_objetivos']['challenge3']) ? json_decode($this->data['data_objetivos']['challenge3'],true) : array();
-        $this->data['data_objetivos']['key_points']     = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_key_points WHERE id_segmento=$id AND page='objetivos'")),true);
+        $this->data['data_objetivos']['key_points']     = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $this->language  . "d1_key_points WHERE id_segmento=$id AND page='objetivos'")),true);
         $this->data['data_objetivos']['cases']          = array();
         for($i=1;$i<=3;$i++){
             $id_case                = $this->data['data_objetivos']['cases_options']["list_case$i"];
-            $case                   = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases where id_card = $id_case")),true);
+            $case                   = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $this->language  . "d1_cases where id_card = $id_case")),true);
             $case                   = !empty($case[0]) ? $case[0] : array();
-            $id_categoria_case      = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) : array();
-            $id_categoria_case      = !empty($id_categoria_case['categoria_case']) ? $id_categoria_case['categoria_case'] : 0;
-            $categoria              = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias where id = $id_categoria_case")),true);
+            $cases_options          = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) : array();
+            $id_categoria_case      = !empty($cases_options['categoria_case']) ? $cases_options['categoria_case'] : 0;
+            $case['is_whitepaper']  = !empty($cases_options['is_whitepaper']) ? $cases_options['is_whitepaper'] : 0;
+            $categoria              = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $this->language  . "d1_cases_categorias where id = $id_categoria_case")),true);
             $case['categoria']      = !empty($categoria[0]) ? $categoria[0] : array();
             $this->data['data_objetivos']['cases'][] = $case;
         }
@@ -124,7 +131,7 @@ class Data_Loader {
     private function get_departamentos_data($id){
         global $wpdb;
         $this->data['data_departamentos']                   = $this->all_data["d1_plugin_departamentos"];
-        $this->data['data_departamentos']                   = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_departamentos WHERE id=$id")),true);
+        $this->data['data_departamentos']                   = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $this->language  . "d1_departamentos WHERE id=$id")),true);
         $this->data['data_departamentos']                   = !empty($this->data['data_departamentos'][0]) ? $this->data['data_departamentos'][0] : array();
         if(empty($id) || empty($this->data['data_departamentos'])){
             wp_redirect(site_url() . '/404/');
@@ -134,26 +141,27 @@ class Data_Loader {
         $this->data['data_departamentos']['challenge1']     = !empty($this->data['data_departamentos']['challenge1']) ? json_decode($this->data['data_departamentos']['challenge1'],true) : array();
         $this->data['data_departamentos']['challenge2']     = !empty($this->data['data_departamentos']['challenge2']) ? json_decode($this->data['data_departamentos']['challenge2'],true) : array();
         $this->data['data_departamentos']['challenge3']     = !empty($this->data['data_departamentos']['challenge3']) ? json_decode($this->data['data_departamentos']['challenge3'],true) : array();
-        $this->data['data_departamentos']['features']       = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_key_points WHERE id_segmento=$id AND page='departamentos'")),true);
+        $this->data['data_departamentos']['features']       = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $this->language  . "d1_key_points WHERE id_segmento=$id AND page='departamentos'")),true);
         $this->data['data_departamentos']['cases']          = array();
         $this->data['data_departamentos']['cargos']         = array();
         for($i=1;$i<=3;$i++){
             $id_case                = $this->data['data_departamentos']['cases_options']["list_case$i"];
-            $case                   = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases where id_card = $id_case")),true);
+            $case                   = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $this->language  . "d1_cases where id_card = $id_case")),true);
             $case                   = !empty($case[0]) ? $case[0] : array();
-            $id_categoria_case      = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) : array();
-            $id_categoria_case      = !empty($id_categoria_case['categoria_case']) ? $id_categoria_case['categoria_case'] : 0;
-            $categoria              = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias where id = $id_categoria_case")),true);
+            $cases_options          = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) : array();
+            $id_categoria_case      = !empty($cases_options['categoria_case']) ? $cases_options['categoria_case'] : 0;
+            $case['is_whitepaper']  = !empty($cases_options['is_whitepaper']) ? $cases_options['is_whitepaper'] : 0;
+            $categoria              = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $this->language  . "d1_cases_categorias where id = $id_categoria_case")),true);
             $case['categoria']      = !empty($categoria[0]) ? $categoria[0] : array();
             $this->data['data_departamentos']['cases'][] = $case;
         }
         for($i=1;$i<=3;$i++){
             $id_modulo              = $this->data['data_departamentos']['modulos_options']["list_modulos$i"];
-            $modulo                 = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_key_points WHERE id=$id_modulo AND page='modulos'")),true);
+            $modulo                 = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $this->language  . "d1_key_points WHERE id=$id_modulo AND page='modulos'")),true);
             $modulo                 = !empty($modulo[0]) ? $modulo[0] : array();
             $this->data['data_departamentos']['modulos'][] = $modulo;
         }
-        $this->data['data_departamentos']['cargos']         = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cargos where id_departamento = $id")),true);
+        $this->data['data_departamentos']['cargos']         = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $this->language  . "d1_cargos where id_departamento = $id")),true);
         $this->data['data_departamentos']['cargo_destaque'] = array();
         if(!empty($this->data['data_departamentos']['cargos'][0])){
             $this->data['data_departamentos']['cargo_destaque'] = $this->data['data_departamentos']['cargos'][0];

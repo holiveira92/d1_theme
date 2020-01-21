@@ -1,4 +1,7 @@
 <?php
+session_start(); 
+$language_option = !empty($_SESSION['d1_language_option']) ? $_SESSION['d1_language_option'] : "PT";
+$language = (!empty($language_option) && $language_option != "PT") ? $language_option ."_" : "";
 function dirname_oldphp($path, $level = 0){
     $dir = explode(DIRECTORY_SEPARATOR, $path);
     $level = $level * -1;
@@ -18,14 +21,14 @@ $d1_view_parser = new D1_View_Parser();
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";
 $GLOBALS["data"] = $d1_view_parser->get_data();
 $data_cases = $GLOBALS["data"]["d1_plugin_cases"];
-$case = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases WHERE id_card=$id_case")),true);
+$case = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_cases WHERE id_card=$id_case")),true);
 $case = !empty($case[0]) ? $case[0] :array();
 $impactos = !empty($case['impactos']) ? json_decode($case['impactos'],true) :array() ;
 $desafios = !empty($case['desafios']) ? json_decode($case['desafios'],true) :array() ;
 $implantacao = !empty($case['implantacao']) ? json_decode($case['implantacao'],true) :array() ;
 $cases_options = !empty($case['cases_options']) ? json_decode($case['cases_options'],true) :array() ;
 $id_categoria_case = !empty($cases_options['categoria_case']) ? $cases_options['categoria_case'] : 0;
-$categoria_case = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_cases_categorias WHERE id=$id_categoria_case")),true);
+$categoria_case = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_cases_categorias WHERE id=$id_categoria_case")),true);
 $categoria_case = !empty($categoria_case[0]) ? $categoria_case[0] :array();
 ?>
 <head>
@@ -211,15 +214,22 @@ get_header();
             <?php
             for($i=1;$i<=3;$i++):
                 $key_select = "list_case" . $i;
-                $query = "SELECT * FROM " . $wpdb->prefix . "d1_cases where id_card = '" . $cases_options[$key_select] ."'";
+                $query = "SELECT * FROM " . $wpdb->prefix . $language  . "d1_cases where id_card = '" . $cases_options[$key_select] ."'";
                 $cards = json_decode(json_encode($wpdb->get_results($query)),true);
                 foreach($cards as $key=>$card):
-                    
+                    $cases_options  = !empty($card['cases_options']) ? json_decode($card['cases_options'],true) :array() ;
+                    $id_categoria_case = !empty($cases_options['categoria_case']) ? $cases_options['categoria_case'] : 0;
+                    $categoria_case = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_cases_categorias WHERE id=$id_categoria_case")),true);
+                    $categoria_case = !empty($categoria_case[0]) ? $categoria_case[0] : array('descricao' => '');
+                    $is_whitepaper  = (!empty($cases_options['is_whitepaper']) && $cases_options['is_whitepaper']) ? $cases_options['is_whitepaper'] : false;
+                    $link           = ($is_whitepaper) ? $card['card_link'] : get_home_url() ."/case/" . sanitize_title($card['title_card']) . "/" . $card['id_card'];
+                    $target         = ($is_whitepaper) ? "_blank" : "_self";
+                    $categoria_case['descricao'] = ($is_whitepaper) ? $card['subtitle_card'] : $categoria_case['descricao'];
                 ?>
                 <div class="case-thumb-content _200ms left"  categoria="<?php echo $categoria_case['descricao'];?>" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('<?php echo $card['img_bg_url'];?>');background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $card['img_bg_url'];?>');">
-                <a href="<?php echo get_home_url();?>/case/<?php echo sanitize_title($card['title_card']);?>/<?php echo $card['id_card'];?>" style='text-decoration:none;'>
+                <a href="<?php echo $link;?>" target="<?php echo $target;?>" style='text-decoration:none;'>
                     <h3 class="h1white left"><?php echo $card['title_card'];?></h3>
-                    <h6 class="lightblue type-gradient"><span><?php echo $card['subtitle_card'];?></span></h6>
+                    <h6 class="lightblue type-gradient"><span><?php echo $categoria_case['descricao'];?></span></h6>
                     <div class="case-thumb-numbers">
                         <h5 class="heading-2 pad20 white huge left"><?php echo $card['text_footer_card'];?></h5>
                         <div class="h1white left tiny"><?php echo $card['subtext_footer_card'];?></div>

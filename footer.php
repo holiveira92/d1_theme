@@ -1,22 +1,25 @@
 <?php
+session_start(); 
+$language_option = !empty($_SESSION['d1_language_option']) ? $_SESSION['d1_language_option'] : "PT";
+$language = (!empty($language_option) && $language_option != "PT") ? $language_option ."_" : "";
 require(trim(ABSPATH) . "wp-load.php");
 global $wpdb;
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";
 $data = $GLOBALS["data"]['d1_plugin_footer'];
 $id_cta = $data['secao1_footer_cta'];
 $id_cta = !empty($id_cta) ? $id_cta : 0;
-$cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_call_to_action WHERE id=$id_cta")), true);
+$cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_call_to_action WHERE id=$id_cta")), true);
 $cta = !empty($cta[0]) ? $cta[0] : array();
-$id_footer_cta1 = $data['secao3_footer_cta1'];
-$id_footer_cta2 = $data['secao3_footer_cta2'];
-$id_footer_cta3 = $data['secao3_footer_cta3'];
-$footer_cta1 = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_call_to_action WHERE id=$id_footer_cta1")), true);
+$id_footer_cta1 = !empty($data['secao3_footer_cta1']) ? $data['secao3_footer_cta1'] : 0;
+$id_footer_cta2 = !empty($data['secao3_footer_cta2']) ? $data['secao3_footer_cta2'] : 0;
+$id_footer_cta3 = !empty($data['secao3_footer_cta3']) ? $data['secao3_footer_cta3'] : 0;
+$footer_cta1 = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_call_to_action WHERE id=$id_footer_cta1")), true);
 $footer_cta1 = !empty($footer_cta1[0]) ? $footer_cta1[0] : array();
-$footer_cta2 = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_call_to_action WHERE id=$id_footer_cta2")), true);
+$footer_cta2 = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_call_to_action WHERE id=$id_footer_cta2")), true);
 $footer_cta2 = !empty($footer_cta2[0]) ? $footer_cta2[0] : array();
-$footer_cta3 = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_call_to_action WHERE id=$id_footer_cta3")), true);
+$footer_cta3 = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_call_to_action WHERE id=$id_footer_cta3")), true);
 $footer_cta3 = !empty($footer_cta3[0]) ? $footer_cta3[0] : array();
-$group_links = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_footer_links WHERE group_id IS NULL or group_id = '' ")), true);
+$group_links = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_footer_links WHERE group_id IS NULL or group_id = '' ")), true);
 ?>
 <div class="bigfooter">
     <!-- Pré Footer -->
@@ -130,7 +133,7 @@ $group_links = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wp
                         <?php
                         foreach ($group_links as $key => $grupo) :
                             $id_grupo = $grupo['id'];
-                            $itens = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_footer_links WHERE group_id=$id_grupo")), true);
+                            $itens = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_footer_links WHERE group_id=$id_grupo")), true);
                             $i = (in_array($key, array(2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32)) !== false) ? 2 : 3;
                             ?>
                             <!-- Grupos de Links -->

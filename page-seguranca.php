@@ -6,7 +6,9 @@ function dirname_oldphp($path, $level = 0){
     array_splice($dir, $level);
     return implode($dir, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
 }
-
+session_start(); 
+$language_option = !empty($_SESSION['d1_language_option']) ? $_SESSION['d1_language_option'] : "PT";
+$language = (!empty($language_option) && $language_option != "PT") ? $language_option ."_" : "";
 require(trim(dirname_oldphp(__FILE__,4)) . "wp-load.php");
 wp_load_alloptions();
 require_once dirname_oldphp(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view_parser.php';
@@ -81,7 +83,7 @@ get_header();
         <div data-duration-in="300" data-duration-out="100" class="tabs-3 w-tabs">
             <div class="tabs-menu-4 w-tab-menu">
             <?php
-                $seguranca = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_seguranca where tipo = 'seguranca' ")),true);
+                $seguranca = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_seguranca where tipo = 'seguranca' ")),true);
                 $cont=1;
                 $class_tab_active_new = ($cont==1) ? "" : "";
                 foreach($seguranca as $k=>$item):
@@ -135,7 +137,7 @@ get_header();
         </div>
 
         <?php
-            $conformidade = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "d1_seguranca where tipo = 'conformidade' ")),true);
+            $conformidade = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_seguranca where tipo = 'conformidade' ")),true);
             $cont=1;
             foreach($conformidade as $k=>$item):
 
