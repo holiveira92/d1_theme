@@ -9,7 +9,7 @@ $language_option = !empty($_SESSION['d1_language_option']) ? $_SESSION['d1_langu
 $language = (!empty($language_option) && $language_option != "PT") ? $language_option ."_" : "";
 $menu_language = (!empty($language_option) && $language_option != "PT") ? "_" . strtolower($language_option) : "";
 $arr_lang = array('PT','EN','ES');
-$GLOBALS["data"] = $d1_view_parser->get_data($language);
+$GLOBALS["data"] = $d1_view_parser->get_data($language_option);
 $data_config_geral = $GLOBALS["data"]["d1_plugin_config_geral"];
 $data_header = $GLOBALS["data"]["d1_plugin"];
 $data_header['d1_favicon'] = (!empty($data_header['d1_favicon'])) ? $data_header['d1_favicon'] : $img_default;
