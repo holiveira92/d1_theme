@@ -109,8 +109,9 @@ get_header();
                 <div class="section-title-2col">
                     <h6 class="white _18"><?php echo $data_home['secao2_section_title'];?></h6>
                     <div class="link-text-arrow">
-                        <a href="./cases" class="link-text-black invert"><?php echo $data_home['secao2_call_action_cases'];?></a>
-                        <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink">
+                        <a href="./cases" class="link-text-black invert"><?php echo $data_home['secao2_call_action_cases'];?>
+                            <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink">
+                        </a>
                     </div>
                 </div>
             </div>
