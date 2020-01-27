@@ -15,7 +15,7 @@ require_once dirname_oldphp(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view
 global $wpdb;
 $d1_view_parser = new D1_View_Parser();
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";
-$GLOBALS["data"] = $d1_view_parser->get_data();
+$GLOBALS["data"] = $d1_view_parser->get_data($language_option);
 $data_home = $GLOBALS["data"]["d1_plugin"];
 $id_lead_generator_cta = !empty($data_home['secao5_cta']) ? $data_home['secao5_cta'] : 0;
 $lead_generator_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_call_to_action WHERE id=$id_lead_generator_cta")),true);
@@ -94,8 +94,9 @@ get_header();
                 <div class="section-title-2col">
                     <h6 class="white _18"><?php echo $data_home['secao2_section_title'];?></h6>
                     <div class="link-text-arrow">
-                        <a href="./cases" class="link-text-black invert"><?php echo $data_home['secao2_call_action_cases'];?></a>
-                        <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink">
+                        <a href="./cases" class="link-text-black invert"><?php echo $data_home['secao2_call_action_cases'];?>
+                            <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink">
+                        </a>
                     </div>
                 </div>
             </div>

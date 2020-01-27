@@ -19,7 +19,7 @@ require_once dirname_oldphp(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view
 global $wpdb;
 $d1_view_parser = new D1_View_Parser();
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";
-$GLOBALS["data"] = $d1_view_parser->get_data();
+$GLOBALS["data"] = $d1_view_parser->get_data($language_option);
 $data_cases = $GLOBALS["data"]["d1_plugin_cases"];
 $case = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_cases WHERE id_card=$id_case")),true);
 $case = !empty($case[0]) ? $case[0] :array();
