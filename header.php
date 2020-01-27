@@ -57,7 +57,7 @@ $menu = array_values(get_d1_menu_tree('menu_principal'.$menu_language));
             <div class="secondary-text type-gradient"><span><?php echo $data_config_geral['top_bar_desc']; ?></span>
             </div><a href="<?php echo $data_config_geral['top_bar_link']; ?>" class="link-top-menu"><?php echo $data_config_geral['top_bar_text_link']; ?></a>
         </div>
-        <div><a href="<?php echo $data_config_geral['top_bar_login_link']; ?>" class="link-top-menu-copy type-gradient"><span><?php echo $data_config_geral['top_bar_text_login_link']; ?></span></a>
+        <div style="display: inline-flex;"><a href="<?php echo $data_config_geral['top_bar_login_link']; ?>" class="link-top-menu-copy type-gradient"><span><?php echo $data_config_geral['top_bar_text_login_link']; ?></span></a>
             <div class="div-block-71">
                 <div data-delay="0" class="dropdown-3 w-dropdown">
                 <?php 
