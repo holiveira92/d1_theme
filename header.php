@@ -24,7 +24,6 @@ $menu = array_values(get_d1_menu_tree('menu_principal'.$menu_language));
     <meta charset="utf-8">
     <title><?php wp_title(''); ?></title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <meta content="Webflow" name="generator">
     <!-- OneTrust Cookies Consent Notice start -->
 
     <script src="https://cookie-cdn.cookiepro.com/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="065cdf4d-b682-4a87-bbb4-41776bbe1e60"></script>
@@ -45,7 +44,6 @@ $menu = array_values(get_d1_menu_tree('menu_principal'.$menu_language));
             n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
         }(window, document)
     </script>
-    <link href="<?php echo get_template_directory_uri() . '/'; ?>icons/webclip.png" rel="apple-touch-icon">
     <link href="<?php echo $data_header['d1_favicon']; ?>" rel="shortcut icon" type="image/x-icon">
 </head>
 
