@@ -25,13 +25,13 @@ $menu = array_values(get_d1_menu_tree('menu_principal'.$menu_language));
     <title><?php wp_title(''); ?></title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="Webflow" name="generator">
-    <!-- OneTrust Cookies Consent Notice start -->
+    <!-- OneTrust Cookies Consent Notice start 
 
     <script src="https://cookie-cdn.cookiepro.com/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="065cdf4d-b682-4a87-bbb4-41776bbe1e60"></script>
     <script type="text/javascript">
     function OptanonWrapper() { }
     </script>
-    <!-- OneTrust Cookies Consent Notice end -->
+    OneTrust Cookies Consent Notice end -->
     <link href="<?php echo get_template_directory_uri() . '/'; ?>css/normalize.css" rel="stylesheet" type="text/css">
     <link href="<?php echo get_template_directory_uri() . '/'; ?>css/webflow.css" rel="stylesheet" type="text/css">
     <link href="<?php echo get_template_directory_uri() . '/'; ?>css/d1-new.css" rel="stylesheet" type="text/css">
