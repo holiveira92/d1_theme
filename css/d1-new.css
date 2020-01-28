@@ -15322,6 +15322,7 @@ textarea.w-select {
   position: relative;
   display: block;
   overflow: hidden;
+  width: 100%;
   z-index: 1;
   left: 0;
   right: 0;

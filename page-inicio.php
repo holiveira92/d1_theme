@@ -20,13 +20,27 @@ $data_home = $GLOBALS["data"]["d1_plugin"];
 $id_lead_generator_cta = !empty($data_home['secao5_cta']) ? $data_home['secao5_cta'] : 0;
 $lead_generator_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_call_to_action WHERE id=$id_lead_generator_cta")),true);
 $lead_generator_cta = !empty($lead_generator_cta[0]) ? $lead_generator_cta[0] : array();
-$heroes_list = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_home_hero")),true);
 $modulos = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_modulos")),true);
 $menu = wp_get_nav_menus();
 $menu_itens = wp_get_nav_menu_items($menu[0]->term_id);
 $menu_pai = get_menus_data($menu_itens);
 get_header();
 ?>
+
+<head>
+    <meta charset="utf-8">
+    <title><?php wp_title(''); ?></title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="Webflow" name="generator">
+    <link href="<?php echo get_template_directory_uri().'/';?>css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo get_template_directory_uri().'/';?>css/webflow.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo get_template_directory_uri() . '/'; ?>css/d1-new.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo get_template_directory_uri().'/';?>css/d1web.css" rel="stylesheet" type="text/css">
+    <script src="<?php echo get_template_directory_uri().'/';?>js/index.js" type="text/javascript"></script>
+    <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart" in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document)</script>
+    <link href="<?php echo get_template_directory_uri().'/';?>icons/webclip.png" rel="apple-touch-icon">
+    <link href="<?php echo $data_header['d1_favicon'];?>" rel="shortcut icon" type="image/x-icon">
+</head>
 
 <style type="text/css">
 
