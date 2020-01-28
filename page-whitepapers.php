@@ -86,7 +86,7 @@ get_header();
                         <div class="h1white left tiny">'.$case['subtext_footer_card'].'</div>
                     </div>
                     <div class="ver-cases">
-                        <div class="text-block-26">Ver Cases</div><img src="' . get_template_directory_uri() . '/images/arrowlink.svg" alt=""></div>
+                        <div class="text-block-26">Ver Whitepapers</div><img src="' . get_template_directory_uri() . '/images/arrowlink.svg" alt=""></div>
                         </a></div>';
                 $i++;
                 if($i==2){

@@ -96,7 +96,7 @@ $menu = array_values(get_d1_menu_tree('menu_principal'.$menu_language));
                     <nav class="dropdown-plataforma w-dropdown-list" id="w-dropdown-list-1">
                         <div class="menu-select-plataforma"></div>
                         <div class="menu-plataforma-wrapper">
-                            <div class="div-block-112">
+                            <div class="div-block-112" style="display: grid;grid-template-areas: 'header header';">
                             <?php 
                             $cont = 1;
                             foreach($menu[0]->wpse_children as $key=>$wpse):

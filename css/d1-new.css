@@ -1340,7 +1340,8 @@ textarea.w-select {
   left: 0;
   right: 0;
   height: 100%;
-  white-space: nowrap
+  white-space: nowrap;
+  width: 100%;
 }
 
 .w-slide {
