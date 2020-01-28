@@ -24,13 +24,14 @@ $menu = array_values(get_d1_menu_tree('menu_principal'.$menu_language));
     <meta charset="utf-8">
     <title><?php wp_title(''); ?></title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <!-- OneTrust Cookies Consent Notice start -->
+    <meta content="Webflow" name="generator">
+    <!-- OneTrust Cookies Consent Notice start 
 
     <script src="https://cookie-cdn.cookiepro.com/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="065cdf4d-b682-4a87-bbb4-41776bbe1e60"></script>
     <script type="text/javascript">
     function OptanonWrapper() { }
     </script>
-    <!-- OneTrust Cookies Consent Notice end -->
+    OneTrust Cookies Consent Notice end -->
     <link href="<?php echo get_template_directory_uri() . '/'; ?>css/normalize.css" rel="stylesheet" type="text/css">
     <link href="<?php echo get_template_directory_uri() . '/'; ?>css/webflow.css" rel="stylesheet" type="text/css">
     <link href="<?php echo get_template_directory_uri() . '/'; ?>css/d1-new.css" rel="stylesheet" type="text/css">
@@ -44,6 +45,7 @@ $menu = array_values(get_d1_menu_tree('menu_principal'.$menu_language));
             n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
         }(window, document)
     </script>
+    <link href="<?php echo get_template_directory_uri() . '/'; ?>icons/webclip.png" rel="apple-touch-icon">
     <link href="<?php echo $data_header['d1_favicon']; ?>" rel="shortcut icon" type="image/x-icon">
 </head>
 
@@ -55,7 +57,7 @@ $menu = array_values(get_d1_menu_tree('menu_principal'.$menu_language));
             <div class="secondary-text type-gradient"><span><?php echo $data_config_geral['top_bar_desc']; ?></span>
             </div><a href="<?php echo $data_config_geral['top_bar_link']; ?>" class="link-top-menu"><?php echo $data_config_geral['top_bar_text_link']; ?></a>
         </div>
-        <div><a href="<?php echo $data_config_geral['top_bar_login_link']; ?>" class="link-top-menu-copy type-gradient"><span><?php echo $data_config_geral['top_bar_text_login_link']; ?></span></a>
+        <div style="display: inline-flex;"><a href="<?php echo $data_config_geral['top_bar_login_link']; ?>" class="link-top-menu-copy type-gradient"><span><?php echo $data_config_geral['top_bar_text_login_link']; ?></span></a>
             <div class="div-block-71">
                 <div data-delay="0" class="dropdown-3 w-dropdown">
                 <?php 
@@ -94,7 +96,7 @@ $menu = array_values(get_d1_menu_tree('menu_principal'.$menu_language));
                     <nav class="dropdown-plataforma w-dropdown-list" id="w-dropdown-list-1">
                         <div class="menu-select-plataforma"></div>
                         <div class="menu-plataforma-wrapper">
-                            <div class="div-block-112">
+                            <div class="div-block-112" style="display: grid;grid-template-areas: 'header header';">
                             <?php 
                             $cont = 1;
                             foreach($menu[0]->wpse_children as $key=>$wpse):
