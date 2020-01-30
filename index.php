@@ -63,8 +63,8 @@ get_header();
                         <div class="home-hero-left left nopad" data-ix="fade-in-on-load">
                             <h1 class="h1white herohome maintitle rightpad"><?php echo insert_degrade($hero['chamada_principal'],2);?></span></h1>
                             <div class="paragrafo white"><?php echo $hero['descricao_primaria'];?></div>
+                            <a href="<?php echo $home_cta['link'];?>" class="btn-gradient hero w-button"><?php echo $home_cta['title'];?></a>
                             <div class="h1white pad20 small type-gradient"><?php echo insert_degrade($hero['descricao_secundaria'],2);?></div>
-                                <a href="<?php echo $home_cta['link'];?>" class="btn-gradient hero w-button"><?php echo $home_cta['title'];?></a>
                         </div>
                         <div class="home-hero-right">
                             <h3 class="h1white nomargin"><?php echo $hero['hero_name'];?></h3>
@@ -200,7 +200,7 @@ get_header();
             <div class="tabs-section-title-2col">
                 <h6 class="pad20 left lightblueleft lightblue"><?php echo $data_home['secao6_title'];?></h6>
                 <div class="link-text-arrow right noinvert">
-                    <a href="../plataforma/" class="link-text-black">VER PLATAFORMA</a>
+                    <a href="<?php echo get_home_url() ."/plataforma";?>" class="link-text-black">VER PLATAFORMA</a>
                     <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink">
                 </div>
             </div>
@@ -212,7 +212,7 @@ get_header();
                     $modulos = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_modulos WHERE id_modulo IS NULL OR id_modulo = '' ")),true);
                     $i=1;
                     foreach($modulos as $key=>$modulo):
-                        $title_class = ($key == 1) ? 'w--current' : "";
+                        $title_class = ($key == 0) ? 'w--current' : "";
                     ?>
                         <a data-w-tab="Tab <?php echo $i;?>" class="home-tab-link w-inline-block w-tab-link <?php echo $title_class;?>">
                             <div><?php echo $modulo['title'];?></div>
