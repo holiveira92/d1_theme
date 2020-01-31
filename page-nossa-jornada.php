@@ -57,7 +57,7 @@ get_header();
                     <h6 class="white nomargin"><?php echo $data_jornada['jornada_secao1_about'];?></h6>
                     <div class="pad20 left"><?php echo $data_jornada['jornada_secao1_about_descricao'];?></div>
                     <div class="home-title-case2">
-                        <a href="<?php echo $data_jornada['jornada_secao1_about_link'];?>" class="body-text-link3"><?php echo $data_jornada['jornada_secao1_about_text_link'];?></a>
+                        <a href="<?php echo $data_jornada['jornada_secao1_about_link'];?>" class="body-text-link3" target="_blank"><?php echo $data_jornada['jornada_secao1_about_text_link'];?></a>
                         <img src="<?php echo get_template_directory_uri();?>/images/arrowlink-black.svg" alt="" class="arrowlink">
                     </div>
                 </div>

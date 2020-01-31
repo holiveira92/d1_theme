@@ -27,8 +27,19 @@ img.home-hero-logo-partner {
       height: 60%!important;
     }
     .section-colright-form {
-      height: 130%!importants;
+      height: 130%!important;
     }
+    .preco-form-wrapper.left.bottommargin {
+      height: calc(75% + 2em);
+    }
+    .hs-form-booleancheckbox input[type="checkbox"] {
+      opacity: 1;
+      position: relative;
+      z-index: 0;
+      }
+      .hs-form-booleancheckbox-display span {
+        margin-left: 10px;
+        }
   }
 
 }
@@ -2894,6 +2905,7 @@ h6 {
   display: -ms-flexbox;
   display: flex;
   height: 420px;
+  display: block;
   margin-right: 5px;
   margin-left: 5px;
   padding: 10px 20px 20px;

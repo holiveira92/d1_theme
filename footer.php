@@ -207,3 +207,13 @@ $group_links = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wp
     });
 </script>
 <script src="<?php echo get_template_directory_uri() . '/'; ?>js/webflow.js" type="text/javascript"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156247007-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-156247007-1');
+</script>

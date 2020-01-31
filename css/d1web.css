@@ -10981,6 +10981,11 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
 
 @media (max-width: 479px) {
 
+  .tab-section-wrapper.grey-bg.nomargin {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
   h1 {
     font-size: 28px;
     line-height: 40px;
@@ -11365,6 +11370,7 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
   .case-thumb-content {
     height: auto;
     text-align: left;
+    display: block;
   }
   a.case-overview-link.w-inline-block.w-tab-link {
     padding: 10px 16px!important;
@@ -13304,7 +13310,7 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
   }
   .div-block-91 {
     width: 100px;
-    margin-top: -16px;
+    margin-top: -10px;
   }
   .heading-27.mobi {
     font-size: 18px;
