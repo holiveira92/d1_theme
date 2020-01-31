@@ -76,8 +76,8 @@ get_header();
                         <div class="home-hero-left left nopad" data-ix="fade-in-on-load">
                             <h1 class="h1white herohome maintitle rightpad"><?php echo insert_degrade($hero['chamada_principal'],2);?></span></h1>
                             <div class="paragrafo white"><?php echo $hero['descricao_primaria'];?></div>
+                            <a href="<?php echo $home_cta['link'];?>" class="btn-gradient hero w-button"><?php echo $home_cta['title'];?></a>
                             <div class="h1white pad20 small type-gradient"><?php echo insert_degrade($hero['descricao_secundaria'],2);?></div>
-                                <a href="<?php echo $home_cta['link'];?>" class="btn-gradient hero w-button"><?php echo $home_cta['title'];?></a>
                         </div>
                         <div class="home-hero-right">
                             <h3 class="h1white nomargin"><?php echo $hero['hero_name'];?></h3>
