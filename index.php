@@ -12,14 +12,15 @@ $language = (!empty($language_option) && $language_option != "PT") ? $language_o
 require(trim(dirname_oldphp(__FILE__,4)) . "wp-load.php");
 wp_load_alloptions();
 require_once dirname_oldphp(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view_parser.php';
+require_once 'data_loader.php';
+$data_loader        = new Data_Loader();
 global $wpdb;
 $d1_view_parser = new D1_View_Parser();
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";
 $GLOBALS["data"] = $d1_view_parser->get_data($language_option);
 $data_home = $GLOBALS["data"]["d1_plugin"];
 $id_lead_generator_cta = !empty($data_home['secao5_cta']) ? $data_home['secao5_cta'] : 0;
-$lead_generator_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_call_to_action WHERE id=$id_lead_generator_cta")),true);
-$lead_generator_cta = !empty($lead_generator_cta[0]) ? $lead_generator_cta[0] : array();
+$lead_generator_cta =  $data_loader->get_cta($id_lead_generator_cta);
 $heroes_list = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_home_hero")),true);
 $modulos = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_modulos")),true);
 $menu = wp_get_nav_menus();
@@ -36,7 +37,6 @@ get_header();
     <link href="<?php echo get_template_directory_uri().'/';?>css/normalize.css" rel="stylesheet" type="text/css">
     <link href="<?php echo get_template_directory_uri().'/';?>css/webflow.css" rel="stylesheet" type="text/css">
     <link href="<?php echo get_template_directory_uri().'/';?>css/d1web.css" rel="stylesheet" type="text/css">
-    <script src="<?php echo get_template_directory_uri().'/';?>js/index.js" type="text/javascript"></script>
     <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart" in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document)</script>
     <link href="<?php echo get_template_directory_uri().'/';?>icons/webclip.png" rel="apple-touch-icon">
     <link href="<?php echo $data_header['d1_favicon'];?>" rel="shortcut icon" type="image/x-icon">
@@ -51,10 +51,8 @@ get_header();
         <div class="mask w-slider-mask">
         <?php
             foreach($heroes_list as $k=>$hero):
-                $id_home_cta = $hero['id_cta'];
-                $id_home_cta = !empty($id_home_cta) ? $id_home_cta : 0;
-                $home_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_call_to_action WHERE id=$id_home_cta")),true);
-                $home_cta = !empty($home_cta[0]) ? $home_cta[0] : array();
+                $id_home_cta = !empty($hero['id_cta']) ? $hero['id_cta'] : 0;
+                $home_cta = $data_loader->get_cta($id_home_cta);
                 $cont = 1;
         ?>
             <div class="_1-slide w-slide" style="background-image: url('<?php echo get_template_directory_uri();?>/images/stripes-h_black_trans.png'), -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url('<?php echo $hero['img_url_bg_hero'];?>')">
@@ -63,7 +61,10 @@ get_header();
                         <div class="home-hero-left left nopad" data-ix="fade-in-on-load">
                             <h1 class="h1white herohome maintitle rightpad"><?php echo insert_degrade($hero['chamada_principal'],2);?></span></h1>
                             <div class="paragrafo white"><?php echo $hero['descricao_primaria'];?></div>
-                            <a href="<?php echo $home_cta['link'];?>" class="btn-gradient hero w-button"><?php echo $home_cta['title'];?></a>
+                            <!-- Botão CTA -->
+                            <a href="<?php echo $home_cta['link'];?>" data-url="<?php echo $home_cta['video_url'];?>" target="<?php echo $home_cta['target'];?>" 
+                            class="btn-gradient hero w-button <?php echo $home_cta['icon'];?>"><?php echo $home_cta['title'];?></a>
+                            <!-- Fim Botão CTA -->
                             <div class="h1white pad20 small type-gradient"><?php echo insert_degrade($hero['descricao_secundaria'],2);?></div>
                         </div>
                         <div class="home-hero-right">
@@ -188,7 +189,11 @@ get_header();
             <div class="section-1col-wrapper" data-ix="fade-in-on-scroll-2">
                 <h1 class="h1white calculadora type-gradient"><?php echo insert_degrade($data_home['secao5_section_title'],3);?></h1>
                 <div class="paragrafo"><?php echo $data_home['secao5_section_descricao'];?></div>
-                    <a href="<?php echo $lead_generator_cta['link'];?>" class="btn-cx w-button"><?php echo $lead_generator_cta['title'];?></a>
+                    <!-- Botão CTA -->
+                    <a href="<?php echo $lead_generator_cta['link'];?>" data-url="<?php echo $lead_generator_cta['video_url'];?>" target="<?php echo $lead_generator_cta['target'];?>" 
+                    class="btn-cx w-button <?php echo $lead_generator_cta['icon'];?>"><?php echo $lead_generator_cta['title'];?></a>
+                    <!-- Fim Botão CTA -->
+
                 </div>
         </div>
     </div>

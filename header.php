@@ -1,6 +1,7 @@
 <?php
 require_once dirname_oldphp(__FILE__, 3) . 'plugins/d1_plugin/includes/base/d1_view_parser.php';
 require_once dirname_oldphp(__FILE__, 3) . 'themes/d1_theme/menu_tree.php';
+require_once dirname_oldphp(__FILE__, 3) . 'themes/d1_theme/modal.php';
 global $wpdb;
 $d1_view_parser = new D1_View_Parser();
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";
@@ -37,6 +38,8 @@ $menu = array_values(get_d1_menu_tree('menu_principal'.$menu_language));
     <link href="<?php echo get_template_directory_uri() . '/'; ?>css/d1web.css" rel="stylesheet" type="text/css">
     <script src="<?php echo get_template_directory_uri() . '/'; ?>js/jquery-3.4.1.min.js" type="text/javascript"></script>
     <script src="<?php echo get_template_directory_uri() . '/'; ?>js/index.js" type="text/javascript"></script>
+    <link href="<?php echo get_template_directory_uri() . '/'; ?>js/modal-video/style.css" rel="stylesheet" type="text/css">
+    <script src="<?php echo get_template_directory_uri() . '/'; ?>js/modal-video/plugins/jquery.fitvids/jquery.fitvids.js" type="text/javascript"></script>
     <script type="text/javascript">
         ! function(o, c) {
             var n = c.documentElement,
@@ -71,11 +74,12 @@ $menu = array_values(get_d1_menu_tree('menu_principal'.$menu_language));
                         <?php endif;?>
                 <?php endforeach;?>
                 <?php
+                    $dpdw_top = 33;//tratamento para posição na tela
                     foreach($arr_lang as $lang):
                         if($language_option != $lang):
                 ?>
-                            <nav class="dropdown-list-2 w-dropdown-list"><a href="<?php echo get_template_directory_uri() ."/language.php?lang=$lang&location=" . get_home_url() ;?>" class="dropdown-link-2 w-dropdown-link"><?php echo $lang;?></a></nav>
-                        <?php endif;?>
+                            <nav style="top: <?php echo $dpdw_top;?>px !important;" class="dropdown-list-2 w-dropdown-list"><a href="<?php echo get_template_directory_uri() ."/language.php?lang=$lang&location=" . get_home_url() ;?>" class="dropdown-link-2 w-dropdown-link"><?php echo $lang;?></a></nav>
+                        <?php $dpdw_top = 2 * $dpdw_top; endif;?>
                 <?php endforeach;?>
                 </div>
             </div>

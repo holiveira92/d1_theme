@@ -2710,6 +2710,10 @@ h6 {
   text-align: center;
 }
 
+.play{
+  background-image: url("../images/play-icon.svg"), linear-gradient(257.91deg, #0a8cff 6.41%, #0fc6ff 82.61%) !important;
+}
+
 .btn-gradient {
   width: 300px;
   height: 68px;
@@ -2722,7 +2726,6 @@ h6 {
   padding-left: 0px;
   border-radius: 100px;
   background-color: transparent;
-  background-image: url("https://uploads-ssl.webflow.com/5d9f3e21a78bd192c39905ad/5d9f4366a121e078409a5476_play-icon.svg"), linear-gradient(257.91deg, #0a8cff 6.41%, #0fc6ff 82.61%);
   background-position: 98% 50%, 0px 0px;
   background-size: auto, auto;
   background-repeat: no-repeat, repeat;
@@ -2739,7 +2742,6 @@ h6 {
   border-width: 1px;
   border-color: rgba(0, 0, 0, 0.5);
   background-color: #131111;
-  background-image: url("https://uploads-ssl.webflow.com/5d9f3e21a78bd192c39905ad/5d9f4366a121e078409a5476_play-icon.svg");
   background-size: auto;
   background-repeat: no-repeat;
   box-shadow: 1px 1px 6px 3px rgba(0, 0, 0, 0.2);
@@ -2747,7 +2749,6 @@ h6 {
 
 .btn-gradient:active {
   background-color: #292828;
-  background-image: url("https://uploads-ssl.webflow.com/5d9f3e21a78bd192c39905ad/5d9f4366a121e078409a5476_play-icon.svg");
   background-size: auto;
   background-repeat: no-repeat;
 }
@@ -3337,17 +3338,19 @@ h6 {
   padding-right: 160px;
 }
 
+.infinite{
+  background-image: url('../images/infinite-icon.svg'), linear-gradient(257.91deg, #0a8cff 6.41%, #0fc6ff 82.61%);
+}
+
 .btn-cx {
   position: static;
   width: 350px;
   height: 66px;
   margin-top: 31px;
-  /*padding: 21px 49px 0px 0px; - 1 fase*/
   padding-top: 21px;
   border: 2px solid #000;
   border-radius: 100px;
   background-color: transparent;
-  /*background-image: url('../images/infinite-icon.svg'), linear-gradient(257.91deg, #0a8cff 6.41%, #0fc6ff 82.61%); - 1 fase*/
   background-position: 94% 50%, 0px 0px;
   background-size: 64px, auto;
   background-repeat: no-repeat, repeat;
@@ -3367,7 +3370,6 @@ h6 {
   border-width: 2px;
   border-color: #fff;
   background-color: transparent;
-  /*background-image: url('../images/infinite-icon.svg'), linear-gradient(257.91deg, #0a8cff 6.41%, #0fc6ff 82.61%); - 1 fase*/
   background-position: 94% 50%;
   background-size: 64px;
   background-repeat: no-repeat;
@@ -3589,7 +3591,7 @@ h6 {
   border-width: 2px;
   border-color: #fff;
   background-color: #000;
-  /*background-image: url("https://uploads-ssl.webflow.com/5d9f3e21a78bd192c39905ad/5d9f4366a121e078409a5476_play-icon.svg"); - fase 1*/
+  /* - fase 1*/
   background-position: 98% 50%;
   background-size: auto;
   background-repeat: no-repeat;
@@ -3699,12 +3701,10 @@ h6 {
   width: 300px;
   height: 66px;
   padding-top: 21px;
-  /*padding-right: 49px; - 1 fase*/
   padding-left: 0px;
   border: 2px solid #fff;
   border-radius: 100px;
   background-color: transparent;
-  /*background-image: url('../images/infinite-icon.svg'), linear-gradient(257.91deg, #0a8cff 6.41%, #0fc6ff 82.61%); - 1 fase*/
   background-position: 94% 50%;
   background-size: auto;
   background-repeat: no-repeat;
@@ -4166,7 +4166,7 @@ h6 {
   border: 2px solid #fff;
   border-radius: 100px;
   background-color: transparent;
-  background-image: url("https://uploads-ssl.webflow.com/5d9f3e21a78bd192c39905ad/5d9f4366a121e078409a5476_play-icon.svg");
+  
   background-position: 98% 50%;
   background-size: auto;
   background-repeat: no-repeat;
@@ -5500,7 +5500,6 @@ h6 {
   padding-left: 0px;
   border-radius: 100px;
   background-color: transparent;
-  background-image: url("https://uploads-ssl.webflow.com/5d9f3e21a78bd192c39905ad/5d9f4366a121e078409a5476_play-icon.svg"), linear-gradient(257.91deg, #0a8cff 6.41%, #0fc6ff 82.61%);
   background-position: 98% 50%, 0px 0px;
   background-size: auto, auto;
   background-repeat: no-repeat, repeat;
@@ -8947,7 +8946,7 @@ h6 {
   border-width: 2px;
   border-color: #fff;
   background-color: transparent;
-  /*background-image: url("https://uploads-ssl.webflow.com/5d9f3e21a78bd192c39905ad/5d9f4366a121e078409a5476_play-icon.svg"); - 1 fase */
+  /* - 1 fase */
   background-position: 98% 50%;
   background-size: auto;
   background-repeat: no-repeat;
@@ -13466,7 +13465,6 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
   .btn-gradient:hover {
       border-style: none;
       background-color: #000;
-      background-image: url("https://uploads-ssl.webflow.com/5d9f3e21a78bd192c39905ad/5d9f4366a121e078409a5476_play-icon.svg");
       background-size: auto;
       background-repeat: no-repeat;
       box-shadow: 1px 1px 6px 5px rgba(0, 0, 0, 0.2);

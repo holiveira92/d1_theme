@@ -1,5 +1,5 @@
 <?php
-function dirname_oldphp($path, $level = 0){
+function dirname_oldphpv2($path, $level = 0){
     $dir = explode(DIRECTORY_SEPARATOR, $path);
     $level = $level * -1;
     if($level == 0) $level = count($dir);
@@ -14,9 +14,9 @@ class Data_Loader {
         session_start(); 
         $language_option = !empty($_SESSION['d1_language_option']) ? $_SESSION['d1_language_option'] : "PT";
         $this->language = (!empty($language_option) && $language_option != "PT") ? $language_option ."_" : "";
-        require(trim(dirname_oldphp(__FILE__,4)) . "wp-load.php");
+        require(trim(dirname_oldphpv2(__FILE__,4)) . "wp-load.php");
         wp_load_alloptions();
-        require_once dirname_oldphp(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view_parser.php';
+        require_once dirname_oldphpv2(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view_parser.php';
         $d1_view_parser = new D1_View_Parser();
         $img_default = get_template_directory_uri() . "/images/img_default.jpg";
         $this->all_data = $d1_view_parser->get_data($language_option);
@@ -170,4 +170,31 @@ class Data_Loader {
         return $this->data;
     }
 
+    function get_cta($id_cta){
+        global $wpdb;
+        $cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $this->language  . "d1_call_to_action WHERE id=$id_cta")),true);
+        $cta = !empty($cta[0]) ? $cta[0] : array();
+        
+        //verifica tipo de cta
+        if(!empty($cta['target'])){
+            switch($cta['target']){
+                case 'modal':
+                    $cta['icon'] = 'play open-modal';
+                    $cta['target'] = '';
+                    $cta['video_url'] = $cta['link'];
+                    $cta['link']   = '#';
+                    break;
+                case 'infinite':
+                    $cta['icon'] = 'infinite';
+                    $cta['target'] = '_blank';
+                    $cta['video_url'] = '';
+                    break;
+                default:
+                    $cta['video_url'] = '';
+                    $cta['icon'] = '';
+                    break;
+            }
+        }
+        return $cta;
+    }
 }
