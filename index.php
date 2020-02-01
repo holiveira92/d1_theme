@@ -21,6 +21,8 @@ $GLOBALS["data"] = $d1_view_parser->get_data($language_option);
 $data_home = $GLOBALS["data"]["d1_plugin"];
 $id_lead_generator_cta = !empty($data_home['secao5_cta']) ? $data_home['secao5_cta'] : 0;
 $lead_generator_cta =  $data_loader->get_cta($id_lead_generator_cta);
+$id_secao7_cta = !empty($data_home['secao7_cta']) ? $data_home['secao7_cta'] : 0;
+$secao7_cta =  $data_loader->get_cta($id_secao7_cta);
 $heroes_list = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_home_hero")),true);
 $modulos = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_modulos")),true);
 $menu = wp_get_nav_menus();
@@ -158,7 +160,7 @@ get_header();
     </div>
 
     <!-- SEÇÃO DESAFIO -->
-    <div class="section-wrapper hide">
+    <div class="section-wrapper">
         <div class="mycontainer">
             <div class="section-title">
                 <h6 class="darkgrey pad20"><?php echo $data_home['secao4_section_title_part3'];?></h6>
@@ -184,14 +186,14 @@ get_header();
     </div>
 
     <!-- SEÇÃO LEAD GENERATOR -->
-    <div class="section-wrapper-large black-bg-stripe hide">
+    <div class="section-wrapper-large black-bg-stripe">
         <div class="mycontainer">
             <div class="section-1col-wrapper" data-ix="fade-in-on-scroll-2">
                 <h1 class="h1white calculadora type-gradient"><?php echo insert_degrade($data_home['secao5_section_title'],3);?></h1>
                 <div class="paragrafo"><?php echo $data_home['secao5_section_descricao'];?></div>
                     <!-- Botão CTA -->
                     <a href="<?php echo $lead_generator_cta['link'];?>" data-url="<?php echo $lead_generator_cta['video_url'];?>" target="<?php echo $lead_generator_cta['target'];?>" 
-                    class="btn-cx w-button <?php echo $lead_generator_cta['icon'];?>"><?php echo $lead_generator_cta['title'];?></a>
+                    class="w-button <?php echo $lead_generator_cta['icon'];?>"><?php echo $lead_generator_cta['title'];?></a>
                     <!-- Fim Botão CTA -->
 
                 </div>
@@ -298,7 +300,11 @@ get_header();
                     <div class="pad20">
                         <?php echo str_replace("\n",'<br />',$data_home['secao7_section_descricao']);?>
                     </div>
-                    <a target='_blank' href="<?php echo $lead_generator_cta['link'];?>" class="btn-black-home-play w-button"><?php echo $lead_generator_cta['title'];?></a></div>
+                    <!-- Botão CTA -->
+                    <a href="<?php echo $secao7_cta['link'];?>" data-url="<?php echo $secao7_cta['video_url'];?>" target="<?php echo $secao7_cta['target'];?>" 
+                    class="w-button <?php echo $secao7_cta['icon'];?>"><?php echo $secao7_cta['title'];?></a>
+                    <!-- Fim Botão CTA -->
+                </div>
                 <div class="section-colright"><img src="<?php echo $data_home['secao7_img'];?>" width="673"></div>
             </div>
         </div>

@@ -12,6 +12,8 @@ $language = (!empty($language_option) && $language_option != "PT") ? $language_o
 require(trim(dirname_oldphp(__FILE__,4)) . "wp-load.php");
 wp_load_alloptions();
 require_once dirname_oldphp(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view_parser.php';
+require_once 'data_loader.php';
+$data_loader        = new Data_Loader();
 global $wpdb;
 $d1_view_parser = new D1_View_Parser();
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";
@@ -19,32 +21,26 @@ $GLOBALS["data"] = $d1_view_parser->get_data($language_option);
 $data_home = $GLOBALS["data"]["d1_plugin"];
 $data_home['d1_favicon'] = (!empty($data_home['d1_favicon'])) ? $data_home['d1_favicon'] : $img_default ;
 $data_jornada = $GLOBALS["data"]["d1_plugin_jornada"];
-$id_menu_cta = $data_home['d1_menu_cta'];
-$id_menu_cta = !empty($id_menu_cta) ? $id_menu_cta : 0;
-$menu_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_call_to_action WHERE id=$id_menu_cta")),true);
-$menu_cta = !empty($menu_cta[0]) ? $menu_cta[0] : array();
-$id_secao1_cta = $data_jornada['jornada_secao1_cta'];
-$id_secao1_cta = !empty($id_secao1_cta) ? $id_secao1_cta : 0;
-$secao1_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_call_to_action WHERE id=$id_secao1_cta")),true);
-$secao1_cta = !empty($secao1_cta[0]) ? $secao1_cta[0] : array('title' =>'','link' =>'','target' =>'',);
-$id_secao4_cta = $data_jornada['jornada_secao4_inovacao_cta'];
-$id_secao4_cta = !empty($id_secao4_cta) ? $id_secao4_cta : 0;
-$secao4_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_call_to_action WHERE id=$id_secao4_cta")),true);
-$secao4_cta = !empty($secao4_cta[0]) ? $secao4_cta[0] : array('title' =>'','link' =>'','target' =>'',);
-//pre($data_jornada);die;
+$id_secao1_cta = !empty($data_jornada['jornada_secao1_cta']) ? $data_jornada['jornada_secao1_cta'] : 0;
+$secao1_cta =  $data_loader->get_cta($id_secao1_cta);
+$id_secao4_cta = !empty($data_jornada['jornada_secao4_inovacao_cta']) ? $data_jornada['jornada_secao4_inovacao_cta'] : 0;
+$secao4_cta =  $data_loader->get_cta($id_secao4_cta);
 get_header();
 ?>
 
 <body class="body">
 
-    <div id="hero" class="nossajornada-hero" style="background-image: url('<?php echo $data_jornada['jornada_secao1_img'];?>');">
+    <div id="hero" class="nossajornada-hero" style="background-image: url('<?php echo $data_jornada['jornada_secao1_img'];?>');width:100%;">
         <div class="mycontainer">
             <div class="home-hero-wrapper centered _16pad">
                 <div class="home-hero-left center">
                     <h6 class="lightblue type-gradient" data-ix="fade-in-on-load"><span><?php echo $data_jornada['jornada_secao1_main_title'];?></span></h6>
                     <h1 class="h1white center bottommargin type-gradient" data-ix="fade-in-on-load-2"><?php echo insert_degrade($data_jornada['jornada_secao1_title'],4);?></h1>
                     <div class="h1white lightblue2 larger center type-gradient" data-ix="fade-in-on-load-2"><span><?php echo $data_jornada['jornada_secao1_desc'];?></span></div>
-                    <a href="<?php echo $secao1_cta['link'];?>" target="<?php echo $secao1_cta['target'];?>" class="btn-gradient w-button" data-ix="fade-in-on-load-2"><?php echo $secao1_cta['title'];?></a></div>
+                    <!-- Botão CTA -->
+                    <a href="<?php echo $secao1_cta['link'];?>" data-url="<?php echo $secao1_cta['video_url'];?>" target="<?php echo $secao1_cta['target'];?>" 
+                    class="btn-gradient w-button <?php echo $secao1_cta['icon'];?>"><?php echo $secao1_cta['title'];?></a></div>
+                    <!-- Fim Botão CTA -->
             </div>
         </div>
         <div class="arrowdown"><img src="<?php echo get_template_directory_uri();?>/images/arrow-hero.svg" width="12" alt=""></div>

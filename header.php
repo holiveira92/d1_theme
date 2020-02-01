@@ -2,7 +2,9 @@
 require_once dirname_oldphp(__FILE__, 3) . 'plugins/d1_plugin/includes/base/d1_view_parser.php';
 require_once dirname_oldphp(__FILE__, 3) . 'themes/d1_theme/menu_tree.php';
 require_once dirname_oldphp(__FILE__, 3) . 'themes/d1_theme/modal.php';
+require_once 'data_loader.php';
 global $wpdb;
+$data_loader        = new Data_Loader();
 $d1_view_parser = new D1_View_Parser();
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";
 session_start(); 
@@ -14,10 +16,8 @@ $GLOBALS["data"] = $d1_view_parser->get_data($language_option);
 $data_config_geral = $GLOBALS["data"]["d1_plugin_config_geral"];
 $data_header = $GLOBALS["data"]["d1_plugin"];
 $data_header['d1_favicon'] = (!empty($data_header['d1_favicon'])) ? $data_header['d1_favicon'] : $img_default;
-$id_menu_cta = $data_header['d1_menu_cta'];
-$id_menu_cta = !empty($id_menu_cta) ? $id_menu_cta : 0;
-$menu_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_call_to_action WHERE id=$id_menu_cta")), true);
-$menu_cta = !empty($menu_cta[0]) ? $menu_cta[0] : array();
+$id_menu_cta = !empty($data_config_geral['d1_menu_cta']) ? $data_config_geral['d1_menu_cta'] : 0;
+$menu_cta =  $data_loader->get_cta($id_menu_cta);
 $menu = array_values(get_d1_menu_tree('menu_principal'.$menu_language));
 ?>
 
@@ -47,9 +47,9 @@ $menu = array_values(get_d1_menu_tree('menu_principal'.$menu_language));
             n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
         }(window, document)
     </script>
-    <link href="<?php echo get_home_url() . '/'; ?>conteudo/uploads/2019/11/favicon-1.png" rel="apple-touch-icon">
-    <link href="<?php echo get_home_url() . '/'; ?>conteudo/uploads/2019/11/favicon-1.png" rel="shortcut icon" type="image/png">
-    <link rel="icon" href="<?php echo get_home_url() . '/'; ?>conteudo/uploads/2019/11/favicon-1.png"/>
+    <link href="<?php $data_header['d1_favicon']; ?>" rel="apple-touch-icon">
+    <link href="<?php $data_header['d1_favicon']; ?>" rel="shortcut icon" type="image/png">
+    <link rel="icon" href="<?php echo $data_header['d1_favicon'];?>"/>
 </head>
 
 
@@ -186,7 +186,10 @@ $menu = array_values(get_d1_menu_tree('menu_principal'.$menu_language));
                     </nav>
                 </div>
                 <div class="div-block-32">
-                    <a href="<?php echo $menu_cta['link']; ?>" class="btn-black-home-outline herp line type-gradient w-button"><?php echo $menu_cta['title']; ?></a>
+                    <!-- Botão CTA -->
+                    <a href="<?php echo $menu_cta['link'];?>" data-url="<?php echo $menu_cta['video_url'];?>" target="<?php echo $menu_cta['target'];?>" 
+                    class="btn-black-home-outline herp line type-gradient w-button <?php echo $menu_cta['icon'];?>"><?php echo $menu_cta['title'];?></a>
+                    <!-- Fim Botão CTA -->
                 </div>
             </div>
         </nav>

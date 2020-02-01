@@ -173,19 +173,24 @@ class Data_Loader {
     function get_cta($id_cta){
         global $wpdb;
         $cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $this->language  . "d1_call_to_action WHERE id=$id_cta")),true);
-        $cta = !empty($cta[0]) ? $cta[0] : array();
+        $cta = !empty($cta[0]) ? $cta[0] :  array('title' =>'','link' =>'','target' =>'');
         
         //verifica tipo de cta
         if(!empty($cta['target'])){
             switch($cta['target']){
                 case 'modal':
-                    $cta['icon'] = 'play open-modal';
+                    $cta['icon'] = 'btn-black-home-play play open-modal';
                     $cta['target'] = '';
                     $cta['video_url'] = $cta['link'];
                     $cta['link']   = '#';
                     break;
+                case 'play':
+                    $cta['icon'] = 'btn-black-home-play play';
+                    $cta['target'] = 'blank';
+                    $cta['video_url'] = '';
+                    break;
                 case 'infinite':
-                    $cta['icon'] = 'infinite';
+                    $cta['icon'] = 'btn-cx infinite';
                     $cta['target'] = '_blank';
                     $cta['video_url'] = '';
                     break;

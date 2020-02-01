@@ -12,6 +12,8 @@ $language = (!empty($language_option) && $language_option != "PT") ? $language_o
 require(trim(dirname_oldphp(__FILE__,4)) . "wp-load.php");
 wp_load_alloptions();
 require_once dirname_oldphp(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view_parser.php';
+require_once 'data_loader.php';
+$data_loader        = new Data_Loader();
 global $wpdb;
 $d1_view_parser = new D1_View_Parser();
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";
@@ -19,36 +21,8 @@ $GLOBALS["data"] = $d1_view_parser->get_data($language_option);
 $data_header = $GLOBALS["data"]["d1_plugin"];
 $data_header['d1_favicon'] = (!empty($data_header['d1_favicon'])) ? $data_header['d1_favicon'] : $img_default ;
 $data_plataforma = $GLOBALS["data"]["d1_plugin_plataforma"];
-$id_menu_cta = $data_header['d1_menu_cta'];
-$id_menu_cta = !empty($id_menu_cta) ? $id_menu_cta : 0;
-$menu_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_call_to_action WHERE id=$id_menu_cta")),true);
-$menu_cta = !empty($menu_cta[0]) ? $menu_cta[0] : array();
-$id_secao1_cta = $data_plataforma['plataforma_secao1_cta'];
-$id_secao1_cta = !empty($id_secao1_cta) ? $id_secao1_cta : 0;
-$secao1_cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_call_to_action WHERE id=$id_secao1_cta")),true);
-$secao1_cta = !empty($secao1_cta[0]) ? $secao1_cta[0] : array('title' =>'','link' =>'','target' =>'',);
-$menu = wp_get_nav_menus();
-$menu_itens = wp_get_nav_menu_items($menu[0]->term_id);
-$menu_pai = array();
-foreach($menu_itens as $key=>$menu){
-    if($menu->menu_item_parent == 0){
-        $menu_pai[] = array(
-            'id' => $menu->ID,
-            'title' => $menu->title,
-            'subitems' => array()
-        );
-    }
-}
-foreach($menu_pai as $key=>&$menu){
-    foreach($menu_itens as $key=>$item){
-        if($item->menu_item_parent == $menu['id']){
-            $menu['subitems'][] = array(
-                'id' => $item->ID,
-                'title' => $item->title,
-                'url' => $item->url,
-        );}
-    }
-}
+$id_secao1_cta = !empty($data_plataforma['plataforma_secao1_cta']) ? $data_plataforma['plataforma_secao1_cta'] : 0;
+$secao1_cta =  $data_loader->get_cta($id_secao1_cta);
 get_header();
 ?>
 <!DOCTYPE html>
@@ -116,9 +90,10 @@ get_header();
                         <h1 class="heading-37"><?php echo $data_plataforma["plataforma_secao2_modulo$i"."_title"];?></h1>
                     </div>
                     <div class="pad20 left"><?php echo $data_plataforma["plataforma_secao2_modulo$i"."_desc"];?></div>
-                        <div class="home-title-case2 left noinvert hide"><a href="<?php echo $data_plataforma["plataforma_secao2_modulo$i"."_link"];?>" class="body-text-link3">VER MÓDULO</a>
-                        <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink hide">
-                    </div>
+                        <div class="home-title-case2 left noinvert">
+                            <a href="<?php echo $data_plataforma["plataforma_secao2_modulo$i"."_link"];?>" class="body-text-link3">VER MÓDULO
+                            <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink"></a>
+                        </div>
                 </div>
                 <div class="section-col-left margin"><img src="<?php echo $data_plataforma["plataforma_secao2_modulo$i"."_img"];?>" width="1004" alt="" class="img-plataforma image-11"></div>
             </div>
