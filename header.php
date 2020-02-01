@@ -14,7 +14,7 @@ $menu_language = (!empty($language_option) && $language_option != "PT") ? "_" . 
 $arr_lang = array('PT','EN','ES');
 $GLOBALS["data"] = $d1_view_parser->get_data($language_option);
 $data_config_geral = $GLOBALS["data"]["d1_plugin_config_geral"];
-$data_header = $GLOBALS["data"]["d1_plugin"];
+$data_header = $GLOBALS["data"]["d1_plugin_config_geral"];
 $data_header['d1_favicon'] = (!empty($data_header['d1_favicon'])) ? $data_header['d1_favicon'] : $img_default;
 $id_menu_cta = !empty($data_config_geral['d1_menu_cta']) ? $data_config_geral['d1_menu_cta'] : 0;
 $menu_cta =  $data_loader->get_cta($id_menu_cta);
@@ -50,6 +50,7 @@ $menu = array_values(get_d1_menu_tree('menu_principal'.$menu_language));
     <link href="<?php $data_header['d1_favicon']; ?>" rel="apple-touch-icon">
     <link href="<?php $data_header['d1_favicon']; ?>" rel="shortcut icon" type="image/png">
     <link rel="icon" href="<?php echo $data_header['d1_favicon'];?>"/>
+    <link rel="shortcut icon" type="image/png" href="<?php echo $data_header['d1_favicon'];?>"/>
 </head>
 
 

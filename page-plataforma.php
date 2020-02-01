@@ -18,8 +18,6 @@ global $wpdb;
 $d1_view_parser = new D1_View_Parser();
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";
 $GLOBALS["data"] = $d1_view_parser->get_data($language_option);
-$data_header = $GLOBALS["data"]["d1_plugin"];
-$data_header['d1_favicon'] = (!empty($data_header['d1_favicon'])) ? $data_header['d1_favicon'] : $img_default ;
 $data_plataforma = $GLOBALS["data"]["d1_plugin_plataforma"];
 $id_secao1_cta = !empty($data_plataforma['plataforma_secao1_cta']) ? $data_plataforma['plataforma_secao1_cta'] : 0;
 $secao1_cta =  $data_loader->get_cta($id_secao1_cta);
