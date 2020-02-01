@@ -29,17 +29,6 @@ img.home-hero-logo-partner {
     .section-colright-form {
       height: 130%!important;
     }
-    .preco-form-wrapper.left.bottommargin {
-      height: calc(75% + 2em);
-    }
-    .hs-form-booleancheckbox input[type="checkbox"] {
-      opacity: 1;
-      position: relative;
-      z-index: 0;
-      }
-      .hs-form-booleancheckbox-display span {
-        margin-left: 10px;
-        }
   }
 
 }
@@ -1347,7 +1336,6 @@ textarea.w-select {
   position: relative;
   display: block;
   overflow: hidden;
-  width: 100%;
   z-index: 1;
   left: 0;
   right: 0;
@@ -2906,7 +2894,6 @@ h6 {
   display: -ms-flexbox;
   display: flex;
   height: 420px;
-  display: block;
   margin-right: 5px;
   margin-left: 5px;
   padding: 10px 20px 20px;
@@ -3338,19 +3325,17 @@ h6 {
   padding-right: 160px;
 }
 
-.infinite{
-  background-image: url('../images/infinite-icon.svg'), linear-gradient(257.91deg, #0a8cff 6.41%, #0fc6ff 82.61%);
-}
-
 .btn-cx {
   position: static;
   width: 350px;
   height: 66px;
   margin-top: 31px;
+  /*padding: 21px 49px 0px 0px; - 1 fase*/
   padding-top: 21px;
   border: 2px solid #000;
   border-radius: 100px;
   background-color: transparent;
+  /*background-image: url('../images/infinite-icon.svg'), linear-gradient(257.91deg, #0a8cff 6.41%, #0fc6ff 82.61%); - 1 fase*/
   background-position: 94% 50%, 0px 0px;
   background-size: 64px, auto;
   background-repeat: no-repeat, repeat;
@@ -3370,6 +3355,7 @@ h6 {
   border-width: 2px;
   border-color: #fff;
   background-color: transparent;
+  /*background-image: url('../images/infinite-icon.svg'), linear-gradient(257.91deg, #0a8cff 6.41%, #0fc6ff 82.61%); - 1 fase*/
   background-position: 94% 50%;
   background-size: 64px;
   background-repeat: no-repeat;
@@ -3591,7 +3577,7 @@ h6 {
   border-width: 2px;
   border-color: #fff;
   background-color: #000;
-  /* - fase 1*/
+  /*background-image: url("https://uploads-ssl.webflow.com/5d9f3e21a78bd192c39905ad/5d9f4366a121e078409a5476_play-icon.svg"); - fase 1*/
   background-position: 98% 50%;
   background-size: auto;
   background-repeat: no-repeat;
@@ -4166,7 +4152,6 @@ h6 {
   border: 2px solid #fff;
   border-radius: 100px;
   background-color: transparent;
-  
   background-position: 98% 50%;
   background-size: auto;
   background-repeat: no-repeat;
@@ -8946,7 +8931,6 @@ h6 {
   border-width: 2px;
   border-color: #fff;
   background-color: transparent;
-  /* - 1 fase */
   background-position: 98% 50%;
   background-size: auto;
   background-repeat: no-repeat;
