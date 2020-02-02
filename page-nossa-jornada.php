@@ -127,7 +127,7 @@ get_header();
                 <h3 class="heading-48 type-gradient"><span><?php echo $data_jornada['jornada_secao4_slide_title'];?></span></h3>
             </div>
             <div class="div-block-38 nomargin _100"><?php echo html_entity_decode($data_jornada['jornada_secao4_slide_code']);?></div>
-            <div class="div-block-38 nomargin flex"><a href="<?php echo $data_jornada['jornada_secao4_slide_link'];?>" target="_blank" class="downloadbtn type-gradient"><span>BAIXAR SLIDES</span></a></div>
+            <div class="div-block-38 nomargin flex"><a href="<?php echo $data_jornada['jornada_secao4_slide_link'];?>" target="_blank" class="downloadbtn type-gradient"><span><?php echo $data_jornada['jornada_secao4_slide_link_chamada'];?></span></a></div>
         </div>
     </div>
     
