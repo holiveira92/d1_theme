@@ -14,6 +14,8 @@ wp_load_alloptions();
 require_once dirname_oldphp(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view_parser.php';
 global $wpdb;
 $d1_view_parser = new D1_View_Parser();
+$GLOBALS["data"] = $d1_view_parser->get_data($language_option);
+$data_cases = $GLOBALS["data"]["d1_plugin_cases"];
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";
 $url_ajax = get_template_directory_uri() . "/cases-overview-ajax.php";
 $filter = (!empty($_GET['filter'])) ? $_GET['filter'] : "0";
@@ -27,7 +29,7 @@ get_header();
 <input type="hidden" id="url_ajax" name="url_ajax" value="<?php echo $url_ajax;?>">
     <div id="filtro" class="div-block-36">
         <div data-duration-in="100" data-duration-out="100" class="tabs-4 w-tabs">
-            <div class="tabs-menu-5 w-tab-menu hide" data-ix="fade-in-on-load">
+            <div class="tabs-menu-5 w-tab-menu" data-ix="fade-in-on-load">
                 <a data-w-tab="Tab 1" class="case-overview-link w-inline-block w-tab-link w--current" categoria="0">
                     <div class="casetab type-gradient"><span>TODOS</span></div>
                 </a>
@@ -97,7 +99,7 @@ get_header();
                     <h5 class="heading-2 pad20 white huge left"><?php echo $case_destaque['text_footer_card'];?></h5>
                     <div class="h1white left tiny"><?php echo $case_destaque['subtext_footer_card'];?></div>
                 </div>
-                <div class="ver-cases"><div class="text-block-26">Ver Cases</div><img src="<?php echo get_template_directory_uri();?>/images/arrowlink.svg" alt=""></div></a>
+                <div class="ver-cases"><div class="text-block-26"><?php echo $data_cases['cases_secao0_chamada'];?></div><img src="<?php echo get_template_directory_uri();?>/images/arrowlink.svg" alt=""></div></a>
             </div>
         </div>
 
@@ -125,7 +127,7 @@ get_header();
                         <div class="h1white left tiny">'.$case['subtext_footer_card'].'</div>
                     </div>
                     <div class="ver-cases">
-                        <div class="text-block-26">Ver Cases</div><img src="' . get_template_directory_uri() . '/images/arrowlink.svg" alt=""></div>
+                        <div class="text-block-26">'.$data_cases['cases_secao0_chamada'].'</div><img src="' . get_template_directory_uri() . '/images/arrowlink.svg" alt=""></div>
                         </a></div>';
                 $i++;
                 if($i==2){

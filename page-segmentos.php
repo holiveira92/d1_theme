@@ -18,6 +18,7 @@ global $wpdb;
 $d1_view_parser = new D1_View_Parser();
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";
 $GLOBALS["data"] = $d1_view_parser->get_data($language_option);
+$data_cases = $GLOBALS["data"]["d1_plugin_cases"];
 $data_segmentos = $GLOBALS["data"]["d1_plugin_segmentos"];
 $id_segmento = (!empty($id)) ? $id : 0;
 $slug = (!empty($slug)) ? $slug : "";
@@ -148,7 +149,7 @@ get_header();
                 <div class="h1white"><?php echo $card['subtext_footer_card'];?></div>
             </div>
             <div class="ver-cases" style="float:right;">
-                <div class="text-block-26">Ver Cases</div><img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink.svg" alt=""></div>
+                <div class="text-block-26"><?php echo $data_cases['cases_secao0_chamada'];?></div><img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink.svg" alt=""></div>
         </a>
         </div>
     </div>

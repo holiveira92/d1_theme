@@ -14,6 +14,8 @@ wp_load_alloptions();
 require_once dirname_oldphp(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view_parser.php';
 global $wpdb;
 $d1_view_parser = new D1_View_Parser();
+$GLOBALS["data"] = $d1_view_parser->get_data($language_option);
+$data_cases = $GLOBALS["data"]["d1_plugin_cases"];
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";
 $url_ajax = get_template_directory_uri() . "/cases-overview-ajax.php";
 $filter = (!empty($_GET['filter'])) ? $_GET['filter'] : "0";
@@ -58,7 +60,7 @@ get_header();
                     <h5 class="heading-2 pad20 white huge left"><?php echo $case_destaque['text_footer_card'];?></h5>
                     <div class="h1white left tiny"><?php echo $case_destaque['subtext_footer_card'];?></div>
                 </div>
-                <div class="ver-cases"><div class="text-block-26">Ver Cases</div><img src="<?php echo get_template_directory_uri();?>/images/arrowlink.svg" alt=""></div></a>
+                <div class="ver-cases"><div class="text-block-26"><?php echo $data_cases['whitepapers_chamada'];?></div><img src="<?php echo get_template_directory_uri();?>/images/arrowlink.svg" alt=""></div></a>
             </div>
         </div>
 
@@ -86,7 +88,7 @@ get_header();
                         <div class="h1white left tiny">'.$case['subtext_footer_card'].'</div>
                     </div>
                     <div class="ver-cases">
-                        <div class="text-block-26">Ver Whitepapers</div><img src="' . get_template_directory_uri() . '/images/arrowlink.svg" alt=""></div>
+                        <div class="text-block-26">'.$data_cases['whitepapers_chamada'].'</div><img src="' . get_template_directory_uri() . '/images/arrowlink.svg" alt=""></div>
                         </a></div>';
                 $i++;
                 if($i==2){

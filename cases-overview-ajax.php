@@ -10,8 +10,12 @@ session_start();
 $language_option = !empty($_SESSION['d1_language_option']) ? $_SESSION['d1_language_option'] : "PT";
 $language = (!empty($language_option) && $language_option != "PT") ? $language_option ."_" : "";
 require(trim(dirname_oldphp(__FILE__,4)) . "wp-load.php");
+require_once dirname_oldphp(__FILE__,3).'plugins/d1_plugin/includes/base/d1_view_parser.php';
 wp_load_alloptions();
 global $wpdb;
+$d1_view_parser = new D1_View_Parser();
+$GLOBALS["data"] = $d1_view_parser->get_data($language_option);
+$data_cases = $GLOBALS["data"]["d1_plugin_cases"];
 $id_categoria = (!empty($_GET['id_categoria'])) ? $_GET['id_categoria'] : "0";
 $cases = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_cases ORDER BY id_card DESC")),true);
 $categoria = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_cases_categorias WHERE id=$id_categoria")),true);
@@ -69,7 +73,7 @@ if(!empty($case_destaque)){
                 <h5 class="heading-2 pad20 white huge left">'.$case_destaque['text_footer_card'].'</h5>
                 <div class="h1white left tiny">'.$case_destaque['subtext_footer_card'].'</div>
             </div>
-            <div class="ver-cases"><div class="text-block-26">Ver Cases</div>
+            <div class="ver-cases"><div class="text-block-26">'.$data_cases['cases_secao0_chamada'].'</div>
             <img src="'.get_template_directory_uri().'/images/arrowlink.svg" alt=""></div>
             </a>
         </div>
@@ -98,7 +102,7 @@ if(!empty($case_destaque)){
                 <div class="h1white left tiny">'.$case['subtext_footer_card'].'</div>
             </div>
             <div class="ver-cases">
-                <div class="text-block-26">Ver Cases</div><img src="' . get_template_directory_uri() . '/images/arrowlink.svg" alt=""></div>
+                <div class="text-block-26">'.$data_cases['cases_secao0_chamada'].'</div><img src="' . get_template_directory_uri() . '/images/arrowlink.svg" alt=""></div>
                 </a></div>';
         $i++;
         if($i==2){
