@@ -99,23 +99,17 @@ get_header();
     </div>
 
 
-    <div class="home-wrapper-gradient gradient-bg">
-        <div class="div-block-84">
-            <div class="mycontainer">
-                <div class="section-title-2col">
-                    <h6 class="white _18">IMPACTOS REAIS DE MELHORIA EM CUSTOMER EXPERIENCE</h6>
-                    <div class="link-text-arrow">
-                        <a href="../cases/" class="link-text-black invert">VER CASES</a>
-                        <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink">
-                    </div>
+    <div id="cases" class="section-wrapper-large bg-grey notop">
+        <div class="mycontainer">
+            <div class="tabs-section-title-2col">
+                <h6 class="pad20"><?php echo $data_preco['preco_secao3_cases_title'];?></h6>
+                <div class="link-text-arrow">
+                    <a href="<?php echo get_home_url() ."/cases/";?>" class="link-text-black"><?php echo $data_preco['preco_secao3_cases_chamada'];?></a>
+                    <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink">
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- SEÇÃO CASES DE SUCESSO -->
-    <div id="cases" class="section-cases">
-        <div class="home-wrapper-gradient-2">
+            <!-- SEÇÃO CASES DE SUCESSO -->
             <div class="case-thumb-content-wrapper large" data-ix="fade-in-on-scroll">
                 <?php
                 for($i=1;$i<=3;$i++):
@@ -147,6 +141,8 @@ get_header();
             </div>
         </div>
     </div>
+
+    
 
 
 <?php get_footer(); ?>
