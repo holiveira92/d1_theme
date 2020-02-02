@@ -20,6 +20,7 @@ $img_default = get_template_directory_uri() . "/images/img_default.jpg";
 $GLOBALS["data"] = $d1_view_parser->get_data($language_option);
 $data_home = $GLOBALS["data"]["d1_plugin"];
 $data_plataforma = $GLOBALS["data"]["d1_plugin_plataforma"];
+$data_config = $GLOBALS["data"]["d1_plugin_config_geral"];
 $data_home['d1_favicon'] = (!empty($data_home['d1_favicon'])) ? $data_home['d1_favicon'] : $img_default ;
 $data_jornada = $GLOBALS["data"]["d1_plugin_jornada"];
 $id_secao1_cta = !empty($data_jornada['jornada_secao1_cta']) ? $data_jornada['jornada_secao1_cta'] : 0;
@@ -151,7 +152,7 @@ get_header();
         <div id="faq" class="mycontainer-3 large">
             <div class="section-title-wrapper">
                 <div class="div-block-104">
-                    <div class="body-text-semiblack">PERGUNTAS FREQUENTES</div>
+                    <div class="body-text-semiblack"><?php echo $data_config['config_geral_chamada_faq'];?></div>
                 </div>
                 <div class="div-block-102"></div>
             </div>
