@@ -88,7 +88,7 @@ get_header();
     <div class="mycontainer">
         <div class="tabs-section-title-2col narrow">
             <h6 class="pad20"><?php echo $dados['cases_options']['cases_title'];?></h6>
-            <div class="link-text-arrow noinvert"><a href="<?php echo get_home_url();?>/cases/" class="link-text-black">VER CASES</a><img src="<?php echo get_template_directory_uri();?>/images/arrowlink-black.svg" alt="" class="arrowlink"></div>
+            <div class="link-text-arrow noinvert"><a href="<?php echo get_home_url();?>/cases/" class="link-text-black"><?php echo $dados['cases_options']['cases_chamada'];?></a><img src="<?php echo get_template_directory_uri();?>/images/arrowlink-black.svg" alt="" class="arrowlink"></div>
         </div>
         <div class="case-thumb-content-wrapper large" data-ix="fade-in-on-scroll">
         <?php foreach($dados['cases'] as $key=>$card): 
