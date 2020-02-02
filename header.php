@@ -1,7 +1,15 @@
 <?php
-require_once dirname_oldphp(__FILE__, 3) . 'plugins/d1_plugin/includes/base/d1_view_parser.php';
-require_once dirname_oldphp(__FILE__, 3) . 'themes/d1_theme/menu_tree.php';
-require_once dirname_oldphp(__FILE__, 3) . 'themes/d1_theme/modal.php';
+function dirname_oldphpv3($path, $level = 0){
+    $dir = explode(DIRECTORY_SEPARATOR, $path);
+    $level = $level * -1;
+    if($level == 0) $level = count($dir);
+    array_splice($dir, $level);
+    return implode($dir, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
+}
+
+require_once dirname_oldphpv3(__FILE__, 3) . 'plugins/d1_plugin/includes/base/d1_view_parser.php';
+require_once dirname_oldphpv3(__FILE__, 3) . 'themes/d1_theme/menu_tree.php';
+require_once dirname_oldphpv3(__FILE__, 3) . 'themes/d1_theme/modal.php';
 require_once 'data_loader.php';
 global $wpdb;
 $data_loader        = new Data_Loader();
