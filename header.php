@@ -104,7 +104,7 @@ $menu = array_values(get_d1_menu_tree('menu_principal'.$menu_language));
             <div class="menu-wrapper mobi w-clearfix">
                 <div data-delay="0" data-hover="1" class="dropdown w-dropdown" role="menu" aria-labelled-by="w-dropdown-toggle-1" style="">
                     <div class="menulink w-dropdown-toggle" tabindex="0" id="w-dropdown-toggle-1" aria-controls="w-dropdown-list-1" aria-haspopup="menu" style="outline: none;">
-                    <a href="#"><div class="text-block-4 "><?php echo $menu[0]->title; ?></div></a>
+                    <a href="<?php echo get_home_url() ."/plataforma";?>"><div class="text-block-4 "><?php echo $menu[0]->title; ?></div></a>
                     </div>
                     <nav class="dropdown-plataforma w-dropdown-list" id="w-dropdown-list-1">
                         <div class="menu-select-plataforma"></div>

@@ -19,6 +19,7 @@ $d1_view_parser = new D1_View_Parser();
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";
 $GLOBALS["data"] = $d1_view_parser->get_data($language_option);
 $data_home = $GLOBALS["data"]["d1_plugin"];
+$data_plataforma = $GLOBALS["data"]["d1_plugin_plataforma"];
 $id_lead_generator_cta = !empty($data_home['secao5_cta']) ? $data_home['secao5_cta'] : 0;
 $lead_generator_cta =  $data_loader->get_cta($id_lead_generator_cta);
 $id_secao7_cta = !empty($data_home['secao7_cta']) ? $data_home['secao7_cta'] : 0;
@@ -193,7 +194,7 @@ get_header();
             <div class="tabs-section-title-2col">
                 <h6 class="pad20 left lightblueleft lightblue"><?php echo $data_home['secao6_title'];?></h6>
                 <div class="link-text-arrow right noinvert">
-                    <a href="<?php echo get_home_url() ."/plataforma";?>" class="link-text-black">VER PLATAFORMA</a>
+                    <a href="<?php echo get_home_url() ."/plataforma";?>" class="link-text-black"><?php echo $data_plataforma['plataforma_secao2_chamada'];?></a>
                     <img src="<?php echo get_template_directory_uri().'/';?>images/arrowlink-black.svg" alt="" class="arrowlink">
                 </div>
             </div>
@@ -207,7 +208,7 @@ get_header();
                     foreach($modulos as $key=>$modulo):
                         $title_class = ($key == 0) ? 'w--current' : "";
                     ?>
-                        <a data-w-tab="Tab <?php echo $i;?>" class="home-tab-link w-inline-block w-tab-link <?php echo $title_class;?>">
+                        <a name="Solucoes_Tab_<?php echo $i;?>" data-w-tab="Tab <?php echo $i;?>" class="home-tab-link w-inline-block w-tab-link <?php echo $title_class;?>">
                             <div><?php echo $modulo['title'];?></div>
                         </a>
                     <?php 
@@ -298,3 +299,15 @@ get_header();
 
     <?php get_footer(); ?>
 </body>
+
+<script>
+jQuery(document).ready(function($) {
+    $('.home-tab-link').click(function(){
+        var tab = $(this).attr('data-w-tab');
+        if(tab != "Tab 1"){
+            $('[name*="Solucoes_Tab_1"]').removeClass('w--current');
+        }
+    }); 
+
+});
+</script>

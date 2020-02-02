@@ -133,9 +133,9 @@ get_header();
                 <h1 class="lieghtblue type-gradient"><?php echo $dados['modulos_options']['modulos_title'];?></h1>
                 <div class="text-block-12"><?php echo $dados['modulos_options']['modulos_descricao'];?></div>
             </div>
-            <a href="#" class="link-block-2 w-inline-block">
+            <a href="<?php echo get_home_url() ."/plataforma";?>" class="link-block-2 w-inline-block">
                 <div class="ver-plat">
-                    <div class="text-block-31">VER PLATAFORMA</div><img src="<?php echo get_template_directory_uri();?>/images/arrowlink-black.svg" alt=""></div>
+                    <div class="text-block-31"><?php echo $dados['chamada_plataforma'];?></div><img src="<?php echo get_template_directory_uri();?>/images/arrowlink-black.svg" alt=""></div>
             </a>
         </div>
 

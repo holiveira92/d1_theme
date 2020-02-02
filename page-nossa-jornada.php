@@ -19,6 +19,7 @@ $d1_view_parser = new D1_View_Parser();
 $img_default = get_template_directory_uri() . "/images/img_default.jpg";
 $GLOBALS["data"] = $d1_view_parser->get_data($language_option);
 $data_home = $GLOBALS["data"]["d1_plugin"];
+$data_plataforma = $GLOBALS["data"]["d1_plugin_plataforma"];
 $data_home['d1_favicon'] = (!empty($data_home['d1_favicon'])) ? $data_home['d1_favicon'] : $img_default ;
 $data_jornada = $GLOBALS["data"]["d1_plugin_jornada"];
 $id_secao1_cta = !empty($data_jornada['jornada_secao1_cta']) ? $data_jornada['jornada_secao1_cta'] : 0;
@@ -79,7 +80,7 @@ get_header();
                     <div class="pad20 left"><?php echo $data_jornada['jornada_secao2_descricao'];?></div>
                     <div class="ver-plat">
                         <a href="<?php echo $data_jornada['jornada_secao2_plataforma_link'];?>" style='text-decoration:none;color: inherit;display:flex;'>
-                        <div class="text-block-30">VER PLATAFORMA</div>
+                        <div class="text-block-30"><?php echo $data_plataforma['plataforma_secao2_chamada'];?></div>
                         <img src="<?php echo get_template_directory_uri();?>/images/arrowlink-black.svg" alt=""></div></a>
                 </div>
                 <div class="section-col-left center _50 nomobi">

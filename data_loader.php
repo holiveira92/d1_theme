@@ -133,6 +133,7 @@ class Data_Loader {
         $this->data['data_departamentos']                   = $this->all_data["d1_plugin_departamentos"];
         $this->data['data_departamentos']                   = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $this->language  . "d1_departamentos WHERE id=$id")),true);
         $this->data['data_departamentos']                   = !empty($this->data['data_departamentos'][0]) ? $this->data['data_departamentos'][0] : array();
+        $this->data['data_departamentos']['chamada_plataforma'] = $this->all_data['d1_plugin_plataforma']['plataforma_secao2_chamada'];
         if(empty($id) || empty($this->data['data_departamentos'])){
             wp_redirect(site_url() . '/404/');
         }
@@ -165,7 +166,6 @@ class Data_Loader {
         $this->data['data_departamentos']['cargo_destaque'] = array();
         if(!empty($this->data['data_departamentos']['cargos'][0])){
             $this->data['data_departamentos']['cargo_destaque'] = $this->data['data_departamentos']['cargos'][0];
-            //unset($this->data['data_departamentos']['cargos'][0]);
         }
         return $this->data;
     }
