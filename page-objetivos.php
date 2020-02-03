@@ -14,7 +14,7 @@ get_header();
 ?>
 <body>
 <!-- SEÇÃO HERO -->
-<div id="hero" class="objetivos-de-negocio-hero" style='url("<?php echo $dados['url_img'];?>");'>
+<div id="hero" class="objetivos-de-negocio-hero" style='background-image: url("<?php echo get_template_directory_uri();?>/images/Group-41.svg"), url("<?php echo $dados['url_img'];?>");'>
     <div class="mycontainer">
         <div class="home-hero-wrapper _16pad">
             <div class="home-hero-left">

@@ -40,12 +40,13 @@ jQuery(document).ready(function($) {
         // Este modal será aberto ou já está aberto?
         if (modal.hasClass('modal-opened')) {
             modalBody.removeClass('modal-body-opened')
-
+            modal.hide()
             setTimeout(function() {
                 iframeContainer.find('iframe').remove()
                 modal.removeClass('modal-opened')
             }, 310)
         } else {
+            modal.show()
             modal.addClass('modal-opened')
             modalBody.addClass('modal-body-opened')
             $(iframe).appendTo(iframeContainer)
