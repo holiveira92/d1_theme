@@ -34,7 +34,7 @@ get_header();
 
         <!-- SEÇÃO NOTICIAS D1 -->
         <div class="noticias-title">
-            <h6>NOTÍCIAS</h6>
+            <h6><?php echo $dados['midia_secao1_chamada'];?></h6>
         </div>
         <div id="noticias" class="div-block-62" style="display: flex;flex-wrap: wrap;">
         <?php
