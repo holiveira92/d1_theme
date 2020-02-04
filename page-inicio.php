@@ -36,7 +36,7 @@ get_header();
 <!-- SEÇÃO HERO -->
 <div id="hero" class="home-hero">
     <div class="arrowdown"><img src="<?php echo get_template_directory_uri();?>/images/arrow-hero.svg" width="12" alt=""></div>
-    <div data-delay="4000" data-animation="fade" data-autoplay="1" data-nav-spacing="0" data-duration="500" data-infinite="1" class="slider w-slider">
+    <div data-delay="7000" data-animation="fade" data-autoplay="1" data-nav-spacing="0" data-duration="500" data-infinite="1" class="slider w-slider">
         <div class="mask w-slider-mask">
         <?php
             foreach($heroes_list as $k=>$hero):
@@ -48,13 +48,17 @@ get_header();
                 <div class="mycontainer _1">
                     <div class="home-hero-wrapper">
                         <div class="home-hero-left left nopad" data-ix="fade-in-on-load">
-                            <h1 class="h1white herohome maintitle rightpad"><?php echo insert_degrade($hero['chamada_principal'],2);?></span></h1>
+                            <h1 class="h1white herohome maintitle rightpad">
+                                <?php echo insert_degrade($hero['chamada_principal'],2);?>
+                            </span></h1>
                             <div class="paragrafo white"><?php echo $hero['descricao_primaria'];?></div>
                             <!-- Botão CTA -->
                             <a href="<?php echo $home_cta['link'];?>" data-url="<?php echo $home_cta['video_url'];?>" target="<?php echo $home_cta['target'];?>" 
                             class="btn-gradient hero w-button <?php echo $home_cta['icon'];?>"><?php echo $home_cta['title'];?></a>
                             <!-- Fim Botão CTA -->
-                            <div class="h1white pad20 small type-gradient"><?php echo insert_degrade($hero['descricao_secundaria'],2);?></div>
+                            <div class="h1white pad20 small">
+                                <p class="text-span-9"><?php echo insert_degrade($hero['descricao_secundaria'],2);?></p>
+                            </div>
                         </div>
                         <div class="home-hero-right">
                             <h3 class="h1white nomargin"><?php echo $hero['hero_name'];?></h3>
@@ -206,10 +210,10 @@ get_header();
                     $modulos = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $language  . "d1_modulos WHERE id_modulo IS NULL OR id_modulo = '' ")),true);
                     $i=1;
                     foreach($modulos as $key=>$modulo):
-                        $title_class = ($key == 0) ? 'w--current' : "";
+                        $title_class = ($key == 0) ? 'w--current type-gradient' : "";
                     ?>
                         <a name="Solucoes_Tab_<?php echo $i;?>" data-w-tab="Tab <?php echo $i;?>" class="home-tab-link w-inline-block w-tab-link <?php echo $title_class;?>">
-                            <div><?php echo $modulo['title'];?></div>
+                            <span><?php echo $modulo['title'];?></span>
                         </a>
                     <?php 
                         $i++;
@@ -235,11 +239,11 @@ get_header();
                                 <?php
                                 $j=1;
                                 foreach($itens as $k=>$item):
-                                    $subitem_tab_class = ($j == 1) ? 'w--current' : "";
+                                    $subitem_tab_class = ($j == 1) ? 'w--current type-gradient' : "";
                                 ?>
 
                                 <a data-w-tab="Tab <?php echo $j;?>" class="home-tab-link w-inline-block w-tab-link <?php echo $subitem_tab_class;?>">
-                                    <div><?php echo $item['subtitle'];?></div>
+                                    <span><?php echo $item['subtitle'];?></span>
                                 </a>
                                 <?php $j++;endforeach; ?>
                             </div>
@@ -289,7 +293,7 @@ get_header();
                     </div>
                     <!-- Botão CTA -->
                     <a href="<?php echo $secao7_cta['link'];?>" data-url="<?php echo $secao7_cta['video_url'];?>" target="<?php echo $secao7_cta['target'];?>" 
-                    class="w-button <?php echo $secao7_cta['icon'];?>"><?php echo $secao7_cta['title'];?></a>
+                    class="btn-black-home w-button <?php echo $secao7_cta['icon'];?>"><?php echo $secao7_cta['title'];?></a>
                     <!-- Fim Botão CTA -->
                 </div>
                 <div class="section-colright"><img src="<?php echo $data_home['secao7_img'];?>" width="673"></div>
@@ -302,12 +306,6 @@ get_header();
 
 <script>
 jQuery(document).ready(function($) {
-    $('.home-tab-link').click(function(){
-        var tab = $(this).attr('data-w-tab');
-        if(tab != "Tab 1"){
-            $('[name*="Solucoes_Tab_1"]').removeClass('w--current');
-        }
-    }); 
 
 });
 </script>
