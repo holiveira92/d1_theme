@@ -491,8 +491,10 @@ h6 {
 }
 
 .btn-gradient.hero:hover {
-  background-color: #141414;
+  background-color: #141414; filter: none; background-image: none!important;
 }
+
+.btn-black-home-play.play:hover { background-color: #141414; filter: none; background-image: none!important; box-shadow: none; background-image: url(../images/play-icon.svg), linear-gradient(257.91deg, #000 6.41%, #000 82.61%) !important; }
 
 .home-hero-left {
   width: 55%;
@@ -918,6 +920,7 @@ h6 {
   font-size: 18px;
   line-height: 140%;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .link-text-black:hover {
@@ -1721,7 +1724,7 @@ h6 {
   color: #42a6ff;
 }
 
-.type-gradient span {
+.type-gradient span, span.text-span-21.type-gradient {
   background: linear-gradient(247.73deg, #0A8CFF 6.41%, #13F1FF 82.61%);
   -webkit-linear-gradient:(247.73deg, #0A8CFF 6.41%, #13F1FF 82.61%);
   -webkit-background-clip: text;

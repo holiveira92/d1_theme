@@ -41,7 +41,7 @@
 
 @media (min-width: 320px) {
     .modal-body {
-        width: 90%;
+        width: 70%;
     }
 }
 
@@ -53,7 +53,7 @@
 
 .modal.modal-opened {
     opacity: 1;
-    z-index: 1034;
+    z-index: 99999;
     pointer-events: initial;
 }
 
