@@ -55,8 +55,8 @@ $menu = array_values(get_d1_menu_tree('menu_principal'.$menu_language));
             n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
         }(window, document)
     </script>
-    <link href="<?php $data_header['d1_favicon']; ?>" rel="apple-touch-icon">
-    <link href="<?php $data_header['d1_favicon']; ?>" rel="shortcut icon" type="image/png">
+    <link href="<?php echo $data_header['d1_favicon']; ?>" rel="apple-touch-icon">
+    <link href="<?php echo  $data_header['d1_favicon']; ?>" rel="shortcut icon" type="image/png">
     <link rel="icon" href="<?php echo $data_header['d1_favicon'];?>"/>
     <link rel="shortcut icon" type="image/png" href="<?php echo $data_header['d1_favicon'];?>"/>
 </head>

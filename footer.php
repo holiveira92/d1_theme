@@ -191,8 +191,16 @@ $group_links = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wp
                 <div class="body-text-small"><?php echo $data['secao6_pitch']; ?>
                     <br>
                 </div>
+                <?php 
+                $langs = array( 
+                    'PT' => array ('politica' => 'Política de Privacidade de Dados' ), 
+                    'EN' => array('politica' => 'Data Privacy Policy'),
+                    'ES' => array('politica' => 'Política de Privacidad de Datos')
+                ); 
+                ?>
                 <div class="bottom-footer">
-                    <a href="https://d1.cx/conteudo/uploads/2020/01/Politica-de-Privacidade-de-Dados-Site.pdf" target="_blank" class="politica"><span>Política de Privacidade de Dados</span></a>
+                    <a href="https://d1.cx/conteudo/uploads/2020/01/Politica-de-Privacidade-de-Dados-Site.pdf" target="_blank" class="politica">
+                    <span><?php echo $langs[$language_option]['politica']; ?></span></a>
                     <h6 class="h6-gradient-copy type-gradient"><span>© <?php echo date("Y"); ?> D1</span></h6>
                 </div>
             </div>

@@ -7,7 +7,7 @@ $dados              = $data_loader->get('departamentos',$id_modulos);
 $dados              = $dados['data_departamentos'];
 ?>
 <head>
-    <title><?php echo "Soluções Para "; $dados['main_title'];?> - D1</title>
+    <title><?php echo "Soluções Para " . mb_convert_case($dados['main_title'], MB_CASE_TITLE, "UTF-8");?> - D1</title>
 </head>
 <?php
 get_header();

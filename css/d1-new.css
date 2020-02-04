@@ -3329,7 +3329,7 @@ h6 {
   position: static;
   width: 350px;
   height: 66px;
-  margin-top: 31px;
+  margin-top: 0px;
   /*padding: 21px 49px 0px 0px; - 1 fase*/
   padding-top: 21px;
   border: 2px solid #000;
@@ -3552,7 +3552,6 @@ h6 {
   position: relative;
   width: 350px;
   height: 66px;
-  margin-top: 28px;
   padding-top: 21px;
   /*padding-right: 49px; - fase 1*/
   padding-left: 0px;
@@ -3778,8 +3777,6 @@ h6 {
   width: 350px;
   height: 66px;
   padding-top: 21px;
-  padding-right: 31px;
-  padding-left: 31px;
   border: 2px solid #fff;
   border-radius: 100px;
   background-color: transparent;

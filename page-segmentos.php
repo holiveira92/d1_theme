@@ -41,7 +41,7 @@ $menu_itens = wp_get_nav_menu_items($menu[0]->term_id);
 $menu_pai = get_menus_data($menu_itens);
 ?>
 <head>
-<title><?php echo "Soluções Para "; echo $segmento['main_title'];?> - D1</title>
+<title><?php echo "Soluções Para " . mb_convert_case($segmento['main_title'], MB_CASE_TITLE, "UTF-8");?> - D1</title>
 </head>
 <?php
 get_header();

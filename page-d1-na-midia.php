@@ -17,10 +17,10 @@ get_header();
             <h6><?php echo $dados['midia_secao1_destaque_title'];?></h6>
         </div>
         <!-- SEÇÃO NOTICIAS DESTAQUE D1 -->
-        <a id="destaque" href="<?php echo $dados['destaque']['link'];?>" target='_blank' class="card-midia type-gradient w-inline-block">
+        <a id="destaque" href="<?php echo $dados['destaque']['link'];?>" target='_blank' class="card-midia type-gradient w-inline-block" style="width:100%;">
             <div class="div-block-59" style='background-image: url("<?php echo $dados['destaque']['url_img_bg'];?>");'></div>
             <div class="div-block-61">
-                <h3 class="article-title"></h3>
+                <h3 class="article-title"><?php echo $dados['destaque']['title'];?></h3>
                 <p class="black righpad"><?php echo $dados['destaque']['content'];?></p>
                 <div class="div-block-66">
                     <h6 class="heading-32"><?php echo $dados['destaque']['vehicle'];?><br></h6>

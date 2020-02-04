@@ -32,7 +32,7 @@ $categoria_case = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . 
 $categoria_case = !empty($categoria_case[0]) ? $categoria_case[0] :array();
 ?>
 <head>
-    <title><?php echo $case['title_card'];?> - D1</title>
+    <title><?php echo mb_convert_case($case['title_card'], MB_CASE_TITLE, "UTF-8");?> - D1</title>
 </head>
 <?php
 get_header();
