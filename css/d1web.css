@@ -77,6 +77,11 @@ a.politica {
   line-height: normal;
 }
 
+.select-items div {
+  padding: 28px 10px;
+  width: 100%;
+}
+
 .w-checkbox-input--inputType-custom {
   border-top-width: 1px;
   border-bottom-width: 1px;
@@ -6405,7 +6410,8 @@ h6.white {
 }
 
 .text-block-31 {
-  width: 213px;
+  width: calc(200% + 50px);
+  white-space: nowrap;
 }
 
 .text-span-21 {
