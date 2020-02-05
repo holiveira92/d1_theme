@@ -102,9 +102,10 @@ class Data_Loader {
 
     private function get_objetivos_data($id){
         global $wpdb;
-        $this->data['data_objetivos']                   = $this->all_data["d1_plugin_objetivos"];
+        $temp_options                                   = $this->all_data["d1_plugin_objetivos"];
         $this->data['data_objetivos']                   = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $this->language  . "d1_objetivos WHERE id=$id")),true);
         $this->data['data_objetivos']                   = !empty($this->data['data_objetivos'][0]) ? $this->data['data_objetivos'][0] : array();
+        $this->data['data_objetivos']['options']        = $temp_options;
         if(empty($id) || empty($this->data['data_objetivos'])){
             wp_redirect(site_url() . '/404/');
         }

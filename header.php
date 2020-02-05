@@ -27,6 +27,9 @@ $data_header['d1_favicon'] = (!empty($data_header['d1_favicon'])) ? $data_header
 $id_menu_cta = !empty($data_config_geral['d1_menu_cta']) ? $data_config_geral['d1_menu_cta'] : 0;
 $menu_cta =  $data_loader->get_cta($id_menu_cta);
 $menu = array_values(get_d1_menu_tree('menu_principal'.$menu_language));
+$dados              = $data_loader->get('objetivos',1);
+$dados              = $dados['data_objetivos'];
+pre($dados);die;
 ?>
 
 <head>

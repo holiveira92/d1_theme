@@ -50,7 +50,7 @@ get_header();
     <div class="mycontainer">
         <div class="modulos-card-wrapper" data-ix="fade-in-on-scroll">
             <div class="section-title">
-                <h6 class="h1white"><?php echo $dados['challenge_title'];?></h6>
+                <h6 class="h1white"><?php echo $dados['objetivos_secao1_desafios_title'];?></h6>
             </div>
             <div class="case-thumb-content-wrapper nopad">
                 <?php for($i=1;$i<=3;$i++):
