@@ -34,7 +34,11 @@ get_header();
                 <div class="section-col-left-2 narrow notop">
                     <h1 class="heading-25 left noleft notop bottom" data-ix="fade-in-on-load"><?php echo $data_plataforma['plataforma_secao1_title'];?></h1>
                     <div class="h1white" data-ix="fade-in-on-load"><?php echo $data_plataforma['plataforma_secao1_descricao'];?> </div>
-                    <a href="<?php echo $secao1_cta['link'];?>" target="<?php echo $secao1_cta['target'];?>" class="btn-black-home-play w-button" data-ix="fade-in-on-load-2"><?php echo $secao1_cta['title'];?></a> </div>
+                        <!-- Botão CTA -->
+                        <a href="<?php echo $secao1_cta['link'];?>" data-url="<?php echo $secao1_cta['video_url'];?>" target="<?php echo $secao1_cta['target'];?>" 
+                        class="<?php echo $secao1_cta['class'];?>"><?php echo $secao1_cta['title'];?></a>
+                        <!-- Fim Botão CTA -->
+                    </div>
                 <div class="section-col-left _80 right"><img src="<?php echo $data_plataforma['plataforma_secao1_img'];?>" width="453"  alt="" class="image-plataforma hero notop" data-ix="fade-in-on-load-2"></div>
             </div>
         </div>

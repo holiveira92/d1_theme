@@ -55,7 +55,7 @@ $group_links = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wp
         <div class="div-block-4">
             <!-- Botão CTA -->
             <a href="<?php echo $cta['link'];?>" data-url="<?php echo $cta['video_url'];?>" target="<?php echo $cta['target'];?>" 
-            class="btn-black-home lightblue w-button <?php echo $cta['icon'];?>"><?php echo $cta['title'];?></a>
+            class="<?php echo $cta['class'];?>"><?php echo $cta['title'];?></a>
             <!-- Fim Botão CTA -->
         </div>
     </div>
@@ -109,7 +109,7 @@ $group_links = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wp
                     <div class="div-block-6">
                         <!-- Botão CTA -->
                         <a href="<?php echo $f_cta['link'];?>" data-url="<?php echo $f_cta['video_url'];?>" target="<?php echo $f_cta['target'];?>" 
-                        class="btn-black-home-outline-footer w-button <?php echo $f_cta['icon'];?>"><?php echo $f_cta['title'];?></a>
+                        class="<?php echo $f_cta['class'];?>"><?php echo $f_cta['title'];?></a>
                         <!-- Fim Botão CTA -->
                     </a></div>
                 <?php endfor;?>

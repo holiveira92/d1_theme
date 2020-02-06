@@ -54,7 +54,7 @@ get_header();
                             <div class="paragrafo white"><?php echo $hero['descricao_primaria'];?></div>
                             <!-- Botão CTA -->
                             <a href="<?php echo $home_cta['link'];?>" data-url="<?php echo $home_cta['video_url'];?>" target="<?php echo $home_cta['target'];?>" 
-                            class="btn-gradient hero w-button <?php echo $home_cta['icon'];?>"><?php echo $home_cta['title'];?></a>
+                            class="<?php echo $home_cta['class'];?>"><?php echo $home_cta['title'];?></a>
                             <!-- Fim Botão CTA -->
                             <div class="h1white pad20 small">
                                 <p class="text-span-9"><?php echo insert_degrade($hero['descricao_secundaria'],2);?></p>
@@ -184,7 +184,7 @@ get_header();
                 <div class="paragrafo"><?php echo $data_home['secao5_section_descricao'];?></div>
                     <!-- Botão CTA -->
                     <a href="<?php echo $lead_generator_cta['link'];?>" data-url="<?php echo $lead_generator_cta['video_url'];?>" target="<?php echo $lead_generator_cta['target'];?>" 
-                    class="w-button <?php echo $lead_generator_cta['icon'];?>"><?php echo $lead_generator_cta['title'];?></a>
+                    class="<?php echo $lead_generator_cta['class'];?>"><?php echo $lead_generator_cta['title'];?></a>
                     <!-- Fim Botão CTA -->
 
                 </div>
@@ -293,7 +293,7 @@ get_header();
                     </div>
                     <!-- Botão CTA -->
                     <a href="<?php echo $secao7_cta['link'];?>" data-url="<?php echo $secao7_cta['video_url'];?>" target="<?php echo $secao7_cta['target'];?>" 
-                    class="btn-black-home w-button <?php echo $secao7_cta['icon'];?>"><?php echo $secao7_cta['title'];?></a>
+                    class="<?php echo $secao7_cta['class'];?>"><?php echo $secao7_cta['title'];?></a>
                     <!-- Fim Botão CTA -->
                 </div>
                 <div class="section-colright"><img src="<?php echo $data_home['secao7_img'];?>" width="673"></div>

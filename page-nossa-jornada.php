@@ -41,7 +41,7 @@ get_header();
                     <div class="h1white lightblue2 larger center type-gradient" data-ix="fade-in-on-load-2"><span><?php echo $data_jornada['jornada_secao1_desc'];?></span></div>
                     <!-- Botão CTA -->
                     <a href="<?php echo $secao1_cta['link'];?>" data-url="<?php echo $secao1_cta['video_url'];?>" target="<?php echo $secao1_cta['target'];?>" 
-                    class="btn-gradient w-button <?php echo $secao1_cta['icon'];?>"><?php echo $secao1_cta['title'];?></a></div>
+                    class="<?php echo $secao1_cta['class'];?>"><?php echo $secao1_cta['title'];?></a></div>
                     <!-- Fim Botão CTA -->
             </div>
         </div>

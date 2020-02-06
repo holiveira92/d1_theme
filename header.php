@@ -29,7 +29,6 @@ $menu_cta =  $data_loader->get_cta($id_menu_cta);
 $menu = array_values(get_d1_menu_tree('menu_principal'.$menu_language));
 $dados              = $data_loader->get('objetivos',1);
 $dados              = $dados['data_objetivos'];
-pre($dados);die;
 ?>
 
 <head>
@@ -200,7 +199,7 @@ pre($dados);die;
                 <div class="div-block-32">
                     <!-- Botão CTA -->
                     <a href="<?php echo $menu_cta['link'];?>" data-url="<?php echo $menu_cta['video_url'];?>" target="<?php echo $menu_cta['target'];?>" 
-                    class="btn-black-home-outline herp line type-gradient w-button <?php echo $menu_cta['icon'];?>"><?php echo $menu_cta['title'];?></a>
+                    class="<?php echo $menu_cta['class'];?>"><?php echo $menu_cta['title'];?></a>
                     <!-- Fim Botão CTA -->
                 </div>
             </div>
