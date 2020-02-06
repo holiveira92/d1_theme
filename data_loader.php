@@ -175,19 +175,21 @@ class Data_Loader {
         global $wpdb;
         $cta = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wpdb->prefix . $this->language  . "d1_call_to_action WHERE id=$id_cta")),true);
         $cta = !empty($cta[0]) ? $cta[0] :  array('title' =>'','link' =>'','target' =>'','background' =>'','hover' =>'');
-        
+
         //verifica tipo de cta
         if(!empty($cta['target'])){
+            $cta['background']          = str_replace('.',' ', $cta['background']);
+            $cta['hover']               = str_replace('.',' ', $cta['hover']);
             switch($cta['target']){
                 case 'modal':
-                    $cta['class'] = 'open-modal w-button ' . $cta['background'] . $cta['hover'];
-                    $cta['target'] = '';
-                    $cta['video_url'] = $cta['link'];
-                    $cta['link']   = '#';
+                    $cta['class']       = 'open-modal w-button ' . $cta['background'] . $cta['hover'];
+                    $cta['target']      = '';
+                    $cta['video_url']   = $cta['link'];
+                    $cta['link']        = '#';
                     break;
                 default:
-                    $cta['video_url'] = '';
-                    $cta['class'] = 'w-button ' . $cta['background'] . $cta['hover'];
+                    $cta['video_url']   = '';
+                    $cta['class']       = 'w-button ' . $cta['background'] . $cta['hover'];
                     break;
             }
         }
