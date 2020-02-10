@@ -202,6 +202,30 @@ $dados              = $dados['data_objetivos'];
                     class="<?php echo $menu_cta['class'];?>"><?php echo $menu_cta['title'];?></a>
                     <!-- Fim Botão CTA -->
                 </div>
+                <div style="display: inline-flex;"><a href="<?php echo $data_config_geral['top_bar_login_link']; ?>" class="link-top-menu-copy type-gradient"><span><?php echo $data_config_geral['top_bar_text_login_link']; ?></span></a>
+                <div class="div-block-lang-mob">
+                    <div data-delay="0" class="dropdown-3 w-dropdown">
+                    <?php 
+                        foreach($arr_lang as $lang):
+                            if($language_option == $lang):
+                    ?>
+                            <div class="dropdown-toggle-3 w-dropdown-toggle">
+                                <div class="icon w-icon-dropdown-toggle"></div>
+                                <div class="text-block-6"><?php echo $lang;?></div>
+                            </div>
+                            <?php endif;?>
+                    <?php endforeach;?>
+                    <?php
+                        $dpdw_top = 33;//tratamento para posição na tela
+                        foreach($arr_lang as $lang):
+                            if($language_option != $lang):
+                    ?>
+                                <nav style="top: <?php echo $dpdw_top;?>px !important;" class="dropdown-list-2 w-dropdown-list"><a href="<?php echo get_template_directory_uri() ."/language.php?lang=$lang&location=" . get_home_url() ;?>" class="dropdown-link-2 w-dropdown-link"><?php echo $lang;?></a></nav>
+                            <?php $dpdw_top = 2 * $dpdw_top; endif;?>
+                    <?php endforeach;?>
+                    </div>
+                </div>
+            </div>
             </div>
         </nav>
         <div class="menu-button w-nav-button">

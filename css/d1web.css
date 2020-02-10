@@ -9930,7 +9930,7 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
   }
   .h6-gradient-copy.type-gradient {
     margin-bottom: 30px;
-    padding-top: 29px;
+    padding-top: 0px;
   }
   .dark-footer-title {
     margin-bottom: 10px;
@@ -10992,7 +10992,11 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
 }
 
 @media (max-width: 479px) {
-
+  .plat-menu-journey {
+    background-image: none!important;
+    width: 0;
+    height: 0;
+  }
   h1 {
     font-size: 28px;
     line-height: 40px;
@@ -11234,6 +11238,12 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
   .home-hero-wrapper._16pad {
     padding-right: 16px;
     padding-left: 16px;
+    align-items: center;
+    align-content: center;
+    display: grid;
+  }
+  .section-colright {
+    display: none!important;
   }
   .home-hero-wrapper.centered._16pad {
     padding-right: 8px;
@@ -11364,11 +11374,11 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
     align-items: center;
   }
   .home-wrapper-gradient {
-    height: 250px;
+    height: 200px;
   }
   .home-wrapper-gradient.gradient-bg {
     margin-bottom: 22px;
-    padding-top: 50px;
+    padding-top: 0;
     padding-bottom: 0px;
   }
   .case-thumb-numbers {
@@ -11566,6 +11576,8 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
     margin-left: 0px;
     padding-right: 0px;
     padding-left: 0px;
+    display: inline-block;
+    margin-top: 50px;
   }
   .section-2col-wrapper._8narrow {
     margin-top: 25px;
@@ -11661,7 +11673,7 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
   }
   .h6-gradient-copy.type-gradient {
     margin-bottom: 30px;
-    padding-top: 37px;
+    padding-top: 0px;
   }
   .btn-cx-outline {
     width: 290px;
@@ -12408,7 +12420,7 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
     padding-left: 0px;
   }
   .modulos-card-wrapper {
-    margin-top: -155px;
+    margin-top: -80px;
     margin-bottom: 0px;
   }
   .modulo-wrapper-grandient {
@@ -12512,7 +12524,7 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
     width:100%;
   }
   .objetivos-de-negocio-hero {
-    height: 100vh;
+    height: 70vh;
   }
   .objetivos-wrapper-grandient {
     height: 250px;
@@ -13078,6 +13090,7 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
   }
   .link-top-menu-copy {
     line-height: 120%;
+    margin-top: 6px;
   }
   .text-block-7-copy {
     position: relative;
