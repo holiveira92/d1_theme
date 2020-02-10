@@ -178,18 +178,18 @@ class Data_Loader {
 
         //verifica tipo de cta
         if(!empty($cta['target'])){
-            $cta['background']          = str_replace('.',' ', $cta['background']);
-            $cta['hover']               = str_replace('.',' ', $cta['hover']);
+            $cta['background']          = str_replace('.','-', $cta['background']);
+            $cta['hover']               = str_replace('.','-', $cta['hover']);
             switch($cta['target']){
                 case 'modal':
-                    $cta['class']       = 'open-modal w-button ' . $cta['background'] . $cta['hover'];
+                    $cta['class']       = 'open-modal w-button' . ' ' .  $cta['background'] . ' ' .  $cta['hover'];
                     $cta['target']      = '';
                     $cta['video_url']   = $cta['link'];
                     $cta['link']        = '#';
                     break;
                 default:
                     $cta['video_url']   = '';
-                    $cta['class']       = 'w-button ' . $cta['background'] . $cta['hover'];
+                    $cta['class']       = 'w-button' . ' ' . $cta['background'] . ' ' . $cta['hover'];
                     break;
             }
         }
