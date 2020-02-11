@@ -202,8 +202,8 @@ $dados              = $dados['data_objetivos'];
                     class="<?php echo $menu_cta['class'];?>"><?php echo $menu_cta['title'];?></a>
                     <!-- Fim Botão CTA -->
                 </div>
-                <div style="display: inline-flex;"><a href="<?php echo $data_config_geral['top_bar_login_link']; ?>" class="link-top-menu-copy type-gradient"><span><?php echo $data_config_geral['top_bar_text_login_link']; ?></span></a>
                 <div class="div-block-lang-mob">
+                <div style="display: inline-flex;"><a href="<?php echo $data_config_geral['top_bar_login_link']; ?>" class="link-top-menu-copy type-gradient"><span><?php echo $data_config_geral['top_bar_text_login_link']; ?></span></a>
                     <div data-delay="0" class="dropdown-3 w-dropdown">
                     <?php 
                         foreach($arr_lang as $lang):

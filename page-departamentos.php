@@ -14,8 +14,19 @@ get_header();
 ?>
 <style>.d-flex{display:flex;align-items:center}.custom-select-departamentos{position:relative}.custom-select-departamentos select{display:none}.select-selected{margin-top:20px;font-size:38px;margin-left:10px;background-color:transparent;border-bottom:4px solid #000;padding-bottom:17px;padding-right:40px}@media (max-width:767px){.select-selected{margin-top:5px;font-size:22px}}.select-selected:after{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjI4NC45MjlweCIgaGVpZ2h0PSIyODQuOTI5cHgiIHZpZXdCb3g9IjAgMCAyODQuOTI5IDI4NC45MjkiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI4NC45MjkgMjg0LjkyOTsiDQoJIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPHBhdGggZD0iTTI4Mi4wODIsNzYuNTExbC0xNC4yNzQtMTQuMjczYy0xLjkwMi0xLjkwNi00LjA5My0yLjg1Ni02LjU3LTIuODU2Yy0yLjQ3MSwwLTQuNjYxLDAuOTUtNi41NjMsMi44NTZMMTQyLjQ2NiwxNzQuNDQxDQoJCUwzMC4yNjIsNjIuMjQxYy0xLjkwMy0xLjkwNi00LjA5My0yLjg1Ni02LjU2Ny0yLjg1NmMtMi40NzUsMC00LjY2NSwwLjk1LTYuNTY3LDIuODU2TDIuODU2LDc2LjUxNUMwLjk1LDc4LjQxNywwLDgwLjYwNywwLDgzLjA4Mg0KCQljMCwyLjQ3MywwLjk1Myw0LjY2MywyLjg1Niw2LjU2NWwxMzMuMDQzLDEzMy4wNDZjMS45MDIsMS45MDMsNC4wOTMsMi44NTQsNi41NjcsMi44NTRzNC42NjEtMC45NTEsNi41NjItMi44NTRMMjgyLjA4Miw4OS42NDcNCgkJYzEuOTAyLTEuOTAzLDIuODQ3LTQuMDkzLDIuODQ3LTYuNTY1QzI4NC45MjksODAuNjA3LDI4My45ODQsNzguNDE3LDI4Mi4wODIsNzYuNTExeiIvPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=);background-size:16px;position:absolute;content:"";width:16px;height:16px;top:28px;right:0}@media (max-width:767px){.select-selected:after{top:10px}}.select-items div,.select-selected{color:#fff;cursor:pointer}.select-items{position:absolute;background-color:#0a8cff;top:calc(100% + 20px);left:10px;right:0;z-index:99;font-size:32px;text-align:left}@media (max-width:767px){.select-items{font-size:16px}}.select-items div{padding:28px 20px}.select-hide{display:none}.select-items div:hover,.same-as-selected{background-color:rgba(0,0,0,.1);transition:background-color 240ms ease-in-out}</style>
 <body>
+<style type = "text/css" > .departamentos-hero{
+    background-image: url("<?php echo get_template_directory_uri();?>/images/Group-16.39.svg"),
+    url("<?php echo $dados['url_img'];?>");
+}
+@media only screen and (max-width: 767px) {
+    .departamentos-hero{
+        background-image: url("<?php echo $dados['url_img'];?>") !important;
+    }
+}
+
+</style>
 <!-- SEÇÃO HERO -->
-<div id="hero" class="departamentos-hero" style='url("<?php echo $dados['url_img'];?>");'>
+<div id="hero" class="departamentos-hero" id="departamentos_hero">
         <div class="mycontainer _16pad">
             <div class="dep-hero-wrapper">
                 <div class="dep-hero-left">

@@ -1,13 +1,30 @@
 jQuery(document).ready(function($) {
-    $('.w-nav-button').on('tap', function() {
-        var el = $(this);
-        var body = $('body') 
-        if(el.hasClass('w--open')){
-            body.removeClass('noScroll')
+    //tratamento mobile
+   $('div[name*=slider_principal]').each(function(index) {
+       var imageUrl = $(this).find('[name*=slider_principal_style]').val();
+       var stripes = $(this).find('[name*=slider_principal_style_stripes]').val();
+       var gradient = "-webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent))";
+        if(window.matchMedia("(max-width: 991px)").matches){
+            var str = 'background-image:  ' + gradient + ', url("' + imageUrl + '")'; 
+            $(this).attr('style', str);
         }else{
-            body.addClass('noScroll')
+           var str = 'background-image:  url("'+ stripes + '"),' + gradient + ', url("' + imageUrl + '")'; 
+           $(this).attr('style', str);
         }
     });
+
+    $('#departamentos_hero').each(function(index) {
+        var imageUrl = $(this).find('[name*=departamentos_hero_style_desktop]').val();
+        var stripes = ""; //$(this).find('[name*=slider_principal_style_stripes]').val();
+        var gradient =""; //"-webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent))";
+         if(window.matchMedia("(max-width: 991px)").matches){
+             var str = 'background-image:  ' + gradient + ', url("' + imageUrl + '")'; 
+             $(this).attr('style', str);
+         }else{
+            var str = 'background-image:  url("'+ stripes + '"),' + gradient + ', url("' + imageUrl + '")'; 
+            $(this).attr('style', str);
+         }
+     });
 
     // Função para mostrar/esconder o modal
     function toggleModalVisibility() {

@@ -326,7 +326,7 @@ html.w-mod-touch * {
 }
 
 .w-button {
-  display: inline-flex;
+  display: inline-block;
   padding: 18px 30px;
   background-color: transparent;
   color: white;

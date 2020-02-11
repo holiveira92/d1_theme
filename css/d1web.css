@@ -9519,6 +9519,10 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
   }
 }
 
+.div-block-lang-mob {
+  display: none;
+}
+
 @media (max-width: 767px) {
   input.hs-button.primary.large {
     width: 80%;
@@ -13188,9 +13192,13 @@ html.w-mod-js *[data-ix="hide-scroll-down"] {
   ._1-slide {
     height: 125vh;
     padding-top: 120px;
-    background-position: 0px 0px, 73% 64%;
+    background-position: 0px 0px, 68% 64%;
     background-size: auto, auto 124%;
     background-repeat: repeat, no-repeat;
+  }
+
+  .div-block-lang-mob {
+    display: block;
   }
   ._2-slide {
     height: 125vh;

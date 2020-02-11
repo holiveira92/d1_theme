@@ -13,8 +13,18 @@ $dados              = $dados['data_objetivos'];
 get_header();
 ?>
 <body>
+<style type = "text/css" > .objetivos-de-negocio-hero{
+    background-image: url("<?php echo get_template_directory_uri();?>/images/Group-41.svg"),
+    url("<?php echo $dados['url_img'];?>");
+}
+@media only screen and (max-width: 767px) {
+    .objetivos-de-negocio-hero{
+        background-image: url("<?php echo $dados['url_img'];?>") !important;
+    }
+}
+</style>
 <!-- SEÇÃO HERO -->
-<div id="hero" class="objetivos-de-negocio-hero" style='background-image: url("<?php echo get_template_directory_uri();?>/images/Group-41.svg"), url("<?php echo $dados['url_img'];?>");'>
+<div id="hero" class="objetivos-de-negocio-hero">
     <div class="mycontainer">
         <div class="home-hero-wrapper _16pad">
             <div class="home-hero-left">

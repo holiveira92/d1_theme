@@ -44,7 +44,9 @@ get_header();
                 $home_cta = $data_loader->get_cta($id_home_cta);
                 $cont = 1;
         ?>
-            <div class="_1-slide w-slide" style="background-image: url('<?php echo get_template_directory_uri();?>/images/stripes-h_black_trans.png'), -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url('<?php echo $hero['img_url_bg_hero'];?>')">
+            <div class="_1-slide w-slide" name="slider_principal">
+                <input type="hidden" name="slider_principal_style_desktop" value="<?php echo $hero['img_url_bg_hero'];?>">
+                <input type="hidden" name="slider_principal_style_stripes" value="<?php echo get_template_directory_uri();?>/images/stripes-h_black_trans.png">
                 <div class="mycontainer _1">
                     <div class="home-hero-wrapper">
                         <div class="home-hero-left left nopad" data-ix="fade-in-on-load">
@@ -63,7 +65,7 @@ get_header();
                         <div class="home-hero-right">
                             <h3 class="h1white nomargin"><?php echo $hero['hero_name'];?></h3>
                             <div class="div-block-97"></div>
-                            <h6 class="lightblue type-gradient"><?php echo $hero['hero_cargo'];?></h6>
+                            <h6 class="white"><?php echo $hero['hero_cargo'];?></h6>
                             <div class="h1white pad20 client"><?php echo $hero['hero_descricao'];?></div>
                             <img src="<?php echo $hero['img_url_logo_hero_company'];?>" alt="" class="home-hero-logo-partner">
                         </div>
