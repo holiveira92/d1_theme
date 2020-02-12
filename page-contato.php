@@ -63,6 +63,14 @@ get_header();
                 <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
                 <![endif]-->
                 <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+                <?php 
+                    $langs = array( 
+                        'PT' => array('solucoes' => 'Soluções Para ' ), 
+                        'EN' => array('solucoes' => 'Solutions for '),
+                        'ES' => array('solucoes' => 'Soluciones para ')
+                    ); 
+                ?>
+                <?php echo $langs[$language_option]['form']?>
                 <script>
                     hbspt.forms.create({
                         portalId: "3898638",

@@ -11,21 +11,38 @@ img.home-hero-logo-partner {
 }
 
 @media not all and (min-resolution:.001dpcm) {
-  #inovacao .heading span, .home-tab-link.w--current span {
+
+  #inovacao .heading span, .home-tab-link.w--current span .text-span-21.type-gradient span{
     -webkit-text-fill-color: #0eb8ff;
     background: none!important;
   }
   .div-block-93 {
     height: auto!important;
   }
+
   @media screen and (max-width:767px) {
     .div-block-93 {
       height: 60%!important;
     }
+    .image-4 {
+      height: intrinsic!important;
+    }
     .section-colright-form {
       height: 130%!important;
     }
+    .preco-form-wrapper.left.bottommargin {
+      height: calc(75% + 2em);
+    }
+    .hs-form-booleancheckbox input[type="checkbox"] {
+      opacity: 1;
+      position: relative;
+      z-index: 0;
+      }
+      .hs-form-booleancheckbox-display span {
+        margin-left: 10px;
+        }
   }
+
 }
 
 html {
@@ -392,6 +409,7 @@ a.w-button .div-block-32 a.w-button {
   background-position: 98% 50%, 0px 0px;
   background-size: auto, auto;
   background-repeat: no-repeat, repeat;
+  border: none;
   width: 350px;
   margin-right: auto;
   margin-left: auto;
@@ -534,12 +552,12 @@ box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.61);
   background-position: 98% 50%, 0px 0px;
   background-size: auto, auto;
   background-repeat: no-repeat, repeat;
-  border: 2px solid white;
+  border: none;
   width: 350px;
   margin-right: auto;
   margin-left: auto;
   margin-top: 15px;
-  padding: 23px 49px 23px 0px;
+  padding: 25px 49px 25px 0px;
   font-size: 18px;
   font-weight: 500;
   text-align: center;
@@ -613,6 +631,7 @@ box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.61);
   background-position: 94% 50%, 0px 0px;
   background-size: auto, auto;
   background-repeat: no-repeat, repeat;
+  border: none;
   width: 350px;
   margin-right: auto;
   margin-left: auto;
@@ -686,12 +705,12 @@ box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.61);
   background-position: 94% 50%, 0px 0px;
   background-repeat: no-repeat, repeat;
   background-size: auto, auto;
-  border: 2px solid white;
   width: 350px;
   margin-right: auto;
   margin-left: auto;
   margin-top: 15px;
-  padding: 23px 49px 23px 0px;
+  padding: 25px 49px 25px 0px;
+  border: none;
   font-size: 18px;
   font-weight: 500;
   text-align: center;
@@ -838,6 +857,7 @@ box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.61);
 .w-button.-normal-azul {
   background-image: linear-gradient(257.91deg, #0a8cff 6.41%, #0fc6ff 82.61%) !important;
   width: 350px;
+  border: none;
   margin-right: auto;
   margin-left: auto;
   margin-top: 15px;
@@ -879,6 +899,7 @@ box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.61);
 
 .w-button.-hover-normal-azul:hover {
   background-image: linear-gradient(257.91deg, #0a8cff 6.41%, #0fc6ff 82.61%) !important;
+  border: none;
   width: 350px;
   margin-right: auto;
   margin-left: auto;
@@ -3389,8 +3410,12 @@ h6 {
   margin-bottom: 25px;
 }
 
-.case-thumb-content h6 span {
-  text-transform: uppercase;
+.case-thumb-content h6 span, .case-thumb-content-2 h6 span, .case-thumb-content {
+  text-transform: uppercase!important;
+}
+
+.case-thumb-content-2 h6 {
+  text-align: left;
 }
 
 .case-thumb-content {
