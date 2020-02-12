@@ -5,9 +5,17 @@ $id_modulos         = get_query_var('id');
 $slug               = get_query_var('slug');
 $dados              = $data_loader->get('departamentos',$id_modulos);
 $dados              = $dados['data_departamentos'];
+$language_option = !empty($_SESSION['d1_language_option']) ? $_SESSION['d1_language_option'] : "PT";
 ?>
 <head>
-    <title><?php echo "Soluções Para " . mb_convert_case($dados['main_title'], MB_CASE_TITLE, "UTF-8");?> - D1</title>
+<?php 
+    $langs = array( 
+        'PT' => array('solucoes' => 'Soluções Para ' ), 
+        'EN' => array('solucoes' => 'Solutions for '),
+        'ES' => array('solucoes' => 'Soluciones para ')
+    ); 
+?>
+    <title><?php echo $langs[$language_option]['solucoes'] . mb_convert_case($dados['main_title'], MB_CASE_TITLE, "UTF-8");?> - D1</title>
 </head>
 <?php
 get_header();

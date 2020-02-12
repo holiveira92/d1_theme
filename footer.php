@@ -193,7 +193,7 @@ $group_links = json_decode(json_encode($wpdb->get_results("SELECT * FROM " . $wp
                 </div>
                 <?php 
                 $langs = array( 
-                    'PT' => array ('politica' => 'Política de Privacidade de Dados' ), 
+                    'PT' => array('politica' => 'Política de Privacidade de Dados' ), 
                     'EN' => array('politica' => 'Data Privacy Policy'),
                     'ES' => array('politica' => 'Política de Privacidad de Datos')
                 ); 
