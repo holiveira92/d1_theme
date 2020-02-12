@@ -53,24 +53,25 @@ get_header();
                     <h6 class="h1white nomargin"><?php echo $data_plataforma['plataforma_secao1_desafio_title'];?></h6>
                 </div>
                 <div class="case-thumb-content-wrapper">
+                <?php for($i=1;$i<=3;$i++):
+                    $idx = "plataforma_secao1_card$i"."_title";
+                    if(empty($data_plataforma[$idx]))
+                        continue;
+                ?>
                     <div class="servicos-thumb-content">
-                        <h3><?php echo $data_plataforma['plataforma_secao1_card1_title'];?></h3>
-                        <p><?php echo $data_plataforma['plataforma_secao1_card1_desc'];?></p>
+                        <h3><?php echo $data_plataforma["plataforma_secao1_card$i"."_title"];?></h3>
+                        <p><?php echo $data_plataforma["plataforma_secao1_card$i"."_desc"];?></p>
                     </div>
-                    <div class="servicos-thumb-content">
-                        <h3><?php echo $data_plataforma['plataforma_secao1_card2_title'];?></h3>
-                        <p><?php echo $data_plataforma['plataforma_secao1_card2_desc'];?></p>
-                    </div>
-                    <div class="servicos-thumb-content">
-                        <h3><?php echo $data_plataforma['plataforma_secao1_card3_title'];?></h3>
-                        <p><?php echo $data_plataforma['plataforma_secao1_card3_desc'];?></p>
-                    </div>
+                <?php endfor; ?>
                 </div>
             </div>
         </div>
     </div>
     
-    <div id="modulos" class="section-stripe-platfaorma blackbg" data-ix="fade-in-on-scroll">
+    <?php
+        $hide_tab_plataforma = (empty($data_plataforma['plataforma_secao2_title'])) ? "hide" : "";
+    ?>
+    <div id="modulos" class="section-stripe-plataforma blackbg <?php echo $hide_tab_plataforma;?>" data-ix="fade-in-on-scroll">
         <div class="mycontainer">
             <h6 class="h1white lightblue2 type-gradient"><span><?php echo $data_plataforma['plataforma_secao2_title'];?></span></h6>
             <div class="div-block-26">
@@ -83,7 +84,10 @@ get_header();
         </div>
     </div>
 
-    <?php for($i=1;$i<=5;$i++): ?>
+    <?php for($i=1;$i<=5;$i++):
+        if(empty($data_plataforma["plataforma_secao2_modulo$i"."_title"]))
+            continue;
+    ?>
     <div id="<?php echo $data_plataforma["plataforma_secao2_modulo$i"."_link"];?>" class="section-wrapper-large" data-ix="fade-in-on-scroll-2">
         <div class="mycontainer">
             <div class="section-2col-wrapper narrow">

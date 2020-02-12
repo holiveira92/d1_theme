@@ -75,6 +75,9 @@ $dados              = $dados['data_objetivos'];
             <div class="div-block-71">
                 <div data-delay="0" class="dropdown-3 w-dropdown">
                 <?php 
+                    //if($data_header['site_lang_pt'] != 1) unset($arr_lang[0]);//PT padrão
+                    if($data_header['site_lang_en'] != 1) unset($arr_lang[1]);
+                    if($data_header['site_lang_es'] != 1) unset($arr_lang[2]);
                     foreach($arr_lang as $lang):
                         if($language_option == $lang):
                 ?>
