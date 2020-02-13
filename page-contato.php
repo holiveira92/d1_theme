@@ -25,7 +25,7 @@ get_header();
 <div id="contatos" class="contato-hero">
     <div class="mycontainer">
     <h1 class="h1white center mobi center" data-ix="fade-in-on-load"><?php echo $data_contato['contato_secao1_main_title'];?><span> <br>‍</span>
-    <span class="text-span-19"><?php echo $data_contato['contato_secao1_title'];?></span><span class="text-span-20">!</span></h1>
+    <span class="text-span-19"><?php echo $data_contato['contato_secao1_title'];?></span></h1>
         <div class="contato-cards-wrapper" data-ix="fade-in-on-load-2">
             <div class="contato-thumb-content-wrapper">
 
@@ -59,24 +59,24 @@ get_header();
 <div id="form" class="section-wrapper-large black">
     <div id="mensagem" class="mycontainer large">
             <div class="form-contact w-form">
-                <!--[if lte IE 8]>
+                <!--[if lte IE 8]-->
                 <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
-                <![endif]-->
+                <!--[endif]-->
                 <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
                 <?php 
                     $langs = array( 
-                        'PT' => array('solucoes' => 'Soluções Para ' ), 
-                        'EN' => array('solucoes' => 'Solutions for '),
-                        'ES' => array('solucoes' => 'Soluciones para ')
-                    ); 
+                        'PT' => array(
+                            'script' => '<script>hbspt.forms.create({ portalId: "3898638", formId: "2570f2b5-9dc1-439d-a6e6-102537d631f6"});</script>'
+                        ),
+                        'EN' => array(
+                            'script' => '<script>hbspt.forms.create({portalId: "3898638",formId: "80e38ce7-4839-4411-b273-02dc915d7d30"});</script>'
+                        ),
+                        'ES' => array(
+                            'script' => '<script>hbspt.forms.create({portalId: "3898638",formId: "5e17bd31-1269-4d00-836e-03ccf09d4c5b"});</script>'
+                        )
+                    );
                 ?>
-                <?php echo $langs[$language_option]['form']?>
-                <script>
-                    hbspt.forms.create({
-                        portalId: "3898638",
-                        formId: "2570f2b5-9dc1-439d-a6e6-102537d631f6"
-                    });
-                </script>
+                <?php echo $langs[$language_option]['script']?>
             </div>
 
     </div>

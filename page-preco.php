@@ -43,18 +43,34 @@ get_header();
                 <div class="section-colright-form">
                     <div class="preco-form-wrapper left bottommargin" data-ix="fade-in-on-load-2">
                         <div class="div-block-93">
-                            <h3 class="heading-36 type-gradient"><span>Vamos conversar?</span></h3>
+
+                            <?php 
+                                $langs = array( 
+                                    'PT' => array('form' => 'Vamos conversar?' ), 
+                                    'EN' => array('form' => 'Lets Talk? '),
+                                    'ES' => array('form' => '¿Vamos a hablar? ')
+                                ); 
+                            ?>
+                            <h3 class="heading-36 type-gradient"><span><?php echo $langs[$language_option]['form']?></span></h3>
                             <div class="preco-form form-block w-form">
-                                <!--[if lte IE 8]>
+                                <!--[if lte IE 8]-->
                                 <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
-                                <![endif]-->
+                                <!--[endif]-->
                                 <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
-                                <script>
-                                    hbspt.forms.create({
-                                    portalId: "3898638",
-                                    formId: "a82bba50-33f2-43dd-bc61-f90fd8a5d359"
-                                });
-                                </script>
+                                <?php 
+                                    $langs = array( 
+                                        'PT' => array(
+                                            'script' => '<script>hbspt.forms.create({portalId: "3898638",formId: "a82bba50-33f2-43dd-bc61-f90fd8a5d359"});</script>'
+                                        ),
+                                        'EN' => array(
+                                            'script' => '<script>hbspt.forms.create({portalId: "3898638",formId: "6fb6608d-5450-4d3a-8310-9011fd054c91"});</script>'
+                                        ),
+                                        'ES' => array(
+                                            'script' => '<script>hbspt.forms.create({portalId: "3898638",formId: "d3112238-5146-4afe-b102-0edabfb45e02"});</script>'
+                                        )
+                                    );
+                                ?>
+                                <?php echo $langs[$language_option]['script']?>
                             </div>
                         </div>
                     </div>
