@@ -29,6 +29,7 @@ $menu_cta =  $data_loader->get_cta($id_menu_cta);
 $menu = array_values(get_d1_menu_tree('menu_principal'.$menu_language));
 $dados              = $data_loader->get('objetivos',1);
 $dados              = $dados['data_objetivos'];
+//pre($data_header);die;
 ?>
 
 <head>
@@ -78,19 +79,21 @@ $dados              = $dados['data_objetivos'];
                     //if($data_header['site_lang_pt'] != 1) unset($arr_lang[0]);//PT padrão
                     if($data_header['site_lang_en'] != 1) unset($arr_lang[1]);
                     if($data_header['site_lang_es'] != 1) unset($arr_lang[2]);
-                    foreach($arr_lang as $lang):
-                        if($language_option == $lang):
+                    $lang_atual = (in_array($language_option,$arr_lang)) ? $language_option : "PT";
+                    if($lang_atual != $language_option){
+                        $url_reload = get_template_directory_uri() ."/language.php?lang=$lang_atual&location=" . get_home_url();
+                        echo("<script>location.href = '".$url_reload."';</script>");
+                        die();
+                    }
                 ?>
                         <div class="dropdown-toggle-3 w-dropdown-toggle">
                             <div class="icon w-icon-dropdown-toggle"></div>
-                            <div class="text-block-6"><?php echo $lang;?></div>
+                            <div class="text-block-6"><?php echo $lang_atual;?></div>
                         </div>
-                        <?php endif;?>
-                <?php endforeach;?>
                 <?php
                     $dpdw_top = 33;//tratamento para posição na tela
                     foreach($arr_lang as $lang):
-                        if($language_option != $lang):
+                        if($lang_atual != $lang):
                 ?>
                             <nav style="top: <?php echo $dpdw_top;?>px !important;" class="dropdown-list-2 w-dropdown-list"><a href="<?php echo get_template_directory_uri() ."/language.php?lang=$lang&location=" . get_home_url() ;?>" class="dropdown-link-2 w-dropdown-link"><?php echo $lang;?></a></nav>
                         <?php $dpdw_top = 2 * $dpdw_top; endif;?>
