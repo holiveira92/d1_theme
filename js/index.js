@@ -40,7 +40,7 @@ jQuery(document).ready(function($) {
         // Vídeo a ser reproduzido
         var container = modal.find('.iframe-res')
         //var videoUrl = container.data('url') //trocando para link do webflow
-        var videoUrl = $('.btn-gradient.play').attr('data-url')
+        var videoUrl = $('.open-modal').attr('data-url')
         var videoType = ''
 
         if (videoUrl.includes(YOUTUBE)) {
